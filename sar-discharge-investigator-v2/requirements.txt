@@ -1,0 +1,11 @@
+numpy>=1.24
+scipy>=1.10
+h5py>=3.9
+pyproj>=3.6
+Pillow>=10.0
+xarray>=2023.6
+rioxarray>=0.15
+pystac-client>=0.7
+planetary-computer>=1.0
+asf_search>=8.0
+earthaccess>=0.9
