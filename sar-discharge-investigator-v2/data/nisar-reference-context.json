@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "water_levels": [
+    {
+      "site_id": "curuai-nisar",
+      "station": "Óbidos",
+      "station_id": "17050001",
+      "water_body": "Amazon River",
+      "unit": "cm above station gauge zero",
+      "low_water_reference_cm": 111,
+      "scope": "Regional river level context. Lago Grande de Curuai has a separate lake water level and responds to river flow through a connected floodplain.",
+      "readings": [
+        {"date": "2026-08-13", "value_cm": 606, "evidence_id": "ana-obidos-2026-08-13"},
+        {"date": "2026-10-12", "value_cm": 141, "evidence_id": "ana-obidos-2026-10-12"}
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ana-obidos-2026-08-13",
+      "title": "Brazil ANA · 13 August 2026 river level at Óbidos",
+      "kind": "Government gauge bulletin",
+      "url": "https://www.gov.br/ana/pt-br/sala-de-situacao/rio-amazonas/boletins/diario/boletim_01_amazonas_publica-1786634090.62.pdf",
+      "notes": "The page 1 table reports 606 cm above station 17050001 gauge zero on the Amazon River. This is a daily gauge reading."
+    },
+    {
+      "id": "ana-obidos-2026-10-12",
+      "title": "Brazil ANA · 12 October 2026 river level at Óbidos",
+      "kind": "Government gauge bulletin",
+      "url": "https://www.gov.br/ana/pt-br/sala-de-situacao/rio-amazonas/boletins/diario/boletim_01_amazonas_publica1310-1.pdf/%40%40download/file",
+      "notes": "The 13 October bulletin's page 1 table reports 141 cm for 12 October at station 17050001, with a low-water reference level of 111 cm."
+    },
+    {
+      "id": "curuai-floodplain-hydrology",
+      "title": "HYBAM · Curuai floodplain and the Amazon River",
+      "kind": "Field and modelling study",
+      "url": "https://iahs.info/uploads/dms/13037.42%20310-319%20S11-29%20Laurence%20MB%20et%20al.pdf",
+      "notes": "The field study describes seasonal storage and release between the Curuai floodplain and the Amazon River. Local lake stage depends on channels, rainfall and other conditions as well as main-stem water levels."
+    }
+  ]
+}

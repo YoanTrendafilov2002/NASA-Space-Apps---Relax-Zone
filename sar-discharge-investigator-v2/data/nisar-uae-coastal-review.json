@@ -1,0 +1,1061 @@
+{
+  "schema_version": 1,
+  "sites": [
+    {
+      "id": "uae-coastal-review",
+      "name": "Umm Al Quwain coast, UAE",
+      "topic": "oil_spill",
+      "aliases": [
+        "Umm Al Quwain coast",
+        "UAE coastal review",
+        "GEM NO. 2 coastal review"
+      ],
+      "bbox": [
+        55.45186408503937,
+        25.493571619658645,
+        55.85576761190493,
+        25.96217789745816
+      ],
+      "start": "2026-10-09",
+      "end": "2026-11-02",
+      "evidence_id": "nisar-uae-coast-20261021-source",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              55.45787333008962,
+              25.493571619658645
+            ],
+            [
+              55.85576761190493,
+              25.497216268532913
+            ],
+            [
+              55.851307878091994,
+              25.96217789745816
+            ],
+            [
+              55.45186408503937,
+              25.958457147806254
+            ],
+            [
+              55.45787333008962,
+              25.493571619658645
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "study_area",
+      "review_points": [
+        {
+          "id": "uae-offshore-slick",
+          "topic": "oil_spill",
+          "label": "Offshore dark-water candidate",
+          "lon": 55.62365960823133,
+          "lat": 25.78413876269549,
+          "evidence_id": "nisar-uae-coast-20261021-offshore",
+          "kind": "visual_interpretation",
+          "notes": "Manual interpretation of a dark feature in this HH acquisition. The held-out UAE screen did not establish oil detection.",
+          "native_pixel": [
+            975,
+            850
+          ],
+          "hh_db": -22.606300354003906,
+          "intersects_fgic_mangrove": false
+        },
+        {
+          "id": "uae-khor-al-beidah",
+          "topic": "wetlands",
+          "label": "Khor Al Beidah wetland",
+          "lon": 55.62767777043343,
+          "lat": 25.582450133969683,
+          "evidence_id": "nisar-uae-coast-20261021-wetland",
+          "kind": "mapped_habitat",
+          "notes": "Review point on a feature in the public mangrove inventory. This scene provides a backscatter observation.",
+          "native_pixel": [
+            2092,
+            858
+          ],
+          "hh_db": -8.054542541503906,
+          "intersects_fgic_mangrove": true
+        }
+      ],
+      "geometry_note": "Extended QGIS review window from the same October 21 acquisition used in the smaller Umm Al Quwain view.",
+      "search_start": "2026-10-09",
+      "search_end": "2026-11-02",
+      "reference_acquisition_date": "2026-10-21"
+    }
+  ],
+  "observations": [
+    {
+      "id": "nisar-uae-coast-20261021",
+      "site_id": "uae-coastal-review",
+      "product_id": "NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "mode": "Frequency A · dual polarization",
+      "frequency": "A",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              55.45787333008962,
+              25.493571619658645
+            ],
+            [
+              55.85576761190493,
+              25.497216268532913
+            ],
+            [
+              55.851307878091994,
+              25.96217789745816
+            ],
+            [
+              55.45186408503937,
+              25.958457147806254
+            ],
+            [
+              55.45787333008962,
+              25.493571619658645
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "coordinates": [
+          [
+            [
+              58.05757,
+              25.95581
+            ],
+            [
+              57.41909,
+              28.08432
+            ],
+            [
+              54.83486,
+              27.43941
+            ],
+            [
+              55.52129,
+              25.32608
+            ],
+            [
+              58.05757,
+              25.95581
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "geometry_kind": "local_coverage_window",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "scientific": true,
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "units": "dB",
+          "display_range_db": [
+            -24.5,
+            -11.0
+          ],
+          "image_url": "/sar/nisar-uae-coast-20261021-hh.png",
+          "image_bounds": [
+            [
+              25.4935038912453,
+              55.45186408503937
+            ],
+            [
+              25.962177897458155,
+              55.85579155254371
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            2518,
+            1955
+          ],
+          "image_transform": [
+            23.0,
+            0.0,
+            6172873.273484398,
+            0.0,
+            -23.0,
+            2994397.267739218
+          ],
+          "image_size_bytes": 4587748,
+          "image_sha256": "537fd460968e3f5d3679254985153340ad41549fce1937262abad0283ceffde3",
+          "science_url": "/science/nisar-uae-coast-20261021-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32640,
+          "science_transform": [
+            20.0,
+            0.0,
+            345000.0,
+            0.0,
+            -20.0,
+            2872000.0
+          ],
+          "science_size_bytes": 11114597,
+          "science_sha256": "8eb0170461ecfbc61d6ea4e797cb0ba7a6a2c3f82f97a5604fe074ea25fc5ec2",
+          "science_shape": [
+            2575,
+            2000
+          ],
+          "science_posting_m": 20,
+          "noise_correction_applied": false,
+          "evidence_id": "nisar-uae-coast-20261021-source",
+          "valid_pixels": 4428763,
+          "valid_fraction": 0.8599539805825243,
+          "geographic_pixel_checks": 225,
+          "notes": "Measured NISAR gamma0. The science COG preserves native linear samples and their quality mask. The map uses a fixed 10 log10 dB stretch."
+        },
+        "HV": {
+          "status": "catalogue_only",
+          "scientific": false,
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "evidence_id": "nisar-uae-coast-20261021-source",
+          "notes": "HV is in the provider granule. This extended review publishes the matched QGIS HH window."
+        }
+      },
+      "evidence_id": "nisar-uae-coast-20261021-source",
+      "source_url": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&granule_list=NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001&output=geojson",
+      "science_requires_earthdata": false,
+      "source_requires_earthdata": true,
+      "orbit": 128,
+      "absolute_orbit": 6455,
+      "frame": 15,
+      "look_direction": "Left",
+      "direction": "ASCENDING",
+      "acquired_at": "2026-10-21T01:35:16Z",
+      "acquisition_end": "2026-10-21T01:35:51.999342105Z",
+      "processing_version": "1.0.11",
+      "product_specification_version": "1.5.0",
+      "noise_correction_applied": false,
+      "source_window": [
+        3678,
+        12748,
+        2000,
+        2575
+      ],
+      "product_type": "GCOV",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "collection_concept_id": "C2854338529-ASF",
+      "granule_concept_id": "G4384361936-ASF",
+      "maturity": "provisional"
+    },
+    {
+      "id": "nisar-uae-coast-20261009",
+      "site_id": "uae-coastal-review",
+      "product_id": "NISAR_L2_PR_GCOV_032_128_A_015_2005_DHDH_M_20261009T013516_20261009T013551_P05023_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_032_128_A_015_2005_DHDH_M_20261009T013516_20261009T013551_P05023_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "mode": "Frequency A · dual polarization",
+      "frequency": "A",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              55.45787333008962,
+              25.493571619658645
+            ],
+            [
+              55.85576761190493,
+              25.497216268532913
+            ],
+            [
+              55.851307878091994,
+              25.96217789745816
+            ],
+            [
+              55.45186408503937,
+              25.958457147806254
+            ],
+            [
+              55.45787333008962,
+              25.493571619658645
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              58.0519653370114,
+              25.971506226929
+            ],
+            [
+              57.9863157146754,
+              26.1838110309973
+            ],
+            [
+              57.9197063727127,
+              26.3959111064784
+            ],
+            [
+              57.8514779251949,
+              26.6076497598484
+            ],
+            [
+              57.7825000798566,
+              26.8192346669493
+            ],
+            [
+              57.7193131271752,
+              27.0322314375506
+            ],
+            [
+              57.6674129782647,
+              27.2479578512997
+            ],
+            [
+              57.6095729886778,
+              27.4622897304517
+            ],
+            [
+              57.5394471660209,
+              27.6737079714481
+            ],
+            [
+              57.4798328845681,
+              27.887671278097
+            ],
+            [
+              57.4138899217648,
+              28.1001470087212
+            ],
+            [
+              57.111857262875,
+              28.0276508902937
+            ],
+            [
+              56.8205291129025,
+              27.9570003069382
+            ],
+            [
+              56.5378455905308,
+              27.8877656773234
+            ],
+            [
+              56.2832031715445,
+              27.8248431564795
+            ],
+            [
+              56.022076873114,
+              27.759741516865
+            ],
+            [
+              55.7830590207279,
+              27.6996663009903
+            ],
+            [
+              55.5384119538145,
+              27.6376686910867
+            ],
+            [
+              55.2993412886135,
+              27.5765996446608
+            ],
+            [
+              55.0639473677434,
+              27.5159999960569
+            ],
+            [
+              54.830476753222,
+              27.4554330421736
+            ],
+            [
+              54.9032279205063,
+              27.2450109314102
+            ],
+            [
+              54.9770375101973,
+              27.0348996294899
+            ],
+            [
+              55.0407151786421,
+              26.8221795512532
+            ],
+            [
+              55.1147533129431,
+              26.6121977299095
+            ],
+            [
+              55.182338733267,
+              26.400567894688
+            ],
+            [
+              55.2496322972609,
+              26.1888977645069
+            ],
+            [
+              55.3166373362526,
+              25.9771868860284
+            ],
+            [
+              55.3833600851049,
+              25.7654370267129
+            ],
+            [
+              55.4498047412693,
+              25.5536494137638
+            ],
+            [
+              55.5157886007148,
+              25.3417753766953
+            ],
+            [
+              55.74063260309,
+              25.3996494726343
+            ],
+            [
+              55.9695964068078,
+              25.4581744872449
+            ],
+            [
+              56.2039909640431,
+              25.517660505831
+            ],
+            [
+              56.4451210313201,
+              25.578405583924
+            ],
+            [
+              56.6912844015349,
+              25.6399453063721
+            ],
+            [
+              56.9444685568446,
+              25.7027425881518
+            ],
+            [
+              57.2057364407617,
+              25.7670159888593
+            ],
+            [
+              57.4762054365039,
+              25.8329869987397
+            ],
+            [
+              57.7547165192848,
+              25.9003161205395
+            ],
+            [
+              58.0519653370114,
+              25.971506226929
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "local_coverage_window",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "scientific": true,
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-uae-coast-20261009-hh.png",
+          "units": "dB",
+          "display_range_db": [
+            -24.5,
+            -11.0
+          ],
+          "image_bounds": [
+            [
+              25.4935038912453,
+              55.45186408503937
+            ],
+            [
+              25.962177897458155,
+              55.85579155254371
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            2518,
+            1955
+          ],
+          "image_transform": [
+            23.0,
+            0.0,
+            6172873.273484398,
+            0.0,
+            -23.0,
+            2994397.267739218
+          ],
+          "image_sha256": "74d3177fb4c2523d097e05cf89312ad0ae6a4ee544f2b82da4b06dc8bd27c759",
+          "image_size_bytes": 4595018,
+          "science_url": "/science/nisar-uae-coast-20261009-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32640,
+          "science_shape": [
+            2575,
+            2000
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            345000.0,
+            0.0,
+            -20.0,
+            2872000.0
+          ],
+          "science_posting_m": 20,
+          "science_sha256": "81aebd94e61a032b1d9cca3433e43b3e3c2024f3601e0a7eac554b02e57cde7d",
+          "science_size_bytes": 11159211,
+          "valid_pixels": 4437484,
+          "valid_fraction": 0.8616473786407767,
+          "noise_correction_applied": false,
+          "evidence_id": "nisar-uae-coast-20261009-source",
+          "notes": "Measured NISAR gamma0. Valid source subswath, positive looks, clear common input exceptions, focused channel when encoded, and finite positive gamma0 power. The display uses a fixed dB stretch."
+        },
+        "HV": {
+          "status": "validated",
+          "scientific": true,
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "image_url": "/sar/nisar-uae-coast-20261009-hv.png",
+          "units": "dB",
+          "display_range_db": [
+            -33,
+            -16
+          ],
+          "image_bounds": [
+            [
+              25.4935038912453,
+              55.45186408503937
+            ],
+            [
+              25.962177897458155,
+              55.85579155254371
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            2518,
+            1955
+          ],
+          "image_transform": [
+            23.0,
+            0.0,
+            6172873.273484398,
+            0.0,
+            -23.0,
+            2994397.267739218
+          ],
+          "image_sha256": "4dc6ad4152222b9b3d19128f21851df5eeb14b53e38cb26f26a20adc991d667d",
+          "image_size_bytes": 4433183,
+          "science_url": "/science/nisar-uae-coast-20261009-hv.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32640,
+          "science_shape": [
+            2575,
+            2000
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            345000.0,
+            0.0,
+            -20.0,
+            2872000.0
+          ],
+          "science_posting_m": 20,
+          "science_sha256": "9c0be04e6ac8e9a1c6f529cff0bef2a71c1c4d5d12045fba03641d87b53a0dcd",
+          "science_size_bytes": 11248253,
+          "valid_pixels": 4437484,
+          "valid_fraction": 0.8616473786407767,
+          "noise_correction_applied": false,
+          "evidence_id": "nisar-uae-coast-20261009-source",
+          "notes": "Measured NISAR gamma0. Valid source subswath, positive looks, clear common input exceptions, focused channel when encoded, and finite positive gamma0 power. The display uses a fixed dB stretch."
+        }
+      },
+      "evidence_id": "nisar-uae-coast-20261009-source",
+      "source_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4356816730-ASF",
+      "science_requires_earthdata": false,
+      "source_requires_earthdata": true,
+      "orbit": 128,
+      "absolute_orbit": 6282,
+      "frame": 15,
+      "look_direction": "Left",
+      "direction": "ASCENDING",
+      "acquired_at": "2026-10-09T01:35:16Z",
+      "acquisition_end": "2026-10-09T01:35:51.999342105Z",
+      "processing_version": "1.0.11",
+      "product_specification_version": "1.5.0",
+      "noise_correction_applied": false,
+      "source_window": [
+        3678,
+        12748,
+        2000,
+        2575
+      ],
+      "product_type": "GCOV",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "collection_concept_id": "C2854338529-ASF",
+      "granule_concept_id": "G4356816730-ASF",
+      "maturity": "provisional",
+      "processing_release": "P05023"
+    },
+    {
+      "id": "nisar-uae-coast-20261102",
+      "site_id": "uae-coastal-review",
+      "product_id": "NISAR_L2_PR_GCOV_034_128_A_015_2005_DHDH_M_20261102T013516_20261102T013551_P05036_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_034_128_A_015_2005_DHDH_M_20261102T013516_20261102T013551_P05036_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "mode": "Frequency A · dual polarization",
+      "frequency": "A",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              55.45787333008962,
+              25.493571619658645
+            ],
+            [
+              55.85576761190493,
+              25.497216268532913
+            ],
+            [
+              55.851307878091994,
+              25.96217789745816
+            ],
+            [
+              55.45186408503937,
+              25.958457147806254
+            ],
+            [
+              55.45787333008962,
+              25.493571619658645
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              58.0663987741752,
+              25.9211369683622
+            ],
+            [
+              58.001626425902,
+              26.133645008205
+            ],
+            [
+              57.9327365294169,
+              26.3451932078555
+            ],
+            [
+              57.8663023266268,
+              26.5573543924096
+            ],
+            [
+              57.7991709338573,
+              26.7693745423796
+            ],
+            [
+              57.7382302995261,
+              26.9829023826199
+            ],
+            [
+              57.6819541370927,
+              27.1975744112398
+            ],
+            [
+              57.6244390601285,
+              27.4119770730787
+            ],
+            [
+              57.5542327290603,
+              27.623369120601
+            ],
+            [
+              57.4938901238361,
+              27.8371509743374
+            ],
+            [
+              57.42563775665,
+              28.0490662893818
+            ],
+            [
+              57.1287703400193,
+              27.9778121617828
+            ],
+            [
+              56.8365310772978,
+              27.9069443972277
+            ],
+            [
+              56.5600483283147,
+              27.8392450577997
+            ],
+            [
+              56.3018031771768,
+              27.7754430300414
+            ],
+            [
+              56.0443740170939,
+              27.7112816510322
+            ],
+            [
+              55.7991578504981,
+              27.6496543419317
+            ],
+            [
+              55.5518456703453,
+              27.5869823532195
+            ],
+            [
+              55.3092069831902,
+              27.5249959129157
+            ],
+            [
+              55.0747904534178,
+              27.4646450008082
+            ],
+            [
+              54.8479060201199,
+              27.4057983255259
+            ],
+            [
+              54.9227344792788,
+              27.1959277683926
+            ],
+            [
+              54.9936736416662,
+              26.9850751680807
+            ],
+            [
+              55.0618023550572,
+              26.773525081224
+            ],
+            [
+              55.1307510385852,
+              26.5622244028277
+            ],
+            [
+              55.1982691351417,
+              26.3505857517208
+            ],
+            [
+              55.2654961987805,
+              26.1389069317406
+            ],
+            [
+              55.3324361765984,
+              25.927187760753
+            ],
+            [
+              55.3990947415867,
+              25.7154297066757
+            ],
+            [
+              55.465475651182,
+              25.5036339446797
+            ],
+            [
+              55.5312212251086,
+              25.2917064658823
+            ],
+            [
+              55.7559627818763,
+              25.3495455950658
+            ],
+            [
+              55.9846225979175,
+              25.4079849744465
+            ],
+            [
+              56.216228385774,
+              25.466756340716
+            ],
+            [
+              56.460413309755,
+              25.5282698320005
+            ],
+            [
+              56.7064927716046,
+              25.5897822763758
+            ],
+            [
+              56.9595891846518,
+              25.652552246233
+            ],
+            [
+              57.2207661702033,
+              25.7167985466625
+            ],
+            [
+              57.4912874012582,
+              25.7827783959386
+            ],
+            [
+              57.7713856376051,
+              25.8504873678369
+            ],
+            [
+              58.0663987741752,
+              25.9211369683622
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "local_coverage_window",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "scientific": true,
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-uae-coast-20261102-hh.png",
+          "units": "dB",
+          "display_range_db": [
+            -24.5,
+            -11.0
+          ],
+          "image_bounds": [
+            [
+              25.4935038912453,
+              55.45186408503937
+            ],
+            [
+              25.962177897458155,
+              55.85579155254371
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            2518,
+            1955
+          ],
+          "image_transform": [
+            23.0,
+            0.0,
+            6172873.273484398,
+            0.0,
+            -23.0,
+            2994397.267739218
+          ],
+          "image_sha256": "38c6e733b8427c9b5c57aa9f565d3955c4259765706f3e6739da593b4fb2fa47",
+          "image_size_bytes": 4554538,
+          "science_url": "/science/nisar-uae-coast-20261102-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32640,
+          "science_shape": [
+            2575,
+            2000
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            345000.0,
+            0.0,
+            -20.0,
+            2872000.0
+          ],
+          "science_posting_m": 20,
+          "science_sha256": "169faee28e653e90d7af216b016a4f9ffc5cd5e374b2039be87ad65760bc0823",
+          "science_size_bytes": 11193799,
+          "valid_pixels": 4436043,
+          "valid_fraction": 0.861367572815534,
+          "noise_correction_applied": false,
+          "evidence_id": "nisar-uae-coast-20261102-source",
+          "notes": "Measured NISAR gamma0. Valid source subswath, positive looks, clear common input exceptions, focused channel when encoded, and finite positive gamma0 power. The display uses a fixed dB stretch."
+        },
+        "HV": {
+          "status": "validated",
+          "scientific": true,
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "image_url": "/sar/nisar-uae-coast-20261102-hv.png",
+          "units": "dB",
+          "display_range_db": [
+            -33,
+            -16
+          ],
+          "image_bounds": [
+            [
+              25.4935038912453,
+              55.45186408503937
+            ],
+            [
+              25.962177897458155,
+              55.85579155254371
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            2518,
+            1955
+          ],
+          "image_transform": [
+            23.0,
+            0.0,
+            6172873.273484398,
+            0.0,
+            -23.0,
+            2994397.267739218
+          ],
+          "image_sha256": "4a922136dfca50b36275796dae51d10fa0f8e7fa5a59b810d08fe0ff242d102e",
+          "image_size_bytes": 4434785,
+          "science_url": "/science/nisar-uae-coast-20261102-hv.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32640,
+          "science_shape": [
+            2575,
+            2000
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            345000.0,
+            0.0,
+            -20.0,
+            2872000.0
+          ],
+          "science_posting_m": 20,
+          "science_sha256": "d7563c4902bc3b3f3280859280f1f7bee43dde3e0f2ece34fc14eb5d33b49d83",
+          "science_size_bytes": 11042541,
+          "valid_pixels": 4436043,
+          "valid_fraction": 0.861367572815534,
+          "noise_correction_applied": false,
+          "evidence_id": "nisar-uae-coast-20261102-source",
+          "notes": "Measured NISAR gamma0. Valid source subswath, positive looks, clear common input exceptions, focused channel when encoded, and finite positive gamma0 power. The display uses a fixed dB stretch."
+        }
+      },
+      "evidence_id": "nisar-uae-coast-20261102-source",
+      "source_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4410026961-ASF",
+      "science_requires_earthdata": false,
+      "source_requires_earthdata": true,
+      "orbit": 128,
+      "absolute_orbit": 6628,
+      "frame": 15,
+      "look_direction": "Left",
+      "direction": "ASCENDING",
+      "acquired_at": "2026-11-02T01:35:16Z",
+      "acquisition_end": "2026-11-02T01:35:51.999342105Z",
+      "processing_version": "1.0.20",
+      "product_specification_version": "1.6.0",
+      "noise_correction_applied": false,
+      "source_window": [
+        3678,
+        12748,
+        2000,
+        2575
+      ],
+      "product_type": "GCOV",
+      "collection": "NISAR_L2_GCOV_V1",
+      "collection_concept_id": "C3622241360-ASF",
+      "granule_concept_id": "G4410026961-ASF",
+      "maturity": "validated",
+      "processing_release": "P05036"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "nisar-uae-coast-20261021-source",
+      "title": "NASA ASF NISAR HH · Umm Al Quwain coastal window",
+      "url": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&granule_list=NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001&output=geojson",
+      "kind": "downloaded_scientific_hdf5",
+      "source_id": "NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001",
+      "accessed_at": "2026-11-15",
+      "provider_asset_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001.h5",
+      "source_filename": "NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001.h5",
+      "source_size_bytes": 1816133632,
+      "provider_size_bytes": 1816133632,
+      "source_sha256": "cd923bddf7f2b68d7d9ea3c95be26c87eaaf00c8f2a9ad4e24c56d2cc1369d9c",
+      "source_authentication": "NASA Earthdata Login required for original HDF5",
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "qgis_reference_check": {
+        "reference": "NISAR_Lband_HH_20261021T0135Z.tif",
+        "compared_postings": 4428763,
+        "qa_invalid_pixels": 721237,
+        "validity_masks_identical": true,
+        "maximum_db_difference": 0.0
+      },
+      "notes": "Local frequency-A HH subset from the ASF HDF5. The native grid, quality mask, and all HH dB values match the saved QGIS reference.",
+      "cmr_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4384361936-ASF"
+    },
+    {
+      "id": "nisar-uae-coast-20261021-offshore",
+      "title": "Offshore candidate and UAE incident context",
+      "kind": "visual_interpretation_with_incident_context",
+      "url": "https://www.wam.ae/en/article/c3051mm-oil-spill-from-gem-no-tanker-contained",
+      "notes": "The October 21 marker is the QGIS callout target selected from this HH image. The UAE authorities described a regional slick on October 30. That report cannot establish the material at this October 21 point."
+    },
+    {
+      "id": "nisar-uae-coast-20261021-wetland",
+      "title": "Khor Al Beidah mapped coastal habitat",
+      "kind": "habitat_inventory",
+      "url": "https://data.emiratesnaturewwf.ae/media/files/2024-12/Habitat_Map_Policy_Report_0.pdf",
+      "government_reference_url": "https://www.moccae.gov.ae/assets/38ab144b/UAE%20KBA%20Final%20Technical%20Report.pdf.aspx",
+      "inventory_url": "https://stgnsdi.fgic.gov.ae/hosting/rest/services/Environment/ENV_SL4_Mangroves_AR/MapServer/1",
+      "inventory_crop_sha256": "ee91ae7dac982d353ef4e499c5c7dc1ee88484554bf445a005fb98cac0259c83",
+      "notes": "The WWF habitat survey documents the wetland. The QGIS callout target falls inside a mangrove polygon in the saved FGIC inventory crop. This point is a habitat reference."
+    },
+    {
+      "id": "nisar-uae-coast-20261009-source",
+      "title": "NASA ASF NISAR calibrated coastal window · 2026-10-09",
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4356816730-ASF",
+      "kind": "downloaded_scientific_hdf5",
+      "source_id": "NISAR_L2_PR_GCOV_032_128_A_015_2005_DHDH_M_20261009T013516_20261009T013551_P05023_N_F_J_001",
+      "source_filename": "NISAR_L2_PR_GCOV_032_128_A_015_2005_DHDH_M_20261009T013516_20261009T013551_P05023_N_F_J_001.h5",
+      "source_size_bytes": 1811939328,
+      "provider_size_bytes": 1811939328,
+      "source_sha256": "db6e2e10def7c2a7ea220dfe8b634c7ab6432b28e8f56845e3a8c27039502554",
+      "accessed_at": "2026-11-15",
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "notes": "The full ASF product was cropped to the exact 21 October native grid. Valid source subswath, positive looks, clear common input exceptions, focused channel when encoded, and finite positive gamma0 power."
+    },
+    {
+      "id": "nisar-uae-coast-20261102-source",
+      "title": "NASA ASF NISAR calibrated coastal window · 2026-11-02",
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4410026961-ASF",
+      "kind": "downloaded_scientific_hdf5",
+      "source_id": "NISAR_L2_PR_GCOV_034_128_A_015_2005_DHDH_M_20261102T013516_20261102T013551_P05036_N_F_J_001",
+      "source_filename": "NISAR_L2_PR_GCOV_034_128_A_015_2005_DHDH_M_20261102T013516_20261102T013551_P05036_N_F_J_001.h5",
+      "source_size_bytes": 1807745024,
+      "provider_size_bytes": 1807745024,
+      "source_sha256": "c10dbeb0e2c2c519c8e9b166ad317403110b3f84481057394a6c196dfd3ab137",
+      "accessed_at": "2026-11-15",
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "notes": "The full ASF product was cropped to the exact 21 October native grid. Valid source subswath, positive looks, clear common input exceptions, focused channel when encoded, and finite positive gamma0 power."
+    },
+    {
+      "id": "uae-p05036-release",
+      "title": "ASF · November processing release",
+      "kind": "Release notes",
+      "url": "https://hyp3-docs.asf.alaska.edu/nisar-docs/release-notes/",
+      "notes": "ASF advises care when comparing products across processing maturities."
+    },
+    {
+      "id": "uae-gem-containment-20261030",
+      "title": "30 October · UAE containment report",
+      "kind": "Official incident statement",
+      "url": "https://www.wam.ae/en/article/c3051mm-oil-spill-from-gem-no-tanker-contained",
+      "notes": "UAE authorities reported stopping the leak at its source. Monitoring and cleanup continued."
+    }
+  ]
+}

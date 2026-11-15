@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "documents": [
+    {
+      "id": "solid-earth",
+      "title": "NISAR Solid Earth validation ATBD, Revision A",
+      "date": "2022-05-25",
+      "url": "https://gitlab.com/nisar-science-algorithms/solid-earth/ATBD/-/raw/main/docs/SES_ATBD.pdf",
+      "entries": [
+        {
+          "id": "coseismic",
+          "title": "Earthquake displacement",
+          "section": "§2.2.2 and §4.1",
+          "pages": [11, 18],
+          "terms": ["coseismic", "co seismic", "earthquake", "fault rupture", "event step", "postseismic", "post seismic", "pre event", "before and after", "bracket the event"],
+          "answer": "Start with an unwrapped interferogram from two passes on the same track, one before the earthquake and one after. The pair gives a useful first estimate when motion after the earthquake is small. When later motion matters, use a longer series to estimate the earthquake's sudden displacement separately from the ongoing trend and postseismic response."
+        },
+        {
+          "id": "transient",
+          "title": "Transient ground motion",
+          "section": "§2.2.3",
+          "pages": [11, 12],
+          "terms": ["transient", "rapid deformation", "short term", "temporary deformation", "12 day", "volcano", "volcanic", "landslide", "aquifer"],
+          "answer": "Start with an approximately 12-day repeat-track unwrapped interferogram across the interval of interest. Add acquisitions to see when movement began or changed. Analyze ascending and descending tracks separately. Compare with GNSS positions at the radar acquisition times after projecting them into each radar line of sight."
+        },
+        {
+          "id": "secular",
+          "title": "Long-term deformation",
+          "section": "§2.2.1 and §3.1–3.2",
+          "pages": [10, 16],
+          "terms": ["secular", "long term", "multi year", "subsidence", "velocity trend", "seasonal", "sbas", "skip 1", "subsiding", "tectonic"],
+          "answer": "Build a connected stack of unwrapped interferograms for each viewing geometry. Estimate the long-term line-of-sight rate while accounting for seasonal movement and event offsets where present. The formal mission validation uses three years. A shorter validation span requires whole-year intervals or an explicit model for seasonal movement."
+        },
+        {
+          "id": "earth-quality",
+          "title": "Interferogram quality and corrections",
+          "section": "§3.1, §3.2.1 and §3.3",
+          "pages": [14, 17],
+          "terms": ["coherence", "mask", "masking", "threshold", "thresholds", "phase correction", "troposphere", "ionosphere", "tide", "layover", "shadow", "quality", "unwrapping"],
+          "answer": "Screen low-coherence interferograms and check masks for water, radar shadow and layover. Reference the stack to a common location. Choose the coherence threshold for the region. Inspect the available phase corrections and confirm which have already been applied before treating a phase change as ground movement."
+        },
+        {
+          "id": "earth-los",
+          "title": "Radar viewing directions",
+          "section": "§2.1, §2.2.1–2.2.3",
+          "pages": [7, 12],
+          "terms": ["line of sight", "los", "look direction", "viewing direction", "ascending", "descending", "vertical", "3d", "displacement components"],
+          "answer": "Each interferogram measures the part of ground motion along the radar's line of sight. Keep ascending and descending observations as separate viewing directions. They provide two projections. Recovering three motion components requires additional information."
+        },
+        {
+          "id": "earth-validation",
+          "title": "Solid Earth validation",
+          "section": "§2.1 and §4.2",
+          "pages": [7, 20],
+          "terms": ["validate", "validation", "accuracy", "mission target", "mission requirement", "gnss", "uavsar", "100 m", "2 mm", "calibration"],
+          "answer": "The validation plan compares relative radar motion with GNSS projected into the same line of sight. It also uses quiet areas to estimate radar noise and UAVSAR for independent comparisons. The 100 m resolution and distance-dependent accuracy targets in §2.1 apply to mission validation for earthquake and transient displacement."
+        }
+      ]
+    },
+    {
+      "id": "sea-ice",
+      "title": "NISAR Level 2 Sea Ice Motion Product ATBD, Revision 4",
+      "date": "2022",
+      "url": "https://gitlab.com/nisar-science-algorithms/cryosphere/sea-ice/rgps_calval/-/blob/main/docs/SeaIceMotion_ATBD_V4.docx",
+      "sha256": "af1684bf5f71767975be4e10749df9ee663f35aa512fc5ba073e98a0815c990c",
+      "entries": [
+        {
+          "id": "ice-pairs",
+          "title": "Sea ice image pairs",
+          "section": "§3.4, §3.7A and §4.1",
+          "terms": ["sea ice", "ice drift", "sea ice motion", "pair", "pairs", "central pack", "marginal ice", "timing", "cadence", "polar stereographic", "amplitude", "overlap", "repeat interval"],
+          "answer": "Choose two radiometrically calibrated, geocoded and multilooked radar amplitude images on a common polar stereographic grid. Check that the same moving ice features are visible in both scenes. The ATBD gives 3–4 days as a starting interval in the central pack and 1–2 days in the faster-moving marginal ice zone."
+        },
+        {
+          "id": "ice-tracking",
+          "title": "Sea ice feature tracking",
+          "section": "§3.7 and §3.7B–E",
+          "terms": ["feature tracking", "feature matching", "cross correlation", "cross-correlation", "quality", "quality flag", "filter", "texture", "vectors", "rotation", "smooth ice"],
+          "answer": "Use normalized cross-correlation to match radar patterns across the two images. Start at coarse resolution to estimate drift, then refine the matches. Screen vectors with weak correlation, little texture or motion inconsistent with nearby vectors. Smooth ice, open water and major floe rotation make matches harder to trust."
+        },
+        {
+          "id": "ice-validation",
+          "title": "Checking sea ice velocity with drift buoys",
+          "section": "§4.1–4.2",
+          "terms": ["buoy", "buoys", "drift buoy", "drift buoys", "gps", "validation", "validate", "error", "interpolate", "geolocation", "deformation validation"],
+          "answer": "Interpolate nearby GPS drift-buoy positions to the two radar acquisition times, then compare the buoy and radar displacement vectors. Account for uncertainty in image location, feature matching and buoy position. The plan focuses on validating ice velocity. Shear, divergence and vorticity have different validation needs."
+        },
+        {
+          "id": "ice-targets",
+          "title": "Sea ice motion mission targets",
+          "section": "§3.1–3.2 and §4.1",
+          "terms": ["target", "targets", "requirement", "resolution", "grid", "5 km", "3 days", "100 m/day", "100 m per day", "coverage", "70 percent", "l2-670"],
+          "answer": "The sea ice motion design targets velocity accuracy of 100 metres per day on a 5 km grid, every three days, over at least 70% of the Arctic and Antarctic sea ice extent. These are mission requirements. Coverage and accuracy for an individual pair depend on usable overlap, ice conditions and trackable features."
+        }
+      ]
+    }
+  ]
+}

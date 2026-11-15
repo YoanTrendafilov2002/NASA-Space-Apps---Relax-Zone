@@ -1,0 +1,600 @@
+{
+  "protocol": "Frozen text-only classifier. View annotations establish reference intent. No app guards, answer quality, or Ollama are evaluated.",
+  "challenge_sha256": "aeade1db1fa9931ee5d86cd511f3d0f3eff3dbde026a5c0029f34884d552c103",
+  "classifier_sha256": "8a2801726d5ae2fcd6c02fde2162e2a38854ab3638f59c25950ce53ee6d7dfa8",
+  "weights_sha256": "dd375ba8d6d860d15146e92ffcbc5c0c0ada11199f8399ac81fefdb9d33c948e",
+  "predictor_labels": [
+    "command",
+    "compare",
+    "change",
+    "polarization",
+    "coverage",
+    "oil",
+    "wetlands",
+    "drought",
+    "unknown"
+  ],
+  "abstain_below": 0.4,
+  "metrics": {
+    "all_target_labels": {
+      "correct": 24,
+      "total": 55,
+      "fraction": 0.43636363636363634
+    },
+    "legacy_labels": {
+      "correct": 24,
+      "total": 45,
+      "fraction": 0.5333333333333333
+    },
+    "legacy_questions": {
+      "correct": 12,
+      "total": 28,
+      "fraction": 0.42857142857142855
+    },
+    "commands": {
+      "correct": 5,
+      "total": 9,
+      "fraction": 0.5555555555555556
+    },
+    "unsupported": {
+      "correct": 7,
+      "total": 8,
+      "fraction": 0.875
+    },
+    "legend": {
+      "correct": 0,
+      "total": 10,
+      "fraction": 0.0
+    },
+    "legend_abstentions": 7,
+    "questions_predicted_as_commands": 0,
+    "unsupported_predicted_as_supported": 1
+  },
+  "predictions_by_reference": {
+    "change": {
+      "change": 1,
+      "compare": 2,
+      "unknown": 1
+    },
+    "command": {
+      "command": 5,
+      "oil": 1,
+      "polarization": 1,
+      "unknown": 1,
+      "wetlands": 1
+    },
+    "compare": {
+      "compare": 3,
+      "unknown": 1
+    },
+    "coverage": {
+      "coverage": 2,
+      "drought": 1,
+      "unknown": 1
+    },
+    "drought": {
+      "drought": 3,
+      "unknown": 1
+    },
+    "legend": {
+      "drought": 1,
+      "oil": 1,
+      "polarization": 1,
+      "unknown": 7
+    },
+    "oil": {
+      "unknown": 3,
+      "wetlands": 1
+    },
+    "polarization": {
+      "compare": 1,
+      "coverage": 1,
+      "polarization": 2
+    },
+    "unknown": {
+      "oil": 1,
+      "unknown": 7
+    },
+    "wetlands": {
+      "unknown": 3,
+      "wetlands": 1
+    }
+  },
+  "row_results": [
+    {
+      "id": "legend-01",
+      "group": "question",
+      "family": "map colours",
+      "reference": "legend",
+      "prediction": "unknown",
+      "top_raw_class": "unknown",
+      "top_raw_score": 0.7535526586989812
+    },
+    {
+      "id": "legend-02",
+      "group": "question",
+      "family": "map colours",
+      "reference": "legend",
+      "prediction": "polarization",
+      "top_raw_class": "polarization",
+      "top_raw_score": 0.4355518721114568
+    },
+    {
+      "id": "legend-03",
+      "group": "question",
+      "family": "map colours",
+      "reference": "legend",
+      "prediction": "oil",
+      "top_raw_class": "oil",
+      "top_raw_score": 0.770264222911752
+    },
+    {
+      "id": "legend-04",
+      "group": "question",
+      "family": "map colours",
+      "reference": "legend",
+      "prediction": "unknown",
+      "top_raw_class": "unknown",
+      "top_raw_score": 0.3508367463484413
+    },
+    {
+      "id": "legend-05",
+      "group": "question",
+      "family": "shadow and opacity",
+      "reference": "legend",
+      "prediction": "drought",
+      "top_raw_class": "drought",
+      "top_raw_score": 0.6087850221246671
+    },
+    {
+      "id": "legend-06",
+      "group": "question",
+      "family": "shadow and opacity",
+      "reference": "legend",
+      "prediction": "unknown",
+      "top_raw_class": "polarization",
+      "top_raw_score": 0.29520308747747426
+    },
+    {
+      "id": "legend-07",
+      "group": "question",
+      "family": "shadow and opacity",
+      "reference": "legend",
+      "prediction": "unknown",
+      "top_raw_class": "unknown",
+      "top_raw_score": 0.7889354689719844
+    },
+    {
+      "id": "legend-08",
+      "group": "question",
+      "family": "action wording in explanations",
+      "reference": "legend",
+      "prediction": "unknown",
+      "top_raw_class": "unknown",
+      "top_raw_score": 0.8784619372042783
+    },
+    {
+      "id": "legend-09",
+      "group": "question",
+      "family": "map colours",
+      "reference": "legend",
+      "prediction": "unknown",
+      "top_raw_class": "coverage",
+      "top_raw_score": 0.34098872938503616
+    },
+    {
+      "id": "legend-10",
+      "group": "question",
+      "family": "shadow and opacity",
+      "reference": "legend",
+      "prediction": "unknown",
+      "top_raw_class": "compare",
+      "top_raw_score": 0.38513032091483745
+    },
+    {
+      "id": "compare-01",
+      "group": "question",
+      "family": "matched dates",
+      "reference": "compare",
+      "prediction": "compare",
+      "top_raw_class": "compare",
+      "top_raw_score": 0.7487999276704993
+    },
+    {
+      "id": "compare-02",
+      "group": "question",
+      "family": "matched dates",
+      "reference": "compare",
+      "prediction": "unknown",
+      "top_raw_class": "compare",
+      "top_raw_score": 0.3374870284410086
+    },
+    {
+      "id": "compare-03",
+      "group": "question",
+      "family": "matched dates",
+      "reference": "compare",
+      "prediction": "compare",
+      "top_raw_class": "compare",
+      "top_raw_score": 0.9485328861985485
+    },
+    {
+      "id": "compare-04",
+      "group": "question",
+      "family": "matched dates",
+      "reference": "compare",
+      "prediction": "compare",
+      "top_raw_class": "compare",
+      "top_raw_score": 0.8844840496178494
+    },
+    {
+      "id": "change-01",
+      "group": "question",
+      "family": "measured radar change",
+      "reference": "change",
+      "prediction": "change",
+      "top_raw_class": "change",
+      "top_raw_score": 0.5639717335739185
+    },
+    {
+      "id": "change-02",
+      "group": "question",
+      "family": "measured radar change",
+      "reference": "change",
+      "prediction": "compare",
+      "top_raw_class": "compare",
+      "top_raw_score": 0.4010881278875627
+    },
+    {
+      "id": "change-03",
+      "group": "question",
+      "family": "measured radar change",
+      "reference": "change",
+      "prediction": "compare",
+      "top_raw_class": "compare",
+      "top_raw_score": 0.9289106749092025
+    },
+    {
+      "id": "change-04",
+      "group": "question",
+      "family": "measured radar change",
+      "reference": "change",
+      "prediction": "unknown",
+      "top_raw_class": "change",
+      "top_raw_score": 0.23586463080503756
+    },
+    {
+      "id": "polarization-01",
+      "group": "question",
+      "family": "channel interpretation",
+      "reference": "polarization",
+      "prediction": "compare",
+      "top_raw_class": "compare",
+      "top_raw_score": 0.45543812523377536
+    },
+    {
+      "id": "polarization-02",
+      "group": "question",
+      "family": "channel availability",
+      "reference": "polarization",
+      "prediction": "coverage",
+      "top_raw_class": "coverage",
+      "top_raw_score": 0.46432668009423805
+    },
+    {
+      "id": "polarization-03",
+      "group": "question",
+      "family": "channel interpretation",
+      "reference": "polarization",
+      "prediction": "polarization",
+      "top_raw_class": "polarization",
+      "top_raw_score": 0.7416898943358718
+    },
+    {
+      "id": "polarization-04",
+      "group": "question",
+      "family": "channel availability",
+      "reference": "polarization",
+      "prediction": "polarization",
+      "top_raw_class": "polarization",
+      "top_raw_score": 0.5634409100538914
+    },
+    {
+      "id": "coverage-01",
+      "group": "question",
+      "family": "measured support",
+      "reference": "coverage",
+      "prediction": "coverage",
+      "top_raw_class": "coverage",
+      "top_raw_score": 0.6151977282118897
+    },
+    {
+      "id": "coverage-02",
+      "group": "question",
+      "family": "measured support",
+      "reference": "coverage",
+      "prediction": "unknown",
+      "top_raw_class": "drought",
+      "top_raw_score": 0.23358116691479236
+    },
+    {
+      "id": "coverage-03",
+      "group": "question",
+      "family": "crop versus footprint",
+      "reference": "coverage",
+      "prediction": "coverage",
+      "top_raw_class": "coverage",
+      "top_raw_score": 0.5834786363820393
+    },
+    {
+      "id": "coverage-04",
+      "group": "question",
+      "family": "measured support",
+      "reference": "coverage",
+      "prediction": "drought",
+      "top_raw_class": "drought",
+      "top_raw_score": 0.6624289912917409
+    },
+    {
+      "id": "oil-01",
+      "group": "question",
+      "family": "event confidence",
+      "reference": "oil",
+      "prediction": "unknown",
+      "top_raw_class": "wetlands",
+      "top_raw_score": 0.2925538553085619
+    },
+    {
+      "id": "oil-02",
+      "group": "question",
+      "family": "event confidence",
+      "reference": "oil",
+      "prediction": "unknown",
+      "top_raw_class": "coverage",
+      "top_raw_score": 0.3237741856462349
+    },
+    {
+      "id": "oil-03",
+      "group": "question",
+      "family": "event confidence",
+      "reference": "oil",
+      "prediction": "wetlands",
+      "top_raw_class": "wetlands",
+      "top_raw_score": 0.44740299872618794
+    },
+    {
+      "id": "oil-04",
+      "group": "question",
+      "family": "event confidence",
+      "reference": "oil",
+      "prediction": "unknown",
+      "top_raw_class": "oil",
+      "top_raw_score": 0.3768304258742435
+    },
+    {
+      "id": "wetland-01",
+      "group": "question",
+      "family": "event confidence",
+      "reference": "wetlands",
+      "prediction": "unknown",
+      "top_raw_class": "wetlands",
+      "top_raw_score": 0.39252422447573965
+    },
+    {
+      "id": "wetland-02",
+      "group": "question",
+      "family": "event confidence",
+      "reference": "wetlands",
+      "prediction": "unknown",
+      "top_raw_class": "drought",
+      "top_raw_score": 0.30387807138328793
+    },
+    {
+      "id": "wetland-03",
+      "group": "question",
+      "family": "event confidence",
+      "reference": "wetlands",
+      "prediction": "unknown",
+      "top_raw_class": "wetlands",
+      "top_raw_score": 0.2428119595967969
+    },
+    {
+      "id": "wetland-04",
+      "group": "question",
+      "family": "event confidence",
+      "reference": "wetlands",
+      "prediction": "wetlands",
+      "top_raw_class": "wetlands",
+      "top_raw_score": 0.5148862947051371
+    },
+    {
+      "id": "drought-01",
+      "group": "question",
+      "family": "long-term event confidence",
+      "reference": "drought",
+      "prediction": "drought",
+      "top_raw_class": "drought",
+      "top_raw_score": 0.6033813328235437
+    },
+    {
+      "id": "drought-02",
+      "group": "question",
+      "family": "long-term event confidence",
+      "reference": "drought",
+      "prediction": "drought",
+      "top_raw_class": "drought",
+      "top_raw_score": 0.6892236880962778
+    },
+    {
+      "id": "drought-03",
+      "group": "question",
+      "family": "long-term event confidence",
+      "reference": "drought",
+      "prediction": "drought",
+      "top_raw_class": "drought",
+      "top_raw_score": 0.9900101449437685
+    },
+    {
+      "id": "drought-04",
+      "group": "question",
+      "family": "long-term event confidence",
+      "reference": "drought",
+      "prediction": "unknown",
+      "top_raw_class": "drought",
+      "top_raw_score": 0.230276518754985
+    },
+    {
+      "id": "command-01",
+      "group": "command",
+      "family": "map selection",
+      "reference": "command",
+      "prediction": "command",
+      "top_raw_class": "command",
+      "top_raw_score": 0.4650761926194247
+    },
+    {
+      "id": "command-02",
+      "group": "command",
+      "family": "map selection",
+      "reference": "command",
+      "prediction": "command",
+      "top_raw_class": "command",
+      "top_raw_score": 0.7187215170343955
+    },
+    {
+      "id": "command-03",
+      "group": "command",
+      "family": "map selection",
+      "reference": "command",
+      "prediction": "command",
+      "top_raw_class": "command",
+      "top_raw_score": 0.49778620079869557
+    },
+    {
+      "id": "command-04",
+      "group": "command",
+      "family": "map selection",
+      "reference": "command",
+      "prediction": "command",
+      "top_raw_class": "command",
+      "top_raw_score": 0.5577128723525709
+    },
+    {
+      "id": "command-05",
+      "group": "command",
+      "family": "map selection",
+      "reference": "command",
+      "prediction": "oil",
+      "top_raw_class": "oil",
+      "top_raw_score": 0.6042668287379314
+    },
+    {
+      "id": "command-06",
+      "group": "command",
+      "family": "filter adjustment",
+      "reference": "command",
+      "prediction": "polarization",
+      "top_raw_class": "polarization",
+      "top_raw_score": 0.4286938903505698
+    },
+    {
+      "id": "command-07",
+      "group": "command",
+      "family": "map selection",
+      "reference": "command",
+      "prediction": "wetlands",
+      "top_raw_class": "wetlands",
+      "top_raw_score": 0.6064626455440492
+    },
+    {
+      "id": "command-08",
+      "group": "command",
+      "family": "date filter",
+      "reference": "command",
+      "prediction": "command",
+      "top_raw_class": "command",
+      "top_raw_score": 0.4648636502883304
+    },
+    {
+      "id": "command-09",
+      "group": "command",
+      "family": "map selection",
+      "reference": "command",
+      "prediction": "unknown",
+      "top_raw_class": "coverage",
+      "top_raw_score": 0.22335536513316276
+    },
+    {
+      "id": "unknown-01",
+      "group": "unsupported",
+      "family": "unavailable sensor",
+      "reference": "unknown",
+      "prediction": "unknown",
+      "top_raw_class": "unknown",
+      "top_raw_score": 0.3485737302106195
+    },
+    {
+      "id": "unknown-02",
+      "group": "unsupported",
+      "family": "unavailable output",
+      "reference": "unknown",
+      "prediction": "unknown",
+      "top_raw_class": "compare",
+      "top_raw_score": 0.2221798023868502
+    },
+    {
+      "id": "unknown-03",
+      "group": "unsupported",
+      "family": "unavailable output",
+      "reference": "unknown",
+      "prediction": "unknown",
+      "top_raw_class": "compare",
+      "top_raw_score": 0.2365327372130095
+    },
+    {
+      "id": "unknown-04",
+      "group": "unsupported",
+      "family": "unavailable workflow",
+      "reference": "unknown",
+      "prediction": "unknown",
+      "top_raw_class": "unknown",
+      "top_raw_score": 0.23587170396892324
+    },
+    {
+      "id": "unknown-05",
+      "group": "unsupported",
+      "family": "unrelated request",
+      "reference": "unknown",
+      "prediction": "unknown",
+      "top_raw_class": "unknown",
+      "top_raw_score": 0.30045753004593717
+    },
+    {
+      "id": "unknown-06",
+      "group": "unsupported",
+      "family": "unavailable forecast",
+      "reference": "unknown",
+      "prediction": "unknown",
+      "top_raw_class": "change",
+      "top_raw_score": 0.34402716383599297
+    },
+    {
+      "id": "unknown-07",
+      "group": "unsupported",
+      "family": "unavailable access",
+      "reference": "unknown",
+      "prediction": "unknown",
+      "top_raw_class": "command",
+      "top_raw_score": 0.3380531466046178
+    },
+    {
+      "id": "unknown-08",
+      "group": "unsupported",
+      "family": "unavailable output",
+      "reference": "unknown",
+      "prediction": "oil",
+      "top_raw_class": "oil",
+      "top_raw_score": 0.4170761159769988
+    }
+  ]
+}

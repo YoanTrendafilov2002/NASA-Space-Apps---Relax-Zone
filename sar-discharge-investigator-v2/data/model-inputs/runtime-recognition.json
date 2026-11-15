@@ -1,0 +1,328 @@
+{
+  "schema_version": 1,
+  "rows": {
+    "nisar-curuai-20260813": {
+      "map_science_path": "science/nisar-curuai-20260813-hh.tif",
+      "map_science_sha256": "5e52c1f0c04afc8fa43e77e4ea8210589131e7f86eca2fc489c3380debabbd86",
+      "product_id": "NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001",
+      "site_id": "curuai-nisar",
+      "evidence_ids": [
+        "asf-nisar-gcov",
+        "nisar-curuai-20260813-source"
+      ],
+      "mode": "wetland",
+      "epsg": 32721,
+      "affine": [
+        60.0,
+        0.0,
+        661520.0,
+        0.0,
+        -60.0,
+        9779520.0
+      ],
+      "shape": [
+        250,
+        249
+      ],
+      "crop": [
+        0,
+        250,
+        0,
+        249
+      ],
+      "counts_expected": {
+        "assessed_cells": 62250,
+        "open_water_cells": 44081,
+        "uncertain_shore_cells": 2914,
+        "vegetation_evaluated_cells": 0
+      },
+      "hdf5_source_filename": "NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001.h5",
+      "original_source_window": [
+        13152,
+        6220,
+        750,
+        747
+      ],
+      "noise_correction_applied": false,
+      "qa": "Clean input exception, valid source subswath, positive looks and finite calibrated power and spatial noise for all nine 20 m postings per 60 m cell.",
+      "aggregation": "Arithmetic mean of native calibrated linear power, before dB conversion.",
+      "file": "nisar-curuai-20260813.npz",
+      "sha256": "16254219d32f5f88a0e14d98350b655b3cf1c1dd82dad7ff54f9005046703f9d",
+      "size_bytes": 820846,
+      "r6_counts_expected": {
+        "assessed_cells": 62250,
+        "flagged_cells": 47798,
+        "logistic_flagged_cells": 48494
+      }
+    },
+    "nisar-curuai-20261012": {
+      "map_science_path": "science/nisar-curuai-20261012-hh.tif",
+      "map_science_sha256": "b52156da0450432f6209ad8ace359f38462007a1d4e129b54aab6d4337380f27",
+      "product_id": "NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001",
+      "site_id": "curuai-nisar",
+      "evidence_ids": [
+        "asf-nisar-gcov",
+        "nisar-curuai-20261012-source"
+      ],
+      "mode": "wetland",
+      "epsg": 32721,
+      "affine": [
+        60.0,
+        0.0,
+        661520.0,
+        0.0,
+        -60.0,
+        9779520.0
+      ],
+      "shape": [
+        250,
+        249
+      ],
+      "crop": [
+        0,
+        250,
+        0,
+        249
+      ],
+      "counts_expected": {
+        "assessed_cells": 62250,
+        "open_water_cells": 34010,
+        "uncertain_shore_cells": 6318,
+        "vegetation_evaluated_cells": 0
+      },
+      "hdf5_source_filename": "NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001.h5",
+      "original_source_window": [
+        13152,
+        6220,
+        750,
+        747
+      ],
+      "noise_correction_applied": false,
+      "qa": "Clean input exception, valid source subswath, positive looks and finite calibrated power and spatial noise for all nine 20 m postings per 60 m cell.",
+      "aggregation": "Arithmetic mean of native calibrated linear power, before dB conversion.",
+      "file": "nisar-curuai-20261012.npz",
+      "sha256": "35997ee15162bb0c591f72fc529296d5d1daa5a821938f2a08eaf0116e79a351",
+      "size_bytes": 822665,
+      "r6_counts_expected": {
+        "assessed_cells": 62250,
+        "flagged_cells": 45490,
+        "logistic_flagged_cells": 47251
+      }
+    },
+    "nisar-eugene-20260827": {
+      "map_science_path": "science/nisar-eugene-20260827-hh.tif",
+      "map_science_sha256": "bcd27b29db62bb2af9b2e896e7272bb7415da954a8b34d7cef0bf3eb0a4647a1",
+      "product_id": "NISAR_L2_PR_GCOV_029_033_A_016_4005_DHDH_A_20260827T112649_20260827T112723_P05023_N_F_J_001",
+      "site_id": "gulf-eugene-nisar",
+      "evidence_ids": [
+        "asf-nisar-gcov",
+        "nisar-eugene-20260827-source"
+      ],
+      "mode": "oil",
+      "epsg": 32615,
+      "affine": [
+        60.0,
+        0.0,
+        617480.0,
+        0.0,
+        -60.0,
+        3139590.0
+      ],
+      "shape": [
+        333,
+        476
+      ],
+      "crop": [
+        82,
+        250,
+        77,
+        400
+      ],
+      "source_files": {
+        "HHHH": {
+          "filename": "NISAR_L2_PR_GCOV_029_033_A_016_4005_DHDH_A_20260827T112649_20260827T112723_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HHHH_subsetted.tif",
+          "sha256": "ab273510cc6e9cd51675312731a8de7a8bce275d10c71eaa44dcc4473befed0a"
+        },
+        "mask": {
+          "filename": "NISAR_L2_PR_GCOV_029_033_A_016_4005_DHDH_A_20260827T112649_20260827T112723_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_mask_subsetted.tif",
+          "sha256": "0d58311b47c6df7df0533ec507d21337fbc1cfd34aa8bb6990d39731b44b7129"
+        },
+        "numberOfLooks": {
+          "filename": "NISAR_L2_PR_GCOV_029_033_A_016_4005_DHDH_A_20260827T112649_20260827T112723_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_numberOfLooks_subsetted.tif",
+          "sha256": "d66f159c11cfeae5824b798148c6a0af8e50207f97e6497fc4a17c1b4f99037e"
+        }
+      },
+      "land_source_sha256": "11f27181115db11c26f281530b4597429b95e2479a3b68464c43e4a1d5348938",
+      "noise_correction_applied": null,
+      "qa": "Complete native postings with valid Harmony subswath, finite nonnegative HH power and positive looks when supplied. Buffered Natural Earth coastline gates open-water context.",
+      "aggregation": "Arithmetic mean of native calibrated linear HH power over the original full 60 m context window.",
+      "file": "nisar-eugene-20260827.npz",
+      "sha256": "0a374dfcc5150fc1f6a31051407ab8bdfb2487b9a83038c88ac77fff4c8128b0",
+      "size_bytes": 523117
+    },
+    "nisar-eloi-20261012": {
+      "map_science_path": "science/nisar-eloi-20261012-hh.tif",
+      "map_science_sha256": "df05d4c43719a0ffa4d99c156724eeeeb13be25ade56464866084611e295058b",
+      "product_id": "NISAR_L2_PR_GCOV_033_004_A_017_4005_DHDH_A_20261012T111043_20261012T111118_P05023_N_F_J_001",
+      "site_id": "eloi-bay-nisar",
+      "evidence_ids": [
+        "asf-nisar-gcov",
+        "nisar-eloi-20261012-source"
+      ],
+      "mode": "oil",
+      "epsg": 32616,
+      "affine": [
+        60.0,
+        0.0,
+        258330.0,
+        0.0,
+        -60.0,
+        3304330.0
+      ],
+      "shape": [
+        565,
+        735
+      ],
+      "crop": [
+        113,
+        331,
+        113,
+        283
+      ],
+      "source_files": {
+        "HHHH": {
+          "filename": "NISAR_L2_PR_GCOV_033_004_A_017_4005_DHDH_A_20261012T111043_20261012T111118_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HHHH_subsetted.tif",
+          "sha256": "6f2db78ec4583ef37df0bf856bf204e7a852597828f5427761c3619a0c8e743a"
+        },
+        "mask": {
+          "filename": "NISAR_L2_PR_GCOV_033_004_A_017_4005_DHDH_A_20261012T111043_20261012T111118_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_mask_subsetted.tif",
+          "sha256": "76aa6db845c8efaf4c1e1e3caae3a0ad3f530c1ae4248a8acefd2d6475f9a1fc"
+        }
+      },
+      "land_source_sha256": "11f27181115db11c26f281530b4597429b95e2479a3b68464c43e4a1d5348938",
+      "noise_correction_applied": null,
+      "qa": "Complete native postings with valid Harmony subswath, finite nonnegative HH power and positive looks when supplied. Buffered Natural Earth coastline gates open-water context.",
+      "aggregation": "Arithmetic mean of native calibrated linear HH power over the original full 60 m context window.",
+      "file": "nisar-eloi-20261012.npz",
+      "sha256": "375728d8a9cfb6d3490c022154a8ab200f127ccbb42664a8de568a793a890f0c",
+      "size_bytes": 1022193
+    },
+    "nisar-hasik-20260811": {
+      "map_science_path": "science/nisar-hasik-20260811-hh.tif",
+      "map_science_sha256": "18c049eb8649563acfc9463da0211934244fdc0fdbfc3dd647cd1887a5b01268",
+      "product_id": "NISAR_L2_PR_GCOV_027_150_D_080_2005_DHDH_A_20260811T144946_20260811T145009_P05023_N_P_J_001",
+      "site_id": "hasik-nisar",
+      "evidence_ids": [
+        "asf-nisar-gcov",
+        "nisar-hasik-20260811-source",
+        "nisar-hasik-optical-20260812"
+      ],
+      "mode": "wetland",
+      "epsg": 32640,
+      "affine": [
+        60.0,
+        0.0,
+        314340.0,
+        0.0,
+        -60.0,
+        1933160.0
+      ],
+      "shape": [
+        100,
+        100
+      ],
+      "crop": [
+        0,
+        100,
+        0,
+        100
+      ],
+      "counts_expected": {
+        "assessed_cells": 10000,
+        "open_water_cells": 7388,
+        "uncertain_shore_cells": 103,
+        "vegetation_evaluated_cells": 0
+      },
+      "hdf5_source_filename": "NISAR_L2_PR_GCOV_027_150_D_080_2005_DHDH_A_20260811T144946_20260811T145009_P05023_N_P_J_001.h5",
+      "original_source_window": [
+        5565,
+        4718,
+        300,
+        300
+      ],
+      "noise_correction_applied": false,
+      "qa": "Valid source subswath, positive looks, clean exception flags and finite nonnegative power. Spatial noise used on the 60 m grid.",
+      "aggregation": "Arithmetic mean of 3 by 3 calibrated native linear-power samples.",
+      "file": "nisar-hasik-20260811.npz",
+      "sha256": "1e9d0e9b142523be7de4f89d32d43ccbac7f2dbf80ed2fece7c0b840cb8fd077",
+      "size_bytes": 134170
+    },
+    "nisar-uae-coast-20261021": {
+      "file": "nisar-uae-coast-20261021.npz",
+      "sha256": "1d7ecdb9d7b0c7a6adad5c9b07ac13b2b0a4eaaf3ba36d0be6324badf13f6359",
+      "size_bytes": 279611,
+      "mode": "wetland",
+      "epsg": 32640,
+      "affine": [
+        60.0,
+        0.0,
+        357920.0,
+        0.0,
+        -60.0,
+        2834580.0
+      ],
+      "shape": [
+        150,
+        150
+      ],
+      "crop": [
+        0,
+        150,
+        0,
+        150
+      ],
+      "map_science_path": "science/nisar-uae-coast-20261021-hh.tif",
+      "map_science_sha256": "8eb0170461ecfbc61d6ea4e797cb0ba7a6a2c3f82f97a5604fe074ea25fc5ec2",
+      "product_id": "NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001",
+      "site_id": "uae-coastal-review",
+      "evidence_ids": [
+        "asf-nisar-gcov",
+        "nisar-uae-coast-20261021-source",
+        "nisar-uae-coast-20261021-wetland"
+      ],
+      "hdf5_source_filename": "NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001.h5",
+      "hdf5_source_sha256": "cd923bddf7f2b68d7d9ea3c95be26c87eaaf00c8f2a9ad4e24c56d2cc1369d9c",
+      "original_source_window": [
+        4324,
+        14619,
+        450,
+        450
+      ],
+      "noise_correction_applied": false,
+      "qa": "All nine native 20 m postings must have valid subswath, clean exception flags, positive looks and finite calibrated power and spatial noise. UInt16 exception encodings also require each polarization's focus bit.",
+      "aggregation": "Arithmetic mean of calibrated linear gamma0 power before conversion to dB.",
+      "counts_expected": {
+        "assessed_cells": 0,
+        "open_water_cells": 0,
+        "uncertain_shore_cells": 0,
+        "vegetation_evaluated_cells": 0
+      }
+    }
+  },
+  "models": {
+    "wetland": {
+      "path": "results/recognition/wetlands/baseline/frozen-model.json",
+      "sha256": "18ad2f16e2721a7e9864fc00741f13a82c34563e829e38e45bcdc53951b4170f"
+    },
+    "oil": {
+      "path": "results/recognition/oil/observed-return-holdouts.json",
+      "sha256": "0e42d230856af9d9bcca119e1aac8fe8fabba543baa585f5784dad3cb9f1a43b"
+    }
+  },
+  "wetland_screen": {
+    "path": "models/wetland_v2.py",
+    "sha256": "fc8e99a637d7aa96d2a6d1cd1cdbc6e04b151b64d580af580a8a59cbaaf055e2",
+    "validation_path": "results/recognition/wetlands/v2-validation.json",
+    "validation_sha256": "71766001d57125086a9959fe08b75455e98ee7aa8b6eb40868405cc5fc9a1adc"
+  }
+}

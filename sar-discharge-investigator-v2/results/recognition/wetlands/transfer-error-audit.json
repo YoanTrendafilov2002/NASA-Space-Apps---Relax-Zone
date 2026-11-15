@@ -1,0 +1,135 @@
+{
+  "interpretation": "Equivalent frozen model outputs on exactly the same buffered held-out cells eligible in both dates. Errors are disagreements with offline optical exposed-water labels. Counts describe decision patterns on this site and pair.",
+  "inputs_sha256": {
+    "curuai_20260813_optical_reference.tif": "486a89fddf561d8070797e9424d87364e15cad65ae7938e4bb2ef729819c5ea5",
+    "curuai_20261012_optical_reference.tif": "406abedc4fa87aea3934236f52cef4c354614ccae27ab4f8395b270749a9a279",
+    "august-threshold-exposed-water.tif": "63e08701c91322fae424500f4c3511a8deb152684ecef6bef9c92600c19a9052",
+    "october-threshold-exposed-water.tif": "9c015197d1cb478d0ddb64b8714058f7ec184a8485dde6e1adf192fb2e24a6ee",
+    "august-logistic-exposed-water.tif": "a89dc98b747cd2c6458980c079d74387b707aeee00a464ea6f86a5774709bddf",
+    "october-logistic-exposed-water.tif": "4937f29e385da57443fbd7b8b1b3c328cff5a620f5ede9c67708bb88bdec6f16"
+  },
+  "same_cells_original_baseline": {
+    "threshold": {
+      "common_cells": 146534,
+      "optical_loss_cells": 31808,
+      "august_same_cells": {
+        "tp": 54090,
+        "fn": 2882,
+        "fp": 760,
+        "tn": 88802,
+        "recall": 0.9494137471038405,
+        "precision": 0.986144029170465,
+        "nonwater_false_positive_rate": 0.008485741720819097,
+        "iou": 0.9369154022032842
+      },
+      "october_same_cells": {
+        "tp": 25037,
+        "fn": 127,
+        "fp": 27513,
+        "tn": 93857,
+        "recall": 0.9949531076140519,
+        "precision": 0.476441484300666,
+        "nonwater_false_positive_rate": 0.22668699019527067,
+        "iou": 0.47529282229436
+      },
+      "paired_loss_prediction_patterns": {
+        "early_water_late_other_observed_loss": 4359,
+        "both_dates_flagged_water": 24580,
+        "early_other_late_water": 428,
+        "both_dates_flagged_other": 2441
+      }
+    },
+    "logistic": {
+      "common_cells": 146534,
+      "optical_loss_cells": 31808,
+      "august_same_cells": {
+        "tp": 54887,
+        "fn": 2085,
+        "fp": 1599,
+        "tn": 87963,
+        "recall": 0.9634030751948326,
+        "precision": 0.971692100697518,
+        "nonwater_false_positive_rate": 0.017853553962618073,
+        "iou": 0.9371019787949668
+      },
+      "october_same_cells": {
+        "tp": 25076,
+        "fn": 88,
+        "fp": 31811,
+        "tn": 89559,
+        "recall": 0.9965029407089493,
+        "precision": 0.44080369856030377,
+        "nonwater_false_positive_rate": 0.26209936557633684,
+        "iou": 0.44012286090390523
+      },
+      "paired_loss_prediction_patterns": {
+        "early_water_late_other_observed_loss": 2949,
+        "both_dates_flagged_water": 26783,
+        "early_other_late_water": 586,
+        "both_dates_flagged_other": 1490
+      }
+    }
+  },
+  "guarded_texture_trial": [
+    {
+      "test": "August spatial holdout",
+      "model": "QGIS HH threshold",
+      "assessed_cells": 247502,
+      "extra_water_cells": 1075,
+      "missed_water_cells": 3294,
+      "nonwater_false_positive_rate": 0.01146043219155446,
+      "recall": 0.9785687796435937,
+      "precision": 0.9929034472742636
+    },
+    {
+      "test": "August spatial holdout",
+      "model": "HH and HH−HV logistic",
+      "assessed_cells": 247502,
+      "extra_water_cells": 2091,
+      "missed_water_cells": 2375,
+      "nonwater_false_positive_rate": 0.022291873220967817,
+      "recall": 0.984547920963429,
+      "precision": 0.9863704804552299
+    },
+    {
+      "test": "August spatial holdout",
+      "model": "HH and HH−HV logistic with local HH texture",
+      "assessed_cells": 247502,
+      "extra_water_cells": 1930,
+      "missed_water_cells": 2868,
+      "nonwater_false_positive_rate": 0.020575473609023343,
+      "recall": 0.9813403946623639,
+      "precision": 0.9873660506798112
+    },
+    {
+      "test": "October temporal holdout on August-withheld blocks",
+      "model": "QGIS HH threshold",
+      "assessed_cells": 181130,
+      "extra_water_cells": 32676,
+      "missed_water_cells": 147,
+      "nonwater_false_positive_rate": 0.21107709003526998,
+      "recall": 0.994415742288406,
+      "precision": 0.4447861621327715
+    },
+    {
+      "test": "October temporal holdout on August-withheld blocks",
+      "model": "HH and HH−HV logistic",
+      "assessed_cells": 181130,
+      "extra_water_cells": 39249,
+      "missed_water_cells": 100,
+      "nonwater_false_positive_rate": 0.253536684624627,
+      "recall": 0.9962011852302082,
+      "precision": 0.4005315168084554
+    },
+    {
+      "test": "October temporal holdout on August-withheld blocks",
+      "model": "HH and HH−HV logistic with local HH texture",
+      "assessed_cells": 181130,
+      "extra_water_cells": 38151,
+      "missed_water_cells": 128,
+      "nonwater_false_positive_rate": 0.2464439362815395,
+      "recall": 0.9951375170946665,
+      "precision": 0.4071052263508788
+    }
+  ]
+}

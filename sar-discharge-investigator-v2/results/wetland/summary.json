@@ -1,0 +1,58 @@
+{
+  "experiments": [
+    {
+      "id": "curuai-nisar-exposed-water-2026",
+      "title": "Curuai exposed water with NISAR L-band",
+      "status": "completed",
+      "scope": "The original QGIS HH threshold and a two-feature logistic model were fitted on 246,621 cells in August 2026. Both were evaluated against same-day Sentinel-2A optical labels at Lago Grande de Curuai, Brazil, on buffered August spatial holdout blocks and again in October with both models unchanged.",
+      "metrics": [
+        {"label": "Fitted QGIS HH cutoff", "value": -15, "unit": "dB"},
+        {"label": "August water IoU · HH threshold", "value": 0.9717817947062621},
+        {"label": "August water IoU · HH and HH–HV logistic", "value": 0.9713373140837753},
+        {"label": "October water IoU · frozen HH threshold", "value": 0.44390243902439025},
+        {"label": "October water IoU · frozen logistic", "value": 0.40006399804958326},
+        {"label": "Paired exposed-water loss recall · HH threshold", "value": 13.704099597585512, "unit": "%"},
+        {"label": "Paired exposed-water loss recall · logistic", "value": 9.271252515090543, "unit": "%"}
+      ],
+      "notes": [
+        "Intersection over union (IoU) is measured against the optical labels. Both models used the same support within each comparison: 247,769 August cells, 181,423 October cells, and 146,534 paired cells, all at 60 m.",
+        "The HH threshold recovered 4,359 of 31,808 optically labelled loss cells. The logistic model recovered 2,949. The comparison covers exposed water in one wetland and two observation dates. Sentinel-2A observed the site about 4 hours 52 minutes after each radar pass."
+      ],
+      "evidence_ids": ["curuai-gcov-20260813", "curuai-gcov-20261012", "curuai-s2-20260813", "curuai-s2-20261012"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "curuai-gcov-20260813",
+      "title": "ASF NISAR GCOV · August radar acquisition",
+      "kind": "Scientific radar raster",
+      "source_id": "NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001",
+      "url": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&granule_list=NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001&output=geojson",
+      "notes": "13 August 2026 at 09:21:54 UTC. Track 3, ascending. HH and HV gamma0 covariance power at 20 m native posting."
+    },
+    {
+      "id": "curuai-gcov-20261012",
+      "title": "ASF NISAR GCOV · October radar acquisition",
+      "kind": "Scientific radar raster",
+      "source_id": "NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001",
+      "url": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&granule_list=NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001&output=geojson",
+      "notes": "12 October 2026 at 09:21:54 UTC. The same track, look direction and native grid as August."
+    },
+    {
+      "id": "curuai-s2-20260813",
+      "title": "Sentinel-2A Level-2A · August optical reference",
+      "kind": "Optical reference proxy",
+      "source_id": "S2A_21MXT_20260813_0_L2A",
+      "url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_21MXT_20260813_0_L2A",
+      "notes": "13 August 2026 at 14:13:28 UTC. Exposed-water labels use cloud-screened scene classification and modified NDWI agreement."
+    },
+    {
+      "id": "curuai-s2-20261012",
+      "title": "Sentinel-2A Level-2A · October optical reference",
+      "kind": "Optical reference proxy",
+      "source_id": "S2A_21MXT_20261012_0_L2A",
+      "url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_21MXT_20261012_0_L2A",
+      "notes": "12 October 2026 at 14:13:23 UTC. Topographic shadows, cloudy areas and mixed cells are excluded from scoring."
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>How to read the evidence · SARtainty</title>
+  <link rel="stylesheet" href="/vendor/fonts.css">
+  <link rel="stylesheet" href="/evidence.css">
+</head>
+<body>
+  <a class="ev-skip" href="#main">Skip to the guide</a>
+  <header class="ev-masthead">
+    <div class="ev-wrap ev-masthead-inner">
+      <a class="ev-brand" href="/">SARtainty</a>
+      <a class="ev-map-link" href="/"><span aria-hidden="true">←</span> Back to the map</a>
+    </div>
+  </header>
+  <main id="main" class="ev-wrap" tabindex="-1">
+    <header class="ev-intro">
+      <h1>How to read<br> the evidence</h1>
+      <p>NISAR measures how much radar energy returns to the satellite. Start with what you can see on the map, then check what the dates, measurements and outside records support.</p>
+      <a href="/science-review-notes">Technical review notes</a>
+    </header>
+    <div class="ev-grid">
+      <nav class="ev-contents" aria-label="On this page">
+        <a href="#map-key">Map key</a>
+        <a href="#compare">Compare dates</a>
+        <a href="#oil">Oil review</a>
+        <a href="#wetlands">Wetlands</a>
+        <a href="#drought">Drought</a>
+        <a href="#audit">Check the sources</a>
+      </nav>
+      <div class="ev-sections">
+        <section id="map-key" aria-labelledby="map-key-title">
+          <h2 id="map-key-title">Read the map</h2>
+          <dl class="ev-key">
+            <dt><span class="ev-symbols" aria-hidden="true"><i class="ev-ramp"></i></span>Radar image</dt>
+            <dd>Dark gray is a weaker return. Light gray is a stronger return. The legend gives the displayed range in decibels (dB). Transparent gaps within a raster crop have no displayed measurement.</dd>
+            <dt><span class="ev-symbols" aria-hidden="true"><i class="ev-outline"></i><i class="ev-outline"></i></span>Study area</dt>
+            <dd>Dashed lines mark the area of interest. Solid lines mark the selected raster crop when a raster is available. Red is used for oil studies and orange for wetlands.</dd>
+            <dt><span class="ev-symbols" aria-hidden="true"><i class="ev-point ev-oil"></i><i class="ev-point ev-wetland"></i></span>Review points</dt>
+            <dd>A red diamond marks an oil review location. An orange circle marks a wetland review location. Select a point to read why it was marked and open its evidence.</dd>
+            <dt>Recognition review outlines</dt>
+            <dd>Read the legend for each image. At Eugene Island a solid red line marks measured dark water that agrees with the dashed NOAA outline. At Curuai a solid orange line marks exposed water that radar and an optical image both picked out. Other dashed lines can trace independent reference boundaries.</dd>
+            <dt><span class="ev-symbols" aria-hidden="true"><i class="ev-fill ev-wetland"></i><i class="ev-fill ev-earth"></i></span>Radar change</dt>
+            <dd>On the optional Radar change layer, orange pixels show stronger returns and olive pixels show weaker returns, by at least 3 dB between dates. These colors describe changes in radar return.</dd>
+            <dt><span class="ev-symbols" aria-hidden="true"><i class="ev-fill ev-land"></i><i class="ev-fill ev-water"></i></span>Map background</dt>
+            <dd>In the Study palette, green land and blue water provide geographic context. Use the dated radar image and its evidence to examine current conditions.</dd>
+          </dl>
+        </section>
+        <section id="compare" aria-labelledby="compare-title">
+          <h2 id="compare-title">Compare two dates</h2>
+          <ol>
+            <li><strong>Start in Acquisitions.</strong> Inspect two measured dates over the same place in turn. Use the same channel, such as HH, on both. Each channel records a particular transmit and receive orientation.</li>
+            <li><strong>Check the records.</strong> In Source audit, check the product, radar frequency, orbit track and pass direction. For numerical comparison, use aligned grids and pixels with valid measurements on both dates.</li>
+            <li><strong>Use the same display range.</strong> A brighter display can result from a different contrast stretch. Use the calibrated values for a numerical comparison.</li>
+          </ol>
+          <p class="ev-example"><strong>Try Curuai.</strong> Radar change compares 13 August and 12 October 2026 over the common, usable area. Roughly +3 dB means twice the returned power and −3 dB means half. Look to water levels, weather and vegetation for clues about why the signal changed.</p>
+          <p><strong>Try Qeshm in HH.</strong> Acquisitions plots how the typical return changed across the same 1.61 million cells on three measured dates. Select a point to open that image. Values between the observation dates are unknown.</p>
+          <p class="ev-source"><a href="https://nisar-docs.asf.alaska.edu/gcov/">ASF GCOV product guide</a><a href="https://science.nasa.gov/mission/nisar/polarimetry/">NASA guide to radar channels</a></p>
+        </section>
+        <section id="oil" aria-labelledby="oil-title">
+          <h2 id="oil-title">Could a dark patch be oil?</h2>
+          <p>A surface film can smooth the short waves that scatter radar energy. Calm water and naturally occurring films can also make the sea look dark.</p>
+          <ol>
+            <li>Compare the patch with nearby open water from the same pass. Check wind at the time of the image and whether the radar signal is strong enough to interpret.</li>
+            <li>Look for a separate observation near the same time, such as an incident response report or a slick mapped from another sensor. Match its location and time to the radar scene.</li>
+          </ol>
+          <p class="ev-source"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5856168/">L-band oil-release field experiments</a></p>
+        </section>
+        <section id="wetlands" aria-labelledby="wetlands-title">
+          <h2 id="wetlands-title">Where might water have changed?</h2>
+          <p>Smooth open water often looks dark. Water among stems or tree trunks can make a stronger return, depending on the plants and the viewing direction.</p>
+          <ol>
+            <li>Start with a mapped wetland boundary. Compare similar radar passes before and during the period you want to investigate.</li>
+            <li>Check a nearby water-level gauge or same-date optical image for exposed water. Under vegetation or cloud, look for field records or an independent water-level estimate.</li>
+          </ol>
+          <p class="ev-source"><a href="https://science.nasa.gov/mission/nisar/nisar-handbook/">NASA NISAR Science Users’ Handbook</a><a href="https://repository.library.noaa.gov/view/noaa/59167">L-band inundated-vegetation study</a></p>
+        </section>
+        <section id="drought" aria-labelledby="drought-title">
+          <h2 id="drought-title">When does less water suggest drought?</h2>
+          <p>Wetland extent can rise and fall in a normal year. Compare the same season across several years to establish the usual range. Use rainfall and water-level records to see whether the deficit persisted.</p>
+          <p class="ev-source"><a href="https://www.droughtmanagement.info/find/guidelines-tools/handbook-drought-indicators-and-indices/">WMO and GWP handbook on drought indicators</a></p>
+        </section>
+        <section id="audit" aria-labelledby="audit-title">
+          <h2 id="audit-title">Check the sources</h2>
+          <p>Open <strong>Source audit</strong> on the map to see the acquisition date, provider, channel and how much of the crop was usable. A measured layer can include a downloadable GeoTIFF. A catalogue entry tells you what the provider lists for that acquisition.</p>
+          <p>Where <strong>Recognition tests</strong> appears for a site, open it to see how the research model performed against a separate reference. Ask chat <strong>What does dB mean?</strong> or <strong>What terms are in your answer?</strong> for short, sourced explanations.</p>
+          <p class="ev-source"><a href="/science-review-notes">Technical review notes</a><a href="/">Open the map and Source audit <span aria-hidden="true">→</span></a></p>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

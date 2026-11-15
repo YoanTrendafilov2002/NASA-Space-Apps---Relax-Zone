@@ -1,0 +1,3501 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "nisar",
+      "term": "NISAR",
+      "aliases": [
+        "NASA-ISRO Synthetic Aperture Radar",
+        "NASA–ISRO Synthetic Aperture Radar"
+      ],
+      "definition": "A joint NASA and ISRO Earth observation mission that carries L-band and S-band imaging radars.",
+      "example": "The Curuai layers in this app come from the mission’s L-band radar.",
+      "category": "Radar products",
+      "source_ids": [
+        "radar-nasa-mission",
+        "radar-nasa-satellite",
+        "radar-wiki-nisar"
+      ]
+    },
+    {
+      "id": "sar",
+      "term": "Synthetic aperture radar (SAR)",
+      "aliases": [
+        "synthetic aperture radar",
+        "SAR imagery",
+        "radar imagery"
+      ],
+      "definition": "An imaging radar that sends microwave pulses toward Earth and combines many echoes as the satellite moves to make a detailed picture. It can work at night and through most clouds.",
+      "example": "The grayscale NISAR image shows the strength of the radar return across the study area.",
+      "category": "Radar products",
+      "source_ids": [
+        "radar-nasa-handbook",
+        "radar-wiki-sar"
+      ]
+    },
+    {
+      "id": "slc",
+      "term": "Single look complex (SLC)",
+      "aliases": [
+        "Single-look complex",
+        "SLC"
+      ],
+      "definition": "A radar image that stores both how strong the echo was and where it was in its wave cycle. Keeping both lets scientists compare the waves later.",
+      "example": "Use the SLC product family in catalogue discovery when an analysis needs phase. The prepared GCOV backgrounds show signal power.",
+      "category": "Radar products",
+      "source_ids": [
+        "radar-asf-products",
+        "radar-nasa-handbook"
+      ]
+    },
+    {
+      "id": "rslc",
+      "term": "Range-Doppler single look complex (RSLC)",
+      "aliases": [
+        "RSLC",
+        "L1 RSLC"
+      ],
+      "definition": "A radar image still arranged by distance and direction from the satellite. It keeps the strength and timing within each wave.",
+      "example": "The product filter can find RSLC records when you need complex radar-coordinate data.",
+      "category": "Radar products",
+      "source_ids": [
+        "radar-asf-products",
+        "radar-asf-naming"
+      ]
+    },
+    {
+      "id": "gslc",
+      "term": "Geocoded single look complex (GSLC)",
+      "aliases": [
+        "GSLC",
+        "L2 GSLC"
+      ],
+      "definition": "A radar image placed on a map grid that keeps both echo strength and the position in each wave cycle.",
+      "example": "A live GSLC catalogue result represents a different product type from the measured GCOV backscatter rows in the date matrix.",
+      "category": "Radar products",
+      "source_ids": [
+        "radar-asf-products",
+        "radar-asf-naming"
+      ]
+    },
+    {
+      "id": "gcov",
+      "term": "Geocoded polarimetric covariance (GCOV)",
+      "aliases": [
+        "GCOV",
+        "Geocoded Covariance",
+        "L2 GCOV"
+      ],
+      "definition": "A NISAR product that puts radar measurements on a map. It includes echo strength for channels such as HH and HV, with adjustments for terrain.",
+      "example": "The app reads the HHHH or HVHV power layer to make an HH or HV map and its dB measurements.",
+      "category": "Radar products",
+      "source_ids": [
+        "radar-asf-gcov",
+        "radar-asf-products"
+      ],
+      "inline": {
+        "forms": [
+          "GCOV"
+        ],
+        "meaning": "a mapped NISAR radar product",
+        "already_explained": [
+          "mapped radar product"
+        ]
+      }
+    },
+    {
+      "id": "gunw",
+      "term": "Geocoded unwrapped interferogram (GUNW)",
+      "aliases": [
+        "GUNW",
+        "L2 GUNW"
+      ],
+      "definition": "A NISAR product that uses the patterns in two radar passes to estimate how the surface moved along the satellite’s viewing direction.",
+      "example": "Use the product filter to identify GUNW records separately from the single-date GCOV images in the matrix.",
+      "category": "Radar products",
+      "source_ids": [
+        "radar-asf-products",
+        "radar-asf-naming",
+        "radar-wiki-insar"
+      ]
+    },
+    {
+      "id": "goff",
+      "term": "Geocoded pixel offsets (GOFF)",
+      "aliases": [
+        "GOFF",
+        "L2 GOFF"
+      ],
+      "definition": "A mapped estimate of how far a visible radar pattern shifted between two observations. It can help track larger movements.",
+      "example": "A GOFF discovery result describes a paired displacement product. The Radar change chart compares GCOV return strength in dB.",
+      "category": "Radar products",
+      "source_ids": [
+        "radar-asf-products",
+        "radar-asf-naming"
+      ]
+    },
+    {
+      "id": "sme2",
+      "term": "Level 3 soil moisture (SME2)",
+      "aliases": [
+        "SME2",
+        "L3 SME2",
+        "soil moisture product"
+      ],
+      "definition": "A NISAR product that estimates the amount of water in the upper part of the soil using the radar return and other information.",
+      "example": "Choose SME2 in catalogue discovery to look for estimated soil moisture. Choose GCOV for measured radar backscatter layers and their charts.",
+      "category": "Radar products",
+      "source_ids": [
+        "radar-asf-products",
+        "radar-asf-naming"
+      ]
+    },
+    {
+      "id": "asf",
+      "term": "Alaska Satellite Facility (ASF)",
+      "aliases": [
+        "ASF DAAC",
+        "NASA ASF DAAC",
+        "Alaska Satellite Facility Distributed Active Archive Center"
+      ],
+      "definition": "A NASA data archive operated by the University of Alaska Fairbanks that distributes NISAR radar products and maintains their documentation.",
+      "example": "Open an ASF product link in Source audit to trace a row to its catalogue record.",
+      "category": "Radar products",
+      "source_ids": [
+        "radar-asf-home",
+        "radar-asf-access"
+      ]
+    },
+    {
+      "id": "product-maturity",
+      "term": "NISAR product maturity",
+      "aliases": [
+        "maturity",
+        "BETA",
+        "PROVISIONAL",
+        "VALIDATED",
+        "provider maturity"
+      ],
+      "definition": "The provider’s product readiness designation. NISAR uses BETA for early data, PROVISIONAL for calibrated and partially validated data, and VALIDATED for fully calibrated and validated products.",
+      "example": "A date can have a prepared layer that passed this app’s local checks while belonging to a PROVISIONAL provider collection. Source audit describes the provider release.",
+      "category": "Radar products",
+      "source_ids": [
+        "radar-asf-products"
+      ]
+    },
+    {
+      "id": "rtc",
+      "term": "Radiometric terrain correction (RTC)",
+      "aliases": [
+        "RTC",
+        "radiometric terrain-corrected",
+        "terrain-flattened"
+      ],
+      "definition": "An adjustment that makes radar brightness easier to compare between slopes. A slope facing the satellite can look brighter partly because of its shape.",
+      "example": "GCOV applies RTC before the app summarizes HH or HV backscatter. Extreme terrain geometry can still leave masked pixels.",
+      "category": "Radar products",
+      "source_ids": [
+        "radar-asf-gcov",
+        "radar-asf-rtc"
+      ]
+    },
+    {
+      "id": "nrb",
+      "term": "Normalized radar backscatter (NRB)",
+      "aliases": [
+        "NRB",
+        "normalised radar backscatter",
+        "CEOS ARD NRB"
+      ],
+      "definition": "Radar echo strength expressed in a standard way so images can be compared more fairly. Use the same channel and processing when you compare.",
+      "example": "The app’s GCOV layers share key NRB characteristics, including geocoding, calibrated backscatter and supporting quality information.",
+      "category": "Radar products",
+      "source_ids": [
+        "radar-asf-gcov",
+        "radar-ceos-nrb"
+      ]
+    },
+    {
+      "id": "polarization",
+      "term": "Polarization",
+      "aliases": [
+        "polarisation",
+        "pol",
+        "polarization channel"
+      ],
+      "definition": "The orientation in which the radar wave vibrates. Radar can send a wave in one orientation and listen for an echo in the same or a different orientation.",
+      "example": "The matrix separates HH, HV, VH and VV because each channel measures a different transmit and receive combination.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-nasa-pol",
+        "radar-wiki-pol"
+      ]
+    },
+    {
+      "id": "hh",
+      "term": "HH",
+      "aliases": [
+        "horizontal-horizontal",
+        "horizontal transmit horizontal receive",
+        "HHHH"
+      ],
+      "definition": "The radar sends the horizontal part of the wave and listens for the horizontal part of the echo. Both letters stand for horizontal.",
+      "example": "Select HH to show the horizontal co-polarized Curuai observations and their saved measurements.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-nasa-pol",
+        "radar-asf-gcov"
+      ],
+      "inline": {
+        "forms": [
+          "HH"
+        ],
+        "meaning": "horizontal send and receive",
+        "already_explained": [
+          "horizontally",
+          "horizontal send",
+          "horizontal transmit"
+        ]
+      }
+    },
+    {
+      "id": "hv",
+      "term": "HV",
+      "aliases": [
+        "horizontal-vertical",
+        "horizontal transmit vertical receive",
+        "HVHV"
+      ],
+      "definition": "The radar sends a horizontally oriented wave and listens for the vertical part of the echo. Plants and rough surfaces can scatter part of the echo into that second orientation.",
+      "example": "Select HV to inspect cross-polarized return on a Curuai date where that channel is available.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-nasa-pol",
+        "radar-asf-gcov"
+      ],
+      "inline": {
+        "forms": [
+          "HV"
+        ],
+        "meaning": "horizontal send, vertical receive",
+        "already_explained": [
+          "vertical part",
+          "vertical receive",
+          "vertical return"
+        ]
+      }
+    },
+    {
+      "id": "vh",
+      "term": "VH",
+      "aliases": [
+        "vertical-horizontal",
+        "vertical transmit horizontal receive",
+        "VHVH"
+      ],
+      "definition": "The radar sends a vertically oriented wave and listens for the horizontal part of the echo.",
+      "example": "A VH column without an image for a selected acquisition means the app lacks a prepared VH layer for that observation.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-nasa-pol",
+        "radar-asf-gcov"
+      ],
+      "inline": {
+        "forms": [
+          "VH"
+        ],
+        "meaning": "vertical send, horizontal receive",
+        "already_explained": [
+          "horizontal part",
+          "horizontal receive"
+        ]
+      }
+    },
+    {
+      "id": "vv",
+      "term": "VV",
+      "aliases": [
+        "vertical-vertical",
+        "vertical transmit vertical receive",
+        "VVVV"
+      ],
+      "definition": "The radar sends a vertically oriented wave and listens for the vertical part of the echo.",
+      "example": "Use the VV column to check availability for a particular date before comparing images or numbers.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-nasa-pol",
+        "radar-asf-gcov"
+      ],
+      "inline": {
+        "forms": [
+          "VV"
+        ],
+        "meaning": "vertical send and receive",
+        "already_explained": [
+          "vertically",
+          "vertical send",
+          "vertical transmit"
+        ]
+      }
+    },
+    {
+      "id": "co-polarization",
+      "term": "Co-polarization",
+      "aliases": [
+        "co-polarized",
+        "copol",
+        "co-pol",
+        "same polarization"
+      ],
+      "definition": "A polarization channel in which the radar transmits and receives the same orientation. HH and VV are the two linear co-polarized channels.",
+      "example": "The Qeshm chart uses HH, a co-polarized measurement of the radar return.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-nasa-pol",
+        "radar-nasa-handbook"
+      ]
+    },
+    {
+      "id": "cross-polarization",
+      "term": "Cross-polarization",
+      "aliases": [
+        "cross-polarized",
+        "crosspol",
+        "cross-pol"
+      ],
+      "definition": "A polarization channel in which the radar transmits one orientation and receives the perpendicular component. Vegetation and other complex surfaces can redirect part of the signal into this component.",
+      "example": "Curuai HV is a cross-polarized layer. Compare HV with HV across dates to keep the measurement type consistent.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-nasa-pol",
+        "radar-nasa-handbook"
+      ]
+    },
+    {
+      "id": "dual-pol",
+      "term": "Dual polarization",
+      "aliases": [
+        "dual-pol",
+        "dual pol",
+        "two channels"
+      ],
+      "definition": "An acquisition mode that records two polarization channels. In a standard linear mode these can be HH and HV or VV and VH.",
+      "example": "An HH/HV date can populate two matrix columns. Availability of VV and VH is tracked separately.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-nasa-pol",
+        "radar-asf-gcov"
+      ]
+    },
+    {
+      "id": "quad-pol",
+      "term": "Quad polarization",
+      "aliases": [
+        "quad-pol",
+        "quad pol",
+        "full polarimetry"
+      ],
+      "definition": "A radar mode that records all four linear transmit and receive combinations, HH, HV, VH and VV.",
+      "example": "A four-column matrix lets you check which channels are available on each date. The acquisition mode tells you which combinations the radar collected.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-nasa-pol",
+        "radar-asf-gcov"
+      ]
+    },
+    {
+      "id": "l-band",
+      "term": "L-band",
+      "aliases": [
+        "L band",
+        "L-SAR",
+        "L wavelength",
+        "24 cm"
+      ],
+      "definition": "The longer-wavelength radar band used by NISAR’s L-SAR instrument, with waves about 24 cm long.",
+      "example": "The Qeshm and Curuai local measurements are from NISAR L-band acquisitions.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-nasa-satellite",
+        "radar-asf-intro"
+      ]
+    },
+    {
+      "id": "s-band",
+      "term": "S-band",
+      "aliases": [
+        "S band",
+        "S-SAR",
+        "9.4 cm"
+      ],
+      "definition": "The shorter-wavelength radar band used by NISAR’s S-SAR instrument, with waves about 9.4 cm long.",
+      "example": "Check the Wavelength field before treating a discovered S-band record as comparable to a prepared L-band series.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-nasa-satellite",
+        "radar-asf-intro"
+      ]
+    },
+    {
+      "id": "frequency-a",
+      "term": "Frequency A",
+      "aliases": [
+        "frequencyA",
+        "freq A",
+        "A frequency",
+        "primary frequency"
+      ],
+      "definition": "The primary frequency group within a NISAR instrument’s product. Its bandwidth, available channels and grid size depend on the acquisition mode.",
+      "example": "The measured Curuai HH crop uses L-band Frequency A.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-asf-intro",
+        "radar-asf-gcov"
+      ]
+    },
+    {
+      "id": "frequency-b",
+      "term": "Frequency B",
+      "aliases": [
+        "frequencyB",
+        "freq B",
+        "B frequency",
+        "secondary frequency"
+      ],
+      "definition": "A separate frequency group that may be present within the same instrument band, often with narrower bandwidth and a coarser product grid. NISAR primarily collects Frequency B for atmospheric corrections.",
+      "example": "A record containing L-band Frequency B still refers to L-SAR. Check the group before comparing its grid or channels with Frequency A.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-asf-intro",
+        "radar-asf-gcov"
+      ]
+    },
+    {
+      "id": "radar-bandwidth",
+      "term": "Radar bandwidth",
+      "aliases": [
+        "bandwidth",
+        "MHz",
+        "20 MHz",
+        "5 MHz",
+        "40 MHz"
+      ],
+      "definition": "The width of the frequency interval covered by the transmitted signal. A wider signal bandwidth can resolve finer differences in radar range when the viewing geometry and processing allow.",
+      "example": "Qeshm Frequency A uses a 20 MHz signal. The MHz value is bandwidth, while the grid spacing is measured in metres.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-asf-gcov",
+        "radar-asf-plan",
+        "radar-nasa-handbook"
+      ]
+    },
+    {
+      "id": "wavelength",
+      "term": "Wavelength",
+      "aliases": [
+        "radar wavelength",
+        "lambda",
+        "λ"
+      ],
+      "definition": "The distance between successive peaks of a wave. A radar’s wavelength helps determine how it interacts with features of different sizes and materials.",
+      "example": "The Wavelength and Frequency fields describe different properties. L-band Frequency A is one group of measurements made with the roughly 24 cm L-band radar.",
+      "category": "Polarization and frequency",
+      "source_ids": [
+        "radar-nasa-satellite",
+        "radar-nasa-handbook"
+      ]
+    },
+    {
+      "id": "acquisition",
+      "term": "Acquisition",
+      "aliases": [
+        "acquisition time",
+        "observation date",
+        "capture",
+        "granule start time"
+      ],
+      "definition": "An interval during which the satellite collects the radar data used to create a product. Its timestamp refers to sensing time.",
+      "example": "Curuai’s August 13 and October 12 rows refer to when NISAR observed the area in 2026.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-asf-naming",
+        "radar-asf-gcov"
+      ]
+    },
+    {
+      "id": "acquired-utc",
+      "term": "Acquired UTC",
+      "aliases": [
+        "UTC",
+        "Zulu time",
+        "Z timestamp",
+        "acquisition UTC"
+      ],
+      "definition": "The date and time when the satellite collected the image, written using Coordinated Universal Time so people in different time zones can compare it.",
+      "example": "The timestamp 2026-08-13T09:21:54Z marks a Curuai acquisition at 09:21:54 UTC.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-nist-utc",
+        "radar-rfc-timestamps",
+        "radar-asf-naming",
+        "radar-wiki-utc"
+      ]
+    },
+    {
+      "id": "track",
+      "term": "Track",
+      "aliases": [
+        "relative orbit",
+        "track number",
+        "flight track"
+      ],
+      "definition": "A number for a recurring orbital path in NISAR’s observation plan. It helps identify acquisitions that follow similar paths over the same area.",
+      "example": "The Marañón February 24 and March 8 observations both use track 147.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-asf-naming",
+        "radar-asf-plan"
+      ]
+    },
+    {
+      "id": "frame",
+      "term": "Frame",
+      "aliases": [
+        "frame number",
+        "scene frame"
+      ],
+      "definition": "A numbered scene segment along a track used to organize products. The track and frame together identify a recurring nominal scene location.",
+      "example": "The two Marañón rows share track 147 and frame 175. The change measurement also checks their aligned grids and shared usable pixels.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-asf-naming",
+        "radar-asf-gcov"
+      ]
+    },
+    {
+      "id": "orbit-pass",
+      "term": "Orbit pass",
+      "aliases": [
+        "pass",
+        "satellite pass",
+        "acquisition pass"
+      ],
+      "definition": "One traversal of the satellite over a region, following part of its orbital path. A pass can collect radar data over many neighbouring scene frames.",
+      "example": "Dates on the same track can represent different passes. Check both the sensing date and the ascending or descending direction.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-asf-plan",
+        "radar-asf-naming"
+      ]
+    },
+    {
+      "id": "ascending-pass",
+      "term": "Ascending pass",
+      "aliases": [
+        "ascending",
+        "ASC",
+        "northbound pass"
+      ],
+      "definition": "The satellite observes while travelling generally northward along its orbit.",
+      "example": "The three Qeshm observations are ascending. Use that field with track, frame and radar mode when checking comparability.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-asf-plan",
+        "radar-asf-naming"
+      ]
+    },
+    {
+      "id": "descending-pass",
+      "term": "Descending pass",
+      "aliases": [
+        "descending",
+        "DESC",
+        "southbound pass"
+      ],
+      "definition": "The satellite observes while travelling generally southward along its orbit.",
+      "example": "The July 12 Burgas observation is descending. Its geometry differs from a typical ascending view of the same region.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-asf-plan",
+        "radar-asf-naming"
+      ]
+    },
+    {
+      "id": "look-direction",
+      "term": "Look direction",
+      "aliases": [
+        "look side",
+        "left-looking",
+        "right-looking",
+        "side looking"
+      ],
+      "definition": "The side of the flight path toward which the radar points. The look side and direction of travel together determine which slopes face the beam.",
+      "example": "NISAR looks left of the flight path. Source audit pairs the look side with the orbit direction when that metadata is available.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-asf-intro",
+        "radar-nasa-handbook"
+      ]
+    },
+    {
+      "id": "same-geometry",
+      "term": "Matched viewing geometry",
+      "aliases": [
+        "same geometry",
+        "same_geometry",
+        "acquisition geometry",
+        "matching geometry"
+      ],
+      "definition": "Observations made with comparable orbital path, scene framing and viewing direction. Pixelwise comparisons also require aligned grids and compatible measurement settings.",
+      "example": "The Qeshm time series uses one established track and frame and a common crop. Source audit records the available metadata and comparison limits.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-asf-plan",
+        "radar-asf-gcov",
+        "radar-nasa-handbook"
+      ]
+    },
+    {
+      "id": "incidence-angle",
+      "term": "Incidence angle",
+      "aliases": [
+        "local incidence angle",
+        "viewing angle"
+      ],
+      "definition": "The angle between the incoming radar beam and a line perpendicular to the reference surface. A local incidence angle uses the slope at that location.",
+      "example": "Even the same surface can return a different signal from a different angle. The app checks geometry before paired change analysis.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-nasa-handbook",
+        "radar-asf-rtc"
+      ]
+    },
+    {
+      "id": "azimuth",
+      "term": "Azimuth",
+      "aliases": [
+        "along track",
+        "azimuth direction"
+      ],
+      "definition": "In a radar image, the direction along the flight path. The radar builds fine azimuth detail from pulses gathered during flight.",
+      "example": "RSLC stores data in radar coordinates. The app’s prepared GCOV map is already geocoded.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-nasa-handbook",
+        "radar-asf-products"
+      ]
+    },
+    {
+      "id": "slant-range",
+      "term": "Slant range",
+      "aliases": [
+        "line-of-sight range",
+        "radar range"
+      ],
+      "definition": "The straight-line distance from the radar to the target, estimated from the pulse travel time.",
+      "example": "GCOV maps observations onto ground coordinates so that a location in the map can be matched to an acquisition crop.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-nasa-handbook",
+        "radar-asf-products"
+      ]
+    },
+    {
+      "id": "ground-range",
+      "term": "Ground range",
+      "aliases": [
+        "cross track",
+        "ground range direction"
+      ],
+      "definition": "Distance across the ground in the direction away from the flight path. It is related to slant range through viewing geometry.",
+      "example": "The map display uses ground locations. Sensor-coordinate products can use slant-range distance in their stored arrays.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-nasa-handbook",
+        "radar-asf-products"
+      ]
+    },
+    {
+      "id": "swath",
+      "term": "Swath",
+      "aliases": [
+        "imaging strip",
+        "radar swath"
+      ],
+      "definition": "The strip of Earth’s surface observed by the radar along the satellite’s flight path.",
+      "example": "A catalogue record can cover a long stretch of a swath while the app serves a small study crop from it.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-nasa-satellite",
+        "radar-asf-plan"
+      ]
+    },
+    {
+      "id": "repeat-cycle",
+      "term": "Repeat cycle",
+      "aliases": [
+        "repeat interval",
+        "12-day cycle",
+        "NISAR repeat"
+      ],
+      "definition": "The interval after which a satellite returns to a similar orbital path. NISAR’s planned orbit repeat is 12 days. Usable observations depend on the observation schedule and data availability.",
+      "example": "Read the actual acquisition dates in the chart. The Qeshm dates include a 24-day gap and a 12-day gap.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-nasa-mission",
+        "radar-asf-plan"
+      ]
+    },
+    {
+      "id": "radar-shadow",
+      "term": "Radar shadow",
+      "aliases": [
+        "shadow",
+        "SAR shadow"
+      ],
+      "definition": "An area hidden from the side-looking radar beam by terrain. The radar has no direct view of the shadowed ground.",
+      "example": "A dark or masked patch near steep terrain can reflect imaging geometry. Check flags before assigning an environmental cause.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-nasa-handbook",
+        "radar-asf-rtc"
+      ]
+    },
+    {
+      "id": "layover",
+      "term": "Layover",
+      "aliases": [
+        "radar layover",
+        "SAR layover"
+      ],
+      "definition": "A distortion on a steep radar-facing slope where high terrain is closer to the radar than lower terrain and echoes from multiple ground positions overlap.",
+      "example": "In paired measurements, the app can exclude cells marked by the product’s layover and shadow flags.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-nasa-handbook",
+        "radar-asf-gcov",
+        "radar-asf-rtc"
+      ]
+    },
+    {
+      "id": "foreshortening",
+      "term": "Foreshortening",
+      "aliases": [
+        "radar foreshortening",
+        "compressed slopes"
+      ],
+      "definition": "The compression of a radar-facing slope in the radar image because different points on it have similar distances to the sensor.",
+      "example": "Bright or compact terrain features can arise from viewing geometry. Compare calibrated scenes with compatible geometry before interpreting change.",
+      "category": "Acquisition and radar geometry",
+      "source_ids": [
+        "radar-nasa-handbook",
+        "radar-asf-rtc"
+      ]
+    },
+    {
+      "id": "backscatter",
+      "term": "Backscatter",
+      "aliases": [
+        "radar return",
+        "radar brightness",
+        "return strength",
+        "backscatter power"
+      ],
+      "definition": "The part of the radar signal that bounces back to the satellite. Roughness, moisture, plants, and the viewing angle can all affect how much comes back.",
+      "example": "Backscatter over time summarizes the calibrated return of a selected polarization across the study grid.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-nasa-handbook",
+        "radar-asf-amplitude",
+        "radar-wiki-radar"
+      ],
+      "inline": {
+        "forms": [
+          "backscatter"
+        ],
+        "meaning": "the radar echo that returns to the satellite",
+        "already_explained": [
+          "echo strength",
+          "strength of the return",
+          "radar energy that"
+        ]
+      }
+    },
+    {
+      "id": "gamma-zero",
+      "term": "Gamma nought (γ⁰)",
+      "aliases": [
+        "gamma0",
+        "gamma zero",
+        "gamma naught",
+        "gamma-nought",
+        "γ0",
+        "γ⁰"
+      ],
+      "definition": "A way to express radar echo strength that accounts for the area facing the sensor. The NISAR map product also adjusts for terrain.",
+      "example": "The app can report a gamma nought value as linear power in a scientific GeoTIFF or as dB in a chart.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-asf-gcov",
+        "radar-asf-rtc"
+      ],
+      "inline": {
+        "forms": [
+          "gamma0",
+          "gamma nought",
+          "gamma-zero",
+          "γ⁰"
+        ],
+        "meaning": "radar echo strength adjusted for how much area faces the sensor",
+        "already_explained": [
+          "area facing"
+        ]
+      }
+    },
+    {
+      "id": "sigma-zero",
+      "term": "Sigma nought (σ⁰)",
+      "aliases": [
+        "sigma0",
+        "sigma zero",
+        "sigma naught",
+        "sigma-nought",
+        "σ0",
+        "σ⁰"
+      ],
+      "definition": "A way to express how much radar echo comes back for a given area on the ground.",
+      "example": "Check the calibration convention before comparing numbers from another sensor with the app’s GCOV gamma nought values.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-asf-rtc",
+        "radar-nasa-handbook"
+      ]
+    },
+    {
+      "id": "linear-power",
+      "term": "Linear power",
+      "aliases": [
+        "power scale",
+        "unitless power",
+        "linear gamma0",
+        "linear backscatter"
+      ],
+      "definition": "A ratio-scale representation of radar power. Doubling the value doubles the represented return power under the same calibration. Positive values can be converted to dB.",
+      "example": "A linear gamma nought value of 0.01 corresponds to −20 dB. The chart and the scientific raster can therefore express the same measurement on different scales.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-asf-gcov",
+        "radar-nist-db"
+      ]
+    },
+    {
+      "id": "decibel",
+      "term": "Decibel (dB)",
+      "aliases": [
+        "dB",
+        "backscatter dB",
+        "gamma0 dB"
+      ],
+      "definition": "A scale for comparing how strong two signals are. When comparing radar power, about 3 dB more means twice the power.",
+      "example": "A value of −20 dB corresponds to 0.01 times the reference power. An increase of about 3 dB corresponds to roughly twice the power.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-nist-db",
+        "radar-asf-rtc",
+        "radar-wiki-db"
+      ],
+      "inline": {
+        "forms": [
+          "dB"
+        ],
+        "meaning": "a scale for comparing echo strength",
+        "already_explained": [
+          "twice the power",
+          "decibel",
+          "logarithmic"
+        ]
+      }
+    },
+    {
+      "id": "radiometric-calibration",
+      "term": "Radiometric calibration",
+      "aliases": [
+        "calibrated",
+        "radar calibration",
+        "calibrated backscatter"
+      ],
+      "definition": "Processing that converts instrument readings into a defined measure of radar return power. Use the calibration convention when comparing products.",
+      "example": "The app reads stored calibrated GCOV values for measurements. Map brightness is produced by applying a display scale.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-asf-gcov",
+        "radar-nasa-preprocessing"
+      ]
+    },
+    {
+      "id": "speckle",
+      "term": "Speckle",
+      "aliases": [
+        "radar speckle",
+        "speckle pattern",
+        "grain"
+      ],
+      "definition": "The grainy pattern in a radar image caused by many tiny echoes adding together or cancelling each other.",
+      "example": "The chart summarizes many pixels because individual bright or dark cells can fluctuate due to speckle.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-nasa-handbook",
+        "radar-asf-gcov",
+        "radar-wiki-speckle"
+      ],
+      "inline": {
+        "forms": [
+          "speckle"
+        ],
+        "meaning": "the grainy pattern made by many small echoes",
+        "already_explained": [
+          "grainy pattern"
+        ]
+      }
+    },
+    {
+      "id": "number-of-looks",
+      "term": "Number of looks",
+      "aliases": [
+        "looks",
+        "numberOfLooks",
+        "multilooking",
+        "multi-looking"
+      ],
+      "definition": "An indication of how many radar samples contribute to a processed cell. Combining looks typically reduces speckle and can trade spatial detail for a more stable estimate.",
+      "example": "When available, the GCOV looks layer helps document which parts of a prepared crop provide usable measurements.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-asf-gcov",
+        "radar-nasa-handbook"
+      ]
+    },
+    {
+      "id": "median",
+      "term": "Median",
+      "aliases": [
+        "middle value",
+        "P50",
+        "50th percentile",
+        "median dB"
+      ],
+      "definition": "The middle reading when you put the values in order from smallest to largest. With two readings in the middle, take their average.",
+      "example": "The Curuai HH chart shows median backscatter near −18.53 dB on August 13, 2026, across the shared valid cells.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-nist-mean-median",
+        "radar-wiki-median"
+      ],
+      "inline": {
+        "forms": [
+          "median"
+        ],
+        "meaning": "the middle value",
+        "already_explained": [
+          "middle value",
+          "middle radar return",
+          "typical radar return"
+        ]
+      }
+    },
+    {
+      "id": "p10",
+      "term": "P10",
+      "aliases": [
+        "10th percentile",
+        "tenth percentile",
+        "lower decile"
+      ],
+      "definition": "The 10th percentile is a value at or below which roughly one-tenth of the measurements lie. It describes the lower part of the distribution.",
+      "example": "P10 is the lower edge of the chart’s P10–P90 band. That edge shows spread across pixels.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-nist-percentile",
+        "radar-wiki-percentile"
+      ]
+    },
+    {
+      "id": "p90",
+      "term": "P90",
+      "aliases": [
+        "90th percentile",
+        "ninetieth percentile",
+        "upper decile"
+      ],
+      "definition": "The 90th percentile is a value at or below which roughly nine-tenths of the measurements lie. It describes the upper part of the distribution.",
+      "example": "The chart band from P10 to P90 spans the middle roughly 80% of measured pixel values. It describes spatial variability.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-nist-percentile",
+        "radar-wiki-percentile"
+      ]
+    },
+    {
+      "id": "radar-change",
+      "term": "Radar change",
+      "aliases": [
+        "backscatter change",
+        "difference in dB",
+        "paired change",
+        "change in return",
+        "delta dB"
+      ],
+      "definition": "A difference in calibrated backscatter between two acquisitions. In a paired map, each cell uses the later dB value minus the earlier dB value at the same position.",
+      "example": "Positive change means a stronger radar return. The Radar change legend shows where change crosses the selected threshold.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-asf-gcov",
+        "radar-nist-db"
+      ]
+    },
+    {
+      "id": "paired-pixels",
+      "term": "Paired native pixels",
+      "aliases": [
+        "paired pixels",
+        "shared valid pixels",
+        "shared native pixels",
+        "common support",
+        "shared grid"
+      ],
+      "definition": "Matching spots on the ground that have a usable radar value on every date being compared.",
+      "example": "The Curuai HH comparison uses 562,500 shared usable pixels. The count is the denominator for cell-level change percentages.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-asf-gcov",
+        "radar-nasa-preprocessing"
+      ]
+    },
+    {
+      "id": "three-db-threshold",
+      "term": "±3 dB threshold",
+      "aliases": [
+        "3 dB",
+        "change threshold",
+        "stronger return",
+        "weaker return",
+        "plus or minus 3 dB"
+      ],
+      "definition": "A display and summary threshold for change in power. A +3 dB change is roughly twice the power and a −3 dB change is roughly half the power.",
+      "example": "Orange denotes stronger cells at or above +3 dB and olive denotes weaker cells at or below −3 dB in the Radar change overlay.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-nist-db",
+        "radar-asf-rtc"
+      ]
+    },
+    {
+      "id": "time-series",
+      "term": "Time series",
+      "aliases": [
+        "backscatter over time",
+        "chart dates",
+        "time chart"
+      ],
+      "definition": "Measurements shown in the order they were taken. In this app, each dot is a date the satellite actually observed. Time between dots can have no recorded values.",
+      "example": "The Qeshm HH series contains three measured dates on the same crop. Connecting line segments link those dates without providing intermediate satellite measurements.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-asf-plan",
+        "radar-wiki-timeseries"
+      ]
+    },
+    {
+      "id": "display-stretch",
+      "term": "Display stretch",
+      "aliases": [
+        "contrast stretch",
+        "display range",
+        "dB display range",
+        "grayscale mapping"
+      ],
+      "definition": "A conversion from a chosen range of scientific values to visible shades. The same value can look brighter or darker under a different stretch.",
+      "example": "Check the displayed dB range before comparing grayscale images. Use the GeoTIFF or the chart for calibrated numbers.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-asf-rtc",
+        "radar-asf-amplitude"
+      ]
+    },
+    {
+      "id": "signal-to-noise",
+      "term": "Signal-to-noise ratio (SNR)",
+      "aliases": [
+        "SNR",
+        "signal to noise",
+        "noise gate"
+      ],
+      "definition": "How strong the measured echo is compared with the instrument’s background noise. A low ratio means the two are hard to separate.",
+      "example": "The oil-screening methods check whether the signal is safely above the available noise estimate before interpreting low-backscatter features.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-asf-gcov",
+        "radar-nist-db",
+        "radar-nasa-handbook"
+      ],
+      "inline": {
+        "forms": [
+          "SNR"
+        ],
+        "meaning": "echo strength compared with instrument noise",
+        "already_explained": [
+          "compared with instrument noise"
+        ]
+      }
+    },
+    {
+      "id": "noise-equivalent-backscatter",
+      "term": "Noise-equivalent sigma nought (NESZ)",
+      "aliases": [
+        "NESZ",
+        "noise-equivalent backscatter",
+        "noise floor",
+        "noise-equivalent sigma zero"
+      ],
+      "definition": "A measure of how faint an echo can be before it gets hard to tell apart from the radar’s own noise.",
+      "example": "The Source audit records when a Harmony subset lacks a spatial noise layer. A value gated against noise needs a noise estimate in a compatible calibration convention.",
+      "category": "Radar measurements and charts",
+      "source_ids": [
+        "radar-asf-gcov",
+        "radar-asf-issues",
+        "radar-nasa-handbook"
+      ],
+      "inline": {
+        "forms": [
+          "NESZ"
+        ],
+        "meaning": "the level where faint echoes compete with instrument noise",
+        "already_explained": [
+          "instrument noise",
+          "radar noise"
+        ]
+      }
+    },
+    {
+      "id": "wetland",
+      "term": "Wetland",
+      "aliases": [
+        "wetlands",
+        "wetland habitat"
+      ],
+      "definition": "An area where water at or near the surface regularly shapes the soil, vegetation and habitat. Wetlands can look dry during part of the year.",
+      "example": "A marsh at Shark River Slough may remain wetland habitat when an optical image shows little visible water.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-ramsar",
+        "intel-wiki-wetland",
+        "intel-epa-wetland"
+      ]
+    },
+    {
+      "id": "emergent-marsh",
+      "term": "Emergent marsh",
+      "aliases": [
+        "emergent wetland",
+        "emergent vegetation",
+        "marsh"
+      ],
+      "definition": "A wetland dominated by rooted plants whose stems or leaves rise above shallow water or wet soil.",
+      "example": "Sawgrass can rise above water in the Everglades and obscure it in an optical view.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-fws-nwi",
+        "intel-epa-wetland"
+      ]
+    },
+    {
+      "id": "exposed-water",
+      "term": "Exposed water",
+      "aliases": [
+        "open water",
+        "visible surface water",
+        "optically exposed water"
+      ],
+      "definition": "Water whose surface is visible to an optical sensor through clear air and without vegetation covering it.",
+      "example": "The Curuai optical comparison tests visible lake water. Water beneath a thick plant canopy can remain unresolved.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-copernicus-s2",
+        "intel-xu-mndwi"
+      ]
+    },
+    {
+      "id": "inundation",
+      "term": "Inundation",
+      "aliases": [
+        "flooded area",
+        "surface inundation",
+        "inundated"
+      ],
+      "definition": "Water covering the land or ground surface. It can occur routinely in a wetland or during a flood.",
+      "example": "Water can inundate the ground beneath marsh plants even if a satellite photo mainly shows green leaves.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-usgs-flood",
+        "intel-epa-wetland"
+      ]
+    },
+    {
+      "id": "flood-extent",
+      "term": "Flood extent",
+      "aliases": [
+        "flood footprint",
+        "flood inundation extent",
+        "extent of flooding"
+      ],
+      "definition": "The area covered by floodwater at a specific time or water level. Establishing it requires distinguishing floodwater from water already present.",
+      "example": "An ordinary lake outline shows water extent. Comparing it with a flood-date reference can help isolate newly flooded area.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-usgs-flood"
+      ]
+    },
+    {
+      "id": "floodplain",
+      "term": "Floodplain",
+      "aliases": [
+        "river floodplain",
+        "flood plain"
+      ],
+      "definition": "Low land alongside a river or stream that can be inundated when its water level rises.",
+      "example": "The Curuai floodplain can gain or lose water during the Amazon's seasonal rise and fall.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-usgs-flood",
+        "intel-wiki-floodplain"
+      ]
+    },
+    {
+      "id": "seasonal-recession",
+      "term": "Seasonal recession",
+      "aliases": [
+        "receding water",
+        "water recession",
+        "seasonal drawdown"
+      ],
+      "definition": "Water retreat that commonly happens during the falling-water phase of a seasonal cycle.",
+      "example": "A smaller lake on an October image can be part of the usual seasonal pattern. Compare Octobers and gauge records before attributing the cause.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-wmo-drought",
+        "intel-usgs-flood"
+      ]
+    },
+    {
+      "id": "drought",
+      "term": "Drought",
+      "aliases": [
+        "hydrological drought",
+        "dry spell",
+        "water deficit"
+      ],
+      "definition": "A sustained shortage of water relative to what is usual for a place and season. Hydrological drought is often assessed with streamflow, lakes, reservoirs or groundwater.",
+      "example": "An August–October decrease in lake area needs seasonal or historical context before it can support a drought interpretation.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-wmo-drought",
+        "intel-wiki-drought"
+      ]
+    },
+    {
+      "id": "hydroperiod",
+      "term": "Hydroperiod",
+      "aliases": [
+        "inundation duration",
+        "wetland hydroperiod"
+      ],
+      "definition": "The timing, duration and recurrence of flooding or water saturation at a site.",
+      "example": "A year of daily Everglades depth maps can help estimate how long a marsh cell stays inundated.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-usgs-eden",
+        "intel-epa-wetland"
+      ]
+    },
+    {
+      "id": "water-level-gauge",
+      "term": "Water-level gauge",
+      "aliases": [
+        "gage",
+        "streamgage",
+        "gauging station",
+        "water level station"
+      ],
+      "definition": "An instrument or station that measures water level at a particular location.",
+      "example": "The Óbidos gauge helps describe the regional Amazon water level. Curuai's local lake level needs its own evidence.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-usgs-gage"
+      ]
+    },
+    {
+      "id": "gage-height",
+      "term": "Gage height",
+      "aliases": [
+        "gauge height",
+        "river stage",
+        "stage"
+      ],
+      "definition": "The height of the water surface above a reference zero at a gauge. That zero can be different from the riverbed or sea level.",
+      "example": "A 141 cm reading at one gauge is 141 cm above its own zero. It gives the actual depth only if that zero coincides with the bed.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-usgs-gage"
+      ]
+    },
+    {
+      "id": "water-depth",
+      "term": "Water depth",
+      "aliases": [
+        "depth estimate",
+        "modeled water depth",
+        "modelled water depth"
+      ],
+      "definition": "The vertical distance from the water surface to the ground or bed. A model can estimate it by subtracting ground elevation from water-surface elevation.",
+      "example": "A 10 cm EDEN class threshold separates modeled values for a marsh comparison at 400 m.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-usgs-eden-depth",
+        "intel-usgs-flood"
+      ]
+    },
+    {
+      "id": "eden",
+      "term": "Everglades Depth Estimation Network",
+      "aliases": [
+        "EDEN",
+        "USGS EDEN",
+        "depth estimation network"
+      ],
+      "definition": "A USGS network of gauges and models that provides gridded daily water levels and estimated depths across the freshwater Everglades.",
+      "example": "A modeled 400 m EDEN depth cell can serve as an independent comparison for a radar prediction over emergent marsh.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-usgs-eden",
+        "intel-usgs-eden-depth"
+      ]
+    },
+    {
+      "id": "nwi",
+      "term": "National Wetlands Inventory",
+      "aliases": [
+        "NWI",
+        "USFWS NWI",
+        "wetlands inventory"
+      ],
+      "definition": "A U.S. Fish and Wildlife Service map inventory that classifies wetlands and deepwater habitats.",
+      "example": "The Everglades benchmark uses NWI to select mapped emergent marsh, then uses EDEN for the comparison date's water estimate.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-fws-nwi",
+        "intel-usgs-eden"
+      ]
+    },
+    {
+      "id": "ramsar-site",
+      "term": "Ramsar site",
+      "aliases": [
+        "Ramsar wetland",
+        "Wetland of International Importance",
+        "Ramsar boundary"
+      ],
+      "definition": "A wetland designated as internationally important under the Convention on Wetlands.",
+      "example": "The Atanasovsko Lake Ramsar boundary describes the designated site. Wet and dry surfaces within it vary by date.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-ramsar"
+      ]
+    },
+    {
+      "id": "oil-spill",
+      "term": "Oil spill",
+      "aliases": [
+        "oil discharge",
+        "petroleum spill",
+        "oil release"
+      ],
+      "definition": "A release of petroleum or petroleum products into the environment. The spill's presence, source or extent can require field evidence or corroborating observations.",
+      "example": "A radar image can reveal dark water worth reviewing after a reported tanker release.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-wiki-oil",
+        "intel-noaa-spill",
+        "intel-emsa"
+      ]
+    },
+    {
+      "id": "oil-slick",
+      "term": "Oil slick",
+      "aliases": [
+        "slick",
+        "oil film",
+        "surface slick"
+      ],
+      "definition": "A layer of oil spread across water. It can damp small ripples and cause weaker radar returns under suitable wind and viewing conditions.",
+      "example": "An elongated dark patch may be a slick candidate. Local wind and an independent observation can help interpret it.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-emsa",
+        "intel-nrcan-oceans",
+        "intel-wiki-oil"
+      ]
+    },
+    {
+      "id": "oil-lookalike",
+      "term": "Oil look-alike",
+      "aliases": [
+        "look-alike",
+        "lookalike",
+        "oil slick look-alike",
+        "false slick"
+      ],
+      "definition": "A feature that resembles a floating oil slick in imagery even though it can come from another cause, such as calm wind, natural films or rain effects.",
+      "example": "A sheltered bay can appear dark along its coast because weak winds leave the water smooth.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-emsa",
+        "intel-nrcan-oceans"
+      ]
+    },
+    {
+      "id": "oil-thickness",
+      "term": "Oil thickness",
+      "aliases": [
+        "slick thickness",
+        "oil sheen thickness"
+      ],
+      "definition": "The depth of an oil layer on the water surface. Estimating it requires observations and methods that can distinguish thickness and related effects.",
+      "example": "An ordinary dark patch in the backscatter layer does not tell you how thick a suspected slick is.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-noaa-thickness",
+        "intel-nrcan-oceans"
+      ]
+    },
+    {
+      "id": "incident-perimeter",
+      "term": "Incident perimeter",
+      "aliases": [
+        "incident outline",
+        "reported slick outline",
+        "reported spill outline",
+        "inspection footprint"
+      ],
+      "definition": "A mapped boundary from a report, inspection or independent image. Its meaning and coverage depend on the source and time.",
+      "example": "A NOAA analyst outline shows an interpreted feature at its reference time. NISAR may have passed before or after it.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-noaa-spill"
+      ]
+    },
+    {
+      "id": "mpsr",
+      "term": "Marine Pollution Surveillance Report",
+      "aliases": [
+        "MPSR",
+        "NOAA MPSR"
+      ],
+      "definition": "A NOAA analyst report describing a possible marine pollution anomaly observed in satellite imagery.",
+      "example": "An MPSR can supply an independent outline and image time for comparing a NISAR dark-water flag.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-noaa-spill"
+      ]
+    },
+    {
+      "id": "mndwi",
+      "term": "Modified Normalized Difference Water Index",
+      "aliases": [
+        "MNDWI",
+        "modified NDWI",
+        "modified normalized difference water index"
+      ],
+      "definition": "An optical index calculated as green minus shortwave infrared reflectance, divided by their sum. It can help distinguish visible water from many surrounding surfaces.",
+      "example": "The Curuai comparison requires agreement between MNDWI and optical scene classification before using a cell as reference water.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-xu-mndwi",
+        "intel-copernicus-s2"
+      ]
+    },
+    {
+      "id": "scl",
+      "term": "Scene Classification Layer",
+      "aliases": [
+        "SCL",
+        "optical scene classification",
+        "Sentinel-2 scene class"
+      ],
+      "definition": "A Sentinel-2 Level-2A map assigning classes such as water, vegetation, cloud, shadow and snow to optical observations.",
+      "example": "Cloud and shadow classes help remove unreliable cells from the independent Curuai water reference.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-copernicus-s2"
+      ]
+    },
+    {
+      "id": "gauge-datum",
+      "term": "Gauge datum",
+      "aliases": [
+        "gage datum",
+        "gauge zero",
+        "gage zero",
+        "stage zero"
+      ],
+      "definition": "The reference elevation a measuring station uses as zero for reported stage. It is specific to the station unless readings are converted to a shared vertical reference.",
+      "example": "Two stations can report the same gage height while their water surfaces are at different elevations.",
+      "category": "Environmental evidence",
+      "source_ids": [
+        "intel-usgs-gage"
+      ]
+    },
+    {
+      "id": "proxy",
+      "term": "Proxy",
+      "aliases": [
+        "proxy observation",
+        "proxy reference",
+        "reference proxy"
+      ],
+      "definition": "A related measurement used when the thing you want to know is difficult to measure directly.",
+      "example": "A clear optical water label is a proxy for exposed surface water. It can miss water under vegetation and may be measured hours after radar.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-wiki-proxy",
+        "intel-copernicus-s2",
+        "intel-xu-mndwi"
+      ]
+    },
+    {
+      "id": "independent-reference",
+      "term": "Independent reference",
+      "aliases": [
+        "independent evidence",
+        "independent label",
+        "reference data",
+        "reference observation"
+      ],
+      "definition": "Evidence from a source separate from the radar model or its prediction. The comparison is strongest when both sources cover the same target, place and time.",
+      "example": "The Curuai HH/HV screen uses only NISAR inputs. A separate Sentinel-2 optical scene supplies the water labels for comparison.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-split",
+        "intel-copernicus-s2"
+      ]
+    },
+    {
+      "id": "ground-truth",
+      "term": "Ground truth",
+      "aliases": [
+        "field truth",
+        "direct field reference",
+        "ground-truth"
+      ],
+      "definition": "Directly observed reference information about the target, ideally aligned to the place and time being tested. Its sampling and measurement limits still matter.",
+      "example": "A field measurement of water depth at a dated location is direct evidence there. Daily modeled depths between stations remain estimates.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-usgs-gage",
+        "intel-usgs-eden"
+      ]
+    },
+    {
+      "id": "positive-only-reference",
+      "term": "Positive-only reference",
+      "aliases": [
+        "positive-only labels",
+        "unlabelled background",
+        "unlabeled background"
+      ],
+      "definition": "A reference that identifies some positives while leaving the classes of other areas unknown.",
+      "example": "A published oil outline supports counting flags inside it. Water outside the outline may be clean, unreviewed or affected.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-noaa-spill",
+        "intel-ml-metrics"
+      ]
+    },
+    {
+      "id": "candidate",
+      "term": "Candidate",
+      "aliases": [
+        "candidate patch",
+        "possible detection",
+        "flagged patch",
+        "screening flag"
+      ],
+      "definition": "A location or object flagged by a rule as worth inspecting because its measured properties fit some criteria.",
+      "example": "A dark-water candidate may match a local contrast rule, while calm water or a natural film can explain the same flag.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-emsa",
+        "intel-nrcan-oceans",
+        "intel-noaa-spill"
+      ]
+    },
+    {
+      "id": "abstention",
+      "term": "Abstention",
+      "aliases": [
+        "abstained",
+        "withheld result",
+        "unassessable",
+        "not assessed",
+        "model abstention"
+      ],
+      "definition": "When a model leaves a place unclassified because the evidence is too weak or missing.",
+      "example": "Atanasovsko's measured HH and HV remain viewable, but the wetland screen withholds its decision when the local radar noise floor exceeds the eligibility limit.",
+      "category": "Models and validation",
+      "source_ids": [
+        "radar-asf-gcov",
+        "intel-ml-threshold"
+      ],
+      "inline": {
+        "forms": [
+          "abstention"
+        ],
+        "meaning": "no prediction where evidence is too weak",
+        "already_explained": [
+          "withheld",
+          "no prediction"
+        ]
+      }
+    },
+    {
+      "id": "eligibility",
+      "term": "Assessment eligibility",
+      "aliases": [
+        "eligible cells",
+        "assessed cells",
+        "assessment support"
+      ],
+      "definition": "The pixels or cells that satisfy a particular analysis's requirements. Totals depend on quality rules, available reference labels and grid overlap.",
+      "example": "If cloud removes 200 optical labels and radar quality excludes another 100 independent cells, only the remaining cells count in the comparison.",
+      "category": "Models and validation",
+      "source_ids": [
+        "radar-asf-gcov",
+        "intel-ml-metrics",
+        "intel-copernicus-s2"
+      ]
+    },
+    {
+      "id": "feature",
+      "term": "Model feature",
+      "aliases": [
+        "predictor",
+        "input feature",
+        "feature vector"
+      ],
+      "definition": "A measured value or derived quantity used as an input by the model.",
+      "example": "Curuai's two-feature model uses HH power in dB and the difference between HH and HV in dB.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-logistic",
+        "radar-asf-gcov"
+      ]
+    },
+    {
+      "id": "label",
+      "term": "Reference label",
+      "aliases": [
+        "target label",
+        "class label",
+        "labeled pixel",
+        "labelled pixel"
+      ],
+      "definition": "A class assigned to a training or test item according to an evidence source and labeling rule.",
+      "example": "A clear optical cell with a water scene class and a compatible MNDWI value can receive the exposed-water label.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-split",
+        "intel-copernicus-s2",
+        "intel-xu-mndwi"
+      ]
+    },
+    {
+      "id": "training",
+      "term": "Model training",
+      "aliases": [
+        "training data",
+        "model fitting",
+        "fit the model",
+        "train"
+      ],
+      "definition": "Choosing model parameters using example inputs and their targets or a stated fitting rule.",
+      "example": "The August Curuai labels and NISAR power features were used to learn two logistic coefficients and an intercept.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-split",
+        "intel-wiki-split",
+        "intel-ml-logistic"
+      ]
+    },
+    {
+      "id": "validation",
+      "term": "Model validation",
+      "aliases": [
+        "validation set",
+        "model evaluation",
+        "validation data"
+      ],
+      "definition": "Checking how a model performs on data separated from fitting. Some validation data help pick settings, while the final test should be kept apart from those choices.",
+      "example": "The app reports August testing on buffered spatial blocks excluded from fitting and October testing on a separate acquisition date.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-split",
+        "intel-wiki-split",
+        "intel-ml-spatial"
+      ]
+    },
+    {
+      "id": "held-out",
+      "term": "Held-out data",
+      "aliases": [
+        "held out",
+        "test set",
+        "held-out test",
+        "unseen data",
+        "holdout"
+      ],
+      "definition": "Observations reserved for checking performance after model fitting. A final holdout is kept separate from choices about thresholds and features.",
+      "example": "A test on Curuai's October acquisition uses the August model with its settings unchanged.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-split",
+        "intel-wiki-split"
+      ],
+      "inline": {
+        "forms": [
+          "held-out"
+        ],
+        "meaning": "reserved for testing",
+        "already_explained": [
+          "reserved for testing"
+        ]
+      }
+    },
+    {
+      "id": "spatial-holdout",
+      "term": "Spatial holdout",
+      "aliases": [
+        "spatial test",
+        "blocked spatial validation",
+        "withheld blocks",
+        "spatial block"
+      ],
+      "definition": "A test that keeps whole geographic regions out of training to reduce similarity between nearby training and test examples.",
+      "example": "The Curuai test withholds alternating three-kilometre blocks and excludes boundary neighbours from the split.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-spatial",
+        "intel-ml-leakage"
+      ]
+    },
+    {
+      "id": "temporal-holdout",
+      "term": "Temporal holdout",
+      "aliases": [
+        "time holdout",
+        "date holdout",
+        "temporal test",
+        "temporal transfer"
+      ],
+      "definition": "A test using acquisitions from dates or periods outside the model's training period.",
+      "example": "Fitting Curuai in August and scoring the October scene checks transfer to a new date at the same location.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-spatial",
+        "intel-ml-split"
+      ]
+    },
+    {
+      "id": "external-validation",
+      "term": "External validation",
+      "aliases": [
+        "cross-site transfer",
+        "external test",
+        "site transfer"
+      ],
+      "definition": "Evaluating a completed model with independently sourced examples from outside its original study, such as a new geographic site and date.",
+      "example": "Applying the frozen Curuai model in Bulgaria tests a new setting. Atanasovsko's radar noise restriction leaves that particular test unassessable.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-spatial",
+        "intel-ml-split",
+        "radar-asf-gcov"
+      ]
+    },
+    {
+      "id": "data-leakage",
+      "term": "Data leakage",
+      "aliases": [
+        "test leakage",
+        "training leakage",
+        "information leakage"
+      ],
+      "definition": "Information from the final test influences model fitting or the choices made before reporting its score, which can overstate performance.",
+      "example": "Tuning the HH cutoff after seeing October's score would make that October result an unsuitable final holdout.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-leakage",
+        "intel-ml-spatial"
+      ]
+    },
+    {
+      "id": "frozen-model",
+      "term": "Frozen model",
+      "aliases": [
+        "fixed model",
+        "frozen cutoff",
+        "frozen threshold",
+        "frozen checkpoint"
+      ],
+      "definition": "A model whose features, learned settings and decision rules stay fixed for evaluation.",
+      "example": "The October assessment uses the August −15 dB HH threshold without changing it after seeing the October optical labels.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-split",
+        "intel-ml-leakage",
+        "intel-ml-threshold"
+      ]
+    },
+    {
+      "id": "decision-threshold",
+      "term": "Decision threshold",
+      "aliases": [
+        "classification threshold",
+        "cutoff",
+        "score threshold"
+      ],
+      "definition": "A value used to turn a measurement or model score into a class according to a rule.",
+      "example": "The Curuai HH baseline flags eligible cells at or below −15 dB as exposed water.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-threshold"
+      ]
+    },
+    {
+      "id": "logistic-regression",
+      "term": "Logistic regression",
+      "aliases": [
+        "logistic model",
+        "logistic classifier",
+        "logit"
+      ],
+      "definition": "A classification method that learns how to combine input features and turn the combined value into a score for a class.",
+      "example": "The Curuai logistic classifier combines HH and HH minus HV to score exposed water. The published screen uses a fixed score cutoff.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-logistic",
+        "intel-wiki-logistic"
+      ]
+    },
+    {
+      "id": "baseline-model",
+      "term": "Baseline model",
+      "aliases": [
+        "baseline",
+        "simple control",
+        "comparison model"
+      ],
+      "definition": "A reference method used to judge whether a newer or more complex model improves performance on the same task and test data.",
+      "example": "The simple frozen HH rule provides a baseline for the HH/HV and local-texture models at Curuai.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-split",
+        "intel-ml-metrics"
+      ]
+    },
+    {
+      "id": "probability-calibration",
+      "term": "Probability calibration",
+      "aliases": [
+        "model calibration",
+        "calibrated probability",
+        "confidence calibration"
+      ],
+      "definition": "Checking or adjusting model probabilities so they match observed frequencies on comparable examples.",
+      "example": "If 100 comparable cells receive a calibrated 70% water probability, roughly 70 should be water on average. A raw decision score has no such guarantee.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-calibration"
+      ]
+    },
+    {
+      "id": "confidence",
+      "term": "Confidence",
+      "aliases": [
+        "model confidence",
+        "confidence score",
+        "analyst confidence"
+      ],
+      "definition": "A stated level of support or certainty for a result. It can come from an analyst's assessment, a calibrated probability, or another defined scoring rule.",
+      "example": "NOAA analyst confidence and a radar decision score describe different kinds of evidence. Read the stated scale before interpreting either.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-noaa-spill",
+        "intel-ml-calibration"
+      ]
+    },
+    {
+      "id": "true-positive",
+      "term": "True positive",
+      "aliases": [
+        "TP",
+        "reference agreement",
+        "joint water cells",
+        "matched water"
+      ],
+      "definition": "A cell the model flags as the target and the comparison reference also labels as that target.",
+      "example": "The Curuai orange agreement outline marks cells flagged as water by radar and labelled exposed water by the optical reference.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-metrics",
+        "intel-wiki-confusion"
+      ]
+    },
+    {
+      "id": "false-positive",
+      "term": "False positive",
+      "aliases": [
+        "FP",
+        "false alarm",
+        "extra detection",
+        "extra water flag"
+      ],
+      "definition": "A model flag where a usable reference labels the same cell as outside the target class.",
+      "example": "A radar water flag in a clear cell labelled other by the optical proxy counts as a false positive for that comparison.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-metrics",
+        "intel-wiki-confusion"
+      ]
+    },
+    {
+      "id": "false-negative",
+      "term": "False negative",
+      "aliases": [
+        "FN",
+        "miss",
+        "missed water",
+        "missed detection"
+      ],
+      "definition": "A reference-positive cell the model classifies outside the target. The cell must be valid for assessment.",
+      "example": "If the clear optical reference labels an eligible cell as water and the radar screen assigns other, that is a missed water cell.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-metrics",
+        "intel-wiki-confusion"
+      ]
+    },
+    {
+      "id": "true-negative",
+      "term": "True negative",
+      "aliases": [
+        "TN",
+        "agreed other",
+        "matched other"
+      ],
+      "definition": "A cell where both the model and a usable reference assign a class outside the target.",
+      "example": "An eligible cell classified as other by both radar and the optical water reference is a true negative for the water class.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-metrics",
+        "intel-wiki-confusion"
+      ]
+    },
+    {
+      "id": "confusion-matrix",
+      "term": "Confusion matrix",
+      "aliases": [
+        "error matrix",
+        "classification matrix",
+        "TP FP FN TN"
+      ],
+      "definition": "A table comparing model classes with reference classes. For one target class it counts agreeing water, missed water, extra flags and agreed other surfaces.",
+      "example": "The four counts let you see whether low water overlap is mostly caused by extra flags or by missed reference water.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-metrics",
+        "intel-wiki-confusion"
+      ]
+    },
+    {
+      "id": "precision",
+      "term": "Precision",
+      "aliases": [
+        "positive predictive value",
+        "PPV",
+        "detection precision"
+      ],
+      "definition": "The fraction of assessed model-positive cells also labelled positive by the reference. It is true positives divided by true positives plus false positives.",
+      "example": "If 20 cells are flagged and 12 agree with the reference, precision is 60% for those assessed flags.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-metrics",
+        "intel-wiki-precision"
+      ]
+    },
+    {
+      "id": "recall",
+      "term": "Recall",
+      "aliases": [
+        "sensitivity",
+        "true positive rate",
+        "hit rate"
+      ],
+      "definition": "The fraction of reference-positive cells found by the model. It is true positives divided by true positives plus false negatives.",
+      "example": "If the reference labels 15 eligible cells as water and radar flags 12, recall is 80%.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-metrics",
+        "intel-wiki-precision"
+      ]
+    },
+    {
+      "id": "specificity",
+      "term": "Specificity",
+      "aliases": [
+        "true negative rate",
+        "TNR"
+      ],
+      "definition": "The fraction of assessed reference-negative cells correctly classified as outside the target.",
+      "example": "If 90 out of 100 optically clear other-surface cells avoid a radar water flag, specificity is 90%.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-metrics",
+        "intel-wiki-confusion"
+      ]
+    },
+    {
+      "id": "iou",
+      "term": "Intersection over union",
+      "aliases": [
+        "IoU",
+        "Jaccard index",
+        "Jaccard score",
+        "intersection-over-union",
+        "water overlap"
+      ],
+      "definition": "The area where the model and reference both found the target, divided by the area where either found it. A bigger share means more agreement.",
+      "example": "Eight agreeing water cells, two missed and ten extra flags give an IoU of 8 out of 20, or 40%.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-metrics",
+        "intel-wiki-jaccard"
+      ],
+      "inline": {
+        "forms": [
+          "IoU"
+        ],
+        "meaning": "the share of flagged area where both sources agree",
+        "already_explained": [
+          "both sources agree",
+          "intersection over union"
+        ]
+      }
+    },
+    {
+      "id": "false-positive-rate",
+      "term": "False-positive rate",
+      "aliases": [
+        "FPR",
+        "false alarm rate",
+        "fraction of other surfaces flagged"
+      ],
+      "definition": "The fraction of assessed reference-negative cells that the model flags as positive.",
+      "example": "Eleven flags among 100 optically labelled other-surface cells give an 11% false-positive rate.",
+      "category": "Models and validation",
+      "source_ids": [
+        "intel-ml-metrics",
+        "intel-wiki-confusion"
+      ]
+    },
+    {
+      "id": "area-of-interest",
+      "term": "Area of interest",
+      "aliases": [
+        "AOI",
+        "site outline",
+        "study window"
+      ],
+      "definition": "The location and extent chosen for a search or an analysis.",
+      "example": "A study box around Atanasovsko can contain the lake, land and nearby ponds. It defines the question's map area.",
+      "category": "Maps and data",
+      "source_ids": [
+        "radar-asf-access",
+        "intel-nasa-cmr",
+        "intel-geojson-rfc"
+      ]
+    },
+    {
+      "id": "bounding-box",
+      "term": "Bounding box",
+      "aliases": [
+        "bbox",
+        "search rectangle",
+        "west south east north"
+      ],
+      "definition": "A rectangle given by its outer coordinate limits. In the app's geographic search, the order is west, south, east, north.",
+      "example": "A broad box can retrieve a scene even if some parts of the rectangle contain no usable radar pixels.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-nasa-cmr",
+        "intel-geojson-rfc",
+        "intel-stac"
+      ]
+    },
+    {
+      "id": "footprint",
+      "term": "Footprint",
+      "aliases": [
+        "scene footprint",
+        "acquisition footprint",
+        "product footprint"
+      ],
+      "definition": "A polygon describing the extent of a satellite scene or another spatial dataset. It may include locations that fail the analysis quality rules.",
+      "example": "An ASF search can return a footprint over your site. The data file and its masks show which pixels are actually usable.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-asf-meta",
+        "intel-nasa-cmr",
+        "intel-stac"
+      ]
+    },
+    {
+      "id": "coverage",
+      "term": "Coverage",
+      "aliases": [
+        "data coverage",
+        "raster coverage",
+        "valid coverage",
+        "assessed coverage"
+      ],
+      "definition": "The portion of a specified area or set of cells for which a condition is true, such as having usable radar data or enough evidence to score a model.",
+      "example": "A scene can cover the entire map crop while cloud leaves only part of it assessable against an optical reference.",
+      "category": "Maps and data",
+      "source_ids": [
+        "radar-asf-gcov",
+        "intel-gdal-raster",
+        "intel-copernicus-s2"
+      ]
+    },
+    {
+      "id": "map-layer",
+      "term": "Map layer",
+      "aliases": [
+        "raster layer",
+        "vector layer",
+        "layer stack"
+      ],
+      "definition": "A dataset drawn as a distinct part of the map, with its own geometry, rendering and visibility.",
+      "example": "The measured radar image, independent optical outline and background coastline can be displayed as separate layers.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-esri-maps",
+        "intel-gdal-raster"
+      ]
+    },
+    {
+      "id": "map-overlay",
+      "term": "Map overlay",
+      "aliases": [
+        "overlay",
+        "agreement overlay",
+        "outline overlay"
+      ],
+      "definition": "A map layer drawn over other layers to show an additional dataset or result.",
+      "example": "The October Curuai outline is an overlay showing locations where the radar screen and optical water proxy agree.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-esri-overlay"
+      ]
+    },
+    {
+      "id": "map-legend",
+      "term": "Map legend",
+      "aliases": [
+        "legend",
+        "map key",
+        "colour key",
+        "color key"
+      ],
+      "definition": "The map's explanation of its colours, line styles and symbols, including any values or classes they represent.",
+      "example": "A dashed line for an independent optical reference and a solid water-agreement line have different meanings even if both are orange.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-usgs-map-symbols"
+      ]
+    },
+    {
+      "id": "basemap",
+      "term": "Basemap",
+      "aliases": [
+        "base map",
+        "background map",
+        "background layer"
+      ],
+      "definition": "The background map that helps orient you with geographical features such as coasts, rivers and place names.",
+      "example": "In the viewer the coastline stays visible beneath the dated NISAR radar layer. Its shape comes from a separate map dataset.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-esri-maps"
+      ]
+    },
+    {
+      "id": "raster",
+      "term": "Raster",
+      "aliases": [
+        "pixel grid",
+        "gridded data",
+        "raster dataset"
+      ],
+      "definition": "A grid of pixels or cells. Each position stores a value or class, and georeferencing places it on Earth.",
+      "example": "The Curuai HH GeoTIFF is a raster whose cells store radar power.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-gdal-raster",
+        "intel-ogc-geotiff"
+      ],
+      "inline": {
+        "forms": [
+          "raster"
+        ],
+        "meaning": "an image made of cells",
+        "already_explained": [
+          "image made of cells",
+          "image on a grid"
+        ]
+      }
+    },
+    {
+      "id": "vector-data",
+      "term": "Vector data",
+      "aliases": [
+        "vector",
+        "map feature",
+        "point line polygon"
+      ],
+      "definition": "Geographic data represented as points, lines or polygons with associated information.",
+      "example": "The outline of a confirmed study area can be stored as a polygon, and a gauge as a point.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-geojson-rfc"
+      ]
+    },
+    {
+      "id": "georeferencing",
+      "term": "Georeferencing",
+      "aliases": [
+        "georeferenced raster",
+        "map registration",
+        "align to map"
+      ],
+      "definition": "Relating image positions to real-world coordinates so the data can line up with other geographic layers.",
+      "example": "A radar grid records its coordinate system and where its rows and columns fall on the map.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-gdal-affine",
+        "intel-ogc-geotiff"
+      ]
+    },
+    {
+      "id": "crs",
+      "term": "Coordinate reference system",
+      "aliases": [
+        "CRS",
+        "spatial reference system",
+        "SRS",
+        "coordinate system"
+      ],
+      "definition": "The rules that give coordinates a meaning on Earth, including the reference surface, coordinate axes and any map projection.",
+      "example": "The Curuai analysis uses a local projected CRS with metres. The browser draws the scene on its own map grid.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-epsg",
+        "intel-wiki-crs",
+        "intel-asf-proj"
+      ]
+    },
+    {
+      "id": "epsg",
+      "term": "EPSG code",
+      "aliases": [
+        "EPSG",
+        "CRS code",
+        "EPSG identifier",
+        "UTM zone code"
+      ],
+      "definition": "An identifier from the EPSG registry that specifies a coordinate reference system or another geodetic definition.",
+      "example": "EPSG:32721 specifies WGS 84 / UTM zone 21S, the metre-based grid used to calculate Curuai agreement areas.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-epsg",
+        "intel-asf-proj"
+      ]
+    },
+    {
+      "id": "map-projection",
+      "term": "Map projection",
+      "aliases": [
+        "projection",
+        "UTM",
+        "Web Mercator"
+      ],
+      "definition": "A mathematical rule for mapping positions on Earth's curved surface to flat coordinates. Projections differ in how they distort shape, area or distance.",
+      "example": "The browser uses Web Mercator for display, while the original radar and area analysis use an appropriate UTM grid.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-asf-proj",
+        "intel-epsg",
+        "intel-wiki-crs"
+      ]
+    },
+    {
+      "id": "affine-transform",
+      "term": "Affine transform",
+      "aliases": [
+        "raster transform",
+        "geotransform",
+        "affine"
+      ],
+      "definition": "Parameters describing how pixel rows and columns map to real-world coordinates. They specify a starting corner, cell spacing and any rotation.",
+      "example": "A north-up 60 m Curuai grid steps 60 m east for each column and 60 m south for each row.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-gdal-affine",
+        "intel-gdal-raster"
+      ]
+    },
+    {
+      "id": "native-grid",
+      "term": "Native grid",
+      "aliases": [
+        "source grid",
+        "original pixel grid",
+        "native coordinates"
+      ],
+      "definition": "The coordinate system and pixel layout of the source product before a local reprojecting, resampling or aggregation step.",
+      "example": "The original Curuai radar values are on a 20 m NISAR grid. The model groups those values into 60 m assessment cells.",
+      "category": "Maps and data",
+      "source_ids": [
+        "radar-asf-gcov",
+        "intel-asf-proj",
+        "intel-gdal-raster"
+      ]
+    },
+    {
+      "id": "pixel-posting",
+      "term": "Pixel posting",
+      "aliases": [
+        "posting",
+        "grid spacing",
+        "cell spacing",
+        "pixel spacing"
+      ],
+      "definition": "The distance between neighboring pixel centers. It describes the grid spacing and can differ from the sensor's effective spatial resolution.",
+      "example": "Three adjacent 20 m postings span a 60 m analysis cell, while the ability to resolve a small target also depends on the sensor and processing.",
+      "category": "Maps and data",
+      "source_ids": [
+        "radar-asf-gcov",
+        "intel-gdal-raster"
+      ]
+    },
+    {
+      "id": "resampling",
+      "term": "Resampling",
+      "aliases": [
+        "nearest neighbour",
+        "nearest neighbor",
+        "bilinear interpolation",
+        "regrid"
+      ],
+      "definition": "Calculating values at a different set of pixel locations. Methods such as nearest neighbour and averaging serve different data types.",
+      "example": "Nearest neighbour can move categorical water labels to a new display grid without inventing an intermediate class value.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-gdal-warp"
+      ]
+    },
+    {
+      "id": "reprojection",
+      "term": "Reprojection",
+      "aliases": [
+        "reproject",
+        "transform CRS",
+        "project data"
+      ],
+      "definition": "Converting geographic positions from one coordinate reference system to another. Raster reprojection usually resamples the pixels onto the new grid.",
+      "example": "A measured UTM radar raster is reprojected for display on the browser map.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-gdal-warp",
+        "intel-asf-proj"
+      ]
+    },
+    {
+      "id": "no-data",
+      "term": "NoData",
+      "aliases": [
+        "nodata",
+        "no data",
+        "missing pixel",
+        "invalid pixel",
+        "fill value"
+      ],
+      "definition": "A raster marker for a location where a usable value is absent. It can mean the product has no coverage there or the cell was excluded.",
+      "example": "A transparent NoData pixel cannot be read as water, land, or an actual zero-power measurement.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-gdal-raster",
+        "radar-asf-gcov"
+      ]
+    },
+    {
+      "id": "quality-mask",
+      "term": "Quality mask",
+      "aliases": [
+        "QA mask",
+        "validity mask",
+        "pixel mask",
+        "valid data mask"
+      ],
+      "definition": "A layer that marks whether pixels can be used or describes conditions such as an anomaly, shadow or missing data.",
+      "example": "The radar study combines quality information before scoring each cell. The optical comparison separately removes cloud and shadow.",
+      "category": "Maps and data",
+      "source_ids": [
+        "radar-asf-gcov",
+        "intel-gdal-raster",
+        "intel-copernicus-s2"
+      ]
+    },
+    {
+      "id": "geotiff",
+      "term": "GeoTIFF",
+      "aliases": [
+        "GeoTIFF download",
+        "georeferenced TIFF",
+        "GTiff",
+        "tif"
+      ],
+      "definition": "A TIFF file that also records where its raster cells belong on Earth. It can store numeric measurements or class codes.",
+      "example": "A downloaded NISAR GeoTIFF can preserve calibrated power values and map coordinates for examination in QGIS.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-ogc-geotiff",
+        "intel-wiki-geotiff"
+      ],
+      "inline": {
+        "forms": [
+          "GeoTIFF"
+        ],
+        "meaning": "a map file that keeps each pixel’s location",
+        "already_explained": [
+          "pixel locations"
+        ]
+      }
+    },
+    {
+      "id": "cog",
+      "term": "Cloud Optimized GeoTIFF",
+      "aliases": [
+        "COG",
+        "cloud-optimized geotiff",
+        "range readable tif"
+      ],
+      "definition": "A GeoTIFF organized so compatible software can retrieve just the blocks it needs from a server that supports byte ranges.",
+      "example": "The workflow can read a small area of a remote optical COG without downloading the whole satellite scene.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-ogc-cog"
+      ]
+    },
+    {
+      "id": "geojson",
+      "term": "GeoJSON",
+      "aliases": [
+        "JSON geometry",
+        "GeoJSON outline",
+        "vector JSON"
+      ],
+      "definition": "A text format for geographic features such as points, lines and polygons, with coordinates and optional properties.",
+      "example": "The evidence layer can use GeoJSON to store a reported outline and its source date.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-geojson-rfc",
+        "intel-wiki-geojson"
+      ]
+    },
+    {
+      "id": "hdf5",
+      "term": "HDF5",
+      "aliases": [
+        "H5",
+        "Hierarchical Data Format",
+        ".h5",
+        "NISAR H5"
+      ],
+      "definition": "A scientific file format that groups arrays and descriptive information in one structured container.",
+      "example": "One NISAR HDF5 product can store measured covariance arrays, pixel-quality masks and the acquisition details.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-asf-hdf",
+        "radar-asf-gcov"
+      ]
+    },
+    {
+      "id": "metadata",
+      "term": "Metadata",
+      "aliases": [
+        "catalogue metadata",
+        "catalog metadata",
+        "product metadata"
+      ],
+      "definition": "Information describing the data, such as where and when it was collected, which channels exist, its units and processing version.",
+      "example": "A catalogue result can list the observation's time and footprint before you open any measured pixels.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-asf-meta",
+        "intel-nasa-cmr"
+      ]
+    },
+    {
+      "id": "data-provenance",
+      "term": "Data provenance",
+      "aliases": [
+        "provenance",
+        "data lineage",
+        "source lineage",
+        "source metadata"
+      ],
+      "definition": "The record of where data came from and what was done to produce a result from it.",
+      "example": "A reviewed layer can record its source NISAR granule, cutout and coordinate system so somebody can trace it back to the original measurements.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-asf-meta",
+        "intel-stac"
+      ]
+    },
+    {
+      "id": "granule",
+      "term": "Granule",
+      "aliases": [
+        "product granule",
+        "granule ID",
+        "scene ID",
+        "product ID"
+      ],
+      "definition": "One indexed unit of satellite data in a collection, commonly corresponding to a specific product and acquisition segment.",
+      "example": "The granule ID helps retrieve the exact Curuai October source even when many scenes overlap the lake.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-nasa-cmr",
+        "intel-asf-meta"
+      ]
+    },
+    {
+      "id": "catalogue",
+      "term": "Catalogue",
+      "aliases": [
+        "catalog",
+        "data catalogue",
+        "scene catalogue",
+        "search result",
+        "catalogue-only"
+      ],
+      "definition": "A searchable list of data records, often with times, footprints, file links and browse images.",
+      "example": "A search can find that a GCOV product exists and list HH without providing any scientific pixel values inside the search response.",
+      "category": "Maps and data",
+      "source_ids": [
+        "radar-asf-access",
+        "intel-nasa-cmr",
+        "intel-stac"
+      ]
+    },
+    {
+      "id": "browse-preview",
+      "term": "Browse preview",
+      "aliases": [
+        "browse image",
+        "thumbnail",
+        "quicklook",
+        "provider preview"
+      ],
+      "definition": "A viewable picture supplied to help identify or inspect a dataset before retrieving its scientific arrays.",
+      "example": "A thumbnail can show the general scene pattern. Use the calibrated raster for a numeric value in dB.",
+      "category": "Maps and data",
+      "source_ids": [
+        "radar-asf-access",
+        "intel-nasa-cmr"
+      ]
+    },
+    {
+      "id": "measured-pixels",
+      "term": "Measured pixels",
+      "aliases": [
+        "scientific pixels",
+        "calibrated raster",
+        "science asset",
+        "numeric raster values"
+      ],
+      "definition": "Numeric values taken from a scientific product and stored with their measurement units and spatial information.",
+      "example": "The NISAR HH scientific raster stores gamma0 power. Display software can transform positive power into dB for viewing or analysis.",
+      "category": "Maps and data",
+      "source_ids": [
+        "radar-asf-gcov",
+        "intel-asf-hdf",
+        "intel-ogc-geotiff"
+      ]
+    },
+    {
+      "id": "authentication",
+      "term": "Authentication",
+      "aliases": [
+        "sign-in",
+        "login required",
+        "account required",
+        "authenticate"
+      ],
+      "definition": "Checking a user's identity before granting access to certain data or account features.",
+      "example": "You may see NASA catalogue listings and browse images publicly, then sign in when retrieving protected scientific files.",
+      "category": "Maps and data",
+      "source_ids": [
+        "radar-asf-access",
+        "intel-nasa-edl"
+      ]
+    },
+    {
+      "id": "earthdata-login",
+      "term": "Earthdata Login",
+      "aliases": [
+        "EDL",
+        "NASA account",
+        "NASA Earthdata Login"
+      ],
+      "definition": "NASA's sign-in service used by Earth science data services.",
+      "example": "Earthdata Login can authorize requests to retrieve a NISAR science product or a Harmony result.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-nasa-edl",
+        "radar-asf-access",
+        "intel-nasa-harmony"
+      ]
+    },
+    {
+      "id": "cmr",
+      "term": "Common Metadata Repository",
+      "aliases": [
+        "CMR",
+        "NASA CMR",
+        "CMR concept ID"
+      ],
+      "definition": "NASA's searchable index of Earth science collections, individual data granules and services.",
+      "example": "An ASF granule's CMR record provides its catalogue identity and links to official resources.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-nasa-cmr"
+      ]
+    },
+    {
+      "id": "harmony",
+      "term": "Harmony",
+      "aliases": [
+        "NASA Harmony",
+        "Harmony subset",
+        "Harmony job"
+      ],
+      "definition": "A NASA service that processes requests to transform supported Earth science data, such as returning a geographic or variable subset.",
+      "example": "A Harmony request can produce a small window from a selected NISAR product when the collection and service support it.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-nasa-harmony",
+        "radar-asf-access"
+      ]
+    },
+    {
+      "id": "subset",
+      "term": "Subset",
+      "aliases": [
+        "data subset",
+        "spatial subset",
+        "clip",
+        "crop",
+        "cutout"
+      ],
+      "definition": "A selected part of a dataset, such as a limited map window, dates or a few measurement variables.",
+      "example": "A local NISAR crop can deliver the HH pixels over an area of interest without needing to display the whole parent scene.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-nasa-harmony",
+        "intel-gdal-warp"
+      ]
+    },
+    {
+      "id": "stac",
+      "term": "SpatioTemporal Asset Catalog",
+      "aliases": [
+        "STAC",
+        "STAC item",
+        "STAC catalogue"
+      ],
+      "definition": "A common specification for describing spatial datasets, when and where they apply, and how to find their files.",
+      "example": "An optical STAC item can list its acquisition time, scene geometry and separate reflectance and classification assets.",
+      "category": "Maps and data",
+      "source_ids": [
+        "intel-stac"
+      ]
+    },
+    {
+      "id": "polarization-matrix",
+      "term": "Polarization matrix",
+      "aliases": [
+        "channel matrix",
+        "data matrix",
+        "matrix"
+      ],
+      "definition": "A table that shows which radar channels are available for each satellite observation.",
+      "example": "Find a date, then look across the HH, HV, VH and VV columns. Select a measured channel to load its image.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "radar-asf-gcov",
+        "radar-nasa-pol"
+      ]
+    },
+    {
+      "id": "source-audit",
+      "term": "Source audit",
+      "aliases": [
+        "source panel",
+        "evidence panel",
+        "series sources",
+        "review source"
+      ],
+      "definition": "The panel that shows where the data came from, when it was collected, and what checks or limits apply.",
+      "example": "Near Eugene Island, open Source audit to see the older NISAR observation and the later NOAA reference separately.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "radar-asf-gcov",
+        "app-asf-search"
+      ]
+    },
+    {
+      "id": "recognition-review",
+      "term": "Recognition review",
+      "aliases": [
+        "recognition outline",
+        "recognition layer",
+        "review outline"
+      ],
+      "definition": "An overlay that draws results and independent reference boundaries from a checked case. Its legend tells you what each outline represents.",
+      "example": "At Curuai, solid orange outlines mark exposed water where the radar screen and a separate optical image agreed.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "app-map-symbol",
+        "app-nasa-sar"
+      ]
+    },
+    {
+      "id": "recognition-test",
+      "term": "Recognition test",
+      "aliases": [
+        "recognition tests",
+        "research result",
+        "research status"
+      ],
+      "definition": "A check of what a model can identify and where the data are good enough to judge its answer.",
+      "example": "At Atanasovsko Lake, the model withheld all predictions because the radar noise was too close to its cutoff.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "app-model-test",
+        "radar-asf-gcov"
+      ]
+    },
+    {
+      "id": "opacity",
+      "term": "Opacity",
+      "aliases": [
+        "transparency",
+        "layer opacity",
+        "opacity slider"
+      ],
+      "definition": "How fully one map layer covers what is underneath it.",
+      "example": "Lower the radar layer’s opacity to see the coastline below it. The measured radar values stay the same.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "app-opacity",
+        "app-qgis-raster"
+      ]
+    },
+    {
+      "id": "fit-raster",
+      "term": "Fit raster",
+      "aliases": [
+        "zoom to image",
+        "zoom to raster"
+      ],
+      "definition": "A map control that moves and zooms the view so the selected radar image fits on screen.",
+      "example": "After panning away from Qeshm, select Fit raster to return to the recorded image.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "app-qgis-map"
+      ]
+    },
+    {
+      "id": "raster-crop",
+      "term": "Raster crop",
+      "aliases": [
+        "image crop",
+        "display crop",
+        "scene crop"
+      ],
+      "definition": "The rectangle that holds the part of the radar image saved for viewing. Some pixels inside the rectangle can still be missing.",
+      "example": "At Eloi Bay the crop includes areas with no usable NISAR pixels. Check the grayscale image to see where the radar actually measured.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "app-asf-search",
+        "app-qgis-raster"
+      ]
+    },
+    {
+      "id": "study-area",
+      "term": "Study area",
+      "aliases": [
+        "study boundary",
+        "study extent",
+        "wetland study area",
+        "oil study area"
+      ],
+      "definition": "The area chosen for an investigation. Its boundary tells you where the work looked.",
+      "example": "The study area around an offshore report can include both an unusual patch and nearby ordinary water.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "app-asf-search"
+      ]
+    },
+    {
+      "id": "review-point",
+      "term": "Review point",
+      "aliases": [
+        "oil review point",
+        "wetland review point",
+        "pin",
+        "review marker"
+      ],
+      "definition": "A pin that marks a location worth inspecting. Open it to see why it was marked and what evidence supports it.",
+      "example": "A red oil review point can mark where a separate report found a dark patch. The outline and source tell you more about its size and cause.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "app-map-symbol",
+        "app-nasa-sar"
+      ]
+    },
+    {
+      "id": "study-palette",
+      "term": "Study palette",
+      "aliases": [
+        "default basemap",
+        "background map colors"
+      ],
+      "definition": "The app’s background map colors for broad features such as land and water. They help show where the radar image sits.",
+      "example": "Blue outside the radar image provides geographic context. Read the dated radar image and its legend to see measured values.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "app-map-symbol",
+        "app-qgis-map"
+      ]
+    },
+    {
+      "id": "manual-mode",
+      "term": "Manual mode",
+      "aliases": [
+        "manual",
+        "manual controls"
+      ],
+      "definition": "The part of the app where you choose your own study area, dates and radar channel.",
+      "example": "Open Manual to set the study area, then select Acquisitions to choose a particular date and HH or HV.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "app-asf-search"
+      ]
+    },
+    {
+      "id": "assistant-mode",
+      "term": "Assistant mode",
+      "aliases": [
+        "assistant",
+        "chat assistant",
+        "explorer guidance",
+        "NISAR analysis"
+      ],
+      "definition": "The chat controls that explain the measurements and help you select a map view using ordinary words.",
+      "example": "Type ‘Show me wetlands’ to open a checked example, or ‘What does dB mean?’ to read a sourced definition without changing the map.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "app-nasa-sar",
+        "radar-asf-gcov"
+      ]
+    },
+    {
+      "id": "timeline",
+      "term": "Timeline",
+      "aliases": [
+        "acquisition timeline",
+        "date selector",
+        "acquisition dates"
+      ],
+      "definition": "A list of the times when the satellite actually observed a place. Select a date to see its available radar image.",
+      "example": "Qeshm has three recorded HH dates. Days between those entries have no measurement in the chart.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "app-qgis-map",
+        "app-asf-search"
+      ]
+    },
+    {
+      "id": "reference-outline",
+      "term": "Reference outline",
+      "aliases": [
+        "independent outline",
+        "NOAA outline",
+        "dashed reference"
+      ],
+      "definition": "A boundary traced in a separate study or image to help check what the radar picked up.",
+      "example": "At Eugene Island, the dashed red outline comes from NOAA’s later observation. The solid outline shows dark NISAR pixels inside that boundary.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "app-noaa-mpsr",
+        "app-map-symbol"
+      ]
+    },
+    {
+      "id": "water-agreement",
+      "term": "Radar and optical water agreement",
+      "aliases": [
+        "water agreement",
+        "orange water outline",
+        "exposed water agreement"
+      ],
+      "definition": "An area where the radar screen and a separate light-based image both indicate exposed water.",
+      "example": "The solid orange areas at Curuai show agreement on checked pixels. Water hidden by plants needs a different check.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "app-nasa-sar",
+        "app-gis"
+      ]
+    },
+    {
+      "id": "file-checksum",
+      "term": "File checksum",
+      "aliases": [
+        "checksum",
+        "SHA-256",
+        "SHA256",
+        "file hash"
+      ],
+      "definition": "A short code calculated from a file’s contents. Checking it helps tell whether the downloaded bytes match the saved file.",
+      "example": "Source audit lists the SHA-256 for the GeoTIFF. Matching it verifies the download’s bytes. Its scientific meaning comes from the acquisition and processing records.",
+      "category": "Using SARtainty",
+      "source_ids": [
+        "app-sha2"
+      ]
+    },
+    {
+      "id": "optical-image",
+      "term": "Optical image",
+      "aliases": [
+        "optical",
+        "optical imagery",
+        "light-based image",
+        "light capture"
+      ],
+      "definition": "An image made by measuring light from the surface. A satellite camera can record visible light and wavelengths beyond what our eyes can see.",
+      "example": "The Curuai check used a separate optical image to look for exposed water. Thick clouds can hide what is beneath them in that image.",
+      "category": "Maps and data",
+      "source_ids": [
+        "app-nasa-sar"
+      ],
+      "inline": {
+        "forms": [
+          "optical image"
+        ],
+        "meaning": "a satellite image made from light",
+        "already_explained": [
+          "taken with light",
+          "made from light"
+        ]
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "radar-nasa-mission",
+      "title": "NASA NISAR mission overview",
+      "url": "https://science.nasa.gov/mission/nisar/mission-overview/"
+    },
+    {
+      "id": "radar-nasa-satellite",
+      "title": "NASA NISAR instruments and orbit",
+      "url": "https://science.nasa.gov/mission/nisar/about-the-satellite/"
+    },
+    {
+      "id": "radar-nasa-pol",
+      "title": "NASA NISAR polarimetry",
+      "url": "https://science.nasa.gov/mission/nisar/polarimetry/"
+    },
+    {
+      "id": "radar-nasa-handbook",
+      "title": "NASA SERVIR SAR Handbook, chapter 2",
+      "url": "https://earthdata.nasa.gov/s3fs-public/2025-04/SARHB_CH2_Content.pdf"
+    },
+    {
+      "id": "radar-nasa-preprocessing",
+      "title": "NASA SAR preprocessing guide",
+      "url": "https://earthdata.nasa.gov/s3fs-public/2024-06/SAR_DataProcessing_1page_new.pdf"
+    },
+    {
+      "id": "radar-asf-home",
+      "title": "Alaska Satellite Facility",
+      "url": "https://asf.alaska.edu/"
+    },
+    {
+      "id": "radar-asf-access",
+      "title": "ASF NISAR data access",
+      "url": "https://nisar-docs.asf.alaska.edu/access-overview/"
+    },
+    {
+      "id": "radar-asf-intro",
+      "title": "ASF NISAR introduction",
+      "url": "https://nisar-docs.asf.alaska.edu/nisar-intro/"
+    },
+    {
+      "id": "radar-asf-products",
+      "title": "ASF NISAR product overview",
+      "url": "https://nisar-docs.asf.alaska.edu/products-overview/"
+    },
+    {
+      "id": "radar-asf-gcov",
+      "title": "ASF NISAR GCOV product guide",
+      "url": "https://nisar-docs.asf.alaska.edu/gcov/"
+    },
+    {
+      "id": "radar-asf-naming",
+      "title": "ASF NISAR product naming conventions",
+      "url": "https://nisar-docs.asf.alaska.edu/naming-conventions/"
+    },
+    {
+      "id": "radar-asf-plan",
+      "title": "ASF NISAR observation plan",
+      "url": "https://nisar-docs.asf.alaska.edu/observation-plan/"
+    },
+    {
+      "id": "radar-asf-amplitude",
+      "title": "ASF NISAR amplitude and backscatter",
+      "url": "https://nisar-docs.asf.alaska.edu/amplitude/"
+    },
+    {
+      "id": "radar-asf-rtc",
+      "title": "ASF radiometric terrain correction guide",
+      "url": "https://hyp3-docs.asf.alaska.edu/guides/rtc_product_guide/"
+    },
+    {
+      "id": "radar-asf-issues",
+      "title": "ASF NISAR product known issues",
+      "url": "https://nisar-docs.asf.alaska.edu/product-known-issues/"
+    },
+    {
+      "id": "radar-ceos-nrb",
+      "title": "CEOS SAR Analysis Ready Data overview, including Normalised Radar Backscatter",
+      "url": "https://calvalportal.ceos.org/html/portal/sarc/documents/documents/S7_3.pdf"
+    },
+    {
+      "id": "radar-nist-db",
+      "title": "NIST SI guide to logarithmic units",
+      "url": "https://www.nist.gov/pml/special-publication-330/sp-330-section-4"
+    },
+    {
+      "id": "radar-nist-utc",
+      "title": "NIST Coordinated Universal Time",
+      "url": "https://www.nist.gov/pml/time-and-frequency-division/time-realization/utcnist-time-scale"
+    },
+    {
+      "id": "radar-nist-mean-median",
+      "title": "NIST statistical handbook on measures of location",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda351.htm"
+    },
+    {
+      "id": "radar-rfc-timestamps",
+      "title": "Internet timestamp specification RFC 9557",
+      "url": "https://www.rfc-editor.org/rfc/rfc9557.html"
+    },
+    {
+      "id": "radar-nist-percentile",
+      "title": "NIST statistical handbook on percentiles",
+      "url": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc262.htm"
+    },
+    {
+      "id": "radar-wiki-nisar",
+      "title": "Wikipedia overview of NISAR",
+      "url": "https://en.wikipedia.org/wiki/NISAR_(satellite)"
+    },
+    {
+      "id": "radar-wiki-sar",
+      "title": "Wikipedia overview of synthetic aperture radar",
+      "url": "https://en.wikipedia.org/wiki/Synthetic-aperture_radar"
+    },
+    {
+      "id": "radar-wiki-insar",
+      "title": "Wikipedia overview of SAR interferometry",
+      "url": "https://en.wikipedia.org/wiki/Interferometric_synthetic-aperture_radar"
+    },
+    {
+      "id": "radar-wiki-radar",
+      "title": "Wikipedia overview of radar remote sensing",
+      "url": "https://en.wikipedia.org/wiki/Radar_remote_sensing"
+    },
+    {
+      "id": "radar-wiki-pol",
+      "title": "Wikipedia overview of polarization",
+      "url": "https://en.wikipedia.org/wiki/Polarization_(waves)"
+    },
+    {
+      "id": "radar-wiki-db",
+      "title": "Wikipedia overview of the decibel",
+      "url": "https://en.wikipedia.org/wiki/Decibel"
+    },
+    {
+      "id": "radar-wiki-timeseries",
+      "title": "Wikipedia overview of time series",
+      "url": "https://en.wikipedia.org/wiki/Time_series"
+    },
+    {
+      "id": "radar-wiki-utc",
+      "title": "Wikipedia overview of Coordinated Universal Time",
+      "url": "https://en.wikipedia.org/wiki/Coordinated_Universal_Time"
+    },
+    {
+      "id": "radar-wiki-median",
+      "title": "Wikipedia overview of the median",
+      "url": "https://en.wikipedia.org/wiki/Median"
+    },
+    {
+      "id": "radar-wiki-percentile",
+      "title": "Wikipedia overview of percentiles",
+      "url": "https://en.wikipedia.org/wiki/Percentile"
+    },
+    {
+      "id": "radar-wiki-speckle",
+      "title": "Wikipedia overview of speckle",
+      "url": "https://en.wikipedia.org/wiki/Speckle_(interference)"
+    },
+    {
+      "id": "intel-ramsar",
+      "title": "Convention on Wetlands · What wetlands are",
+      "url": "https://www.ramsar.org/about/our-mission"
+    },
+    {
+      "id": "intel-wiki-wetland",
+      "title": "Wikipedia · Wetland",
+      "url": "https://en.wikipedia.org/wiki/Wetland"
+    },
+    {
+      "id": "intel-epa-wetland",
+      "title": "U.S. EPA · Wetland identification and hydrology",
+      "url": "https://www.epa.gov/cwa-404/how-wetlands-are-defined-and-identified-under-cwa-section-404"
+    },
+    {
+      "id": "intel-usgs-flood",
+      "title": "USGS · Flood inundation mapping science",
+      "url": "https://www.usgs.gov/mission-areas/water-resources/science/flood-inundation-mapping-science"
+    },
+    {
+      "id": "intel-wiki-floodplain",
+      "title": "Wikipedia · Floodplain",
+      "url": "https://en.wikipedia.org/wiki/Floodplain"
+    },
+    {
+      "id": "intel-wmo-drought",
+      "title": "WMO and GWP · Handbook of drought indicators and indices",
+      "url": "https://www.droughtmanagement.info/find/guidelines-tools/handbook-drought-indicators-and-indices/"
+    },
+    {
+      "id": "intel-wiki-drought",
+      "title": "Wikipedia · Drought",
+      "url": "https://en.wikipedia.org/wiki/Drought"
+    },
+    {
+      "id": "intel-usgs-gage",
+      "title": "USGS · Streamgaging basics",
+      "url": "https://www.usgs.gov/mission-areas/water-resources/science/streamgaging-basics"
+    },
+    {
+      "id": "intel-usgs-eden",
+      "title": "USGS · Everglades Depth Estimation Network",
+      "url": "https://www.usgs.gov/centers/cfwsc/science/everglades-depth-estimation-network-eden"
+    },
+    {
+      "id": "intel-usgs-eden-depth",
+      "title": "USGS · Calculating EDEN water depth",
+      "url": "https://sflwww.er.usgs.gov/eden/models/water_depth.php"
+    },
+    {
+      "id": "intel-fws-nwi",
+      "title": "U.S. Fish and Wildlife Service · National Wetlands Inventory",
+      "url": "https://www.fws.gov/program/national-wetlands-inventory"
+    },
+    {
+      "id": "intel-emsa",
+      "title": "European Maritime Safety Agency · How SAR oil screening works",
+      "url": "https://emsa.europa.eu/earth-observation-products/how-does-sar-detection-work/items.html"
+    },
+    {
+      "id": "intel-nrcan-oceans",
+      "title": "Natural Resources Canada · Radar for ocean applications",
+      "url": "https://natural-resources.canada.ca/maps-tools-publications/satellite-elevation-air-photos/oceans-applications"
+    },
+    {
+      "id": "intel-noaa-spill",
+      "title": "NOAA · Marine Pollution Surveillance Reports",
+      "url": "https://ospo.noaa.gov/products/ocean/marinepollution/"
+    },
+    {
+      "id": "intel-noaa-thickness",
+      "title": "NOAA · How thick is the oil slick?",
+      "url": "https://blog.response.restoration.noaa.gov/how-thick-oil-slick"
+    },
+    {
+      "id": "intel-wiki-oil",
+      "title": "Wikipedia · Oil spill",
+      "url": "https://en.wikipedia.org/wiki/Oil_spill"
+    },
+    {
+      "id": "intel-copernicus-s2",
+      "title": "Copernicus · Sentinel-2 Level-2A processing and scene classification",
+      "url": "https://sentiwiki.copernicus.eu/web/s2-processing"
+    },
+    {
+      "id": "intel-xu-mndwi",
+      "title": "Hanqiu Xu · Modified normalised difference water index",
+      "url": "https://doi.org/10.1080/01431160600589179"
+    },
+    {
+      "id": "intel-wiki-proxy",
+      "title": "Wikipedia · Proxy in statistics",
+      "url": "https://en.wikipedia.org/wiki/Proxy_(statistics)"
+    },
+    {
+      "id": "intel-wiki-split",
+      "title": "Wikipedia · Training, validation and test datasets",
+      "url": "https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets"
+    },
+    {
+      "id": "intel-ml-split",
+      "title": "scikit-learn · Cross-validation and model evaluation",
+      "url": "https://scikit-learn.org/stable/modules/cross_validation.html"
+    },
+    {
+      "id": "intel-ml-spatial",
+      "title": "Roberts et al. · Cross-validation for spatial and temporal data",
+      "url": "https://doi.org/10.1111/ecog.02881"
+    },
+    {
+      "id": "intel-ml-leakage",
+      "title": "scikit-learn · Data leakage",
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html#data-leakage"
+    },
+    {
+      "id": "intel-ml-threshold",
+      "title": "scikit-learn · Tuning a decision threshold",
+      "url": "https://scikit-learn.org/stable/modules/classification_threshold.html"
+    },
+    {
+      "id": "intel-ml-logistic",
+      "title": "scikit-learn · Logistic regression",
+      "url": "https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression"
+    },
+    {
+      "id": "intel-wiki-logistic",
+      "title": "Wikipedia · Logistic regression",
+      "url": "https://en.wikipedia.org/wiki/Logistic_regression"
+    },
+    {
+      "id": "intel-ml-calibration",
+      "title": "scikit-learn · Probability calibration",
+      "url": "https://scikit-learn.org/stable/modules/calibration.html"
+    },
+    {
+      "id": "intel-ml-metrics",
+      "title": "scikit-learn · Metrics and scoring",
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    },
+    {
+      "id": "intel-wiki-precision",
+      "title": "Wikipedia · Precision and recall",
+      "url": "https://en.wikipedia.org/wiki/Precision_and_recall"
+    },
+    {
+      "id": "intel-wiki-jaccard",
+      "title": "Wikipedia · Jaccard index",
+      "url": "https://en.wikipedia.org/wiki/Jaccard_index"
+    },
+    {
+      "id": "intel-wiki-confusion",
+      "title": "Wikipedia · Confusion matrix",
+      "url": "https://en.wikipedia.org/wiki/Confusion_matrix"
+    },
+    {
+      "id": "intel-asf-proj",
+      "title": "Alaska Satellite Facility · NISAR map projections",
+      "url": "https://nisar-docs.asf.alaska.edu/projections/"
+    },
+    {
+      "id": "intel-asf-meta",
+      "title": "Alaska Satellite Facility · NISAR metadata",
+      "url": "https://nisar-docs.asf.alaska.edu/metadata/"
+    },
+    {
+      "id": "intel-asf-hdf",
+      "title": "Alaska Satellite Facility · NISAR HDF5 data format",
+      "url": "https://nisar-docs.asf.alaska.edu/data-format/"
+    },
+    {
+      "id": "intel-gdal-raster",
+      "title": "GDAL · Raster data model",
+      "url": "https://gdal.org/en/stable/user/raster_data_model.html"
+    },
+    {
+      "id": "intel-gdal-warp",
+      "title": "GDAL · Reprojection and resampling",
+      "url": "https://gdal.org/en/stable/programs/gdalwarp.html"
+    },
+    {
+      "id": "intel-gdal-affine",
+      "title": "GDAL · Geotransform tutorial",
+      "url": "https://gdal.org/en/stable/tutorials/geotransforms_tut.html"
+    },
+    {
+      "id": "intel-ogc-geotiff",
+      "title": "Open Geospatial Consortium · GeoTIFF standard",
+      "url": "https://docs.ogc.org/is/19-008r4/19-008r4.html"
+    },
+    {
+      "id": "intel-ogc-cog",
+      "title": "Open Geospatial Consortium · Cloud Optimized GeoTIFF",
+      "url": "https://docs.ogc.org/is/21-026/21-026.html"
+    },
+    {
+      "id": "intel-geojson-rfc",
+      "title": "Internet Engineering Task Force · GeoJSON Format (RFC 7946)",
+      "url": "https://www.rfc-editor.org/rfc/rfc7946"
+    },
+    {
+      "id": "intel-epsg",
+      "title": "IOGP · EPSG Geodetic Parameter Dataset",
+      "url": "https://epsg.org/home.html"
+    },
+    {
+      "id": "intel-wiki-crs",
+      "title": "Wikipedia · Spatial reference system",
+      "url": "https://en.wikipedia.org/wiki/Spatial_reference_system"
+    },
+    {
+      "id": "intel-wiki-geotiff",
+      "title": "Wikipedia · GeoTIFF",
+      "url": "https://en.wikipedia.org/wiki/GeoTIFF"
+    },
+    {
+      "id": "intel-wiki-geojson",
+      "title": "Wikipedia · GeoJSON",
+      "url": "https://en.wikipedia.org/wiki/GeoJSON"
+    },
+    {
+      "id": "intel-nasa-cmr",
+      "title": "NASA · Common Metadata Repository Search API",
+      "url": "https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html"
+    },
+    {
+      "id": "intel-nasa-edl",
+      "title": "NASA · Earthdata Login",
+      "url": "https://urs.earthdata.nasa.gov/"
+    },
+    {
+      "id": "intel-nasa-harmony",
+      "title": "NASA · Harmony documentation",
+      "url": "https://harmony.earthdata.nasa.gov/docs"
+    },
+    {
+      "id": "intel-stac",
+      "title": "SpatioTemporal Asset Catalog · Specification",
+      "url": "https://stacspec.org/en/"
+    },
+    {
+      "id": "intel-esri-maps",
+      "title": "Esri Training · Exploring GIS maps",
+      "url": "https://www.esri.com/training/assets/downloads/Educator_Guide_Get_to_Know_GIS.pdf"
+    },
+    {
+      "id": "intel-esri-overlay",
+      "title": "Esri GIS Dictionary · Overlay",
+      "url": "https://support.esri.com/en-us/gis-dictionary/overlay"
+    },
+    {
+      "id": "intel-usgs-map-symbols",
+      "title": "USGS · Topographic map symbols and map legends",
+      "url": "https://www.usgs.gov/educational-resources/topographic-map-symbols"
+    },
+    {
+      "id": "app-asf-search",
+      "title": "ASF’s guide to finding NISAR data in Vertex",
+      "url": "https://nisar-docs.asf.alaska.edu/vertex/"
+    },
+    {
+      "id": "app-nasa-sar",
+      "title": "NASA’s introduction to imaging radar",
+      "url": "https://science.nasa.gov/mission/nisar/get-to-know-sar/"
+    },
+    {
+      "id": "app-map-symbol",
+      "title": "Wikipedia on map symbols",
+      "url": "https://en.wikipedia.org/wiki/Map_symbol"
+    },
+    {
+      "id": "app-model-test",
+      "title": "Wikipedia on testing a statistical model",
+      "url": "https://en.wikipedia.org/wiki/Statistical_model_validation"
+    },
+    {
+      "id": "app-opacity",
+      "title": "ArcGIS documentation on map transparency",
+      "url": "https://doc.arcgis.com/en/arcgis-online/create-maps/set-transparency-and-visible-range-mv.htm"
+    },
+    {
+      "id": "app-qgis-raster",
+      "title": "QGIS documentation on raster properties",
+      "url": "https://docs.qgis.org/3.44/en/docs/user_manual/working_with_raster/raster_properties.html"
+    },
+    {
+      "id": "app-qgis-map",
+      "title": "QGIS documentation on map and time controls",
+      "url": "https://docs.qgis.org/3.44/en/docs/user_manual/map_views/map_view.html"
+    },
+    {
+      "id": "app-noaa-mpsr",
+      "title": "NOAA’s Marine Pollution Surveillance Reports",
+      "url": "https://www.ospo.noaa.gov/products/ocean/marinepollution/index.html"
+    },
+    {
+      "id": "app-gis",
+      "title": "Wikipedia on geographic information systems",
+      "url": "https://en.wikipedia.org/wiki/Geographic_information_system"
+    },
+    {
+      "id": "app-sha2",
+      "title": "Wikipedia on the SHA-2 hash functions",
+      "url": "https://en.wikipedia.org/wiki/SHA-2"
+    }
+  ]
+}

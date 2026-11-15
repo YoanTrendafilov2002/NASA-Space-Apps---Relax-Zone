@@ -1,0 +1,78 @@
+{
+  "site": "Shark River Slough, Everglades",
+  "date": "2026-10-27",
+  "status": "completed",
+  "scope": "Separate one-date spatially held-out inundation screen over emergent vegetation.",
+  "targets": "USGS EDEN daily modeled depth 0 cm versus at least 10 cm in NWI freshwater emergent cells.",
+  "reference_limit": "Provisional EDEN v3 modeled depths use interpolation of water-level gauges and elevation.",
+  "comparison_limit": "This target, scale and fit differ from the Curuai exposed-water model. No cross-site or temporal transfer was tested here.",
+  "radar_source": {
+    "filename": "NISAR_L2_PR_GCOV_034_047_A_014_2005_DHDH_M_20261027T104408_20261027T104439_P05036_N_F_J_001.h5",
+    "bytes": 1249902592,
+    "sha256": "f8798330e9d3f835469a04dc8b7232b86dec47dc6f03eeaf6f02b3c19e30be84",
+    "id": "NISAR_L2_PR_GCOV_034_047_A_014_2005_DHDH_M_20261027T104408_20261027T104439_P05036_N_F_J_001",
+    "noise_correction_applied": "false",
+    "retained_native_postings": 2005063,
+    "posting_m": 20.0
+  },
+  "depth_source": {
+    "filename": "EDEN_2026_Q4_depth.nc",
+    "bytes": 19535344,
+    "sha256": "b3458285590480b1343ecd36bd44863ca716a8cc7692ab64bb64cab4794a68b4",
+    "url": "https://sflthredds.er.usgs.gov/thredds/fileServer/eden/depths/2026_q4_depth.nc",
+    "documentation": "https://pubs.usgs.gov/publication/sir20205083"
+  },
+  "inventory_source": {
+    "filename": "NWI_emergent_wetlands.geojson",
+    "bytes": 6534777,
+    "sha256": "81badc19d9aae52fbbea69fe8113f9ec6724e2f09f13e5d038c7af3c950248bb",
+    "url": "https://fwspublicservices.wim.usgs.gov/wetlandsmapservice/rest/services/Wetlands/MapServer/0/query",
+    "documentation": "https://www.fws.gov/program/national-wetlands-inventory/data-download"
+  },
+  "source_algorithm": {
+    "filename": "everglades_wetland_validation.py",
+    "bytes": 15428,
+    "sha256": "1107323ff48fdc1ec9a6dfb1a878ff15e4c1d16bf19fd033cbe46b4b35994c5b"
+  },
+  "grid_m": 400,
+  "spatial_block_m": 4800,
+  "folds": 5,
+  "eligible_cells": 4417,
+  "assessed_cells": 2813,
+  "radar_abstentions": 1604,
+  "reproduced_archived_scores": true,
+  "metrics": [
+    {
+      "model": "HH",
+      "fold": "all held-out",
+      "training_cells": "",
+      "test_cells": 2813,
+      "TP": 1409,
+      "FP": 161,
+      "TN": 683,
+      "FN": 560,
+      "recall": 0.7155916708989335,
+      "specificity": 0.8092417061611374,
+      "precision": 0.8974522292993631,
+      "IoU": 0.6615023474178404,
+      "balanced_accuracy": 0.7624166885300354,
+      "standardized_predictor_coefficients": ""
+    },
+    {
+      "model": "HH and HH–HV",
+      "fold": "all held-out",
+      "training_cells": "",
+      "test_cells": 2813,
+      "TP": 1697,
+      "FP": 79,
+      "TN": 765,
+      "FN": 272,
+      "recall": 0.861858811579482,
+      "specificity": 0.9063981042654028,
+      "precision": 0.9555180180180181,
+      "IoU": 0.82861328125,
+      "balanced_accuracy": 0.8841284579224424,
+      "standardized_predictor_coefficients": ""
+    }
+  ]
+}

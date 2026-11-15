@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "sites": [
+    {
+      "id": "everglades-nisar",
+      "name": "Shark River Slough, Everglades",
+      "topic": "wetlands",
+      "bbox": [
+        -80.83603808668131,
+        25.483465851964016,
+        -80.68645000169595,
+        25.619164238531866
+      ],
+      "start": "2026-10-27",
+      "end": "2026-10-27",
+      "aliases": [
+        "Everglades",
+        "Florida Everglades",
+        "Shark River Slough"
+      ],
+      "evidence_id": "nisar-everglades-20261027-source",
+      "benchmark_evidence_ids": [
+        "everglades-eden-depth",
+        "everglades-nwi-emergent"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "nisar-everglades-20261027",
+      "site_id": "everglades-nisar",
+      "product_id": "NISAR_L2_PR_GCOV_034_047_A_014_2005_DHDH_M_20261027T104408_20261027T104439_P05036_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_034_047_A_014_2005_DHDH_M_20261027T104408_20261027T104439_P05036_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "product_type": "GCOV",
+      "frequency": "A",
+      "mode": "Frequency A · dual polarization",
+      "collection": "NISAR_L2_GCOV_V1",
+      "collection_concept_id": "C3622241360-ASF",
+      "granule_concept_id": "G4406681165-ASF",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.68680225527767,
+              25.483465851964016
+            ],
+            [
+              -80.68645000169595,
+              25.61892008424917
+            ],
+            [
+              -80.83585367600526,
+              25.619164238531866
+            ],
+            [
+              -80.83603808668131,
+              25.4837085334046
+            ],
+            [
+              -80.68680225527767,
+              25.483465851964016
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "coordinates": [
+          [
+            [
+              -78.7848,
+              24.17291
+            ],
+            [
+              -79.32656,
+              26.06904
+            ],
+            [
+              -81.75329,
+              25.46718
+            ],
+            [
+              -81.17697,
+              23.58234
+            ],
+            [
+              -78.7848,
+              24.17291
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "geometry_kind": "local_coverage_window",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-everglades-20261027-hh.png",
+          "image_bounds": [
+            [
+              25.483465851964002,
+              -80.8360380866813
+            ],
+            [
+              25.619164238531866,
+              -80.68645000169595
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            750,
+            746
+          ],
+          "image_transform": [
+            22.321808913285686,
+            0.0,
+            -8998626.597555032,
+            0.0,
+            -22.324527198744317,
+            2951988.749826743
+          ],
+          "image_sha256": "211d33a7722f3be1a0c32f54882b3f92e78209e27b2882ccbfa5fd9018b3d3a8",
+          "image_size_bytes": 618337,
+          "display_range_db": [
+            -26,
+            -8
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-everglades-20261027-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32617,
+          "science_posting_m": 20,
+          "science_shape": [
+            750,
+            750
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            516480.0,
+            0.0,
+            -20.0,
+            2833520.0
+          ],
+          "science_sha256": "dc6d363bae80e0f900c71cbae269945809eed9cbf571588a170bc389ab7f5d45",
+          "science_size_bytes": 1463533,
+          "valid_fraction": 1.0,
+          "valid_pixels": 562500,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-everglades-20261027-source",
+          "quality_mask": "Valid subswath, no low-byte input anomaly, HH focus bit 256, positive looks, finite nonnegative power."
+        },
+        "HV": {
+          "status": "validated",
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "image_url": "/sar/nisar-everglades-20261027-hv.png",
+          "image_bounds": [
+            [
+              25.483465851964002,
+              -80.8360380866813
+            ],
+            [
+              25.619164238531866,
+              -80.68645000169595
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            750,
+            746
+          ],
+          "image_transform": [
+            22.321808913285686,
+            0.0,
+            -8998626.597555032,
+            0.0,
+            -22.324527198744317,
+            2951988.749826743
+          ],
+          "image_sha256": "c82f07d37d5232d42cf4f4579194cbf6b5092d21d50bd78b148ada62adfbc3df",
+          "image_size_bytes": 604989,
+          "display_range_db": [
+            -33,
+            -16
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-everglades-20261027-hv.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32617,
+          "science_posting_m": 20,
+          "science_shape": [
+            750,
+            750
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            516480.0,
+            0.0,
+            -20.0,
+            2833520.0
+          ],
+          "science_sha256": "b88e7ead3002f181d0f99e25df0498518561e0e1890b2f67bf61e70b328dc12a",
+          "science_size_bytes": 1441185,
+          "valid_fraction": 1.0,
+          "valid_pixels": 562500,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-everglades-20261027-source",
+          "quality_mask": "Valid subswath, no low-byte input anomaly, HV focus bit 512, positive looks, finite nonnegative power."
+        }
+      },
+      "evidence_id": "nisar-everglades-20261027-source",
+      "source_url": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&granule_list=NISAR_L2_PR_GCOV_034_047_A_014_2005_DHDH_M_20261027T104408_20261027T104439_P05036_N_F_J_001&output=geojson",
+      "science_requires_earthdata": false,
+      "source_requires_earthdata": true,
+      "benchmark_evidence_ids": [
+        "everglades-eden-depth",
+        "everglades-nwi-emergent"
+      ],
+      "orbit": 47,
+      "absolute_orbit": 6547,
+      "frame": 14,
+      "direction": "ASCENDING",
+      "look_direction": "Left",
+      "acquired_at": "2026-10-27T10:44:08Z",
+      "acquisition_end": "2026-10-27T10:44:39.999342105Z",
+      "processing_version": "1.0.20",
+      "product_specification_version": "1.6.0",
+      "noise_correction_applied": false,
+      "source_window": [
+        5916,
+        3728,
+        750,
+        750
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "nisar-everglades-20261027-source",
+      "title": "ASF NISAR GCOV source image · Everglades",
+      "kind": "downloaded_scientific_hdf5",
+      "url": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&granule_list=NISAR_L2_PR_GCOV_034_047_A_014_2005_DHDH_M_20261027T104408_20261027T104439_P05036_N_F_J_001&output=geojson",
+      "source_id": "NISAR_L2_PR_GCOV_034_047_A_014_2005_DHDH_M_20261027T104408_20261027T104439_P05036_N_F_J_001",
+      "source_filename": "NISAR_L2_PR_GCOV_034_047_A_014_2005_DHDH_M_20261027T104408_20261027T104439_P05036_N_F_J_001.h5",
+      "source_size_bytes": 1249902592,
+      "source_sha256": "f8798330e9d3f835469a04dc8b7232b86dec47dc6f03eeaf6f02b3c19e30be84",
+      "provider_size_bytes": 1249902592,
+      "provider_asset_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_V1/NISAR_L2_PR_GCOV_034_047_A_014_2005_DHDH_M_20261027T104408_20261027T104439_P05036_N_F_J_001/NISAR_L2_PR_GCOV_034_047_A_014_2005_DHDH_M_20261027T104408_20261027T104439_P05036_N_F_J_001.h5",
+      "cmr_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4406681165-ASF",
+      "source_authentication": "NASA Earthdata Login required for original HDF5",
+      "accessed_at": "2026-11-15",
+      "benchmark_overlap_audit": {
+        "evaluation_grid_m": 400,
+        "crop_covers_study_grid_centres": 1444,
+        "crop_covers_assessed_grid_centres": 882,
+        "reference_grid_sha256": "dd61ba70884c4bcd430945841f485bbff7a233c00762e4ac50a37f006a574123",
+        "benchmark_study_bbox_wgs84": [
+          -80.88,
+          25.43,
+          -80.6,
+          25.71
+        ],
+        "original_benchmark_assessed_cells": 2813
+      },
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "notes": "Measured 20 m HH and HV gamma0 power from the original acquisition used in the archived EDEN benchmark. The map shows a 15 km window of this source scene."
+    },
+    {
+      "id": "everglades-eden-depth",
+      "title": "USGS EDEN · modeled water-depth reference",
+      "kind": "benchmark_reference",
+      "url": "https://pubs.usgs.gov/publication/sir20205083",
+      "notes": "Audit-only reference. USGS EDEN estimates daily water depth from gauge observations and terrain elevation for the separate 400 m wetland benchmark."
+    },
+    {
+      "id": "everglades-nwi-emergent",
+      "title": "USFWS National Wetlands Inventory · Emergent wetland scope",
+      "kind": "benchmark_reference",
+      "url": "https://www.fws.gov/program/national-wetlands-inventory/data-download",
+      "notes": "Audit-only reference. Freshwater emergent polygons define the eligibility domain in the separate Shark River Slough benchmark."
+    }
+  ]
+}

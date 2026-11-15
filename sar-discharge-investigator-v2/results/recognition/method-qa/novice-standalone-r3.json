@@ -1,0 +1,731 @@
+{
+  "protocol": "Direct standalone runtime from ExplorerServer(0), Ollama off. Each request includes its locked map-view context, and has its own rate-limit key. An empty metadata adapter prevents network traffic; verified local data and answers are genuine. No prompts are included in this report.",
+  "challenge_sha256": "aeade1db1fa9931ee5d86cd511f3d0f3eff3dbde026a5c0029f34884d552c103",
+  "app_sha256": {
+    "explorer_assistant.py": "4d41898d6d6e8bb0dbf07a76ae992186c84e958eb8599943dc13d788ca05b139",
+    "explorer_server.py": "159c97ec4c69b42edb44d21dbeffe27669e9822222b950d4177e232f960052ad",
+    "matrix_answers.py": "39cdceec327ca824c0e03761ce92d07514d477ddf0b8622380d103bbd3ce70f5",
+    "matrix_intent.py": "0cb5c47269157f0b9361c453f4f3564160c93d128bed4362e7e68a0e705e1876",
+    "data/matrix-assistant-model.json": "5cd9b5dcedee2309a93ff8776f48700c4ed73ee6c37ea5e7464f6c9ae62f93b1"
+  },
+  "metrics": {
+    "all": {
+      "total": 55,
+      "action_correct": 39,
+      "kind_correct": 33,
+      "scope_correct": 26
+    },
+    "question": {
+      "total": 38,
+      "action_correct": 26,
+      "kind_correct": 20,
+      "scope_correct": 14
+    },
+    "command": {
+      "total": 9,
+      "action_correct": 7,
+      "kind_correct": 7,
+      "scope_correct": 6
+    },
+    "unsupported": {
+      "total": 8,
+      "action_correct": 6,
+      "kind_correct": 6,
+      "scope_correct": 6
+    },
+    "legend": {
+      "total": 10,
+      "action_correct": 7,
+      "kind_correct": 5,
+      "scope_correct": 4
+    }
+  },
+  "unsupported_actions": {
+    "clarify": 6,
+    "answer": 2
+  },
+  "offline_catalogue_lookups": 0,
+  "row_results": [
+    {
+      "id": "legend-01",
+      "group": "question",
+      "reference_kind": "legend",
+      "action": "clarify",
+      "answer_kind": null,
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "legend-02",
+      "group": "question",
+      "reference_kind": "legend",
+      "action": "answer",
+      "answer_kind": "legend",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "legend-03",
+      "group": "question",
+      "reference_kind": "legend",
+      "action": "answer",
+      "answer_kind": "oil",
+      "action_correct": true,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "legend-04",
+      "group": "question",
+      "reference_kind": "legend",
+      "action": "answer",
+      "answer_kind": "legend",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "legend-05",
+      "group": "question",
+      "reference_kind": "legend",
+      "action": "answer",
+      "answer_kind": "terrain_shadow",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "legend-06",
+      "group": "question",
+      "reference_kind": "legend",
+      "action": "answer",
+      "answer_kind": "legend",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "legend-07",
+      "group": "question",
+      "reference_kind": "legend",
+      "action": "answer",
+      "answer_kind": "legend",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": false,
+      "unmet_checks": [
+        "content_cue_1",
+        "content_cue_2"
+      ],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "legend-08",
+      "group": "question",
+      "reference_kind": "legend",
+      "action": "clarify",
+      "answer_kind": null,
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "legend-09",
+      "group": "question",
+      "reference_kind": "legend",
+      "action": "answer",
+      "answer_kind": "oil",
+      "action_correct": true,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "legend-10",
+      "group": "question",
+      "reference_kind": "legend",
+      "action": "clarify",
+      "answer_kind": null,
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "compare-01",
+      "group": "question",
+      "reference_kind": "compare",
+      "action": "answer",
+      "answer_kind": "compare",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "compare-02",
+      "group": "question",
+      "reference_kind": "compare",
+      "action": "clarify",
+      "answer_kind": null,
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "compare-03",
+      "group": "question",
+      "reference_kind": "compare",
+      "action": "answer",
+      "answer_kind": "compare",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": false,
+      "unmet_checks": [
+        "content_cue_1"
+      ],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "compare-04",
+      "group": "question",
+      "reference_kind": "compare",
+      "action": "answer",
+      "answer_kind": "compare",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "change-01",
+      "group": "question",
+      "reference_kind": "change",
+      "action": "answer",
+      "answer_kind": "change",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": false,
+      "unmet_checks": [
+        "content_cue_3"
+      ],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "change-02",
+      "group": "question",
+      "reference_kind": "change",
+      "action": "answer",
+      "answer_kind": "compare",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "change-03",
+      "group": "question",
+      "reference_kind": "change",
+      "action": "answer",
+      "answer_kind": "compare",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": false,
+      "unmet_checks": [
+        "content_cue_2"
+      ],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "change-04",
+      "group": "question",
+      "reference_kind": "change",
+      "action": "select",
+      "answer_kind": null,
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "polarization-01",
+      "group": "question",
+      "reference_kind": "polarization",
+      "action": "answer",
+      "answer_kind": "legend",
+      "action_correct": true,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "polarization-02",
+      "group": "question",
+      "reference_kind": "polarization",
+      "action": "select",
+      "answer_kind": null,
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "polarization-03",
+      "group": "question",
+      "reference_kind": "polarization",
+      "action": "answer",
+      "answer_kind": "polarization",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": false,
+      "unmet_checks": [
+        "content_cue_3"
+      ],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "polarization-04",
+      "group": "question",
+      "reference_kind": "polarization",
+      "action": "answer",
+      "answer_kind": "polarization",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "coverage-01",
+      "group": "question",
+      "reference_kind": "coverage",
+      "action": "answer",
+      "answer_kind": "coverage",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "coverage-02",
+      "group": "question",
+      "reference_kind": "coverage",
+      "action": "select",
+      "answer_kind": null,
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "coverage-03",
+      "group": "question",
+      "reference_kind": "coverage",
+      "action": "answer",
+      "answer_kind": "coverage",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": false,
+      "unmet_checks": [
+        "content_cue_2"
+      ],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "coverage-04",
+      "group": "question",
+      "reference_kind": "coverage",
+      "action": "answer",
+      "answer_kind": "drought",
+      "action_correct": true,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "oil-01",
+      "group": "question",
+      "reference_kind": "oil",
+      "action": "clarify",
+      "answer_kind": null,
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "oil-02",
+      "group": "question",
+      "reference_kind": "oil",
+      "action": "clarify",
+      "answer_kind": null,
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "oil-03",
+      "group": "question",
+      "reference_kind": "oil",
+      "action": "answer",
+      "answer_kind": "wetlands",
+      "action_correct": true,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "oil-04",
+      "group": "question",
+      "reference_kind": "oil",
+      "action": "clarify",
+      "answer_kind": null,
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "wetland-01",
+      "group": "question",
+      "reference_kind": "wetlands",
+      "action": "answer",
+      "answer_kind": "wetlands",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "wetland-02",
+      "group": "question",
+      "reference_kind": "wetlands",
+      "action": "clarify",
+      "answer_kind": null,
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "wetland-03",
+      "group": "question",
+      "reference_kind": "wetlands",
+      "action": "answer",
+      "answer_kind": "change",
+      "action_correct": true,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "wetland-04",
+      "group": "question",
+      "reference_kind": "wetlands",
+      "action": "answer",
+      "answer_kind": "wetlands",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "drought-01",
+      "group": "question",
+      "reference_kind": "drought",
+      "action": "answer",
+      "answer_kind": "drought",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "drought-02",
+      "group": "question",
+      "reference_kind": "drought",
+      "action": "answer",
+      "answer_kind": "drought",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "drought-03",
+      "group": "question",
+      "reference_kind": "drought",
+      "action": "answer",
+      "answer_kind": "drought",
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "drought-04",
+      "group": "question",
+      "reference_kind": "drought",
+      "action": "select",
+      "answer_kind": null,
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "command-01",
+      "group": "command",
+      "reference_kind": "command",
+      "action": "select",
+      "answer_kind": null,
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "command-02",
+      "group": "command",
+      "reference_kind": "command",
+      "action": "select",
+      "answer_kind": null,
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "command-03",
+      "group": "command",
+      "reference_kind": "command",
+      "action": "answer",
+      "answer_kind": "legend",
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [
+        "site_id",
+        "polarizations",
+        "change_layer_id"
+      ],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "command-04",
+      "group": "command",
+      "reference_kind": "command",
+      "action": "select",
+      "answer_kind": null,
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "command-05",
+      "group": "command",
+      "reference_kind": "command",
+      "action": "select",
+      "answer_kind": null,
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "command-06",
+      "group": "command",
+      "reference_kind": "command",
+      "action": "select",
+      "answer_kind": null,
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "command-07",
+      "group": "command",
+      "reference_kind": "command",
+      "action": "answer",
+      "answer_kind": "legend",
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [
+        "site_id"
+      ],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "command-08",
+      "group": "command",
+      "reference_kind": "command",
+      "action": "select",
+      "answer_kind": null,
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "command-09",
+      "group": "command",
+      "reference_kind": "command",
+      "action": "select",
+      "answer_kind": null,
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": false,
+      "unmet_checks": [
+        "site_id"
+      ],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "unknown-01",
+      "group": "unsupported",
+      "reference_kind": "unknown",
+      "action": "clarify",
+      "answer_kind": null,
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "unknown-02",
+      "group": "unsupported",
+      "reference_kind": "unknown",
+      "action": "clarify",
+      "answer_kind": null,
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "unknown-03",
+      "group": "unsupported",
+      "reference_kind": "unknown",
+      "action": "clarify",
+      "answer_kind": null,
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "unknown-04",
+      "group": "unsupported",
+      "reference_kind": "unknown",
+      "action": "answer",
+      "answer_kind": "change",
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "unknown-05",
+      "group": "unsupported",
+      "reference_kind": "unknown",
+      "action": "clarify",
+      "answer_kind": null,
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "unknown-06",
+      "group": "unsupported",
+      "reference_kind": "unknown",
+      "action": "clarify",
+      "answer_kind": null,
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "unknown-07",
+      "group": "unsupported",
+      "reference_kind": "unknown",
+      "action": "clarify",
+      "answer_kind": null,
+      "action_correct": true,
+      "kind_correct": true,
+      "scope_correct": true,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    },
+    {
+      "id": "unknown-08",
+      "group": "unsupported",
+      "reference_kind": "unknown",
+      "action": "answer",
+      "answer_kind": "oil",
+      "action_correct": false,
+      "kind_correct": false,
+      "scope_correct": false,
+      "unmet_checks": [],
+      "offline_catalogue_lookups": 0
+    }
+  ]
+}

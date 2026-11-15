@@ -1,0 +1,185 @@
+{
+  "protocol": "Same locked prompts and recorded map contexts, actual sealed app engine, one sequential pass per mode. The provider stub supplies no remote catalogue data. Aggregate only.",
+  "archive": "sartainty-agent-r3.2.zip",
+  "archive_sha256": "80e0b7c4b5c10907ee6fa51a64ec9937c8491afc0554009ecba5d274ba6ee46e",
+  "staged_files_matched": 111,
+  "challenge_sha256": "aeade1db1fa9931ee5d86cd511f3d0f3eff3dbde026a5c0029f34884d552c103",
+  "expected_cases_per_mode": 55,
+  "qwen_model": "qwen3.5:4b",
+  "status": "completed",
+  "standalone": {
+    "all": {
+      "total": 55,
+      "action_correct": 39,
+      "kind_correct": 33,
+      "scope_correct": 26
+    },
+    "question": {
+      "total": 38,
+      "action_correct": 26,
+      "kind_correct": 20,
+      "scope_correct": 14
+    },
+    "command": {
+      "total": 9,
+      "action_correct": 7,
+      "kind_correct": 7,
+      "scope_correct": 6
+    },
+    "unsupported": {
+      "total": 8,
+      "action_correct": 6,
+      "kind_correct": 6,
+      "scope_correct": 6
+    },
+    "legend": {
+      "total": 10,
+      "action_correct": 7,
+      "kind_correct": 5,
+      "scope_correct": 4
+    },
+    "unsupported_actions": {
+      "clarify": 6,
+      "answer": 2
+    }
+  },
+  "qwen_path": {
+    "all": {
+      "total": 55,
+      "action_correct": 48,
+      "kind_correct": 41,
+      "scope_correct": 33
+    },
+    "question": {
+      "total": 38,
+      "action_correct": 38,
+      "kind_correct": 31,
+      "scope_correct": 24
+    },
+    "command": {
+      "total": 9,
+      "action_correct": 6,
+      "kind_correct": 6,
+      "scope_correct": 5
+    },
+    "unsupported": {
+      "total": 8,
+      "action_correct": 4,
+      "kind_correct": 4,
+      "scope_correct": 4
+    },
+    "legend": {
+      "total": 10,
+      "action_correct": 10,
+      "kind_correct": 6,
+      "scope_correct": 5
+    },
+    "unsupported_actions": {
+      "clarify": 4,
+      "answer": 4
+    }
+  },
+  "paired_changes": {
+    "action_correct": {
+      "qwen_only_correct": 12,
+      "standalone_only_correct": 3
+    },
+    "kind_correct": {
+      "qwen_only_correct": 11,
+      "standalone_only_correct": 3
+    },
+    "scope_correct": {
+      "qwen_only_correct": 10,
+      "standalone_only_correct": 3
+    }
+  },
+  "standalone_run": {
+    "model_counts": {},
+    "offline_metadata_lookups": 0,
+    "stopped_unavailable": false,
+    "seconds": 0.06
+  },
+  "qwen_run": {
+    "model_counts": {
+      "attempted": 27,
+      "completed": 27
+    },
+    "offline_metadata_lookups": 0,
+    "stopped_unavailable": false,
+    "seconds": 54.92
+  },
+  "actual_qwen_called_subset": {
+    "standalone": {
+      "all": {
+        "total": 27,
+        "action_correct": 14,
+        "kind_correct": 12,
+        "scope_correct": 11
+      },
+      "question": {
+        "total": 14,
+        "action_correct": 2,
+        "kind_correct": 0,
+        "scope_correct": 0
+      },
+      "command": {
+        "total": 7,
+        "action_correct": 7,
+        "kind_correct": 7,
+        "scope_correct": 6
+      },
+      "unsupported": {
+        "total": 6,
+        "action_correct": 5,
+        "kind_correct": 5,
+        "scope_correct": 5
+      },
+      "legend": {
+        "total": 4,
+        "action_correct": 1,
+        "kind_correct": 0,
+        "scope_correct": 0
+      },
+      "unsupported_actions": {
+        "clarify": 5,
+        "answer": 1
+      }
+    },
+    "qwen_path": {
+      "all": {
+        "total": 27,
+        "action_correct": 23,
+        "kind_correct": 20,
+        "scope_correct": 18
+      },
+      "question": {
+        "total": 14,
+        "action_correct": 14,
+        "kind_correct": 11,
+        "scope_correct": 10
+      },
+      "command": {
+        "total": 7,
+        "action_correct": 6,
+        "kind_correct": 6,
+        "scope_correct": 5
+      },
+      "unsupported": {
+        "total": 6,
+        "action_correct": 3,
+        "kind_correct": 3,
+        "scope_correct": 3
+      },
+      "legend": {
+        "total": 4,
+        "action_correct": 4,
+        "kind_correct": 1,
+        "scope_correct": 1
+      },
+      "unsupported_actions": {
+        "answer": 3,
+        "clarify": 3
+      }
+    }
+  }
+}

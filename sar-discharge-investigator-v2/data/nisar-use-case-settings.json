@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {"id": "asf-gunw-product", "title": "ASF · Geocoded Unwrapped Interferogram (GUNW)", "kind": "Product guide", "url": "https://nisar-docs.asf.alaska.edu/gunw/", "notes": "Frequency A, co-polarized mission pairs, delivered grids, coherence and phase correction layers."},
+    {"id": "asf-goff-product", "title": "ASF · Geocoded Pixel Offsets (GOFF)", "kind": "Product guide", "url": "https://nisar-docs.asf.alaska.edu/goff/", "notes": "Geocoded position shifts and signal-to-noise information for pairs."},
+    {"id": "asf-rslc-product", "title": "ASF · Range-Doppler Single Look Complex (RSLC)", "kind": "Product guide", "url": "https://nisar-docs.asf.alaska.edu/rslc/", "notes": "Complex radar scenes available for custom interferogram generation."},
+    {"id": "nasa-nisar-ice-requirements", "title": "NASA · NISAR mission requirements", "kind": "Mission requirements", "url": "https://science.nasa.gov/mission/nisar/mission-requirements/", "notes": "Mission requirements describe target sampling and accuracy for sea-ice motion."}
+  ],
+  "cases": [
+    {
+      "id": "wetlands", "label": "Wetland water and vegetation",
+      "aliases": ["wetland water and vegetation", "open water", "wetland habitat", "wetlands", "wetland"],
+      "summary": "Look for exposed water, compare it with mapped habitat, and identify where a water edge is uncertain.",
+      "availability": "in_app",
+      "availability_note": "Run Wetland water and vegetation in Acquisitions for a prepared scene. Source audit records noise checks and vegetation eligibility.",
+      "question": "What settings should I use for wetland water and vegetation?",
+      "chat": "Choose a prepared NISAR L-band GCOV scene with HH and HV. Open Acquisitions and run Wetland water and vegetation. Cyan outlines show open-water candidates, and tan outlines show uncertain edges. Flooded vegetation needs a matched drier date and a vegetation reference.",
+      "fields": [
+        {"id": "data", "label": "Radar input", "value": "NISAR L-band GCOV. Use calibrated radar pixels with the corresponding HH and HV channels."},
+        {"id": "timing", "label": "Dates", "value": "Start with one prepared acquisition for exposed water. Use a matched drier date and an independent vegetation reference for the flooded-vegetation screen."},
+        {"id": "quality", "label": "Quality checks", "value": "The app checks both channels and withholds noisy cells. Its 60 m open-water research screen uses HH ≤ −17 dB and HV ≤ −23 dB plus a neighborhood check."},
+        {"id": "output", "label": "Read the result", "value": "Open-water candidates and uncertain edges are different classes. Compare with optical imagery close to the radar pass. A mapped wetland describes habitat across time."}
+      ],
+      "evidence_ids": ["nisar-ecosystems-atbd-water-vegetation", "nisar-ecosystems-atbd-water-classes", "wetland-v2-validation", "asf-nisar-gcov"]
+    },
+    {
+      "id": "wetland_flood", "label": "Wetland flooding",
+      "aliases": ["wetland flooding", "flood mapping", "map flooding", "flooded vegetation", "inundation", "flooding", "flood"],
+      "summary": "Compare the event with an earlier, drier observation to screen for possible inundation.",
+      "availability": "in_app",
+      "availability_note": "Radar return change and the wetland screen run on prepared data. The bundled scenes withhold the flooded-vegetation class when a verified pair is missing.",
+      "question": "What settings should I use for wetland flooding?",
+      "chat": "Use NISAR L-band HH and HV and compare a drier observation before the event with one during it. Match the track, viewing geometry and grid. Smooth open water can darken the echo, while flooded trunks or stems can strengthen HH. Check water levels or field observations.",
+      "fields": [
+        {"id": "data", "label": "Radar input", "value": "NISAR L-band GCOV HH and HV. HH is sensitive to echo changes from water and upright vegetation. HV adds information about vegetation scattering."},
+        {"id": "timing", "label": "Dates", "value": "Choose a drier acquisition before the event and one during it. For tidal wetlands record the tide at each overpass."},
+        {"id": "geometry", "label": "Matching", "value": "Keep the same track, frame, look direction, frequency, polarization, native grid and processing where possible."},
+        {"id": "quality", "label": "Independent checks", "value": "Check exposed water against near-date optical imagery. Check water beneath plants against field, gauge or appropriate hydrologic evidence."},
+        {"id": "output", "label": "Read the result", "value": "The app's signed dB map shows where radar return changed. Interpret a flood only where the radar pattern and independent evidence support it."}
+      ],
+      "evidence_ids": ["nisar-ecosystems-atbd-water-time", "nisar-ecosystems-atbd-water-validation", "wetland-field-study", "wetland-v2-validation"]
+    },
+    {
+      "id": "wetland_drought", "label": "Wetland drying and drought",
+      "aliases": ["wetland drying and drought", "wetland drought", "wetland drying", "drought", "drying", "low water"],
+      "summary": "Compare conditions with the same season in earlier years and check whether water levels or rainfall were unusually low.",
+      "availability": "in_app",
+      "availability_note": "Acquisitions can chart prepared radar dates on shared pixels. Drought interpretation also uses independent hydrologic records.",
+      "question": "What settings should I use for wetland drying and drought?",
+      "chat": "Use comparable HH scenes and add HV when available. Compare the same part of the season across years, then check rain, gauges or optical water extent. Radar change can show where a wetland looks different, while the longer baseline shows whether that change is unusual.",
+      "fields": [
+        {"id": "data", "label": "Radar input", "value": "Use prepared NISAR L-band GCOV. Keep the radar channel the same for comparisons and review HH and HV separately when both are available."},
+        {"id": "timing", "label": "Dates", "value": "Compare the same season across years where coverage allows. Include multiple dates to assess whether the change persists."},
+        {"id": "geometry", "label": "Matching", "value": "Same site, track, pass, channel and native grid. Compare similar tide or management conditions when applicable."},
+        {"id": "quality", "label": "Independent checks", "value": "Use a relevant rainfall record and lake or river levels. Compare with independent water extent where available."},
+        {"id": "output", "label": "Read the result", "value": "Radar return and exposed-water extent are indicators. Seasonal exposure and managed drawdown can resemble drought."}
+      ],
+      "evidence_ids": ["drought-indicators", "nisar-ecosystems-atbd-water-time", "nisar-ecosystems-atbd-water-confounds"]
+    },
+    {
+      "id": "oil_spill", "label": "Oil slick investigation",
+      "aliases": ["oil slick investigation", "oil spill", "oil slick", "oil", "slick"],
+      "summary": "Find patches of weaker radar return and check whether a slick is a plausible explanation.",
+      "availability": "in_app",
+      "availability_note": "Run Dark-water research screen at a prepared Eugene Island or Eloi Bay scene. Source audit links the reference observations.",
+      "question": "What settings should I use for an oil slick investigation?",
+      "chat": "Start with a prepared NISAR L-band HH scene near the reported time. Compare the dark patch with nearby water on both sides and check wind, currents, shoreline and incident timing. Smooth water and other films can also look dark.",
+      "fields": [
+        {"id": "data", "label": "Radar input", "value": "Prepared NISAR L-band GCOV HH. The app compares measured returns with nearby water on both sides of each assessed cell."},
+        {"id": "timing", "label": "Dates", "value": "Choose a pass close to the report time. Compare a second pass only after checking how far a slick could move between observations."},
+        {"id": "quality", "label": "Independent checks", "value": "Review wind, currents, shoreline, vessel or incident records, and independent imagery. Very smooth water can produce a similar echo."},
+        {"id": "output", "label": "Read the result", "value": "Dashed red outlines show dark-water candidates. Material identification requires separate evidence."}
+      ],
+      "evidence_ids": ["emsa-slick-context", "oil-field-study", "nisar-observed-oil-screen"]
+    },
+    {
+      "id": "coseismic", "label": "Earthquake displacement",
+      "aliases": ["earthquake displacement", "earthquake ground movement", "coseismic deformation", "coseismic displacement", "co seismic", "coseismic", "earthquake", "quake"],
+      "summary": "Measure the ground offset across an earthquake using an interferogram that brackets the event.",
+      "availability": "reference_only",
+      "availability_note": "Use the linked ASF GUNW guide for data. SARtainty currently runs backscatter analyses on GCOV.",
+      "question": "What settings should I use for earthquake displacement?",
+      "chat": "Start in ASF with an L2 GUNW pair on the same track, with one radar pass before the earthquake and one after it. Use the supplied Frequency A HH or VV channel. Check coherence, phase corrections and GNSS projected along the radar view before reading the displacement.",
+      "fields": [
+        {"id": "data", "label": "Radar product", "value": "ASF NISAR L2 GUNW. Standard delivered pairs use Frequency A and co-polarization HH or VV, as available."},
+        {"id": "timing", "label": "Dates", "value": "Choose one pass before and one after the earthquake, close to the event. A longer stack can separate the earthquake step from later motion."},
+        {"id": "geometry", "label": "Matching", "value": "Pair acquisitions from the same repeat track and viewing geometry. Analyze ascending and descending separately."},
+        {"id": "quality", "label": "Quality checks", "value": "Inspect coherence, connected phase regions and terrain masks. Check which atmospheric, ionospheric and tidal corrections have been applied."},
+        {"id": "output", "label": "Read the result", "value": "A single interferogram measures movement along the radar viewing direction. Compare with GNSS projected into that direction."}
+      ],
+      "evidence_ids": ["nisar-mission-atbd-coseismic", "nisar-mission-atbd-earth-quality", "asf-gunw-product"]
+    },
+    {
+      "id": "transient", "label": "Short-term ground deformation",
+      "aliases": ["short term ground deformation", "short term deformation", "transient displacement", "transient deformation", "slow slip", "volcanic deformation", "transient"],
+      "summary": "Follow a temporary change in ground motion, such as volcanic unrest or slow fault slip.",
+      "availability": "reference_only",
+      "availability_note": "Use ASF for interferograms and a time-series processor for the deformation curve. SARtainty charts backscatter on its prepared data.",
+      "question": "What settings should I use for short-term ground deformation?",
+      "chat": "Start with a repeat-track NISAR GUNW pair spanning roughly 12 days around the episode. Add observations before, during and after to see how the movement evolves. Check coherence and phase corrections, and compare with GNSS at the radar pass times.",
+      "fields": [
+        {"id": "data", "label": "Radar product", "value": "Use NISAR L2 GUNW as the starting input. Delivered pairs use Frequency A and HH or VV."},
+        {"id": "timing", "label": "Dates", "value": "Start with a roughly 12-day repeat pair spanning the episode. Add dates on either side to resolve a short-lived change from a steady trend."},
+        {"id": "geometry", "label": "Matching", "value": "Use consistent track and viewing geometry within a series. Fit each look direction separately."},
+        {"id": "quality", "label": "Quality checks", "value": "Check coherence, phase consistency and atmospheric effects. Match continuous GNSS readings to the satellite pass times."},
+        {"id": "output", "label": "Read the result", "value": "Each pair integrates the change between two acquisition times. A series is needed to resolve how the transient evolved."}
+      ],
+      "evidence_ids": ["nisar-mission-atbd-transient", "nisar-mission-atbd-earth-validation", "asf-gunw-product"]
+    },
+    {
+      "id": "secular", "label": "Long-term ground deformation",
+      "aliases": ["long term ground deformation", "long term deformation", "secular deformation", "secular velocity", "subsidence", "long term ground motion", "secular"],
+      "summary": "Estimate a steady rate of movement from a connected stack while accounting for seasonal and event-related motion.",
+      "availability": "reference_only",
+      "availability_note": "Build a displacement stack in a phase time-series processor using ASF data. SARtainty displays its prepared backscatter series.",
+      "question": "What settings should I use for long-term ground deformation?",
+      "chat": "Build a connected, multiyear stack of NISAR interferograms for each track. Fit a line-of-sight velocity while accounting for seasonal signals and event steps. The Solid Earth ATBD uses three years for the formal validation test.",
+      "fields": [
+        {"id": "data", "label": "Radar product", "value": "Start from a stack of NISAR GUNW pairs. RSLC provides complex images for building custom links when needed."},
+        {"id": "timing", "label": "Dates", "value": "Use a connected multiyear stack. Three years is the formal science validation span in the Solid Earth ATBD."},
+        {"id": "geometry", "label": "Matching", "value": "Keep one track, look direction and radar channel within each stack. Keep separate stacks for other viewing directions."},
+        {"id": "quality", "label": "Quality checks", "value": "Test the effect of seasonal signals, events and phase corrections. Compare a trend against continuous GNSS over the same interval."},
+        {"id": "output", "label": "Read the result", "value": "Report line-of-sight velocity and uncertainty. A second viewing geometry provides a second projection of the motion."}
+      ],
+      "evidence_ids": ["nisar-mission-atbd-secular", "nisar-mission-atbd-earth-los", "asf-gunw-product", "asf-rslc-product"]
+    },
+    {
+      "id": "sea_ice_motion", "label": "Sea ice motion",
+      "aliases": ["sea ice motion", "sea ice drift", "track sea ice", "sea ice", "ice drift", "marginal ice", "pack ice"],
+      "summary": "Track features that appear in both radar images to estimate the direction and speed of drifting sea ice.",
+      "availability": "reference_only",
+      "availability_note": "Use the linked mission method to plan a pair. SARtainty currently provides backscatter analysis and this settings reference.",
+      "question": "What settings should I use for sea ice motion?",
+      "chat": "Choose overlapping calibrated radar images on a shared polar grid and match the same channel. The ATBD suggests roughly 3–4 days for central pack ice and 1–2 days for faster marginal ice. Keep only consistent matches and check velocities against GPS drift buoys.",
+      "fields": [
+        {"id": "data", "label": "Radar input", "value": "Overlapping calibrated, geocoded, multilooked amplitude imagery. The 2022 design describes L-band VV. Confirm the channel in the two actual acquisitions."},
+        {"id": "timing", "label": "Pair spacing", "value": "The ATBD describes roughly 3–4 days for central pack ice and 1–2 days for faster marginal ice. Use both actual acquisition times for velocity."},
+        {"id": "geometry", "label": "Matching", "value": "Use a shared polar stereographic grid and enough overlap to capture features displaced between passes."},
+        {"id": "quality", "label": "Quality checks", "value": "Flag weak or ambiguous matches and vectors that disagree with neighboring ones. Compare velocity with GPS drift buoy positions at both radar times."},
+        {"id": "output", "label": "Read the result", "value": "Motion is the tracked offset divided by elapsed time. The ATBD uses a 5 km target output grid. ASF GOFF provides pixel offsets with its own quality layers."}
+      ],
+      "evidence_ids": ["nisar-mission-atbd-ice-pairs", "nisar-mission-atbd-ice-tracking", "nisar-mission-atbd-ice-validation", "nasa-nisar-ice-requirements", "asf-goff-product"]
+    }
+  ]
+}

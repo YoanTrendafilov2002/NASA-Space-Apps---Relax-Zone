@@ -1,0 +1,3 @@
+test,matched_water_cells,missed_water_cells,extra_water_cells,matched_nonwater_cells,matched_water_km2,missed_water_km2,extra_water_km2,matched_nonwater_km2,water_recall,water_precision,water_iou,nonwater_specificity
+all held-out clear reference,150529,3294,1077,92869,541.9044,11.8584,3.8772,334.3284,0.9785857771594625,0.9928960595227102,0.9717817947062621,0.9885359674706746
+held-out clear reference with strict net signal gate,142454,3294,1077,92869,512.8344,11.8584,3.8772,334.3284,0.9773993468177951,0.9924963945071099,0.9702298654861229,0.9885359674706746

@@ -1,0 +1,670 @@
+{
+  "schema_version": 1,
+  "method_sha256": "fc8e99a637d7aa96d2a6d1cd1cdbc6e04b151b64d580af580a8a59cbaaf055e2",
+  "scope": "Optical exposed-water reference comparisons only. The Curuai replays are retrospective. Oman is a prospective site and date. UAE is a time-offset external proxy with complete v2 radar abstention. The paired flooded-vegetation rule lacks an independently labeled unseen matched pair.",
+  "cases": [
+    {
+      "case": "nisar-curuai-20260813",
+      "assessment_scope": "retrospective",
+      "scope_definition": "Previously examined reference and candidate development context.",
+      "data": {
+        "map_science_path": "science/nisar-curuai-20260813-hh.tif",
+        "map_science_sha256": "5e52c1f0c04afc8fa43e77e4ea8210589131e7f86eca2fc489c3380debabbd86",
+        "product_id": "NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001",
+        "site_id": "curuai-nisar",
+        "evidence_ids": [
+          "asf-nisar-gcov",
+          "nisar-curuai-20260813-source"
+        ],
+        "mode": "wetland",
+        "epsg": 32721,
+        "affine": [
+          60.0,
+          0.0,
+          661520.0,
+          0.0,
+          -60.0,
+          9779520.0
+        ],
+        "shape": [
+          250,
+          249
+        ],
+        "crop": [
+          0,
+          250,
+          0,
+          249
+        ],
+        "counts_expected": {
+          "assessed_cells": 62250,
+          "flagged_cells": 47798,
+          "logistic_flagged_cells": 48494
+        },
+        "hdf5_source_filename": "NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001.h5",
+        "original_source_window": [
+          13152,
+          6220,
+          750,
+          747
+        ],
+        "noise_correction_applied": false,
+        "qa": "Clean input exception, valid source subswath, positive looks and finite calibrated power and spatial noise for all nine 20 m postings per 60 m cell.",
+        "aggregation": "Arithmetic mean of native calibrated linear power, before dB conversion.",
+        "file": "nisar-curuai-20260813.npz",
+        "sha256": "16254219d32f5f88a0e14d98350b655b3cf1c1dd82dad7ff54f9005046703f9d",
+        "size_bytes": 820846
+      },
+      "input_sha256": "16254219d32f5f88a0e14d98350b655b3cf1c1dd82dad7ff54f9005046703f9d",
+      "reference_sha256": "486a89fddf561d8070797e9424d87364e15cad65ae7938e4bb2ef729819c5ea5",
+      "evaluation_code_sha256": "686d9365502436fb0d3cb5e279984a1ce5f8092614442d46126a5735f4667c58",
+      "screen_code_sha256": "fc8e99a637d7aa96d2a6d1cd1cdbc6e04b151b64d580af580a8a59cbaaf055e2",
+      "open_water_parameters": {
+        "hh_db_max": -17.0,
+        "hv_db_max": -23.0,
+        "hh_noise_margin_db": 3.0,
+        "hv_noise_margin_db": 1.0,
+        "edge_hh_db_max": -15.0,
+        "edge_hv_db_max": -21.0,
+        "minimum_weak_neighbors": 4,
+        "minimum_component_cells": 4
+      },
+      "paired_flooded_vegetation_parameters": {
+        "hh_increase_db_min": 3.0,
+        "hh_minus_hv_increase_db_min": 2.0,
+        "hv_absolute_change_db_max": 2.0,
+        "observed_above_noise_db_min": 3.0,
+        "minimum_component_cells": 4
+      },
+      "reference_mask": "all classified reference cells",
+      "open_water": {
+        "r6_all_supported": {
+          "total_cells": 62250,
+          "radar_assessed_cells": 62250,
+          "radar_flags": 47798,
+          "reference_cells": 51272,
+          "paired_cells": 51272,
+          "reference_coverage": 1.0,
+          "tp": 40354,
+          "fp": 34,
+          "fn": 984,
+          "tn": 9900,
+          "precision": 0.9991581657918194,
+          "recall": 0.976196235908849,
+          "iou": 0.9753939862709079,
+          "false_positive_rate": 0.0034225890879806724,
+          "withheld_reference_water": 0,
+          "withheld_reference_other": 0,
+          "positive_and_negative_support": true
+        },
+        "v2_all_supported": {
+          "total_cells": 62250,
+          "radar_assessed_cells": 62250,
+          "radar_flags": 44081,
+          "reference_cells": 51272,
+          "paired_cells": 51272,
+          "reference_coverage": 1.0,
+          "tp": 37880,
+          "fp": 1,
+          "fn": 3458,
+          "tn": 9933,
+          "precision": 0.9999736015416699,
+          "recall": 0.9163481542406503,
+          "iou": 0.9163259875662207,
+          "false_positive_rate": 0.00010066438494060802,
+          "withheld_reference_water": 0,
+          "withheld_reference_other": 0,
+          "positive_and_negative_support": true
+        },
+        "r6_common_support": {
+          "total_cells": 62250,
+          "radar_assessed_cells": 62250,
+          "radar_flags": 47798,
+          "reference_cells": 51272,
+          "paired_cells": 51272,
+          "reference_coverage": 1.0,
+          "tp": 40354,
+          "fp": 34,
+          "fn": 984,
+          "tn": 9900,
+          "precision": 0.9991581657918194,
+          "recall": 0.976196235908849,
+          "iou": 0.9753939862709079,
+          "false_positive_rate": 0.0034225890879806724,
+          "withheld_reference_water": 0,
+          "withheld_reference_other": 0,
+          "positive_and_negative_support": true
+        },
+        "v2_common_support": {
+          "total_cells": 62250,
+          "radar_assessed_cells": 62250,
+          "radar_flags": 44081,
+          "reference_cells": 51272,
+          "paired_cells": 51272,
+          "reference_coverage": 1.0,
+          "tp": 37880,
+          "fp": 1,
+          "fn": 3458,
+          "tn": 9933,
+          "precision": 0.9999736015416699,
+          "recall": 0.9163481542406503,
+          "iou": 0.9163259875662207,
+          "false_positive_rate": 0.00010066438494060802,
+          "withheld_reference_water": 0,
+          "withheld_reference_other": 0,
+          "positive_and_negative_support": true
+        },
+        "uncertain_transition_cells": 2914,
+        "boundary_diagnostic": {
+          "reference_boundary_cells": 136,
+          "transition_cells": 2914,
+          "transition_cells_near_label": 2484,
+          "transition_cells_within_one_cell_of_label_boundary": 45,
+          "reference_boundary_cells_within_one_cell_of_transition": 54,
+          "scope": "A one-grid-cell adjacency diagnostic where both reference classes are known. Mixed edges are not labelled as confirmed shorelines."
+        }
+      },
+      "flooded_vegetation": {
+        "status": "unassessed",
+        "reason": "This comparison uses exposed-water labels. Evaluating submerged vegetation requires an independent inundation reference."
+      }
+    },
+    {
+      "case": "nisar-curuai-20261012",
+      "assessment_scope": "retrospective",
+      "scope_definition": "Previously examined reference and candidate development context.",
+      "data": {
+        "map_science_path": "science/nisar-curuai-20261012-hh.tif",
+        "map_science_sha256": "b52156da0450432f6209ad8ace359f38462007a1d4e129b54aab6d4337380f27",
+        "product_id": "NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001",
+        "site_id": "curuai-nisar",
+        "evidence_ids": [
+          "asf-nisar-gcov",
+          "nisar-curuai-20261012-source"
+        ],
+        "mode": "wetland",
+        "epsg": 32721,
+        "affine": [
+          60.0,
+          0.0,
+          661520.0,
+          0.0,
+          -60.0,
+          9779520.0
+        ],
+        "shape": [
+          250,
+          249
+        ],
+        "crop": [
+          0,
+          250,
+          0,
+          249
+        ],
+        "counts_expected": {
+          "assessed_cells": 62250,
+          "flagged_cells": 45490,
+          "logistic_flagged_cells": 47251
+        },
+        "hdf5_source_filename": "NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001.h5",
+        "original_source_window": [
+          13152,
+          6220,
+          750,
+          747
+        ],
+        "noise_correction_applied": false,
+        "qa": "Clean input exception, valid source subswath, positive looks and finite calibrated power and spatial noise for all nine 20 m postings per 60 m cell.",
+        "aggregation": "Arithmetic mean of native calibrated linear power, before dB conversion.",
+        "file": "nisar-curuai-20261012.npz",
+        "sha256": "35997ee15162bb0c591f72fc529296d5d1daa5a821938f2a08eaf0116e79a351",
+        "size_bytes": 822665
+      },
+      "input_sha256": "35997ee15162bb0c591f72fc529296d5d1daa5a821938f2a08eaf0116e79a351",
+      "reference_sha256": "406abedc4fa87aea3934236f52cef4c354614ccae27ab4f8395b270749a9a279",
+      "evaluation_code_sha256": "686d9365502436fb0d3cb5e279984a1ce5f8092614442d46126a5735f4667c58",
+      "screen_code_sha256": "fc8e99a637d7aa96d2a6d1cd1cdbc6e04b151b64d580af580a8a59cbaaf055e2",
+      "open_water_parameters": {
+        "hh_db_max": -17.0,
+        "hv_db_max": -23.0,
+        "hh_noise_margin_db": 3.0,
+        "hv_noise_margin_db": 1.0,
+        "edge_hh_db_max": -15.0,
+        "edge_hv_db_max": -21.0,
+        "minimum_weak_neighbors": 4,
+        "minimum_component_cells": 4
+      },
+      "paired_flooded_vegetation_parameters": {
+        "hh_increase_db_min": 3.0,
+        "hh_minus_hv_increase_db_min": 2.0,
+        "hv_absolute_change_db_max": 2.0,
+        "observed_above_noise_db_min": 3.0,
+        "minimum_component_cells": 4
+      },
+      "reference_mask": "all classified reference cells",
+      "open_water": {
+        "r6_all_supported": {
+          "total_cells": 62250,
+          "radar_assessed_cells": 62250,
+          "radar_flags": 45490,
+          "reference_cells": 33920,
+          "paired_cells": 33920,
+          "reference_coverage": 1.0,
+          "tp": 7744,
+          "fp": 10738,
+          "fn": 93,
+          "tn": 15345,
+          "precision": 0.4190022724813332,
+          "recall": 0.9881332142401429,
+          "iou": 0.41690444145356664,
+          "false_positive_rate": 0.41168577234213855,
+          "withheld_reference_water": 0,
+          "withheld_reference_other": 0,
+          "positive_and_negative_support": true
+        },
+        "v2_all_supported": {
+          "total_cells": 62250,
+          "radar_assessed_cells": 62250,
+          "radar_flags": 34010,
+          "reference_cells": 33920,
+          "paired_cells": 33920,
+          "reference_coverage": 1.0,
+          "tp": 6605,
+          "fp": 4412,
+          "fn": 1232,
+          "tn": 21671,
+          "precision": 0.5995280021784515,
+          "recall": 0.8427969886436136,
+          "iou": 0.5392276920564945,
+          "false_positive_rate": 0.1691523214354177,
+          "withheld_reference_water": 0,
+          "withheld_reference_other": 0,
+          "positive_and_negative_support": true
+        },
+        "r6_common_support": {
+          "total_cells": 62250,
+          "radar_assessed_cells": 62250,
+          "radar_flags": 45490,
+          "reference_cells": 33920,
+          "paired_cells": 33920,
+          "reference_coverage": 1.0,
+          "tp": 7744,
+          "fp": 10738,
+          "fn": 93,
+          "tn": 15345,
+          "precision": 0.4190022724813332,
+          "recall": 0.9881332142401429,
+          "iou": 0.41690444145356664,
+          "false_positive_rate": 0.41168577234213855,
+          "withheld_reference_water": 0,
+          "withheld_reference_other": 0,
+          "positive_and_negative_support": true
+        },
+        "v2_common_support": {
+          "total_cells": 62250,
+          "radar_assessed_cells": 62250,
+          "radar_flags": 34010,
+          "reference_cells": 33920,
+          "paired_cells": 33920,
+          "reference_coverage": 1.0,
+          "tp": 6605,
+          "fp": 4412,
+          "fn": 1232,
+          "tn": 21671,
+          "precision": 0.5995280021784515,
+          "recall": 0.8427969886436136,
+          "iou": 0.5392276920564945,
+          "false_positive_rate": 0.1691523214354177,
+          "withheld_reference_water": 0,
+          "withheld_reference_other": 0,
+          "positive_and_negative_support": true
+        },
+        "uncertain_transition_cells": 6318,
+        "boundary_diagnostic": {
+          "reference_boundary_cells": 100,
+          "transition_cells": 6318,
+          "transition_cells_near_label": 5000,
+          "transition_cells_within_one_cell_of_label_boundary": 96,
+          "reference_boundary_cells_within_one_cell_of_transition": 71,
+          "scope": "A one-grid-cell adjacency diagnostic where both reference classes are known. Mixed edges are not labelled as confirmed shorelines."
+        }
+      },
+      "flooded_vegetation": {
+        "status": "unassessed",
+        "reason": "This comparison uses exposed-water labels. Evaluating submerged vegetation requires an independent inundation reference."
+      }
+    },
+    {
+      "case": "uae-khor-al-beidah-20261021",
+      "assessment_scope": "proxy-only",
+      "scope_definition": "Independent reference supports only a restricted proxy comparison.",
+      "data": {
+        "scope": "External exposed-water and land comparison, separated by distance to opposing reference class",
+        "site": "Khor Al Beidah, Umm Al Quwain, UAE",
+        "site_url": "https://stgnsdi.fgic.gov.ae/hosting/rest/services/Environment/ENV_SL4_Mangroves_AR/MapServer/1",
+        "radar_asset": "NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001",
+        "radar_item": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4384361936-ASF",
+        "reference_item": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_40RCP_20261019_0_L2A",
+        "epsg": 32640,
+        "native_bounds": [
+          357920,
+          2825580,
+          366920,
+          2834580
+        ],
+        "notes": "The optical acquisition is 42.55 hours before radar, over an intertidal coast. The two images cannot establish time-matched coastal inundation or vegetation flooding.",
+        "radar": {
+          "start_utc": "2026-10-21T01:35:16.000000000Z",
+          "local_hdf5": "NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001.h5",
+          "source_window": [
+            4324,
+            14619,
+            450,
+            450
+          ],
+          "source_sha256": "cd923bddf7f2b68d7d9ea3c95be26c87eaaf00c8f2a9ad4e24c56d2cc1369d9c"
+        },
+        "optical": "2026-10-19T07:02:26.053000Z",
+        "optical_reference_sha256": "87e29ca5e38a0b23811cb4b0f143cb1ff2b4dbe967adc6e6934596ed1faa60af",
+        "inventory_sha256": "6b428dc8b51f4c0eb7fc527aad5a0e61f108b95293285321f2cb6f36f3d90fee",
+        "analysis_affine": [
+          60.0,
+          0.0,
+          357920.0,
+          0.0,
+          -60.0,
+          2834580.0
+        ],
+        "analysis_shape": [
+          150,
+          150
+        ],
+        "npz_sha256": "3ba4e4bb6289caddf86b4a92b89b8b29821888b1a48d8a7df102cce34a00341c",
+        "counts": {
+          "nonwater": 10213,
+          "water": 9185,
+          "joint_radar_QA": 19104,
+          "r6_noise_qualified": 19104,
+          "shore": 1010,
+          "core_water": 7104,
+          "core_other": 6850,
+          "mangrove_inventory": 2356,
+          "reference_water_in_mangrove_inventory": 49
+        }
+      },
+      "input_sha256": "3ba4e4bb6289caddf86b4a92b89b8b29821888b1a48d8a7df102cce34a00341c",
+      "reference_sha256": "3ba4e4bb6289caddf86b4a92b89b8b29821888b1a48d8a7df102cce34a00341c",
+      "evaluation_code_sha256": "686d9365502436fb0d3cb5e279984a1ce5f8092614442d46126a5735f4667c58",
+      "screen_code_sha256": "fc8e99a637d7aa96d2a6d1cd1cdbc6e04b151b64d580af580a8a59cbaaf055e2",
+      "open_water_parameters": {
+        "hh_db_max": -17.0,
+        "hv_db_max": -23.0,
+        "hh_noise_margin_db": 3.0,
+        "hv_noise_margin_db": 1.0,
+        "edge_hh_db_max": -15.0,
+        "edge_hv_db_max": -21.0,
+        "minimum_weak_neighbors": 4,
+        "minimum_component_cells": 4
+      },
+      "paired_flooded_vegetation_parameters": {
+        "hh_increase_db_min": 3.0,
+        "hh_minus_hv_increase_db_min": 2.0,
+        "hv_absolute_change_db_max": 2.0,
+        "observed_above_noise_db_min": 3.0,
+        "minimum_component_cells": 4
+      },
+      "reference_mask": "registered clear reference core",
+      "open_water": {
+        "r6_all_supported": {
+          "total_cells": 22500,
+          "radar_assessed_cells": 19104,
+          "radar_flags": 11515,
+          "reference_cells": 13954,
+          "paired_cells": 11832,
+          "reference_coverage": 0.8479289092733266,
+          "tp": 5135,
+          "fp": 2343,
+          "fn": 271,
+          "tn": 4083,
+          "precision": 0.6866809307301418,
+          "recall": 0.9498705142434333,
+          "iou": 0.6626661504710285,
+          "false_positive_rate": 0.3646125116713352,
+          "withheld_reference_water": 1698,
+          "withheld_reference_other": 424,
+          "positive_and_negative_support": true
+        },
+        "v2_all_supported": {
+          "total_cells": 22500,
+          "radar_assessed_cells": 0,
+          "radar_flags": 0,
+          "reference_cells": 13954,
+          "paired_cells": 0,
+          "reference_coverage": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0,
+          "precision": null,
+          "recall": null,
+          "iou": null,
+          "false_positive_rate": null,
+          "withheld_reference_water": 7104,
+          "withheld_reference_other": 6850,
+          "positive_and_negative_support": false
+        },
+        "r6_common_support": {
+          "total_cells": 22500,
+          "radar_assessed_cells": 0,
+          "radar_flags": 0,
+          "reference_cells": 13954,
+          "paired_cells": 0,
+          "reference_coverage": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0,
+          "precision": null,
+          "recall": null,
+          "iou": null,
+          "false_positive_rate": null,
+          "withheld_reference_water": 7104,
+          "withheld_reference_other": 6850,
+          "positive_and_negative_support": false
+        },
+        "v2_common_support": {
+          "total_cells": 22500,
+          "radar_assessed_cells": 0,
+          "radar_flags": 0,
+          "reference_cells": 13954,
+          "paired_cells": 0,
+          "reference_coverage": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0,
+          "precision": null,
+          "recall": null,
+          "iou": null,
+          "false_positive_rate": null,
+          "withheld_reference_water": 7104,
+          "withheld_reference_other": 6850,
+          "positive_and_negative_support": false
+        },
+        "uncertain_transition_cells": 0,
+        "boundary_diagnostic": null
+      },
+      "flooded_vegetation": {
+        "status": "unassessed",
+        "reason": "This comparison uses exposed-water labels. Evaluating submerged vegetation requires an independent inundation reference."
+      },
+      "habitat_context": {
+        "inventory_cells": 2356,
+        "optical_water_in_inventory": 49,
+        "r6_flags_in_inventory": 205,
+        "v2_flags_in_inventory": 0,
+        "scope": "Inventory overlap is descriptive context. The inventory gives habitat extent and does not measure flooding underneath vegetation."
+      }
+    },
+    {
+      "case": "oman-hasik-20260811",
+      "assessment_scope": "prospective",
+      "scope_definition": "Candidate rule frozen before these independent comparison labels were examined.",
+      "data": {
+        "scope": "Prospective coastal open-water comparison on a site and date untouched by this wetland model.",
+        "site": "Hasik coast, Dhofar, Oman",
+        "radar_asset": "NISAR_L2_PR_GCOV_027_150_D_080_2005_DHDH_A_20260811T144946_20260811T145009_P05023_N_P_J_001",
+        "radar_item": "https://search.asf.alaska.edu/#/?granule=NISAR_L2_PR_GCOV_027_150_D_080_2005_DHDH_A_20260811T144946_20260811T145009_P05023_N_P_J_001",
+        "reference_item": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_40QCE_20260812_0_L2A",
+        "epsg": 32640,
+        "native_bounds": [
+          314340,
+          1927160,
+          320340,
+          1933160
+        ],
+        "notes": "Fixed 6 km square around Hasik from published geography and the parent radar footprint. The nearest full-coverage Sentinel-2 opportunity is on the following morning. A coast can change between observations.",
+        "radar": {
+          "start_utc": "2026-08-11T14:49:46.000000000Z",
+          "local_hdf5": "NISAR_L2_PR_GCOV_027_150_D_080_2005_DHDH_A_20260811T144946_20260811T145009_P05023_N_P_J_001.h5",
+          "source_window": [
+            5565,
+            4718,
+            300,
+            300
+          ],
+          "source_sha256": "fb1fab65eb58842027cddb9977d6b19f5b9a84f0740ea5cc1a083d554f6723d5"
+        },
+        "optical": "2026-08-12T06:54:40.704000Z",
+        "optical_reference_sha256": "6d82bc67bffeb6775ee38f3c08e1972eb13ae2c5f37d946c0e40d3229ef11fc2",
+        "analysis_affine": [
+          60.0,
+          0.0,
+          314340.0,
+          0.0,
+          -60.0,
+          1933160.0
+        ],
+        "analysis_shape": [
+          100,
+          100
+        ],
+        "npz_sha256": "f6f7950ed7a18113c40fed26c3c54fb11da04c5f799c7df7b9847fd33b102e56",
+        "counts": {
+          "water": 7025,
+          "nonwater": 2293,
+          "shore": 59,
+          "core_water": 6618,
+          "core_other": 2100
+        }
+      },
+      "input_sha256": "f6f7950ed7a18113c40fed26c3c54fb11da04c5f799c7df7b9847fd33b102e56",
+      "reference_sha256": "f6f7950ed7a18113c40fed26c3c54fb11da04c5f799c7df7b9847fd33b102e56",
+      "evaluation_code_sha256": "686d9365502436fb0d3cb5e279984a1ce5f8092614442d46126a5735f4667c58",
+      "screen_code_sha256": "fc8e99a637d7aa96d2a6d1cd1cdbc6e04b151b64d580af580a8a59cbaaf055e2",
+      "open_water_parameters": {
+        "hh_db_max": -17.0,
+        "hv_db_max": -23.0,
+        "hh_noise_margin_db": 3.0,
+        "hv_noise_margin_db": 1.0,
+        "edge_hh_db_max": -15.0,
+        "edge_hv_db_max": -21.0,
+        "minimum_weak_neighbors": 4,
+        "minimum_component_cells": 4
+      },
+      "paired_flooded_vegetation_parameters": {
+        "hh_increase_db_min": 3.0,
+        "hh_minus_hv_increase_db_min": 2.0,
+        "hv_absolute_change_db_max": 2.0,
+        "observed_above_noise_db_min": 3.0,
+        "minimum_component_cells": 4
+      },
+      "reference_mask": "registered clear reference core",
+      "open_water": {
+        "r6_all_supported": {
+          "total_cells": 10000,
+          "radar_assessed_cells": 10000,
+          "radar_flags": 7531,
+          "reference_cells": 8718,
+          "paired_cells": 8718,
+          "reference_coverage": 1.0,
+          "tp": 6618,
+          "fp": 28,
+          "fn": 0,
+          "tn": 2072,
+          "precision": 0.9957869395124888,
+          "recall": 1.0,
+          "iou": 0.9957869395124888,
+          "false_positive_rate": 0.013333333333333334,
+          "withheld_reference_water": 0,
+          "withheld_reference_other": 0,
+          "positive_and_negative_support": true
+        },
+        "v2_all_supported": {
+          "total_cells": 10000,
+          "radar_assessed_cells": 10000,
+          "radar_flags": 7388,
+          "reference_cells": 8718,
+          "paired_cells": 8718,
+          "reference_coverage": 1.0,
+          "tp": 6554,
+          "fp": 0,
+          "fn": 64,
+          "tn": 2100,
+          "precision": 1.0,
+          "recall": 0.990329404653974,
+          "iou": 0.990329404653974,
+          "false_positive_rate": 0.0,
+          "withheld_reference_water": 0,
+          "withheld_reference_other": 0,
+          "positive_and_negative_support": true
+        },
+        "r6_common_support": {
+          "total_cells": 10000,
+          "radar_assessed_cells": 10000,
+          "radar_flags": 7531,
+          "reference_cells": 8718,
+          "paired_cells": 8718,
+          "reference_coverage": 1.0,
+          "tp": 6618,
+          "fp": 28,
+          "fn": 0,
+          "tn": 2072,
+          "precision": 0.9957869395124888,
+          "recall": 1.0,
+          "iou": 0.9957869395124888,
+          "false_positive_rate": 0.013333333333333334,
+          "withheld_reference_water": 0,
+          "withheld_reference_other": 0,
+          "positive_and_negative_support": true
+        },
+        "v2_common_support": {
+          "total_cells": 10000,
+          "radar_assessed_cells": 10000,
+          "radar_flags": 7388,
+          "reference_cells": 8718,
+          "paired_cells": 8718,
+          "reference_coverage": 1.0,
+          "tp": 6554,
+          "fp": 0,
+          "fn": 64,
+          "tn": 2100,
+          "precision": 1.0,
+          "recall": 0.990329404653974,
+          "iou": 0.990329404653974,
+          "false_positive_rate": 0.0,
+          "withheld_reference_water": 0,
+          "withheld_reference_other": 0,
+          "positive_and_negative_support": true
+        },
+        "uncertain_transition_cells": 103,
+        "boundary_diagnostic": null
+      },
+      "flooded_vegetation": {
+        "status": "unassessed",
+        "reason": "This comparison uses exposed-water labels. Evaluating submerged vegetation requires an independent inundation reference."
+      }
+    }
+  ]
+}

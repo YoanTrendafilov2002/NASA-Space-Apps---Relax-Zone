@@ -1,0 +1,568 @@
+{
+  "schema_version": 1,
+  "sites": [
+    {
+      "id": "maranon-nisar",
+      "name": "Marañón River at Saramurillo, Peru",
+      "topic": "oil_spill",
+      "aliases": [
+        "Marañón",
+        "Marañón River",
+        "Maranon River",
+        "Saramurillo",
+        "Pontoon 4"
+      ],
+      "bbox": [
+        -74.96032658179783,
+        -4.767460945419271,
+        -74.87916238604299,
+        -4.686031377644958
+      ],
+      "start": "2026-02-24",
+      "end": "2026-03-08",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -74.87916238604299,
+              -4.7674514664843155
+            ],
+            [
+              -74.8791764891604,
+              -4.686031377644958
+            ],
+            [
+              -74.96032658179783,
+              -4.686040693994223
+            ],
+            [
+              -74.9603219509081,
+              -4.767460945419271
+            ],
+            [
+              -74.87916238604299,
+              -4.7674514664843155
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "study_area",
+      "review_points": [
+        {
+          "id": "maranon-pontoon-4",
+          "topic": "oil_spill",
+          "label": "Station 1 · Pontoon 4 inspection area",
+          "lon": -74.9198,
+          "lat": -4.7267,
+          "evidence_id": "maranon-oefa-pontoon-4",
+          "kind": "approximate_inspection_location",
+          "notes": "Approximate QGIS marker within the digitized OEFA inspection illustration. The field record independently establishes the incident. Radar records the backscatter around it."
+        }
+      ],
+      "geometry_note": "The 9 km QGIS review window is centered on the approximate Pontoon 4 inspection marker.",
+      "evidence_id": "maranon-oefa-pontoon-4"
+    }
+  ],
+  "observations": [
+    {
+      "id": "nisar-maranon-20260224",
+      "site_id": "maranon-nisar",
+      "product_id": "NISAR_L2_PR_GCOV_013_147_A_175_2005_DHDH_A_20260224T104407_20260224T104442_P05023_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_013_147_A_175_2005_DHDH_A_20260224T104407_20260224T104442_P05023_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "product_type": "GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "frequency": "A",
+      "mode": "Frequency A · dual polarization",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "collection_concept_id": "C2854338529-ASF",
+      "granule_concept_id": "G4275155676-ASF",
+      "maturity": "provisional",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -74.87916238604299,
+              -4.7674514664843155
+            ],
+            [
+              -74.8791764891604,
+              -4.686031377644958
+            ],
+            [
+              -74.96032658179783,
+              -4.686040693994223
+            ],
+            [
+              -74.9603219509081,
+              -4.767460945419271
+            ],
+            [
+              -74.87916238604299,
+              -4.7674514664843155
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -73.74224,
+              -5.96611
+            ],
+            [
+              -74.20418,
+              -3.81847
+            ],
+            [
+              -76.39507,
+              -4.28631
+            ],
+            [
+              -75.9446,
+              -6.42782
+            ],
+            [
+              -73.74224,
+              -5.96611
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "local_coverage_window",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-maranon-20260224-hh.png",
+          "image_bounds": [
+            [
+              -4.767460945419272,
+              -74.96032658179782
+            ],
+            [
+              -4.6860313776449605,
+              -74.87916238604299
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            450,
+            448
+          ],
+          "image_transform": [
+            20.167761031411438,
+            0.0,
+            -8344545.384783222,
+            0.0,
+            -20.212517289187655,
+            -522229.1555093881
+          ],
+          "image_sha256": "24b2e60b7c953d9cc8ecf5c17e761fb4b593f0e00458812b9ffe9084615ed84b",
+          "image_size_bytes": 74998,
+          "display_range_db": [
+            -26,
+            -8
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-maranon-20260224-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32718,
+          "science_posting_m": 20,
+          "science_shape": [
+            450,
+            450
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            504400.0,
+            0.0,
+            -20.0,
+            9482040.0
+          ],
+          "science_sha256": "5496a756eefb7fa10e54b1b149a05775020142aa9548101e5de7f703779cde20",
+          "science_size_bytes": 517605,
+          "valid_fraction": 1.0,
+          "valid_pixels": 202500,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "scientific": true,
+          "evidence_id": "nisar-maranon-20260224-source"
+        },
+        "HV": {
+          "status": "validated",
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "image_url": "/sar/nisar-maranon-20260224-hv.png",
+          "image_bounds": [
+            [
+              -4.767460945419272,
+              -74.96032658179782
+            ],
+            [
+              -4.6860313776449605,
+              -74.87916238604299
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            450,
+            448
+          ],
+          "image_transform": [
+            20.167761031411438,
+            0.0,
+            -8344545.384783222,
+            0.0,
+            -20.212517289187655,
+            -522229.1555093881
+          ],
+          "image_sha256": "da6086e639e2fad3ea5f7daa3d0a5d8cee0b48eb54ecf20d08b49e77ce86de22",
+          "image_size_bytes": 45952,
+          "display_range_db": [
+            -33,
+            -16
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-maranon-20260224-hv.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32718,
+          "science_posting_m": 20,
+          "science_shape": [
+            450,
+            450
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            504400.0,
+            0.0,
+            -20.0,
+            9482040.0
+          ],
+          "science_sha256": "fc2711ce1aecc66e32323c1bddaf83bf7e92662bd390b73120e78617c5e09a73",
+          "science_size_bytes": 513909,
+          "valid_fraction": 1.0,
+          "valid_pixels": 202500,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "scientific": true,
+          "evidence_id": "nisar-maranon-20260224-source"
+        }
+      },
+      "evidence_id": "nisar-maranon-20260224-source",
+      "source_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4275155676-ASF",
+      "source_requires_earthdata": true,
+      "science_requires_earthdata": false,
+      "orbit": 147,
+      "absolute_orbit": 3014,
+      "frame": 175,
+      "look_direction": "Left",
+      "direction": "ASCENDING",
+      "acquired_at": "2026-02-24T10:44:07Z",
+      "acquisition_end": "2026-02-24T10:44:42.999342105Z",
+      "processing_version": "1.0.11",
+      "product_specification_version": "1.5.0",
+      "noise_correction_applied": false,
+      "source_window": [
+        9236,
+        5958,
+        450,
+        450
+      ]
+    },
+    {
+      "id": "nisar-maranon-20260308",
+      "site_id": "maranon-nisar",
+      "product_id": "NISAR_L2_PR_GCOV_014_147_A_175_2005_DHDH_A_20260308T104408_20260308T104442_P05023_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_014_147_A_175_2005_DHDH_A_20260308T104408_20260308T104442_P05023_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "product_type": "GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "frequency": "A",
+      "mode": "Frequency A · dual polarization",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "collection_concept_id": "C2854338529-ASF",
+      "granule_concept_id": "G4275159850-ASF",
+      "maturity": "provisional",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -74.87916238604299,
+              -4.7674514664843155
+            ],
+            [
+              -74.8791764891604,
+              -4.686031377644958
+            ],
+            [
+              -74.96032658179783,
+              -4.686040693994223
+            ],
+            [
+              -74.9603219509081,
+              -4.767460945419271
+            ],
+            [
+              -74.87916238604299,
+              -4.7674514664843155
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -73.75062,
+              -5.92076
+            ],
+            [
+              -74.20025,
+              -3.83289
+            ],
+            [
+              -76.39128,
+              -4.30072
+            ],
+            [
+              -75.95298,
+              -6.38267
+            ],
+            [
+              -73.75062,
+              -5.92076
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "local_coverage_window",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-maranon-20260308-hh.png",
+          "image_bounds": [
+            [
+              -4.767460945419272,
+              -74.96032658179782
+            ],
+            [
+              -4.6860313776449605,
+              -74.87916238604299
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            450,
+            448
+          ],
+          "image_transform": [
+            20.167761031411438,
+            0.0,
+            -8344545.384783222,
+            0.0,
+            -20.212517289187655,
+            -522229.1555093881
+          ],
+          "image_sha256": "181bf725ce446446b01f1c0df80a0b5ea312c3332216645e46c37a13334934ab",
+          "image_size_bytes": 73348,
+          "display_range_db": [
+            -26,
+            -8
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-maranon-20260308-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32718,
+          "science_posting_m": 20,
+          "science_shape": [
+            450,
+            450
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            504400.0,
+            0.0,
+            -20.0,
+            9482040.0
+          ],
+          "science_sha256": "8615b37f9a4996fb038cbbe7d502696fd45cbffa43d195837817e03509f8fd19",
+          "science_size_bytes": 518101,
+          "valid_fraction": 1.0,
+          "valid_pixels": 202500,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "scientific": true,
+          "evidence_id": "nisar-maranon-20260308-source"
+        },
+        "HV": {
+          "status": "validated",
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "image_url": "/sar/nisar-maranon-20260308-hv.png",
+          "image_bounds": [
+            [
+              -4.767460945419272,
+              -74.96032658179782
+            ],
+            [
+              -4.6860313776449605,
+              -74.87916238604299
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            450,
+            448
+          ],
+          "image_transform": [
+            20.167761031411438,
+            0.0,
+            -8344545.384783222,
+            0.0,
+            -20.212517289187655,
+            -522229.1555093881
+          ],
+          "image_sha256": "c0d580080dc7dd5b4f1fa5807b64518530407916c92622562a8738adbb9a6e5e",
+          "image_size_bytes": 44889,
+          "display_range_db": [
+            -33,
+            -16
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-maranon-20260308-hv.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32718,
+          "science_posting_m": 20,
+          "science_shape": [
+            450,
+            450
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            504400.0,
+            0.0,
+            -20.0,
+            9482040.0
+          ],
+          "science_sha256": "94ba0fad4046caaa9f929adcf14fa3a92bfef924d6d42a25657e4786034e9167",
+          "science_size_bytes": 515479,
+          "valid_fraction": 1.0,
+          "valid_pixels": 202500,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "scientific": true,
+          "evidence_id": "nisar-maranon-20260308-source"
+        }
+      },
+      "evidence_id": "nisar-maranon-20260308-source",
+      "source_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4275159850-ASF",
+      "source_requires_earthdata": true,
+      "science_requires_earthdata": false,
+      "orbit": 147,
+      "absolute_orbit": 3187,
+      "frame": 175,
+      "look_direction": "Left",
+      "direction": "ASCENDING",
+      "acquired_at": "2026-03-08T10:44:08Z",
+      "acquisition_end": "2026-03-08T10:44:42.999342105Z",
+      "processing_version": "1.0.11",
+      "product_specification_version": "1.5.0",
+      "noise_correction_applied": false,
+      "source_window": [
+        9236,
+        5958,
+        450,
+        450
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "maranon-oefa-pontoon-4",
+      "title": "OEFA field investigation · Saramurillo, March 2026",
+      "kind": "regulatory_field_inspection",
+      "url": "https://www3.congreso.gob.pe/Docs/comisiones2025/transportes/files/oefa_ppt_22_05_2026.pdf#page=10",
+      "incident_date_local": "2026-03-07",
+      "notes": "OEFA reported a spill near Station 1 Pontoon 4 on March 7 and field supervision March 8–12. The report describes roughly 2,757 m² of impacted water. The archived 60 m, 40 m bank-buffer HH screen had zero assessable area within the digitized inspection footprint. A same-grid radar pair cannot determine the presence, absence or extent of oil at overpass.",
+      "archived_qgis_review": {
+        "analysis_cell_m": 60,
+        "bank_buffer_m": 40,
+        "review_radius_m": 1000,
+        "darkening_threshold_db": 3,
+        "assessable_river_cells_within_radius": 246,
+        "connected_candidate_patches_within_radius": 0,
+        "assessable_area_in_digitized_inspection_footprint_m2": 0.0,
+        "source_sha256": {
+          "screen_summary.json": "4999fd8c772df4d6fafcc3f17fb47c0fd3c8f17fcd2ea69505070fdd658a678e",
+          "oefa_saramurillo_inspection_area.geojson": "4754ec72df534fb0e840e00bf908341f790427b210d492a9117a57d4be9052ab",
+          "NISAR_Maranon_sensitivity.csv": "c080fbded6d741d4466791422439d66c9e0f5f6a5c387c4b35e2f38bd401416d",
+          "NISAR_Maranon_inspection_coverage.csv": "c89d9d03f8dbd5eefe4de9c833bda221a96ffbf8c966f05774f3b281d3d39001"
+        },
+        "scope": "Archived noise-gated QGIS screening context only. The later inspection outline is a manually georeferenced proxy. It has no SAR-overpass material labels."
+      },
+      "corroborating_url": "https://www.gob.pe/institucion/mpfn/noticias/1363623-fema-dirige-inspeccion-en-loreto-tras-derrame-de-petroleo-en-el-rio-maranon"
+    },
+    {
+      "id": "nisar-maranon-20260224-source",
+      "title": "NASA ASF NISAR HH/HV · 2026-02-24",
+      "kind": "downloaded_scientific_hdf5",
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4275155676-ASF",
+      "source_id": "NISAR_L2_PR_GCOV_013_147_A_175_2005_DHDH_A_20260224T104407_20260224T104442_P05023_N_F_J_001",
+      "source_filename": "NISAR_L2_PR_GCOV_013_147_A_175_2005_DHDH_A_20260224T104407_20260224T104442_P05023_N_F_J_001.h5",
+      "source_size_bytes": 1908408320,
+      "provider_size_bytes": 1908408320,
+      "source_sha256": "213d494b56d6902de0c46cc42bd0a483886567a70edc8b7c5f954495aa530277",
+      "provider_asset_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_013_147_A_175_2005_DHDH_A_20260224T104407_20260224T104442_P05023_N_F_J_001/NISAR_L2_PR_GCOV_013_147_A_175_2005_DHDH_A_20260224T104407_20260224T104442_P05023_N_F_J_001.h5",
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "notes": "The same native grid, acquisition geometry and product processing are shared across both observations. The hosted crop preserves measured HH and HV gamma0, including the source noise convention."
+    },
+    {
+      "id": "nisar-maranon-20260308-source",
+      "title": "NASA ASF NISAR HH/HV · 2026-03-08",
+      "kind": "downloaded_scientific_hdf5",
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4275159850-ASF",
+      "source_id": "NISAR_L2_PR_GCOV_014_147_A_175_2005_DHDH_A_20260308T104408_20260308T104442_P05023_N_F_J_001",
+      "source_filename": "NISAR_L2_PR_GCOV_014_147_A_175_2005_DHDH_A_20260308T104408_20260308T104442_P05023_N_F_J_001.h5",
+      "source_size_bytes": 1862270976,
+      "provider_size_bytes": 1862270976,
+      "source_sha256": "f9ba8313e52c645be74019d631e4956714c50cfa8f01c62dbf8537f03a6cf769",
+      "provider_asset_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_014_147_A_175_2005_DHDH_A_20260308T104408_20260308T104442_P05023_N_F_J_001/NISAR_L2_PR_GCOV_014_147_A_175_2005_DHDH_A_20260308T104408_20260308T104442_P05023_N_F_J_001.h5",
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "notes": "The same native grid, acquisition geometry and product processing are shared across both observations. The hosted crop preserves measured HH and HV gamma0, including the source noise convention."
+    }
+  ],
+  "pair_audit": {
+    "native_epsg": 32718,
+    "native_posting_m": 20,
+    "same_grid": true,
+    "common_positive_samples": {
+      "HH": 202500,
+      "HV": 202500
+    },
+    "scope": "Co-registered NISAR radar backscatter before and after the reported incident."
+  }
+}

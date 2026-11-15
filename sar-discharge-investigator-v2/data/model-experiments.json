@@ -1,0 +1,40 @@
+{
+  "experiments": [
+    {
+      "id": "curuai-water",
+      "title": "Curuai open-water model",
+      "kind": "wetland",
+      "status": "completed",
+      "scope": "Exposed water at one Curuai site, using NISAR L-band data at 60 m and Sentinel-2 optical water references.",
+      "metrics": [
+        {"label": "August spatial holdout, HH threshold overlap", "value": 0.972, "unit": "IoU"},
+        {"label": "October temporal holdout, HH threshold overlap", "value": 0.444, "unit": "IoU"},
+        {"label": "October temporal holdout, dual-pol logistic overlap", "value": 0.400, "unit": "IoU"},
+        {"label": "August to October water-loss overlap, HH threshold", "value": 0.136, "unit": "IoU"},
+        {"label": "August to October water-loss overlap, dual-pol logistic", "value": 0.092, "unit": "IoU"}
+      ],
+      "notes": ["Both models were fitted to August training blocks, then frozen before October scoring. The October comparisons use spatial blocks withheld from fitting.", "Transfer to the later date was weaker than within-date agreement. The experiment evaluates exposed water and change against an optical proxy. Drought attribution requires a seasonal baseline and independent hydrological evidence."],
+      "evidence_ids": ["gcov-method", "optical-method"]
+    },
+    {
+      "id": "oman-uae-slick",
+      "title": "Oman and UAE slick candidate screening",
+      "kind": "oil",
+      "status": "completed",
+      "scope": "NISAR L-band HH screening fitted on Oman and checked with a fixed threshold against a separate UAE reference case at 60 m.",
+      "metrics": [
+        {"label": "Fitted contrast threshold", "value": 1.5, "unit": "dB"},
+        {"label": "Oman overlap among eligible mapped cells", "value": 0.56, "unit": "%"},
+        {"label": "UAE reference eligible for assessment", "value": 4.42, "unit": "%"},
+        {"label": "UAE overlap among 2,075 eligible mapped cells", "value": 0, "unit": "%"}
+      ],
+      "notes": ["The reference maps represent candidate slick evidence from other sensors, acquired at different times. Unlabelled water may contain either class, so precision and false-positive rates are unestimated.", "This holdout provides no positive evidence that the fitted threshold transfers to another incident."],
+      "evidence_ids": ["gcov-method", "oil-physics"]
+    }
+  ],
+  "evidence": [
+    {"id": "gcov-method", "title": "ASF NISAR GCOV product guide", "url": "https://nisar-docs.asf.alaska.edu/gcov/", "kind": "provider_specification"},
+    {"id": "oil-physics", "title": "Field study of radar response to surface films", "url": "https://doi.org/10.1029/97JC01915", "kind": "primary_research"},
+    {"id": "optical-method", "title": "Sentinel-2 optical product specifications", "url": "https://sentiwiki.copernicus.eu/web/s2-products", "kind": "provider_specification"}
+  ]
+}

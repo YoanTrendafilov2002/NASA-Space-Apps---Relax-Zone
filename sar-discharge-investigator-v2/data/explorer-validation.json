@@ -1,0 +1,232 @@
+{
+  "generated_at": "2026-11-15T02:02:24Z",
+  "validated_site_geometry_count": 2,
+  "event_geometry_count": 1,
+  "unique_curated_acquisitions": 7,
+  "rtc_advertised": 6,
+  "validated_scientific_rasters": 0,
+  "minimum_catalogue_footprint_coverage_percent": 100.0,
+  "archive_transfer": "Only exact HTTP 206 ranges for ZIP directory, observedEventA and image footprint metadata. No satellite science asset requested.",
+  "network_body_bytes": 2083419,
+  "network_entries": [
+    {
+      "source_url": "https://rsis.ramsar.org/geoserver/wfs",
+      "label": "RSIS boundary 454",
+      "status": 200,
+      "bytes": 301983,
+      "sha256": "47af4f02cff0153bb694f54086d4937e751308bb0cda8493ae0488f4263aae03"
+    },
+    {
+      "source_url": "https://rsis.ramsar.org/geoserver/wfs",
+      "label": "RSIS boundary 64",
+      "status": 200,
+      "bytes": 27919,
+      "sha256": "2c125125e761f5c50faf08be1eaa33a8656706335bcf04fe15f14585c005bda1"
+    },
+    {
+      "source_url": "https://api.daac.asf.alaska.edu/services/search/param",
+      "label": "ASF exact-area inventory albufera",
+      "status": 200,
+      "bytes": 38394,
+      "sha256": "8f767959956dc770d764e359c6976ed7062a3bcf59f5cab12a4c54f4da797685"
+    },
+    {
+      "source_url": "https://api.daac.asf.alaska.edu/services/search/param",
+      "label": "ASF exact-area inventory tobago",
+      "status": 200,
+      "bytes": 20589,
+      "sha256": "9cba70bc123810ae00b612b303f5063dbaea4a7e8e9ad95aa7c85f11bcee7a68"
+    },
+    {
+      "source_url": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_v1.zip",
+      "label": "CEMS archive length probe",
+      "status": 206,
+      "bytes": 1,
+      "sha256": "5c62e091b8c0565f1bafad0dad5934276143ae2ccef7a5381e8ada5b1a8d26d2"
+    },
+    {
+      "source_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20241019T180256_20241019T180321_056175_06E02E_rtc",
+      "label": "PC exact item S1A_IW_GRDH_1SDV_20241019T180256_20241019T180321_056175_06E02E_rtc",
+      "status": 200,
+      "bytes": 5937,
+      "sha256": "b0c1327c3e0ddab0f9a64cb9724bf3e238752a5ab94b38ea23376a017abde1e8"
+    },
+    {
+      "source_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20240121T221832_20240121T221857_052211_064FCC_rtc",
+      "label": "PC exact item S1A_IW_GRDH_1SDV_20240121T221832_20240121T221857_052211_064FCC_rtc",
+      "status": 200,
+      "bytes": 5890,
+      "sha256": "4f6eb79132481809bfa751fa9d250a9c979ee594b1168dde4735b5c43d051646"
+    },
+    {
+      "source_url": "https://rapidmapping.s3.amazonaws.com/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_v1.zip",
+      "label": "CEMS archive bytes 23112686–23112707",
+      "status": 206,
+      "bytes": 22,
+      "sha256": "4553dc079acc86fd26852c9d44928bdce162c04f7ccdb06d6ae49bf40cefff98"
+    },
+    {
+      "source_url": "https://rapidmapping.s3.amazonaws.com/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_v1.zip",
+      "label": "CEMS archive bytes 23112666–23112685",
+      "status": 206,
+      "bytes": 20,
+      "sha256": "3efca927093549f206c33de93749051ff970b89103527c1cb94d665b1b9283a4"
+    },
+    {
+      "source_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20240202T221831_20240202T221856_052386_0655B8_rtc",
+      "label": "PC exact item S1A_IW_GRDH_1SDV_20240202T221831_20240202T221856_052386_0655B8_rtc",
+      "status": 200,
+      "bytes": 5890,
+      "sha256": "abe18338103379b550613e6d3f667f13798168dc85e6e2b90ef12bb85a58a236"
+    },
+    {
+      "source_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20241031T180256_20241031T180321_056350_06E71E_rtc",
+      "label": "PC exact item S1A_IW_GRDH_1SDV_20241031T180256_20241031T180321_056350_06E71E_rtc",
+      "status": 404,
+      "bytes": 0
+    },
+    {
+      "source_url": "https://rapidmapping.s3.amazonaws.com/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_v1.zip",
+      "label": "CEMS archive bytes 23107849–23112685",
+      "status": 206,
+      "bytes": 4837,
+      "sha256": "54b315408cb33c1d758c5578d98a2f944c2bf280ec851e6b23706d1c93ee4297"
+    },
+    {
+      "source_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20240214T221831_20240214T221856_052561_065B99_rtc",
+      "label": "PC exact item S1A_IW_GRDH_1SDV_20240214T221831_20240214T221856_052561_065B99_rtc",
+      "status": 200,
+      "bytes": 5889,
+      "sha256": "bcbec9726e33482ce24967e8b7b3eb30c1219b1e21e74795990d892411422c7c"
+    },
+    {
+      "source_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20241112T180255_20241112T180320_056525_06EE16_rtc",
+      "label": "PC exact item S1A_IW_GRDH_1SDV_20241112T180255_20241112T180320_056525_06EE16_rtc",
+      "status": 200,
+      "bytes": 5946,
+      "sha256": "16a47cb94756f9dcd1a41f8d13339bfd5fb9277dae59b99680a1ad3fd6f8d698"
+    },
+    {
+      "source_url": "https://rapidmapping.s3.amazonaws.com/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_v1.zip",
+      "label": "CEMS archive bytes 4041217–4041246",
+      "status": 206,
+      "bytes": 30,
+      "sha256": "85ab4279ecec848c0bc951bc5dc3b1df530c07a1d51dcd81955796f004e967f2"
+    },
+    {
+      "source_url": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc/items/S1A_IW_GRDH_1SDV_20240226T221831_20240226T221856_052736_066190_rtc",
+      "label": "PC exact item S1A_IW_GRDH_1SDV_20240226T221831_20240226T221856_052736_066190_rtc",
+      "status": 200,
+      "bytes": 5892,
+      "sha256": "18f60fac32ac171cc830fa378b3c2ef4da3bfd499259d02af1ca3bbc8997409d"
+    },
+    {
+      "source_url": "https://rapidmapping.s3.amazonaws.com/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_v1.zip",
+      "label": "CEMS archive bytes 4041247–4041294",
+      "status": 206,
+      "bytes": 48,
+      "sha256": "1ad5f466aa009972a0efedd15a7da3527b35d354ad562bf652133f50a6ff09eb"
+    },
+    {
+      "source_url": "https://rapidmapping.s3.amazonaws.com/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_v1.zip",
+      "label": "CEMS archive bytes 4041295–5693680",
+      "status": 206,
+      "bytes": 1652386,
+      "sha256": "f36b1158352294c78db2d305d3d6ff4cae7d9cb82ae530179cc4fae732e85c33"
+    },
+    {
+      "source_url": "https://rapidmapping.s3.amazonaws.com/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_v1.zip",
+      "label": "CEMS archive bytes 4015770–4015799",
+      "status": 206,
+      "bytes": 30,
+      "sha256": "375288fb7fb5859b340eea3b7a1726283fcea665f271cdd3dd3e6edd5770a0fd"
+    },
+    {
+      "source_url": "https://rapidmapping.s3.amazonaws.com/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_v1.zip",
+      "label": "CEMS archive bytes 4015800–4015848",
+      "status": 206,
+      "bytes": 49,
+      "sha256": "c095c6c4ab5e9cb5c854c0ae988ca6d308b9d88f6d8a607444e2f60501a4b4f0"
+    },
+    {
+      "source_url": "https://rapidmapping.s3.amazonaws.com/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_v1.zip",
+      "label": "CEMS archive bytes 4015849–4017114",
+      "status": 206,
+      "bytes": 1266,
+      "sha256": "60583c33964d61bd792539e13a2cf73df7677c405b58ba55301a047e588b2d1f"
+    },
+    {
+      "source_url": "https://rapidmapping.s3.amazonaws.com/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_v1.zip",
+      "label": "CEMS archive bytes 7451892–7451921",
+      "status": 206,
+      "bytes": 30,
+      "sha256": "15a107c0f18146d70e12925e4a32d227fe4628eb64b49a66d65436c834f026d2"
+    },
+    {
+      "source_url": "https://rapidmapping.s3.amazonaws.com/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_v1.zip",
+      "label": "CEMS archive bytes 7451922–7451960",
+      "status": 206,
+      "bytes": 39,
+      "sha256": "deba3c872acdb50b77c347172056d4675aea3522fadd2fad9f6e4180c0f662dc"
+    },
+    {
+      "source_url": "https://rapidmapping.s3.amazonaws.com/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_v1.zip",
+      "label": "CEMS archive bytes 7451961–7452292",
+      "status": 206,
+      "bytes": 332,
+      "sha256": "c42f7ab340dbbb5c34d0c7a4af1bf63d61407f145d701533adf8237ffa4767ac"
+    }
+  ],
+  "cems_provenance": {
+    "activation": "EMSR773",
+    "aoi": "AOI01 Valencia province",
+    "product": "DEL_PRODUCT v1",
+    "layer": "observedEventA",
+    "source_url": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_v1.zip",
+    "archive_bytes": 23112708,
+    "retrieved_range_bytes": 1659089,
+    "member": "EMSR773_AOI01_DEL_PRODUCT_observedEventA_v1.json",
+    "member_sha256": "fe759aa0499432dc0d5e1c0d8f19fed8eeac85fc4c531bd7eb73cfe9fcf00f96",
+    "source_table_member": "EMSR773_AOI01_DEL_PRODUCT_source_v1.dbf",
+    "source_acquisitions": [
+      {
+        "reference_id": 1,
+        "sensor": "Sentinel-2",
+        "phase": "Pre-event",
+        "acquired_at": "2024-08-12T10:46:29Z",
+        "source_resolution": "10.0 m",
+        "referenced_by_clipped_flood_features": false
+      },
+      {
+        "reference_id": 2,
+        "sensor": "Landsat-8",
+        "phase": "Post-event",
+        "acquired_at": "2024-10-30T10:37:22Z",
+        "source_resolution": "30.0 m",
+        "referenced_by_clipped_flood_features": false
+      },
+      {
+        "reference_id": 3,
+        "sensor": "Sentinel-2",
+        "phase": "Post-event",
+        "acquired_at": "2024-10-31T10:51:09Z",
+        "source_resolution": "10.0 m",
+        "referenced_by_clipped_flood_features": true
+      },
+      {
+        "reference_id": 4,
+        "sensor": "Sentinel-1",
+        "phase": "Post-event",
+        "acquired_at": "2024-10-31T18:02:21Z",
+        "source_resolution": "20.0 m",
+        "referenced_by_clipped_flood_features": true
+      }
+    ],
+    "source_feature_count": 1488,
+    "clipped_feature_count": 275,
+    "repaired_source_geometries": 5,
+    "clip": "Exact intersection with official RSIS site 454 polygon. Display geometry uses 20 m topology-preserving simplification; export retains clipped feature geometries.",
+    "authoritative_for": "Published mapped flood extent for the CEMS product observation intervals",
+    "credit": "Contains modified Copernicus Service information 2024. Copernicus Emergency Management Service (© 2024 European Union), EMSR773 Valencia Province (AOI01), Delineation v1."
+  }
+}

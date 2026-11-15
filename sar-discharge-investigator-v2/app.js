@@ -21,20 +21,22 @@ const REFS = {
   fingas14: {t:'Fingas M., Brown C. (2014). Review of oil spill remote sensing. Mar. Pollut. Bull. 83(1), 9–23.', u:'https://doi.org/10.1016/j.marpolbul.2014.03.059'},
   minchew12: {t:'Minchew B., Jones C.E., Holt B. (2012). Polarimetric analysis of backscatter from the Deepwater Horizon oil spill using L-band synthetic aperture radar. IEEE TGRS 50(10), 3812–3830.', u:'https://doi.org/10.1109/TGRS.2012.2185804'},
   topouzelis08: {t:'Topouzelis K. (2008). Oil spill detection by SAR images: dark formation detection, feature extraction and classification algorithms. Sensors 8(10), 6642–6659.', u:'https://doi.org/10.3390/s8106642'},
-  nasaEO21: {t:'NASA Earth Observatory (2021). Troubled Waters — oil leaks and algae in Lake Maracaibo (MODIS, Landsat 8, Sentinel-2, Sept 2021).', u:'https://earthobservatory.nasa.gov/images/148894/troubled-waters'},
+  nasaEO21: {t:'NASA Earth Observatory (2021). Troubled Waters — oil leaks and algae in Lake Maracaibo (MODIS, Landsat 8, Sentinel-2, Sept 2021).', u:'https://science.nasa.gov/earth/earth-observatory/troubled-waters-148894/'},
   squier15: {t:'Squier M., Bridges J., Garber J., Warneke W., Khan S. (2015). Observing oil surface area due to seepage in Lake Maracaibo (ALOS PALSAR L-band). AAPG Search and Discovery #90219.', u:'https://searchanddiscovery.com/abstracts/html/2015/90219gcags/abstracts/177.html'},
   nasaEO03: {t:'NASA Earth Observatory (2003). Oil slicks on Lake Maracaibo, Venezuela (Terra MISR, 26 Dec 2002).', u:'https://science.nasa.gov/earth/earth-observatory/oil-slicks-on-lake-maracaibo-venezuela-3478/'},
-  unep11: {t:'UNEP (2011). Environmental Assessment of Ogoniland. United Nations Environment Programme, Nairobi.', u:'https://www.unep.org/resources/assessment/environmental-assessment-ogoniland-site-factsheets-executive-summary-and-full'},
+  unep11: {t:'UNEP (2011). Environmental Assessment of Ogoniland. United Nations Environment Programme, Nairobi.', u:'https://wedocs.unep.org/items/6a723752-f705-41ea-b744-ae2f49f92809'},
   onuh21: {t:'Onuh P.A. et al. (2021). Artisanal refining of crude oil in the Niger Delta: a challenge to clean-up and remediation in Ogoniland. Local Economy 36(6), 468–486.', u:'https://doi.org/10.1177/02690942211071075'},
   noaaITC: {t:'NOAA DARRP. ITC Tank Fire, Deer Park, Texas (March 2019): oil products and fire water reached Tucker Bayou, San Jacinto River and the Houston Ship Channel.', u:'https://darrp.noaa.gov/node/1668'},
   nisarOil: {t:'NASA/JPL. NISAR Applications: Oil Spills (fact sheet).', u:'https://assets.science.nasa.gov/content/dam/science/missions/nisar/nisar-jpl/pdf/NISAR_Applications_OilSpills1.pdf'},
-  asfGcov: {t:'ASF NISAR Data User Guide — GCOV product (layers, pixel spacing by bandwidth, RTC).', u:'https://hyp3-docs.asf.alaska.edu/nisar-docs/gcov'},
+  asfGcov: {t:'ASF NISAR Data User Guide — GCOV product (layers, pixel spacing by bandwidth, RTC).', u:'https://nisar-docs.asf.alaska.edu/gcov/'},
   wu09: {t:'Wu T.Y., Mohammad A.W., Jahim J.Md., Anuar N. (2009). A holistic approach to managing palm oil mill effluent (POME): biotechnological advances in the sustainable reuse of POME. Biotechnol. Adv. 27(1), 40–52.', u:'https://research.monash.edu/en/publications/a-holistic-approach-to-managing-palm-oil-mill-effluent-pome-biote/'},
-  emsa: {t:'EMSA CleanSeaNet — European satellite-based oil spill and vessel detection service.', u:'https://www.emsa.europa.eu/csn-menu.html'},
+  emsa: {t:'EMSA CleanSeaNet — European satellite-based oil spill and vessel detection service.', u:'https://emsa.europa.eu/earth-observation-products/how-does-sar-detection-work/items.html'},
   era5: {t:'Hersbach H. et al. (2020). The ERA5 global reanalysis. Q. J. R. Meteorol. Soc. 146, 1999–2049 (accessed via Open-Meteo historical API).', u:'https://doi.org/10.1002/qj.3803'},
   pekel16: {t:'Pekel J.-F. et al. (2016). High-resolution mapping of global surface water and its long-term changes. Nature 540, 418–422 (JRC Global Surface Water).', u:'https://doi.org/10.1038/nature20584'},
   lee80: {t:'Lee J.-S. (1980). Digital image enhancement and noise filtering by use of local statistics. IEEE TPAMI 2(2), 165–168.', u:'https://doi.org/10.1109/TPAMI.1980.4766994'},
   noaaMPSR: {t:'NOAA OSPO Marine Pollution Surveillance Reports (analyst-reviewed SAR oil analyses, US waters).', u:'https://www.ospo.noaa.gov/Products/ocean/marinepollution/'},
+  s1Mission: {t:'Copernicus Sentinel-1 mission performance and nominal noise specification.', u:'https://sentiwiki.copernicus.eu/web/s1-mission'},
+  s1Products: {t:'Copernicus Sentinel-1 products, spacing, resolution and looks.', u:'https://sentiwiki.copernicus.eu/web/s1-products'},
 };
 
 /* ------------------------------------------------------------------ */
@@ -48,24 +50,24 @@ const INDUSTRIES = [
    waste:'Crude oil; produced water containing dispersed oil.',
    pathway:'Direct to lake, estuary or sea; via creeks from onshore lines.',
    mechanism:'Floating crude forms a viscous surface film that damps cm–dm Bragg waves, lowering backscatter (dark patch). Demonstrated at C- and L-band.',
-   pattern:{doc:['Chronic, recurring slicks at fixed infrastructure: “The oil spills are multiple and continuous, and you can easily spot the sources” (Lake Maracaibo, NASA EO 2021).','L-band (ALOS PALSAR) time series showed changing oil coverage linked to seepage (Lake Maracaibo, 2010).'], hyp:['Leak frequency tied to pipeline pressure/production rate — not independently documented here.']},
+   pattern:{doc:['NASA Earth Observatory describes historical recurring releases in Lake Maracaibo alongside extensive algal blooms.'], hyp:['Leak frequency tied to pipeline pressure/production rate — not independently documented here.']},
    confounders:'Cyanobacteria/algal films, low-wind patches, river plumes, rain cells.',
-   hotspots:['maracaibo','bonny'], refs:['nasaEO21','squier15','alpers89','fingas14','minchew12'], conf:'High (mechanism) · Medium (site attribution)'},
-  {id:'bilge', name:'Shipping & shipyards — illegal bilge / oily-waste discharge', rank:2, detect:'S',
-   illicit:'Discharge of bilge water, sludge and oily residues in breach of MARPOL Annex I.',
+   hotspots:['maracaibo','bonny'], refs:['nasaEO21','squier15','alpers89','fingas14','minchew12'], conf:'Published surface-film mechanism and historical context'},
+  {id:'bilge', name:'Shipping and shipyards — oily waste', rank:2, detect:'S',
+   illicit:'Surface release of bilge water or oily residues.',
    processes:'Engine-room bilge accumulation, tank cleaning, ship repair.',
    waste:'Bilge oil, sludge, oily water mixtures.',
    pathway:'Shipping lanes, port approaches, estuary channels, sea.',
    mechanism:'Thin mineral-oil films damp Bragg waves; long narrow dark features, often attached to or aligned with a vessel track.',
-   pattern:{doc:['Linear or tailed slicks along shipping routes — the most frequent SAR-detected illicit discharge in European waters (CleanSeaNet).'], hyp:['Discharges inside rivers/inner ports — not established by the sources reviewed here.']},
+   pattern:{doc:['EMSA screens for possible surface spills with SAR and uses vessel information to follow up.'], hyp:['Discharges inside rivers/inner ports — not established by the sources reviewed here.']},
    confounders:'Calm ship wakes, natural films, low-wind lanes, current shear lines.',
    hotspots:['galveston','maracaibo'], refs:['brekke05','topouzelis08','emsa','fingas14'], conf:'High'},
-  {id:'artisanal_refining', name:'Artisanal crude refining & oil theft (illegal)', rank:3, detect:'C',
-   illicit:'Unlicensed “bush” refineries cooking stolen crude in mangrove creeks.',
+  {id:'artisanal_refining', name:'Artisanal crude refining', rank:3, detect:'C',
+   illicit:'Small refining sites near waterways may release crude or residues.',
    processes:'Pipeline tapping, open-pot distillation, transport by boat.',
    waste:'Crude and distillation residues dumped or leaked; refined-product spills; burnt residues.',
    pathway:'Mangrove creeks → estuary (Bonny River) → coast.',
-   mechanism:'Floating crude/residue damps waves as above. Light refined products (kerosene, diesel) spread thin and evaporate within hours–days, shortening the detection window.',
+   mechanism:'Floating crude or residues can damp surface waves. Persistence and contrast depend on the product and environmental conditions.',
    pattern:{doc:['Many small, distributed sites in creeks and mangroves; widespread hydrocarbon contamination of creeks (UNEP Ogoniland assessment).','Artisanal refining undermines clean-up/remediation in Ogoniland (Onuh et al. 2021).'], hyp:['Night-time operation — not independently documented in the sources reviewed; testable with dawn/dusk SAR passes.']},
    confounders:'Narrow creeks below resolution, mangrove shadow/layover, tidal mudflats, low wind, biogenic films.',
    hotspots:['bonny'], refs:['unep11','onuh21','fingas14'], conf:'Medium'},
@@ -78,21 +80,21 @@ const INDUSTRIES = [
    pattern:{doc:['Incident releases: in 2019 the ITC Deer Park tank fire sent oil products and fire water through ditches into Tucker Bayou, the San Jacinto River and the Houston Ship Channel (NOAA DARRP).'], hyp:['Discharges tied to production cycles or storm events — requires permit discharge-monitoring data, not SAR alone.']},
    confounders:'Narrow channels near resolution limit, ship wakes, harbour structures, low wind in sheltered bayous.',
    hotspots:['galveston'], refs:['noaaITC','fingas14','noaaMPSR'], conf:'Medium'},
-  {id:'waste_oil', name:'Illegal dumping of used / waste oil', rank:5, detect:'C',
+  {id:'waste_oil', name:'Used oil and waste oil', rank:5, detect:'C',
    illicit:'Unlicensed disposal of lubricants, sludge and oily waste into drains or watercourses.',
    processes:'Vehicle/engine servicing, informal recycling.',
    waste:'Used lubricating oil, sludge.',
    pathway:'Storm drains → rivers → estuary.',
    mechanism:'Floating oil films damp waves if the released volume covers an area several resolution cells wide.',
    pattern:{doc:[], hyp:['Episodic, small-volume releases — likely below SAR detectability in narrow rivers; no SAR case studies found.']},
-   confounders:'As for mineral oil; most events too small for 10–20 m SAR.',
+   confounders:'Natural films, calm water and mixed shoreline pixels.',
    hotspots:[], refs:['fingas14'], conf:'Low'},
   {id:'palm_veg_oil', name:'Palm-oil & vegetable-oil mills', rank:6, detect:'C',
    illicit:'Untreated or partially treated effluent (POME) released to rivers.',
    processes:'Sterilisation, pressing, clarification.',
    waste:'High BOD/COD organic matter, oil & grease, suspended solids (POME).',
    pathway:'Rivers and canals near mills.',
-   mechanism:'Free fatty/vegetable-oil films are surface-active and can damp waves like biogenic monomolecular films; most POME oil is emulsified or retained in ponds. Single-frequency SAR cannot separate these films from natural slicks.',
+   mechanism:'Surface films may reduce roughness. The cited effluent composition study does not establish SAR detectability.',
    pattern:{doc:['Effluent composition (oil & grease, BOD/COD) documented (Wu et al. 2009).'], hyp:['Seasonal discharge pulses with crop cycle — not tested with SAR.']},
    confounders:'Natural biogenic films (essentially the same physics), low wind.',
    hotspots:[], refs:['wu09','gade98'], conf:'Low'},
@@ -116,24 +118,24 @@ const INDUSTRIES = [
    processes:'Pulping, bleaching.',
    waste:'Dissolved lignin/organics, resin acids, fibres, colour; foam.',
    pathway:'Rivers.',
-   mechanism:'Dissolved and suspended constituents do not damp surface waves. Foam tends to be radar-bright, not dark. Effect of surfactant films: unknown.',
+   mechanism:'This detector has no direct measurement of dissolved or suspended constituents. A surface effect would require independent evidence.',
    pattern:{doc:[], hyp:[]}, confounders:'—', hotspots:[], refs:['fingas14'], conf:'Medium (physics)'},
   {id:'textile', name:'Textile dyeing & finishing', rank:10, detect:'U',
    illicit:'Unlicensed dye-houses discharging untreated effluent.',
    processes:'Dyeing, washing, finishing.',
    waste:'Dissolved dyes, salts, surfactants, high temperature.',
    pathway:'Rivers and canals.',
-   mechanism:'Colour and dissolved load are optical, not radar, signatures. Dissolved pollutants are invisible to SAR.',
+   mechanism:'This SAR method measures surface backscatter. Dye colour and dissolved concentrations are outside its measurement scope.',
    pattern:{doc:[], hyp:[]}, confounders:'—', hotspots:[], refs:['fingas14'], conf:'Medium (physics)'},
   {id:'tannery', name:'Tanneries', rank:11, detect:'U',
    illicit:'Unregistered tanneries bypassing treatment.',
    processes:'Liming, chrome tanning.',
    waste:'Chromium (III), sulphide, salts, proteins (dissolved/suspended).',
    pathway:'Rivers.',
-   mechanism:'Dissolved/suspended — no change in surface roughness; not SAR-detectable.',
+   mechanism:'This detector has no direct measurement of dissolved or suspended material.',
    pattern:{doc:[], hyp:[]}, confounders:'—', hotspots:[], refs:['fingas14'], conf:'Medium (physics)'},
 ];
-const DET = {S:['Supported','b-sup'], C:['Conditional','b-con'], U:['Unlikely','b-unl'], K:['Unknown','b-unk']};
+const DET = {S:['Published analogue','b-info'], C:['Conditional','b-con'], U:['No direct measurement','b-unl'], K:['Unknown','b-unk']};
 
 /* ------------------------------------------------------------------ */
 /* 3. Hotspots (Q5) — real coordinates; evidence from cited sources     */
@@ -142,19 +144,19 @@ const HOTSPOTS = [
   {id:'maracaibo', name:'Lake Maracaibo', country:'Venezuela', water:'estuary', waterLabel:'Estuarine lake (open water, ~100 km wide)',
    center:[9.85,-71.55], search:[-71.85,9.60,-71.10,10.65], demo:[-71.64,10.02,-71.34,10.32], primary:true,
    industries:['oil_production','bilge','refining_petrochem'],
-   why:'More than 10,000 oil installations and thousands of km of ~50-year-old, partly unmapped pipelines leak into the lake (NASA EO 2021). L-band ALOS PALSAR has previously imaged oil on the lake surface (Squier et al. 2015). Open water ≫ SAR resolution.',
+   why:'NASA Earth Observatory documents historical releases and algal blooms in Lake Maracaibo. Broad open-water areas let users inspect observations away from mapped land.',
    caveats:'Tropical: frequent low wind and intense cyanobacteria blooms (“verdín”) produce look-alike films.',
-   feasibility:'High — wide water body, dense NISAR GCOV and Sentinel-1 coverage.', refs:['nasaEO21','squier15','nasaEO03']},
+   feasibility:'Candidate open-water site. Check catalogue coverage and acquisition conditions.', refs:['nasaEO21','squier15','nasaEO03']},
   {id:'galveston', name:'Houston Ship Channel – Galveston Bay', country:'USA', water:'estuary', waterLabel:'Ship channel (150–300 m) + bay (20–30 km)',
    center:[29.55,-94.95], search:[-95.30,29.30,-94.70,29.80], demo:[-95.12,29.45,-94.82,29.72], primary:false,
    industries:['refining_petrochem','bilge'],
-   why:'One of the largest petrochemical and refining complexes in the US. Documented 2019 ITC Deer Park release reached Tucker Bayou, the San Jacinto River and the Ship Channel (NOAA DARRP). NOAA analysts publish SAR-based pollution reports for US waters — a reference for validation.',
-   caveats:'The ship channel is only tens of SAR pixels wide; bayous are narrower. Heavy ship traffic produces wake look-alikes.',
+   why:'NOAA documents a 2019 oil and firewater release that reached Tucker Bayou, the San Jacinto River and the Houston Ship Channel.',
+   caveats:'Narrow waterways can fall within the detector’s shoreline buffer. Ship wakes are possible look-alikes.',
    feasibility:'Medium — bay resolvable, channel marginal.', refs:['noaaITC','noaaMPSR']},
   {id:'bonny', name:'Bonny River estuary, Niger Delta', country:'Nigeria', water:'creeks', waterLabel:'Estuary + mangrove creeks (tens–hundreds m)',
    center:[4.55,7.12], search:[6.95,4.35,7.30,4.80], demo:[6.98,4.38,7.22,4.62], primary:false,
    industries:['artisanal_refining','oil_production'],
-   why:'UNEP documented widespread hydrocarbon contamination of creeks in Ogoniland, with artisanal refining as a continuing source (UNEP 2011; Onuh et al. 2021). Persistent cloud cover makes SAR the only regular observer.',
+   why:'UNEP documented historical hydrocarbon contamination of creeks and impacts from artisanal refining in parts of Ogoniland. The study provides regional context for selecting scenes.',
    caveats:'Most creeks are below reliable slick-detection width; mangrove edges and tidal mudflats confound dark-feature detection.',
    feasibility:'Low–medium — main estuary channel only.', refs:['unep11','onuh21']},
 ];
@@ -166,7 +168,7 @@ const SNAPSHOT = {retrieved:'2026-11-14', note:'ASF Search API, NISAR L2 GCOV, p
 /* 4. Sensor constants                                                  */
 /* ------------------------------------------------------------------ */
 const SENSORS = {
-  S1: {name:'Sentinel-1 C-band (5.405 GHz)', pol:'VV', nesz:-21, neszNote:'−22 dB σ⁰ (IW spec) expressed as γ⁰ at ~39° incidence (÷cos θ ≈ +1 dB); ±1 dB across the swath', band:'C', braggCm:'≈4.8 cm at 35° incidence',
+  S1: {name:'Sentinel-1 C-band (5.405 GHz)', pol:'VV', nesz:-21, neszBasis:'nominal_sentinel1_screening', neszNote:'The nominal −21 dB γ⁰ screen approximates the −22 dB σ⁰ mission specification over flat water at 39° incidence. The local noise level is unverified.', band:'C', braggCm:'≈4.8 cm at 35° incidence',
        product:'Sentinel-1 IW GRD, radiometrically terrain-corrected γ⁰ (Microsoft Planetary Computer “sentinel-1-rtc”)'},
   NISAR: {name:'NISAR L-band (1.257 GHz)', pol:'HH', nesz:null, band:'L', braggCm:'≈21 cm at 35° incidence',
        product:'NISAR L2 GCOV (geocoded, RTC γ⁰ covariance)'},
@@ -217,6 +219,20 @@ async function fetchJSON(url, opt={}, timeout=45000){
 /* 7. Data access                                                       */
 /* ------------------------------------------------------------------ */
 const MPC = 'https://planetarycomputer.microsoft.com/api';
+function weatherAtAcquisition(hourly, target){
+  const t=hourly?.time||[];
+  let k=-1, best=Infinity;
+  t.forEach((s,i)=>{ const gap=Math.abs(Date.parse(s+'Z')-target); if(gap<best){ best=gap; k=i; } });
+  if(k<0 || best>3600000) throw new Error('No ERA5 model hour near the acquisition');
+  const ws=hourly.wind_speed_10m?.[k], wd=hourly.wind_direction_10m?.[k];
+  const stamp=Date.parse(t[k]+'Z');
+  const near=[k-1,k,k+1].map(i=>{
+    const mm=hourly.precipitation?.[i];
+    return Date.parse(t[i]+'Z')===stamp+(i-k)*3600000 && Number.isFinite(mm) && mm>=0 ? mm:null;
+  });
+  return {ws:Number.isFinite(ws)&&ws>=0?ws:null, wd:Number.isFinite(wd)?wd:null, time:t[k]+'Z',
+          precip3h:near.every(Number.isFinite)?near.reduce((a,b)=>a+b,0):null};
+}
 const API = {
   async nisar(hs, from, to){
     const q = new URLSearchParams({platform:'NISAR', processingLevel:'GCOV', intersectsWith:bboxWKT(hs.search),
@@ -269,16 +285,13 @@ const API = {
     return `${MPC}/data/v1/item/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?${q}`;
   },
   async wind(lat, lon, iso){
-    const d=iso.slice(0,10);
-    const q=new URLSearchParams({latitude:lat.toFixed(3), longitude:lon.toFixed(3), start_date:d, end_date:d,
+    const target=Date.parse(iso);
+    if(!Number.isFinite(target)) throw new Error('Acquisition time is unavailable');
+    const day=offset=>new Date(target+offset*3600000).toISOString().slice(0,10);
+    const q=new URLSearchParams({latitude:lat.toFixed(3), longitude:lon.toFixed(3), start_date:day(-2), end_date:day(2),
       hourly:'wind_speed_10m,wind_direction_10m,precipitation', wind_speed_unit:'ms', models:'era5', timezone:'GMT'});
     const j=await fetchJSON('https://archive-api.open-meteo.com/v1/archive?'+q);
-    const t=j.hourly?.time||[]; if(!t.length) throw new Error('No ERA5 data for this date yet (ERA5 has ~5-day latency)');
-    const target=new Date(iso).getTime(); let k=0, best=1e15;
-    t.forEach((s,i)=>{const dt=Math.abs(new Date(s+'Z').getTime()-target); if(dt<best){best=dt;k=i;}});
-    const ws=j.hourly.wind_speed_10m[k]; if(ws==null) throw new Error('ERA5 wind not yet available for this hour');
-    const pr=j.hourly.precipitation; const near=[k-1,k,k+1].filter(i=>i>=0&&i<pr.length).map(i=>pr[i]??0);
-    return {ws, wd:j.hourly.wind_direction_10m[k], precip3h:near.reduce((a,b)=>a+b,0), time:t[k]+'Z', grid:[j.latitude,j.longitude]};
+    return {...weatherAtAcquisition(j.hourly,target), grid:[j.latitude,j.longitude]};
   },
   async facilities(lat, lon, rKm=15){
     const r=Math.round(rKm*1000);
@@ -411,21 +424,22 @@ function analyzeScene(db, valid, occ, W, H, pxM, pIn){
     cs.sort(); const p95=cs[Math.min(n-1,Math.floor(0.95*n))];
     const meanDb=lin2db(sl/n), bgDb=lin2db(sbg/n), contrast=bgDb-meanDb;
     const cx=sx/n, cy=sy/n; let xx=0,yy=0,xy=0; for(const i of pix){const dx=(i%W)*pxX-cx, dy=((i/W)|0)*pxY-cy; xx+=dx*dx; yy+=dy*dy; xy+=dx*dy;}
-    xx/=n; yy/=n; xy/=n; const tr=xx+yy, det=xx*yy-xy*xy, disc=Math.sqrt(Math.max(0,tr*tr/4-det)); const fl=pxL*pxL/12;
-    const l1=tr/2+disc+fl, l2=Math.max(tr/2-disc,0)+fl;       // + pixel variance: moments of a continuous pixel footprint
-    const ang=Math.atan2(l1-fl-xx, xy||1e-12); const ux=Math.abs(xy)<1e-12&&xx>=yy?1:Math.cos(ang), uy=Math.abs(xy)<1e-12&&xx>=yy?0:Math.sin(ang);
+    xx=xx/n+pxX*pxX/12; yy=yy/n+pxY*pxY/12; xy/=n;
+    const tr=xx+yy, det=xx*yy-xy*xy, disc=Math.sqrt(Math.max(0,tr*tr/4-det));
+    const l1=tr/2+disc, l2=Math.max(tr/2-disc,0);
+    const ang=0.5*Math.atan2(2*xy,xx-yy); const ux=Math.cos(ang), uy=Math.sin(ang);
     let pmin=Infinity, pmax=-Infinity; for(const i of pix){const t=((i%W)*pxX-cx)*ux+(((i/W)|0)*pxY-cy)*uy; if(t<pmin) pmin=t; if(t>pmax) pmax=t;}
     const ellA=2*Math.sqrt(l1), ellB=2*Math.sqrt(l2);
     // edge step: linear means of the outer water ring vs. the inner boundary (dB difference)
     let oS=0,oN=0,iS=0,iN=0; const seen=new Set();
-    for(const i of pix){ let edge=false; for(const j of [i-1,i+1,i-W,i+W]){ if(j<0||j>=N) continue; if(lab[j]!==ci && wm[j]){ edge=true; if(!seen.has(j)){seen.add(j); oS+=filt[j]; oN++;} } } if(edge){iS+=filt[i]; iN++;} }
+    for(const i of pix){ let edge=false; const x=i%W; const neighbors=[x>0?i-1:-1,x<W-1?i+1:-1,i-W,i+W]; for(const j of neighbors){ if(j<0||j>=N) continue; if(lab[j]!==ci && wm[j]){ edge=true; if(!seen.has(j)){seen.add(j); oS+=filt[j]; oN++;} } } if(edge){iS+=filt[i]; iN++;} }
     const area=n*pxKm2, noiseFrac=nesz!=null? nz/n : null, regional=area>regionalKm2;
     const se=4.343*Math.sqrt(1/(p.enl*n)) ; const u=Math.sqrt(se*se + Math.pow(p.quantDb/Math.sqrt(12),2)*2);
     const id=anoms.length; for(const i of pix) keep[i]=id;
     anoms.push({id, n, pix, cx:cx/pxX, cy:cy/pxY, area, meanDb, bgDb, contrast, contrastU:u, p95Contrast:p95, maxContrast:mx,
       elong:Math.sqrt(l1/l2), ellipseMajorKm:2*ellA/1000, lengthKm:(pmax-pmin+Math.abs(ux)*pxX+Math.abs(uy)*pxY)/1000, fillRatio:(n*pxX*pxY)/(Math.PI*ellA*ellB),
       edgeStep:(oN&&iN)? lin2db(oS/oN)-lin2db(iS/iN) : null, shoreKm: mnD>=1e8? null : (mnD/3)*pxL/1000, touchesShoreBuffer: mnD<1e8 && (mnD/3)*pxL<=p.shoreBufM+1.5*pxL,
-      permFrac:pw/n, noiseFrac, regional, cls: (noiseFrac!=null&&noiseFrac>=0.5)?'noise':(regional?'regional':'measurable')});
+      permFrac:pw/n, noiseFrac, regional, cls: (noiseFrac!=null&&(noiseFrac>=0.5 || meanDb<=nesz+1))?'noise':(regional?'regional':'measurable')});
   });
   anoms.sort((a,b)=>b.area-a.area);
   const top=anoms.slice(0,40); const remap=new Map(top.map((a,k)=>[a.id,k]));
@@ -457,17 +471,26 @@ function persistence(run, comp){
 }
 /** acquisition comparability (Sentinel-1C vs -1D etc.) from STAC metadata and scene statistics */
 function comparability(sceneA, sceneB, resA, resB){
-  const pa=sceneA.properties, pb=sceneB.properties; const notes=[];
-  const sameTrack = pa['sat:relative_orbit']!=null && pa['sat:relative_orbit']===pb['sat:relative_orbit'];
-  const sameDir = pa['sat:orbit_state']===pb['sat:orbit_state'];
-  const dDays = Math.abs(new Date(pa.datetime)-new Date(pb.datetime))/864e5;
-  if(pa.platform!==pb.platform) notes.push(`Different satellites (${pa.platform} vs ${pb.platform}). Both units fly the same reference orbit; absolute calibration offsets between units are not quantified here but cancel to first order because contrast is measured against a background in the same scene.`);
-  if(pa['sat:relative_orbit']==null || pb['sat:relative_orbit']==null) notes.push('Relative orbit not reported in the metadata — acquisition geometry cannot be verified.');
-  else notes.push(sameTrack&&sameDir? `Same relative orbit (${pa['sat:relative_orbit']}) and pass direction (${pa['sat:orbit_state']}): the same ground point is seen at nominally the same incidence angle.` :
-    `Different geometry (relative orbit ${pa['sat:relative_orbit']} ${pa['sat:orbit_state']} vs ${pb['sat:relative_orbit']} ${pb['sat:orbit_state']}). Water backscatter depends strongly on incidence angle and RTC does not normalise this, so only relative contrast is compared.`);
-  notes.push(`Water background: ${fmt(resA.waterMeanDb)} dB vs ${fmt(resB.waterMeanDb)} dB (Δ ${fmt(resB.waterMeanDb-resA.waterMeanDb)} dB, mostly wind-driven); measurable water ${fmt(resA.measFrac*100,0)} % vs ${fmt(resB.measFrac*100,0)} %.`);
-  if(pa['s1:instrument_configuration_ID']!==pb['s1:instrument_configuration_ID']) notes.push('Different instrument configuration IDs.');
-  return {sameTrack, sameDir, dDays, sameGeometry:sameTrack&&sameDir, notes};
+  const pa=sceneA.properties, pb=sceneB.properties;
+  const orbitA=pa['sat:relative_orbit'], orbitB=pb['sat:relative_orbit'];
+  const passA=pa['sat:orbit_state'], passB=pb['sat:orbit_state'];
+  const sameTrack=Number.isInteger(orbitA) && orbitA>0 && orbitA===orbitB;
+  const sameDir=['ascending','descending'].includes(passA) && passA===passB;
+  const known=Number.isInteger(orbitA) && Number.isInteger(orbitB) && ['ascending','descending'].includes(passA) && ['ascending','descending'].includes(passB);
+  const sameGeometry=sameTrack && sameDir;
+  const timeGap=Math.abs(new Date(pa.datetime)-new Date(pb.datetime));
+  const differentDate=Number.isFinite(timeGap) && timeGap>0;
+  const dDays=Number.isFinite(timeGap)?timeGap/864e5:null;
+  const dtA=pa['s1:datatake_id'], dtB=pb['s1:datatake_id'];
+  const independent=differentDate && sceneA.id!==sceneB.id && !(dtA && dtB && pa.platform===pb.platform && dtA===dtB);
+  const notes=[];
+  if(!known) notes.push('Relative orbit or pass direction is missing. Comparison geometry is unverified.');
+  else if(sameGeometry) notes.push(`Relative orbit ${orbitA} and ${passA} pass match. Local incidence and surface conditions may still differ.`);
+  else notes.push('Relative orbit or pass direction differs. Recurrence is untested.');
+  if(!independent) notes.push('A distinct dated acquisition is required to assess recurrence.');
+  if(pa.platform && pb.platform && pa.platform!==pb.platform) notes.push(`Different satellites (${pa.platform} and ${pb.platform}). Cross-platform calibration differences were not measured.`);
+  if(resA && resB) notes.push(`Water mean: ${fmt(resA.waterMeanDb)} dB and ${fmt(resB.waterMeanDb)} dB. Eligible water: ${fmt(resA.measFrac*100,0)} % and ${fmt(resB.measFrac*100,0)} %.`);
+  return {sameTrack, sameDir, dDays, sameGeometry, geometryKnown:known, canAssess:sameGeometry&&independent, notes};
 }
 
 /* ------------------------------------------------------------------ */
@@ -491,19 +514,26 @@ const HYP = [
   {id:'noise', name:'Sensor noise floor (signal too weak to interpret)', short:'Noise floor'},
 ];
 const EV = {supports:['ev-sup','▲','supports'], consistent:['ev-con','✓','consistent'], untested:['ev-unt','?','untested'], contradicts:['ev-bad','✗','contradicts'], context:['ev-ctx','○','context only']};
+function persistenceLabel(status){
+  return {recurs:'Contrast recurs', absent:'Below recurrence threshold', partial:'Partial recurrence', untestable:'Untested'}[status] || 'Not assessed';
+}
+function contrastText(a){
+  return `${fmt(a.contrast)} dB${Number.isFinite(a.contrastU)?` (approximate sampling error ${fmt(a.contrastU,2)} dB)`:''}`;
+}
 function buildObs(a, run, ctx){
   const w=ctx.wind; const sensor=run.sensor; const nz=sensor.nesz;
-  const conflict = w && nz!=null && (w.ws+2)<3 && a.bgDb > nz+6;
+  const windKnown=Number.isFinite(w?.ws) && w.ws>=0 && Number.isFinite(Date.parse(w.time));
+  const precipKnown=Number.isFinite(w?.precip3h) && w.precip3h>=0;
   return [
-    {k:'contrast', label:'Backscatter contrast vs. local background', val:`${fmt(a.contrast)} ± ${fmt(a.contrastU??0.3,2)} dB (95th pct ${fmt(a.p95Contrast??a.maxContrast)} dB)`, src:`${sensor.name}, ${run.sceneId}`, kind:'measured'},
-    {k:'noise', label:'Anomaly level above noise floor', val: nz!=null? `${fmt(a.meanDb-nz)} dB (mean ${fmt(a.meanDb)} dB; NESZ ≈ ${nz} dB γ⁰)${a.noiseFrac!=null?`; ${fmt(a.noiseFrac*100,0)} % of pixels within 1 dB of NESZ`:''}` : 'NESZ not available — noise test not possible', src:'Sensor specification', kind: nz!=null?'measured':'missing'},
-    {k:'wind', label:'10 m wind speed at acquisition', val: w? `${fmt(w.ws)} m/s from ${fmt(w.wd,0)}° (ERA5 ${w.time.slice(11,16)} UTC; interval ±2 m/s)${conflict?` — conflicts with the SAR image: the surrounding water is wind-roughened (background ${fmt(a.bgDb)} dB, ${fmt(a.bgDb-nz)} dB above noise), so ERA5 is not used`:''}` : (ctx.windErr||'Not retrieved'), iv: (w && !conflict)? [Math.max(0,w.ws-2), w.ws+2] : null, src:'ERA5 via Open-Meteo (≈25 km grid)', kind: w?(conflict?'conflict':'model'):'missing'},
-    {k:'bg', label:'Local background backscatter', val:`${fmt(a.bgDb)} dB${nz!=null?` (${fmt(a.bgDb-nz)} dB above noise floor)`:''}`, src:sensor.name, kind:'measured'},
-    {k:'scale', label:'Feature size vs. background window', val: a.regional!=null? `${fmt(a.area,2)} km² ${a.regional?'exceeds':'within'} the ${fmt(run.res?.regionalKm2 ?? run.meta?.scene?.regional_km2,0)} km² background window — ${a.regional?'regional darkening; local contrast is ill-defined':'local contrast well defined'}` : 'not computed', src:'Segmentation', kind:a.regional!=null?'measured':'missing'},
-    {k:'precip', label:'Precipitation ±1 h', val: w? `${fmt(w.precip3h,1)} mm (ERA5)` : '—', src:'ERA5 (cannot resolve small convective cells)', kind: w?'model':'missing'},
-    {k:'shore', label:'Distance to land / permanent-water share', val:`${a.shoreKm==null?'no land in window':fmt(a.shoreKm,2)+' km from land'} (in-water structures excluded) · ${fmt(a.permFrac*100,0)} % permanent water`, src:'JRC Global Surface Water occurrence', kind:'measured'},
+    {k:'contrast', label:'Backscatter contrast vs. local background', val:`${contrastText(a)}${Number.isFinite(a.p95Contrast)?` (95th percentile ${fmt(a.p95Contrast)} dB)`:''}`, src:`${sensor.name}, ${run.sceneId}`, kind:'measured'},
+    {k:'noise', label:'Anomaly level relative to noise screen', val: Number.isFinite(nz)? `${fmt(a.meanDb-nz)} dB relative to ${nz} dB γ⁰${a.noiseFrac!=null?` · ${fmt(a.noiseFrac*100,0)} % of pixels below the screen + 1 dB`:''}` : 'No noise screen in matching radiometry', src:sensor.neszNote || 'Detector screening threshold', kind:Number.isFinite(nz)?'threshold':'missing'},
+    {k:'wind', label:'Modelled 10 m wind near acquisition', val: windKnown? `${fmt(w.ws)} m/s${Number.isFinite(w.wd)?` from ${fmt(w.wd,0)}°`:''} (ERA5 ${w.time.slice(11,16)} UTC)` : (ctx.windErr||'Unavailable'), src:'ERA5 via Open-Meteo, 0.25° atmospheric grid', kind:windKnown?'model':'missing'},
+    {k:'bg', label:'Local background backscatter', val:`${fmt(a.bgDb)} dB`, src:sensor.name, kind:'measured'},
+    {k:'scale', label:'Feature size vs. background window', val: a.regional!=null? `${fmt(a.area,2)} km² ${a.regional?'exceeds':'is within'} the ${fmt(run.res?.regionalKm2 ?? run.meta?.scene?.regional_km2,0)} km² regional size threshold` : 'Not computed', src:'Segmentation', kind:a.regional!=null?'measured':'missing'},
+    {k:'precip', label:'Three hourly precipitation totals near acquisition', val:precipKnown?`${fmt(w.precip3h,1)} mm (ERA5)`:'Unavailable', src:'ERA5 reanalysis', kind:precipKnown?'model':'missing'},
+    {k:'shore', label:'Mapped land distance and historical water occurrence', val:`${Number.isFinite(a.shoreKm)?fmt(a.shoreKm,2)+' km from mapped land':'Mapped land distance unavailable'} · ${Number.isFinite(a.permFrac)?fmt(a.permFrac*100,0)+' % of feature pixels at ≥ 90% water occurrence':'water occurrence unavailable'}`, src:'JRC Global Surface Water occurrence', kind:Number.isFinite(a.shoreKm)?'measured':'missing'},
     {k:'shape', label:'Shape', val:`${fmt(a.area,2)} km², extent ${fmt(a.lengthKm,1)} km, axis ratio ${fmt(a.elong,1)}${a.fillRatio!=null?`, fill ${fmt(a.fillRatio,2)}`:''}, edge step ${fmt(a.edgeStep)} dB`, src:'Segmentation', kind:'measured'},
-    {k:'persist', label:'Same pixels in comparison scene', val: a.persistStatus==='untestable'? `untestable — only ${fmt((a.persistCover||0)*100,0)} % of the pixels are measurable in ${run.compId}` : a.persist!=null? `${a.persistStatus}: contrast ${fmt(a.persist)} dB, ${fmt(a.persistFrac*100,0)} % of pixels dark (${run.compId})` : 'No comparison scene analysed', src:'Second acquisition'+(run.compare? (run.compare.sameGeometry?' (same geometry)':' (different geometry)') :''), kind: a.persist!=null?'measured':'missing'},
+    {k:'persist', label:'Contrast in the same pixels on a second date', val: a.persist!=null? `${persistenceLabel(a.persistStatus)} · ${fmt(a.persist)} dB (${run.compId})` : a.persistStatus==='untestable'?'Comparison lacks matching geometry or eligible pixels.':'No comparable scene analysed', src:'Second acquisition', kind:a.persist!=null?'measured':'missing'},
     {k:'pts', label:'Bright point targets in the SAR image (platforms/vessels, unidentified)', val: a.ptN!=null? `${a.ptInside??0} inside, ${a.ptN} within 2 km of the edge; nearest ${a.ptMinKm!=null?fmt(a.ptMinKm,1)+' km':'—'}` : 'not computed', src:'Same SAR scene (γ⁰ ≥ max(background, NESZ) + 10 dB)', kind:'context'},
     {k:'infra', label:'Mapped infrastructure within 15 km', val: ctx.fac? facSummary(ctx.fac) : (ctx.facErr||'Not retrieved'), src:'OpenStreetMap (unverified)', kind:'context'},
   ];
@@ -512,79 +542,60 @@ function facSummary(f){ if(!f.length) return 'none mapped'; const c={}; f.forEac
   return Object.entries(c).sort((a,b)=>b[1]-a[1]).slice(0,4).map(([k,v])=>`${v}× ${k}`).join(', ')+(f.length>=600?' (truncated)':''); }
 function reason(a, run, ctx){
   const obs=buildObs(a, run, ctx); const O=Object.fromEntries(obs.map(o=>[o.k,o]));
-  const nz=run.sensor.nesz, W=O.wind.iv, R=[]; const shoreKm = a.shoreKm==null? Infinity : a.shoreKm;  // null = no land in the window
+  const nz=run.sensor.nesz, R=[];
   const chk=(h,k,ev,why)=>R.push({h,k,ev,why});
-  // Noise floor (decisive when the anomaly itself sits at the floor)
-  const atFloor = nz!=null && (a.meanDb<=nz+1 || (a.noiseFrac!=null && a.noiseFrac>=0.5));
-  if(nz==null){ chk('noise','noise','untested','No noise-equivalent σ⁰ for this product.'); }
-  else if(atFloor){ chk('noise','noise','supports',`Anomaly mean is ${fmt(a.meanDb-nz)} dB above NESZ${a.noiseFrac!=null?` and ${fmt(a.noiseFrac*100,0)} % of its pixels are within 1 dB of it`:''}: the "dark" signal is at the instrument floor.`);
-    ['oil','bio','wind','curr','rain','shore'].forEach(h=>chk(h,'noise','untested','Signal at the noise floor: the surface cannot be characterised.')); }
-  else if(a.meanDb>=nz+3) chk('noise','noise','contradicts',`Anomaly is ${fmt(a.meanDb-nz)} dB above NESZ — a measurable surface signal.`);
-  else chk('noise','noise','consistent','Anomaly is 1–3 dB above NESZ; noise contributes substantially.');
-  // Wind (ERA5) — detection windows: Brekke & Solberg 2005; Fingas & Brown 2014; Gade et al. 1998
-  if(W){
-    chk('oil','wind', W[0]>14?'contradicts':(W[1]<2?'untested':'consistent'), W[0]>14?'Lower wind bound > 14 m/s: oil films are generally not observable.':(W[1]<2?'Upper wind bound < 2 m/s: no Bragg waves for a film to damp — film presence cannot be assessed.':'Wind interval overlaps the ~2–12 m/s window in which films are observable.'));
-    chk('bio','wind', W[0]>10?'contradicts':'consistent', W[0]>10?'Lower wind bound > 10 m/s: natural monomolecular films are dispersed.':'Wind compatible with natural films (best seen at low–moderate wind).');
-    const shelter=shoreKm<=5;
-    if(W[0]>6 && !shelter) chk('wind','wind','contradicts',`Lower wind bound ${fmt(W[0])} m/s > 6 m/s and ${isFinite(shoreKm)?fmt(shoreKm,1)+' km from land':'no land in the window'} (no sheltering).`);
-    else if(W[1]<3) chk('wind','wind','supports',`ERA5 indicates calm conditions (upper bound ${fmt(W[1])} m/s) that are not contradicted by the SAR background.`);
-    else chk('wind','wind','consistent', shelter?'Within 5 km of land: local sheltering possible.':'Wind interval reaches values where Bragg waves are weak.');
-  } else ['oil','bio','wind'].forEach(h=>chk(h,'wind','untested', O.wind.kind==='conflict'?'ERA5 wind contradicts the SAR-observed roughness — not used.':'Wind not available.'));
-  // Scale
-  if(a.regional) { chk('wind','scale','consistent','Darkening larger than the background window is typical of wind-speed variability.'); chk('oil','scale','consistent','Large slicks exist, but local contrast is ill-defined at this scale.'); }
-  // Shoreline (land, not structures)
-  if(a.permFrac>=0.95 && shoreKm>=1) chk('shore','shore','contradicts',`${fmt(a.permFrac*100,0)} % permanent water and ${isFinite(shoreKm)?fmt(shoreKm,2)+' km from land':'no land in the analysis window'}.`);
-  else if(a.touchesShoreBuffer) chk('shore','shore','supports','Feature reaches the shoreline buffer: mixed land/water pixels or shallow-water damping are likely contributors.');
-  else chk('shore','shore','consistent','Near land or on seasonally wet pixels.');
-  // Rain
-  if(ctx.wind) chk('rain','precip', ctx.wind.precip3h>=0.5?'supports':'untested', ctx.wind.precip3h>=0.5?`ERA5 shows ${fmt(ctx.wind.precip3h,1)} mm near the acquisition time.`:'ERA5 shows no rain, but a 25 km reanalysis cannot exclude a convective cell — untested.');
-  else chk('rain','precip','untested','Precipitation not available.');
+  const hasNoiseScreen=Number.isFinite(nz) && Number.isFinite(a.meanDb);
+  const atFloor=hasNoiseScreen && (a.meanDb<=nz+1 || (Number.isFinite(a.noiseFrac) && a.noiseFrac>=0.5));
+  if(!hasNoiseScreen) chk('noise','noise','untested','A noise screen in γ⁰ dB is unavailable.');
+  else if(atFloor) chk('noise','noise','supports','The feature is close to or below the configured noise screen. A surface interpretation needs a better-measured scene.');
+  else chk('noise','noise','untested','The feature passes the nominal screen. Actual local noise remains unverified.');
+  for(const h of ['oil','bio']) chk(h,'wind','untested', O.wind.kind==='model'?
+    'Coarse wind gives acquisition context. It cannot establish or exclude a surface film at this feature.':'Wind context is unavailable.');
+  chk('wind','wind',O.wind.kind==='model'&&ctx.wind.ws<3?'consistent':'untested',
+    O.wind.kind==='model'&&ctx.wind.ws<3?'The reanalysis grid cell was calm. Local wind is unresolved.':'Local calm or sheltering remains untested.');
+  if(a.regional) chk('oil','scale','context','The feature exceeds the regional size threshold. Its local contrast is indicative.');
+  const nearMappedShore=Number.isFinite(a.shoreKm) && a.touchesShoreBuffer===true;
+  chk('shore','shore',nearMappedShore?'consistent':'untested',nearMappedShore?
+    'The feature reaches the mapped shoreline buffer. Mixed pixels are possible.':'Historical surface-water occurrence cannot resolve the shoreline or shallows on the acquisition date.');
+  const wetGridCell=O.precip.kind==='model' && ctx.wind.precip3h>=0.5;
+  chk('rain','precip',wetGridCell?'consistent':'untested',wetGridCell?
+    'The reanalysis grid cell recorded precipitation near acquisition. A rain cell over this feature is unverified.':
+    O.precip.kind==='model'?'The coarse reanalysis cannot exclude local rain.':'Precipitation is unavailable.');
   chk('curr','shape','untested','No current, plume or stratification data are connected; shape alone cannot test this.');
-  // Persistence (not discriminating between explanations → consistent, never supports)
   if(a.persistStatus && a.persistStatus!=='untestable' && a.persist!=null){
-    const rec=a.persistStatus==='recurs';
-    chk('oil','persist','consistent', rec?'Recurs at the same pixels — consistent with a fixed source (also with recurring sheltered calm).':'Not recurring — consistent with an intermittent release or a transient film/wind.');
-    chk('wind','persist','consistent', rec?'Recurrence also occurs in topographically sheltered areas.':'Transient — consistent with variable wind.');
-  } else chk('oil','persist','untested', a.persistStatus==='untestable'?'Comparison scene not measurable over these pixels.':'No comparison scene.');
+    chk('oil','persist','context',`${persistenceLabel(a.persistStatus)} on the comparison date. Recurrence describes the backscatter signal.`);
+  } else chk('oil','persist','untested','A comparable, eligible second observation is unavailable.');
   // Context (never changes status)
   if(a.ptN!=null) chk('oil','pts','context', `${(a.ptInside||0)+a.ptN} radar-bright point targets inside or within 2 km — possible platforms or vessels; their presence is not evidence of a discharge.`);
   if(ctx.fac) chk('oil','infra','context', ctx.fac.length? 'Mapped industrial features nearby (unverified; proximity ≠ causation).':'No mapped features (absence of mapping is not evidence of absence).');
-  const hyps=HYP.map(h=>{ const rows=R.filter(r=>r.h===h.id); const ev=rows.map(r=>r.ev);
+  const hyps=HYP.map(h=>{ const rows=R.filter(r=>r.h===h.id).map(r=>atFloor&&h.id!=='noise'&&r.ev!=='context'?
+    {...r,ev:'untested',why:'Low signal prevents testing a surface explanation.'}:r); const ev=rows.map(r=>r.ev);
     let status = ev.includes('contradicts')?'contradicted' : ev.includes('supports')?'supported' : ev.includes('consistent')?'consistent' : 'untested';
-    if(atFloor && h.id!=='noise' && status!=='contradicted') status='untested';   // a signal at the floor cannot test any surface explanation
     return {...h, rows, status}; });
-  const by=s=>hyps.filter(h=>h.status===s); const oil=hyps.find(h=>h.id==='oil');
+  const by=s=>hyps.filter(h=>h.status===s);
   let verdict;
-  if(hyps.find(h=>h.id==='noise').status==='supported') verdict={cls:'neg', title:'Not interpretable — signal at the noise floor', text:'The anomaly’s backscatter is at the instrument noise floor, so no surface explanation (including an oil film) can be tested from this scene. Choose a windier acquisition.'};
-  else if(oil.status==='contradicted') verdict={cls:'neg', title:'Industrial surface film contradicted', text:'A measured condition lies outside the range in which an oil film could produce this feature.'};
-  else if(by('contradicted').length===HYP.length-1 && oil.status!=='untested') verdict={cls:'pos', title:'Only a surface-film explanation remains', text:'All alternatives are contradicted. SAR still cannot identify the substance — in-situ sampling is required.'};
-  else verdict={cls:'inc', title:'Inconclusive', text:`Supported: ${by('supported').map(h=>h.short).join(', ')||'none'} · Consistent: ${by('consistent').map(h=>h.short).join(', ')||'none'} · Untested: ${by('untested').map(h=>h.short).join(', ')||'none'} · Contradicted: ${by('contradicted').map(h=>h.short).join(', ')||'none'}.`};
+  if(atFloor) verdict={cls:'neg', title:'Not interpretable under the noise screen', text:'The feature is close to or below the configured noise screen. Surface explanations remain untested.'};
+  else verdict={cls:'inc', title:hasNoiseScreen?'Inconclusive':'Inconclusive — noise unverified', text:`Compatible context: ${by('consistent').map(h=>h.short).join(', ')||'none'} · Untested: ${by('untested').map(h=>h.short).join(', ')}.`};
   const needs=[];
   if(verdict.cls==='neg' && hyps.find(h=>h.id==='noise').status==='supported') needs.push('A scene with wind-roughened water (background ≥ NESZ + 4 dB) over this location.');
-  if(!W) needs.push(O.wind.kind==='conflict'? 'Scene-scale wind retrieved from the SAR image itself (e.g. CMOD5.N on Sentinel-1 VV) — ERA5 disagrees with the observed roughness.' : 'Wind at acquisition time (ERA5 once available, or SAR-derived wind).');
-  if(['supported','consistent','untested'].includes(hyps.find(h=>h.id==='bio').status)) needs.push('Multi-frequency comparison (NISAR L-band vs Sentinel-1 C-band) and near-simultaneous Sentinel-2 optical imagery to separate biogenic from mineral-oil films (Gade et al. 1998).');
+  needs.push('Local wind observations near the acquisition.');
+  needs.push('Time-aligned multi-frequency SAR or optical observations to examine competing explanations.');
   if(a.persist==null) needs.push('A second, measurable acquisition with the same geometry (same relative orbit) to test recurrence.');
   if(hyps.find(h=>h.id==='rain').status!=='contradicted') needs.push('Satellite rainfall (GPM IMERG, 30 min) to test rain cells.');
   needs.push('Current/plume data (river discharge, tide phase) to test frontal explanations.');
-  needs.push('In-situ water sampling or aerial observation — the only way to identify the substance and its source.');
-  const cannot=['The chemical identity, thickness or volume of the film.','Which facility (if any) released it — proximity is not causation.','Whether any release was legal or illegal.'];
+  needs.push('Independent identification and source evidence, such as water sampling or a documented spill assessment.');
+  const cannot=['Chemical identity, thickness or volume of a possible film.','Whether a source released a film, or which source it was.','Legal status of any release.'];
   return {obs, hyps, verdict, needs, cannot};
 }
 
 /* ------------------------------------------------------------------ */
 /* 10. Map                                                              */
 /* ------------------------------------------------------------------ */
-let map, L_hot, L_foot, L_sar, L_img, L_anom, L_comp, L_fac, L_win, L_nisar, L_sel;
+let map, L_hot, L_foot, L_sar, L_img, L_anom, L_comp, L_fac, L_win, L_nisar, L_sel, L_import;
 function initMap(){
   map=L.map('map',{zoomControl:true, preferCanvas:true}).setView([15,-40],3);
-  // Basemaps: key-free, documented public tile services (CARTO now returns "API KEY REQUIRED" tiles)
-  const SARATTR=' | SAR: ESA Copernicus via Microsoft Planetary Computer; NISAR via ASF DAAC';
-  const osm=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19, attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'+SARATTR});
-  const esriImg=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19, attribution:'Imagery © Esri, Maxar, Earthstar Geographics'+SARATTR});
-  const esriGray=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxZoom:16, attribution:'© Esri, HERE, Garmin, © OpenStreetMap contributors'+SARATTR});
-  osm.addTo(map); let osmErr=0;
-  osm.on('tileerror',()=>{ if(++osmErr===8 && map.hasLayer(osm)){ map.removeLayer(osm); esriGray.addTo(map); toast('OpenStreetMap tiles unavailable — switched to Esri Light Gray basemap'); } });
-  L.control.layers({'OpenStreetMap':osm,'Esri World Imagery':esriImg,'Esri Light Gray':esriGray},null,{position:'bottomleft'}).addTo(map);
+  window.RelaxZoneExplorer.createBasemaps(map, message=>{if(message) toast(message);});
+  map.attributionControl.addAttribution('SAR: Copernicus via Microsoft Planetary Computer, NISAR via ASF DAAC');
   map.createPane('sar'); map.getPane('sar').style.zIndex=350;     // SAR tiles + NISAR quick-look
   map.createPane('ovl'); map.getPane('ovl').style.zIndex=380;     // analysed window image (above tiles)
   map.createPane('anom'); map.getPane('anom').style.zIndex=390;   // detected anomalies
@@ -613,7 +624,7 @@ function setLegend(){
   } else {
     parts.push('<b>Investigate</b>');
     if(S.layers.sar) parts.push(`γ⁰ VV <span class="sw"></span> ${DB_MIN}…${DB_MAX} dB`);
-    parts.push('<i style="background:#ff2d7a"></i>Measurable dark anomaly (SAR-observed)<br><i style="background:#f59e0b"></i>Regional darkening (> background window)<br><i style="background:#8b5cf6"></i>At noise floor (not interpretable)<br><i style="background:rgba(30,64,140,.35)"></i>Water not measurable (background &lt; NESZ + T + 1 dB)<br><i style="background:#ffd400"></i>Selected anomaly<br><i style="border:1.5px dashed #1f5fae"></i>Analysis window');
+    parts.push('<i style="background:#ff2d7a"></i>Local dark-feature candidate<br><i style="background:#f59e0b"></i>Regional darkening<br><i style="background:#8b5cf6"></i>Low signal under nominal noise screen<br><i style="background:rgba(30,64,140,.35)"></i>Water excluded by background or noise screen<br><i style="background:#ffd400"></i>Selected feature<br><i style="border:1.5px dashed #1f5fae"></i>Analysis window');
     if(S.ctx[S.sel]?.fac?.length){ const cats=[...new Set(S.ctx[S.sel].fac.map(f=>f.cat))]; parts.push('<b>Mapped infrastructure (OSM, unverified)</b><br>'+cats.map(c=>`<i style="background:${CAT_COL[c]};border-radius:50%"></i>${esc(c)}`).join('<br>')); }
   }
   el.innerHTML=parts.join('<br>');
@@ -625,17 +636,23 @@ function setMapTools(){
   el.querySelectorAll('button').forEach(x=>x.onclick=()=>{ if(x.disabled) return; const k=x.dataset.layer; S.layers[k]=!S.layers[k]; if(k==='comp'&&S.layers.comp) S.layers.sar=S.layers.sar; refreshLayers(); setMapTools(); setLegend(); });
 }
 function refreshLayers(){
-  [L_sar,L_img,L_anom,L_comp,L_nisar].forEach(l=>{ if(l) map.removeLayer(l); });
-  L_sar=L_img=L_anom=L_comp=L_nisar=null;
+  [L_sar,L_img,L_anom,L_comp,L_nisar,L_import].forEach(l=>{ if(l) map.removeLayer(l); });
+  L_sar=L_img=L_anom=L_comp=L_nisar=L_import=null;
   if(S.screen!=='investigate') { L_fac.clearLayers(); L_sel.clearLayers(); L_win.clearLayers(); return; }
-  if(S.layers.nisar && S.nisarSel){ const g=S.nisarSel.geometry.coordinates[0]; const xs=g.map(p=>p[0]), ys=g.map(p=>p[1]);
+  if(S.layers.nisar && S.nisarSel?.geometry){
     const u=(S.nisarSel.properties.browse||[]).find(x=>/_LATLON\.png$/.test(x));
-    if(u) L_nisar=L.imageOverlay(u,[[Math.min(...ys),Math.min(...xs)],[Math.max(...ys),Math.max(...xs)]],{opacity:0.9, pane:'sar'}).addTo(map); }
+    const bounds=L.geoJSON(S.nisarSel.geometry).getBounds();
+    if(u && bounds.isValid()) L_nisar=L.imageOverlay(u,bounds,{opacity:0.9, pane:'sar'}).addTo(map); }
   if(S.scene && S.layers.sar && !(S.layers.comp && S.run?.compUrl)) L_sar=L.layerGroup(S.scene.items.map(it=>L.tileLayer(API.s1Tiles(it.id),{pane:'sar', opacity:1, maxNativeZoom:14, maxZoom:18}))).addTo(map);
   if(S.run){ const [w,s,e,n]=S.run.bbox; const B=[[s,w],[n,e]];
     if(S.layers.comp && S.run.compUrl) L_comp=L.imageOverlay(S.run.compUrl,B,{pane:'ovl'}).addTo(map);
     else if(S.layers.sar) L_img=L.imageOverlay(S.run.url,B,{pane:'ovl'}).addTo(map);
     if(S.layers.anom) L_anom=L.imageOverlay(anomalyOverlay(),B,{pane:'anom', opacity:0.85}).addTo(map); }
+  const imported = S.imported.find(run=>run.hotspot===S.hs && (run.anoms.includes(currentAnom()) || run.sceneId===S.importedPreview));
+  if(S.invTab==='nisar' && imported?.quicklook && imported.bbox){
+    const [w,s,e,n]=imported.bbox;
+    L_import=L.imageOverlay(imported.quicklook,[[s,w],[n,e]],{pane:'anom',opacity:0.95}).bindTooltip('Imported analysis display image').addTo(map);
+  }
   drawSel(); drawFacilities(); drawWindow();
 }
 function anomalyOverlay(){
@@ -663,51 +680,60 @@ function filteredHotspots(){
   return HOTSPOTS.filter(h=> (S.filt.industry==='all' || h.industries.includes(S.filt.industry)) && (S.filt.water==='all' || h.water===S.filt.water));
 }
 function selectHotspot(id){
-  if(S.hs!==id){ S.hs=id; S.acq={status:'idle', nisar:[], s1:[], err:{}, hs:null}; S.scene=null; S.comp=null; S.nisarSel=null; S.run=null; S.sel=null; S.pendingWin=null; S.scr=null; S.runStatus=null; }
+  if(S.hs!==id){ S.hs=id; S.acq={status:'idle', nisar:[], s1:[], err:{}, hs:null}; S.scene=null; S.comp=null; S.nisarSel=null; S.run=null; S.sel=null; S.pendingWin=null; S.scr=null; S.runStatus=null; S.importedPreview=null; }
   const h=hsById(id); const [w,s,e,n]=h.search; map.fitBounds([[s,w],[n,e]],{padding:[30,30]});
-  drawHotspots(); drawFootprints(); render();
+  drawHotspots(); drawFootprints(); refreshLayers(); render();
 }
 async function findData(){
-  const h=hsById(S.hs); S.acq={status:'loading', nisar:[], s1:[], err:{}, hs:h.id}; render();
-  const [a,b]=await Promise.allSettled([API.nisar(h,S.filt.from,S.filt.to), API.s1(h.search,S.filt.from,S.filt.to)]);
+  const h=hsById(S.hs), {from,to}=S.filt;
+  const query={status:'loading',nisar:[],s1:[],err:{},hs:h.id,from,to};
+  S.acq=query; S.scr=null; S.scene=null; S.comp=null; S.nisarSel=null; S.run=null; S.runStatus=null; S.sel=null;
+  render();
+  const [a,b]=await Promise.allSettled([API.nisar(h,from,to), API.s1(h.search,from,to)]);
+  if(S.acq!==query) return;
   if(a.status==='fulfilled') S.acq.nisar=a.value; else S.acq.err.nisar=a.reason.message;
   if(b.status==='fulfilled') S.acq.s1=b.value; else S.acq.err.s1=b.reason.message;
   S.acq.status='done';
   if(S.acq.s1.length && !S.scene) S.scene=S.acq.s1[0];
-  if(S.acq.s1.length) screenScenes();
   if(S.acq.nisar.length && !S.nisarSel) S.nisarSel=S.acq.nisar[0];
   drawFootprints(); render();
 }
 /** Surface-condition screening: median water γ⁰ of each acquisition over the hotspot demo window.
  *  Bragg scattering (and hence any slick contrast) needs wind-roughened water well above the noise floor. */
 async function screenScenes(){
-  const h=hsById(S.hs), bbox=h.demo, n=128; S.scr={state:'loading', done:0, total:S.acq.s1.length}; render();
+  const query=S.acq, bbox=hsById(S.hs).demo, n=128;
+  if(S.scr?.state==='loading' || !query.s1.length) return;
+  const scenes=query.s1.slice(0,8), screening={state:'loading',done:0,total:scenes.length};
+  S.scr=screening; render();
   try{
     const gs=await API.gswItem(bbox); const occ=new Float32Array(n*n);
     for(const it of gs){ const g=await API.png(API.gswBbox(it.id,bbox,n,n)); URL.revokeObjectURL(g.url); for(let i=0;i<n*n;i++) if(g.data[i*4+3]>0) occ[i]=Math.max(occ[i], g.data[i*4]/255*100); }
     const nW=occ.reduce((a,v)=>a+(v>=80),0);
-    const todo=[...S.acq.s1]; const hsAtStart=S.hs;
-    const worker=async()=>{ while(todo.length){ const a=todo.shift(); const v=[];
+    const todo=[...scenes];
+    const worker=async()=>{ while(todo.length && S.acq===query){ const a=todo.shift(); const v=[];
       try{ const seen=new Uint8Array(n*n);
         for(const it of a.items){ const im=await API.png(API.s1Bbox(it.id,bbox,n,n)); URL.revokeObjectURL(im.url);
           for(let i=0;i<n*n;i++) if(!seen[i] && occ[i]>=80 && im.data[i*4+3]>0){ seen[i]=1; v.push(DB_MIN+im.data[i*4]*(DB_MAX-DB_MIN)/255); } }
         v.sort((x,y)=>x-y); const med=v.length? v[v.length>>1] : null; const cover=v.length/Math.max(1,nW);
         a.scr={median:med, cover, ok: med!=null && cover>=0.3 && med>=SENSORS.S1.nesz+4};
       }catch(e){ a.scr={err:e.message, ok:false}; }
-      if(S.hs!==hsAtStart) return; S.scr.done++; if(S.scr.done%4===0) render(); } };
-    await Promise.all([worker(),worker(),worker(),worker(),worker(),worker()]);
-    if(S.hs!==hsAtStart) return;
-    const ok=S.acq.s1.filter(a=>a.scr?.ok);
-    S.scr={state:'done', ok:ok.length, total:S.acq.s1.length};
-    if(ok.length && !S.run){ S.scene=ok[0]; S.comp=ok.find(a=>a!==ok[0] && a.properties['sat:orbit_state']===ok[0].properties['sat:orbit_state']) || ok[1] || null; refreshLayers(); }
-  }catch(e){ S.scr={state:'error', msg:e.message}; }
+      if(S.acq!==query) return; screening.done++; render(); } };
+    await Promise.all([worker(),worker()]);
+    if(S.acq!==query) return;
+    const ok=scenes.filter(a=>a.scr?.ok);
+    S.scr={state:'done',ok:ok.length,total:scenes.length};
+  }catch(e){ if(S.acq!==query) return; S.scr={state:'error', msg:e.message}; }
   render();
 }
-function scrTag(a){ const r=a.scr; if(!r) return ''; if(r.err) return ' · screening failed'; if(r.median==null||r.cover<0.3) return ' · outside window';
-  return r.ok? ` · ✓ usable (water ${fmt(r.median)} dB)` : ` · low signal (${fmt(r.median)} dB)`; }
+function scrTag(a){ const r=a.scr; if(!r) return ''; if(r.err) return ' · screening failed'; if(r.median==null||r.cover<0.3) return ' · insufficient water coverage';
+  return r.ok? ` · passes screen (${fmt(r.median)} dB)` : ` · below screen (${fmt(r.median)} dB)`; }
 function gotoScreen(s){
   S.screen=s; S.visited.add(s); document.getElementById('main').classList.toggle('wide', !['discover','investigate'].includes(s));
-  if(['discover','investigate'].includes(s)) setTimeout(()=>map.invalidateSize(),50);
+  if(!map) boot();
+  if(!map) return;
+  if(['discover','investigate'].includes(s)) requestAnimationFrame(()=>{
+    if(map.getContainer().clientWidth && map.getContainer().clientHeight) map.invalidateSize({pan:false});
+  });
   if(s==='investigate' && !S.run){ const h=hsById(S.hs); const [w,so,e,n]=h.demo; S.pendingWin=h.demo; map.fitBounds([[so,w],[n,e]]); }
   drawFootprints(); refreshLayers(); render();
 }
@@ -720,49 +746,61 @@ function windowFromView(){
 async function loadScene(item, bbox){
   const lat=(bbox[1]+bbox[3])/2; const wM=(bbox[2]-bbox[0])*111320*Math.cos(lat*Math.PI/180), hM=(bbox[3]-bbox[1])*110540;
   let px=Math.max(20, Math.max(wM,hM)/1024); px=Math.ceil(px/5)*5;
-  const W=Math.round(wM/px), H=Math.round(hM/px);
-  const N=W*H, db=new Float32Array(N), valid=new Uint8Array(N); let nv=0;
+  const W=Math.max(1,Math.round(wM/px)), H=Math.max(1,Math.round(hM/px));
+  const N=W*H, db=new Float32Array(N), valid=new Uint8Array(N); let nv=0, rangeLimits=0;
   const c=document.createElement('canvas'); c.width=W; c.height=H; const g=c.getContext('2d'); const out=g.createImageData(W,H);
   for(const it of item.items){ // mosaic all slices of the datatake
     const img=await API.png(API.s1Bbox(it.id,bbox,W,H)); URL.revokeObjectURL(img.url);
-    for(let i=0;i<N;i++){ if(!valid[i] && img.data[i*4+3]>0){ valid[i]=1; nv++; const v=img.data[i*4]; db[i]=DB_MIN+v*(DB_MAX-DB_MIN)/255;
+    for(let i=0;i<N;i++){ if(!valid[i] && img.data[i*4+3]>0){ valid[i]=1; nv++; const v=img.data[i*4]; db[i]=DB_MIN+v*(DB_MAX-DB_MIN)/255; if(v===0 || v===255) rangeLimits++;
       out.data[i*4]=out.data[i*4+1]=out.data[i*4+2]=v; out.data[i*4+3]=255; } } }
   g.putImageData(out,0,0);
-  return {W,H,px,pxX:wM/W,pxY:hM/H,db,valid,nv,url:c.toDataURL()};
+  return {W,H,px,pxX:wM/W,pxY:hM/H,db,valid,nv,rangeLimitFraction:nv?rangeLimits/nv:null,url:c.toDataURL()};
 }
 async function runAnalysis(useView){
   if(!S.scene){ toast('Select a Sentinel-1 scene first'); return; }
+  const scene=S.scene, comp=S.comp;
   const bbox = useView ? windowFromView() : hsById(S.hs).demo;
-  S.pendingWin=bbox; S.runStatus={state:'loading', msg:'Reading calibrated γ⁰ subset from Planetary Computer…'}; S.run=null; S.sel=null; render(); drawWindow();
+  S.pendingWin=bbox; S.runStatus={state:'loading', msg:'Reading a rescaled 8-bit Sentinel-1 RTC VV subset…'}; S.run=null; S.sel=null; render(); drawWindow();
+  const pending=S.runStatus, p={T:S.params.T,minKm2:S.params.minKm2,nesz:SENSORS.S1.nesz};
+  const stillCurrent=()=>S.runStatus===pending && S.scene===scene;
   try{
-    const sc=await loadScene(S.scene,bbox);
+    const sc=await loadScene(scene,bbox);
+    if(!stillCurrent()) return;
     if(sc.nv < sc.W*sc.H*0.2) throw new Error('This scene covers less than 20 % of the analysis window. Choose another date or move the window.');
     S.runStatus.msg='Reading JRC Global Surface Water mask…'; render();
     const gsw=await API.gswItem(bbox);
     const occ=new Float32Array(sc.W*sc.H).fill(NaN);
-    for(const it of gsw){ const g=await API.png(API.gswBbox(it.id,bbox,sc.W,sc.H));
+    for(const it of gsw){ const g=await API.png(API.gswBbox(it.id,bbox,sc.W,sc.H)); URL.revokeObjectURL(g.url);
       for(let i=0;i<sc.W*sc.H;i++){ if(g.data[i*4+3]>0) occ[i]=isNaN(occ[i])? g.data[i*4]/255*100 : Math.max(occ[i], g.data[i*4]/255*100); } }
+    if(!stillCurrent()) return;
     S.runStatus.msg='Speckle filtering, adaptive thresholding, segmentation…'; render();
     await new Promise(r=>setTimeout(r,20));
-    const p={T:S.params.T, minKm2:S.params.minKm2, nesz:SENSORS.S1.nesz, pxX:sc.pxX, pxY:sc.pxY};
-    const res=analyzeScene(sc.db, sc.valid, occ, sc.W, sc.H, sc.px, p);
+    if(!stillCurrent()) return;
+    const res=analyzeScene(sc.db, sc.valid, occ, sc.W, sc.H, sc.px, {...p,pxX:sc.pxX,pxY:sc.pxY});
     if(res.error) throw new Error(res.error);
-    const run={src:'browser', bbox, W:sc.W, H:sc.H, px:sc.px, url:sc.url, res, anoms:res.anoms, T:p.T, sensor:SENSORS.S1,
-      sceneId:S.scene.id, sceneTime:S.scene.properties.datetime, platform:S.scene.properties.platform, orbit:S.scene.properties['sat:orbit_state'], occ};
-    run.anoms.forEach(a=>{ a.latlon=[bbox[3]-(a.cy+0.5)/sc.H*(bbox[3]-bbox[1]), bbox[0]+(a.cx+0.5)/sc.W*(bbox[2]-bbox[0])]; a.label='S1-'+(a.id+1); a.key=run.sceneId+'#'+a.id; });
-    if(S.comp && S.comp.id!==S.scene.id){
-      S.runStatus.msg='Analysing comparison scene for persistence…'; render();
-      try{ const c2=await loadScene(S.comp,bbox); const r2=analyzeScene(c2.db,c2.valid,occ,c2.W,c2.H,c2.px,p);
-        if(!r2.error){ persistence(run, r2); run.compId=S.comp.id; run.compTime=S.comp.properties.datetime; run.compUrl=c2.url; run.compStats=r2;
-          run.compare=comparability(S.scene,S.comp,res,r2); run.compPlatform=S.comp.properties.platform; } else run.compErr=r2.error; }
-      catch(e){ run.compErr=e.message; }
+    const run={src:'browser', bbox, W:sc.W, H:sc.H, px:sc.px, url:sc.url, res, anoms:res.anoms, T:p.T, minKm2:p.minKm2, sensor:SENSORS.S1,
+      rangeLimitFraction:sc.rangeLimitFraction, sceneId:scene.id, sceneTime:scene.properties.datetime, platform:scene.properties.platform, orbit:scene.properties['sat:orbit_state'], occ};
+    run.anoms.forEach(a=>{ a.latlon=[bbox[3]-(a.cy+0.5)/sc.H*(bbox[3]-bbox[1]), bbox[0]+(a.cx+0.5)/sc.W*(bbox[2]-bbox[0])]; a.label='S1-'+(a.id+1); a.key=JSON.stringify([run.sceneId,bbox,p.T,p.minKm2,a.id]); });
+    if(comp){
+      run.compare=comparability(scene,comp);
+      run.compId=comp.id; run.compTime=comp.properties.datetime;
+      if(run.compare.canAssess){
+        S.runStatus.msg='Reading the matched-track comparison scene…'; render();
+        try{ const c2=await loadScene(comp,bbox); const r2=analyzeScene(c2.db,c2.valid,occ,c2.W,c2.H,c2.px,{...p,pxX:sc.pxX,pxY:sc.pxY});
+          if(r2.error) run.compErr=r2.error;
+          else { persistence(run,r2); run.compUrl=c2.url; run.compStats=r2;
+            run.compare=comparability(scene,comp,res,r2); run.compPlatform=comp.properties.platform; } }
+        catch(e){ run.compErr=e.message; }
+      }
+      if(!run.compStats) run.anoms.forEach(a=>{ a.persistStatus='untestable'; });
     }
+    if(!stillCurrent()) return;
     S.run=run; S.runStatus={state:'done'}; S.layers.anom=true;
     if(run.anoms.length) selectAnom(run.anoms[0].key, false);
-  }catch(e){ S.runStatus={state:'error', msg:e.message}; }
+  }catch(e){ if(!stillCurrent()) return; S.runStatus={state:'error', msg:e.message}; }
   refreshLayers(); setMapTools(); setLegend(); render();
 }
-function allAnoms(){ const a=[...(S.run?.anoms||[])]; S.imported.forEach(r=>a.push(...r.anoms)); return a; }
+function allAnoms(){ const a=[...(S.run?.anoms||[])]; S.imported.filter(r=>r.hotspot===S.hs).forEach(r=>a.push(...r.anoms)); return a; }
 function currentAnom(){ return allAnoms().find(a=>a.key===S.sel) || null; }
 function runOf(a){ if(!a) return null; if(S.run && S.run.anoms.includes(a)) return S.run; return S.imported.find(r=>r.anoms.includes(a)); }
 async function selectAnom(key, fly=true){
@@ -775,16 +813,41 @@ async function selectAnom(key, fly=true){
   if(!c.fac && !c.facLoading){ c.facLoading=true; API.facilities(a.latlon[0],a.latlon[1]).then(f=>c.fac=f.sort((x,y)=>x.dkm-y.dkm)).catch(e=>c.facErr=e.message).finally(()=>{c.facLoading=false; drawFacilities(); setMapTools(); setLegend(); render();}); }
 }
 function importResults(file){
+  const hotspot=S.hs;
   const rd=new FileReader(); rd.onload=()=>{ try{
-    const j=JSON.parse(rd.result); if(!j.anomalies || !j.source) throw new Error('Not an analysis.py result file');
-    const sensor = j.source.platform==='NISAR' ? {...SENSORS.NISAR, nesz:j.nesz_db ?? null} : {...SENSORS.S1};
-    const run={src:'file', bbox:j.bbox, sensor, sceneId:j.source.granule, sceneTime:j.source.start, platform:j.source.platform, T:j.params?.contrast_db ?? 3, file:file.name, meta:j,
+    const j=JSON.parse(rd.result);
+    if(!Array.isArray(j.anomalies) || !/^(NISAR|Sentinel-1[a-d]?)$/i.test(j.source?.platform||'')) throw new Error('Choose an analysis.py result for NISAR or Sentinel-1');
+    const baseSensor=j.source.platform==='NISAR'?SENSORS.NISAR:SENSORS.S1;
+    const marked=Number.isFinite(j.nesz_db) && j.nesz_radiometry==='gamma0_dB';
+    const legacyS1=baseSensor===SENSORS.S1 && j.nesz_db===SENSORS.S1.nesz;
+    const knownScreen=marked||legacyS1;
+    const sensor={...baseSensor,nesz:knownScreen?j.nesz_db:null,
+      neszBasis:knownScreen?(j.nesz_basis||(legacyS1?baseSensor.neszBasis:'declared_gamma0_screen')):null,
+      neszNote:marked&&j.nesz_basis==='user_supplied_gamma0_screen'?'User-supplied γ⁰ screen. Local noise is unverified.':knownScreen?baseSensor.neszNote:null};
+    const comparisonVerified=j.comparison?.same_geometry===true && j.comparison?.distinct_acquisition===true;
+    const run={src:'file', bbox:j.bbox, sensor, sceneId:j.source.granule, sceneTime:j.source.start, platform:j.source.platform, T:j.params?.contrast_db ?? 3,
+      px:j.pixel_m, minKm2:j.params?.min_area_km2, compId:j.comparison?.scene, file:file.name, meta:j,
       anoms:j.anomalies.map((x,k)=>({...x, id:k, latlon:x.centroid, area:x.area_km2, meanDb:x.mean_db, bgDb:x.bg_db, contrast:x.contrast_db, contrastU:x.contrast_unc_db ?? null, p95Contrast:x.p95_contrast_db ?? null, maxContrast:x.max_contrast_db,
         elong:x.elongation, lengthKm:x.length_km, ellipseMajorKm:x.ellipse_major_km ?? null, fillRatio:x.fill_ratio ?? null, ptN:x.point_targets_2km ?? null, ptInside:x.point_targets_inside ?? null, ptMinKm:x.nearest_point_target_km ?? null, edgeStep:x.edge_step_db, shoreKm:x.shore_km, touchesShoreBuffer:x.touches_shore_buffer ?? null, permFrac:x.perm_water_frac,
-        noiseFrac:x.noise_frac ?? null, regional:x.regional ?? null, cls:x.class ?? null, persist:x.persist_db ?? null, persistFrac:x.persist_frac ?? null, persistCover:x.persist_cover ?? null, persistStatus:x.persist_status ?? (x.persist_db!=null?'measured':null),
-        label:(j.source.platform==='NISAR'?'NI-':'PY-')+(k+1), key:j.source.granule+'#'+k}))};
-    S.imported=S.imported.filter(r=>r.sceneId!==run.sceneId); S.imported.push(run);
-    if(j.quicklook_png && j.bbox){ const [w,s,e,n]=j.bbox; L.imageOverlay(j.quicklook_png,[[s,w],[n,e]],{pane:'anom',opacity:0.95}).bindTooltip(`${esc(run.platform)} analysis.py result`).addTo(map); map.fitBounds([[s,w],[n,e]]); }
+        noiseFrac:knownScreen?x.noise_frac ?? null:null, regional:x.regional ?? null, cls:x.class==='noise'&&!knownScreen?'unverified':x.class ?? null,
+        persist:comparisonVerified?x.persist_db ?? null:null, persistFrac:comparisonVerified?x.persist_frac ?? null:null,
+        persistCover:comparisonVerified?x.persist_cover ?? null:null, persistStatus:comparisonVerified?x.persist_status ?? null:j.comparison||x.persist_db!=null?'untestable':null,
+        label:(j.source.platform==='NISAR'?'NI-':'PY-')+(k+1), key:JSON.stringify([j.source.granule,j.bbox,j.generated,k])}))};
+    run.hotspot=hotspot;
+    const b=j.bbox;
+    if(Array.isArray(b) && b.length===4 && b.every(Number.isFinite) && b[0]<b[2] && b[1]<b[3] &&
+       typeof j.quicklook_png==='string' && /^data:image\/png;base64,[a-zA-Z0-9+/=]+$/.test(j.quicklook_png)) {
+      run.quicklook=j.quicklook_png;
+    }
+    S.imported=S.imported.filter(r=>r.sceneId!==run.sceneId || r.hotspot!==hotspot); S.imported.push(run);
+    if(S.hs===hotspot && S.screen==='investigate' && S.invTab==='nisar'){
+      S.importedPreview=run.sceneId;
+      if(run.quicklook) {
+        const [w,s,e,n]=b;
+        map.fitBounds([[s,w],[n,e]]);
+      }
+      refreshLayers();
+    }
     toast(`Loaded ${run.anoms.length} anomalies from ${file.name}`); render();
   }catch(e){ toast('Could not load file: '+e.message, 6000); } }; rd.readAsText(file);
 }
@@ -814,16 +877,17 @@ function rDiscover(){
   else {
     const ni=a.nisar, s1=a.s1;
     acqHtml += `<h3>NISAR L2 GCOV <span class="badge b-info">${ni.length}</span></h3>`;
-    if(a.err.nisar) acqHtml+=stateBox('error',`ASF search failed: ${esc(a.err.nisar)}. Catalogue snapshot (${SNAPSHOT.retrieved}): ${SNAPSHOT.counts[h.id]} GCOV granules intersect this hotspot.`);
-    else if(!ni.length) acqHtml+=stateBox('empty','No NISAR GCOV products in this date range. Widen the range.');
+    if(a.err.nisar) acqHtml+=stateBox('error',`ASF search failed: ${esc(a.err.nisar)}. Earlier snapshot (${SNAPSHOT.retrieved}): ${SNAPSHOT.counts[h.id]} records for this hotspot and the earlier search window.`);
+    else if(!ni.length) acqHtml+=stateBox('empty','ASF returned no NISAR GCOV records for this query.');
     else acqHtml+=`<div class="list">${ni.map((f,i)=>{const p=f.properties; return `<div class="it ${S.nisarSel===f?'sel':''}" data-ni="${i}"><span>${p.startTime.slice(0,16).replace('T',' ')} UTC · ${p.flightDirection==='ASCENDING'?'Asc':'Desc'} ${p.pathNumber}/${p.frameNumber}</span><span class="muted">${esc(p.mainBandPolarization||'')} · ${esc((p.rangeBandwidth||[]).join())} MHz</span></div>`;}).join('')}</div>`;
     acqHtml += `<h3>Sentinel-1 RTC (fallback / cross-frequency) <span class="badge b-info">${s1.length}</span></h3>`;
-    if(S.scr?.state==='loading') acqHtml+=stateBox('loading',`Screening surface conditions ${S.scr.done}/${S.scr.total}…`);
-    else if(S.scr?.state==='done') acqHtml+=stateBox(S.scr.ok?'ok':'warn',`${S.scr.ok} of ${S.scr.total} acquisitions show wind-roughened water suitable for slick detection.`);
+    if(S.scr?.state==='loading') acqHtml+=stateBox('loading',`Screening median water backscatter ${S.scr.done}/${S.scr.total}…`);
+    else if(S.scr?.state==='done') acqHtml+=stateBox(S.scr.ok?'ok':'warn',`${S.scr.ok} of ${S.scr.total} sampled acquisitions passed the nominal signal and coverage screen.`);
     if(a.err.s1) acqHtml+=stateBox('error',`Planetary Computer search failed: ${esc(a.err.s1)}`);
-    else if(!s1.length) acqHtml+=stateBox('empty','No Sentinel-1 RTC scenes in this date range.');
-    else acqHtml+=`<div class="list">${s1.map((f,i)=>{const p=f.properties; return `<div class="it ${S.scene===f?'sel':''}" data-s1="${i}"><span>${p.datetime.slice(0,16).replace('T',' ')} UTC · ${esc(p.platform)}</span><span class="muted">${esc(p['sat:orbit_state']||'')}${f.scr? (f.scr.ok?' · <b style="color:var(--ok)">usable</b>':' · low signal') : ''}</span></div>`;}).join('')}</div>`;
-    acqHtml+=`<p class="small muted">NISAR quick-looks open in Investigate. Calibrated NISAR analysis runs in <code>analysis.py</code> (Earthdata login). Sentinel-1 γ⁰ is analysed directly in the browser.</p>`;
+    else if(!s1.length) acqHtml+=stateBox('empty','Planetary Computer returned no Sentinel-1 RTC records for this query.');
+    else acqHtml+=`<div class="list">${s1.map((f,i)=>{const p=f.properties; return `<div class="it ${S.scene===f?'sel':''}" data-s1="${i}"><span>${p.datetime.slice(0,16).replace('T',' ')} UTC · ${esc(p.platform)}</span><span class="muted">${esc(p['sat:orbit_state']||'')}${scrTag(f)}</span></div>`;}).join('')}</div>
+    <button class="btn" id="screenScenes" ${S.scr?.state==='loading'?'disabled':''}>Screen latest ${Math.min(s1.length,8)} scenes</button>`;
+    acqHtml+=`<p class="small muted">Results for ${esc(a.from)} to ${esc(a.to)}. The catalogue is bounded. Screening reads separate small Sentinel-1 PNG subsets and weighs coverage and median signal. The Explorer carries the browser-authenticated NISAR subset handoff.</p>`;
   }
   $('#side').innerHTML=`
     <h2>1 · Discover</h2><p class="lead">Choose a candidate hotspot, then find SAR acquisitions over it.</p>
@@ -854,17 +918,19 @@ function rDiscover(){
   $('#fTo').onchange=e=>{ S.filt.to=e.target.value; };
   document.querySelectorAll('[data-hs]').forEach(el=>el.onclick=()=>selectHotspot(el.dataset.hs));
   $('#find').onclick=()=>{ if(S.filt.from>S.filt.to){ toast('Start date must be before end date'); return; } findData(); };
+  const screeningButton=$('#screenScenes'); if(screeningButton) screeningButton.onclick=screenScenes;
   $('#toInv').onclick=()=>gotoScreen('investigate');
   document.querySelectorAll('[data-ni]').forEach(el=>el.onclick=()=>{ S.nisarSel=S.acq.nisar[+el.dataset.ni]; render(); });
   document.querySelectorAll('[data-s1]').forEach(el=>el.onclick=()=>{ S.scene=S.acq.s1[+el.dataset.s1]; render(); });
 }
 
-const CLS={measurable:['b-sup','Measurable','Contrast measured against a valid local background, above the noise floor.'],
-  regional:['b-con','Regional','Larger than the background window: a regional darkening (often wind) rather than a local feature; contrast is ill-defined.'],
-  noise:['b-unl','Noise floor','Most pixels are within 1 dB of the instrument noise floor — not interpretable.']};
-function run_nesz(a){ const r=runOf(a); const nz=r?.sensor?.nesz; return nz==null? 'NESZ not available' : `${fmt(a.meanDb-nz)} dB (NESZ ≈ ${nz} dB γ⁰)${a.noiseFrac!=null?` · ${fmt(a.noiseFrac*100,0)} % of pixels within 1 dB`:''}`; }
+const CLS={measurable:['b-info','Local contrast','Contrast against the estimated local background.'],
+  regional:['b-con','Regional','Large compared with the background window. Use the contrast as an indication.'],
+  noise:['b-unl','Low signal','At or near the configured noise screen. Surface explanations remain untested.'],
+  unverified:['b-unk','Noise unverified','The imported noise threshold has no declared γ⁰ radiometry.']};
+function run_nesz(a){ const nz=runOf(a)?.sensor?.nesz; return nz==null? 'Screen unavailable' : `${fmt(a.meanDb-nz)} dB relative to the ${nz} dB γ⁰ screen${a.noiseFrac!=null?` · ${fmt(a.noiseFrac*100,0)} % of pixels below screen + 1 dB`:''}`; }
 function clsBadge(a){ const c=CLS[a.cls]; return c? `<span class="badge ${c[0]}" title="${esc(c[2])}">${c[1]}</span>` : ''; }
-function anomRow(a){ return `<div class="it ${a.key===S.sel?'sel':''}" data-an="${esc(a.key)}"><span><b>${esc(a.label)}</b> · ${fmt(a.area,2)} km² · −${fmt(a.contrast)}${a.contrastU!=null?'±'+fmt(a.contrastU,1):''} dB</span><span class="muted">${clsBadge(a)} ${fmt(a.shoreKm,1)} km from land</span></div>`; }
+function anomRow(a){ return `<div class="it ${a.key===S.sel?'sel':''}" data-an="${esc(a.key)}"><span><b>${esc(a.label)}</b> · ${fmt(a.area,2)} km² · ${fmt(a.contrast)} dB contrast</span><span class="muted">${clsBadge(a)}</span></div>`; }
 function rInvestigate(){
   const h=hsById(S.hs); const p=S.scene?.properties;
   if(!S.acq.s1.length && !S.acq.nisar.length && S.acq.status!=='loading'){
@@ -879,35 +945,36 @@ function rInvestigate(){
   if(rs?.state==='loading') runHtml=stateBox('loading',esc(rs.msg));
   else if(rs?.state==='error') runHtml=stateBox('error',esc(rs.msg));
   else if(r){
-    const warn = r.res.lowFrac!=null && r.res.lowFrac>0.5 ? stateBox('warn',`${fmt(r.res.lowFrac*100,0)} % of open water is within 3 dB of the noise floor — scene-wide low wind is likely; dark features here are not interpretable.`) : '';
+    const warn = r.res.lowFrac!=null && r.res.lowFrac>0.5 ? stateBox('warn',`${fmt(r.res.lowFrac*100,0)} % of analysed water has background below the nominal noise screen + 3 dB. Interpret low-signal features with care.`) : '';
     const cc={measurable:0,regional:0,noise:0}; r.anoms.forEach(x=>cc[x.cls]++);
-    runHtml=`${stateBox('ok',`${r.res.totalFound} dark features ≥ ${S.params.minKm2} km² found (${r.anoms.length} largest listed: ${cc.measurable} measurable, ${cc.regional} regional, ${cc.noise} at noise floor). Water mean γ⁰ ${fmt(r.res.waterMeanDb)} dB; ${fmt(r.res.measFrac*100,0)} % of open water measurable (background ≥ NESZ + T + 1 dB); ${r.res.nPoints} bright point targets; ${r.res.nStruct} in-water structures masked.`)}${warn}
+    runHtml=`${stateBox('ok',`${r.res.totalFound} dark-feature candidates (${r.anoms.length} largest listed: ${cc.measurable} local, ${cc.regional} regional, ${cc.noise} low signal). Mean water γ⁰ ${fmt(r.res.waterMeanDb)} dB. ${fmt(r.res.measFrac*100,0)} % of analysed water passed the background and noise screens.`)}${warn}
+      <p class="small muted">The browser detector uses rescaled 8-bit γ⁰ estimates. ${fmt(r.rangeLimitFraction*100,1)} % of valid pixels fall at the displayed range limits, where values may be clipped.</p>
       ${r.compErr?stateBox('warn','Comparison scene: '+esc(r.compErr)):''}
-      ${r.compare? `<details class="small"><summary>Comparison scene: ${r.compare.sameGeometry?'same geometry':'different geometry'} · Δ ${fmt(r.compare.dDays,0)} days</summary><ul>${r.compare.notes.map(n=>`<li>${esc(n)}</li>`).join('')}</ul></details>`:''}
-      ${r.anoms.length? `<div class="list" style="max-height:200px">${r.anoms.map(anomRow).join('')}</div>` : stateBox('empty','No dark anomalies above the threshold in this window.')}`;
+      ${r.compare? `<details class="small"><summary>Comparison ${r.compare.canAssess?'matches track and pass':'untested'} · Δ ${fmt(r.compare.dDays,0)} days</summary><ul>${r.compare.notes.map(n=>`<li>${esc(n)}</li>`).join('')}</ul></details>`:''}
+      ${r.anoms.length? `<div class="list" style="max-height:200px">${r.anoms.map(anomRow).join('')}</div>` : stateBox('empty','No candidate passed the selected screens in eligible pixels. Surface conditions elsewhere are untested.')}`;
   }
   const imp = S.imported.map(R=>`<h3>${esc(R.platform)} · ${esc(R.file)}</h3><div class="list">${R.anoms.map(anomRow).join('')||'<div class="it">No anomalies in file</div>'}</div>`).join('');
   const a=currentAnom(); const c=a?S.ctx[a.key]:null; const ar=runOf(a);
-  const det = a? `<div class="card" style="margin-top:10px"><div class="row" style="justify-content:space-between"><b>Anomaly ${esc(a.label)}</b><span>${clsBadge(a)} <span class="badge b-info" title="Tier 1 of 3: SAR-observed surface anomaly. Not a possible discharge until tested; never a verified source.">Tier 1 · SAR-observed</span></span></div>
-     ${a.cls==='noise'? stateBox('warn','Most of this feature is at the instrument noise floor: the “dark” signal is not a measurable surface property.') : a.cls==='regional'? stateBox('warn','This feature is larger than the background window: it is a regional darkening (commonly wind variability), and its contrast is only indicative.') : ''}
+  const det = a? `<div class="card" style="margin-top:10px"><div class="row" style="justify-content:space-between"><b>Anomaly ${esc(a.label)}</b><span>${clsBadge(a)} <span class="badge b-info" title="Tier 1: candidate with reduced backscatter relative to the estimated background.">Tier 1 · SAR-observed</span></span></div>
+     ${a.cls==='noise'? stateBox('warn','The feature is close to or below the noise screen. Surface explanations remain untested.') : a.cls==='regional'? stateBox('warn','This regional feature is large relative to the estimated background window. Its contrast is indicative.') : ''}
      <dl class="kv" style="margin-top:6px">
        <dt>Centre</dt><dd>${fmt(a.latlon[0],4)}°, ${fmt(a.latlon[1],4)}°</dd>
-       <dt>Area</dt><dd>${fmt(a.area,2)} km² <span class="tip" title="Pixel count × true pixel area of the analysis grid">ⓘ</span></dd>
+       <dt>Area</dt><dd>${fmt(a.area,2)} km² <span class="tip" title="Segment pixel count × approximate pixel area at the window midpoint">ⓘ</span></dd>
        <dt>Extent / axis ratio</dt><dd>${fmt(a.lengthKm,1)} km along the principal axis · ratio ${fmt(a.elong,1)}${a.fillRatio!=null?` · fill ${fmt(a.fillRatio,2)}`:''} <span class="tip" title="Extent: range of pixel positions projected on the principal axis. Axis ratio: √(λ1/λ2) of the second-moment (equivalent) ellipse. Fill: area / equivalent-ellipse area (low = ragged or branching).">ⓘ</span></dd>
        <dt>γ⁰ inside / background</dt><dd>${fmt(a.meanDb)} dB / ${fmt(a.bgDb)} dB</dd>
-       <dt>Contrast</dt><dd>−${fmt(a.contrast)} ± ${fmt(a.contrastU??0,2)} dB${a.p95Contrast!=null?` (95th pct −${fmt(a.p95Contrast)} dB)`:''} <span class="tip" title="Ratio of linear means (background / anomaly) in dB. ± = speckle standard error of the mean (ENL 4.4) combined with 8-bit quantisation. Excludes NESZ and calibration uncertainty.">ⓘ</span></dd>
-       <dt>Above noise floor</dt><dd>${run_nesz(a)}</dd>
-       <dt>Edge step</dt><dd>${fmt(a.edgeStep)} dB <span class="tip" title="Sharp edges are more typical of films than of gradual wind-speed changes, but this is an indicator, not a test.">ⓘ</span></dd>
-       <dt>Land</dt><dd>${fmt(a.shoreKm,2)} km${a.touchesShoreBuffer?' (reaches shoreline buffer)':''} · ${fmt(a.permFrac*100,0)} % permanent water</dd>
-       <dt>Persistence</dt><dd>${a.persistStatus==='untestable'?`untestable (${fmt((a.persistCover||0)*100,0)} % measurable in comparison)` : a.persist!=null? `${esc(a.persistStatus||'')}: −${fmt(a.persist)} dB, ${a.persistFrac!=null?fmt(a.persistFrac*100,0)+' % of pixels dark':''}`:'not assessed'}</dd>
+       <dt>Contrast</dt><dd>${contrastText(a)}${Number.isFinite(a.p95Contrast)?` (pixel contrast 95th percentile ${fmt(a.p95Contrast)} dB)`:''} <span class="tip" title="10 log10(mean background power / mean feature power). Sampling error uses assumed ENL and independent pixels. It excludes background, calibration, and noise uncertainty.">ⓘ</span></dd>
+       <dt>Noise screen</dt><dd>${run_nesz(a)}</dd>
+       <dt>Edge step</dt><dd>${fmt(a.edgeStep)} dB <span class="tip" title="Local contrast across the segment boundary">ⓘ</span></dd>
+       <dt>Mapped land</dt><dd>${Number.isFinite(a.shoreKm)?fmt(a.shoreKm,2)+' km':'Unavailable'} · ${fmt(a.permFrac*100,0)} % of feature pixels at ≥ 90% historical water occurrence</dd>
+       <dt>Comparison</dt><dd>${persistenceLabel(a.persistStatus)}${Number.isFinite(a.persist)?` · ${fmt(a.persist)} dB`:''}${Number.isFinite(a.persistCover)?` · ${fmt(a.persistCover*100,0)} % eligible pixels`:''}</dd>
        <dt>Wind (ERA5)</dt><dd>${c?.wind? `${fmt(c.wind.ws)} m/s, ${fmt(c.wind.wd,0)}°` : c?.windLoading? '<span class="spin"></span>loading' : esc(c?.windErr||'—')}</dd>
        <dt>SAR point targets</dt><dd>${a.ptN!=null? `${a.ptInside??0} inside, ${a.ptN} within 2 km (platforms/vessels, unidentified)` : '—'}</dd>
        <dt>Nearby mapped infrastructure</dt><dd>${c?.fac? esc(facSummary(c.fac)) : c?.facLoading? '<span class="spin"></span>querying OpenStreetMap' : esc(c?.facErr||'—')}</dd>
      </dl>
-     <p class="small muted" style="margin:8px 0">Observed: a region of reduced radar backscatter (tier 1). Whether it is a possible industrial discharge (tier 2) is tested on the next screen; a verified pollution source (tier 3) requires in-situ evidence and is never established here. Nearby facilities are context only.</p>
+     <p class="small muted" style="margin:8px 0">The detector found lower backscatter relative to the estimated local background. Nearby facilities provide context. Source attribution needs independent evidence.</p>
      <button class="btn primary block" id="toReason">Investigate explanations →</button></div>` : '';
   $('#side').innerHTML=`
-    <h2>2 · Investigate</h2><p class="lead">${esc(h.name)} — detect dark surface anomalies in calibrated SAR.</p>
+    <h2>2 · Investigate</h2><p class="lead">${esc(h.name)} — inspect dark-feature candidates in SAR.</p>
     <div class="tabs"><button id="tS1" class="${S.invTab!=='nisar'?'on':''}">Sentinel-1 RTC (${S.acq.s1.length})</button><button id="tNI" class="${S.invTab==='nisar'?'on':''}">NISAR GCOV (${S.acq.nisar.length})</button></div>
     ${S.invTab==='nisar' ? `
       ${S.acq.nisar.length? `<label class="f">Acquisition</label><select id="niSel">${niOpts}</select>
@@ -916,13 +983,13 @@ function rInvestigate(){
         <dt>Polarisation</dt><dd>${esc(S.nisarSel.properties.mainBandPolarization)} (main band ${esc((S.nisarSel.properties.rangeBandwidth||[]).join())} MHz)</dd>
         <dt>Size</dt><dd>${fmt((S.nisarSel.properties.bytes?.[S.nisarSel.properties.fileName+'.h5']?.bytes||Object.values(S.nisarSel.properties.bytes||{})[0]?.bytes||0)/1e9,2)} GB HDF5</dd></dl>
         <button class="btn block" id="niShow">${S.layers.nisar?'Hide':'Show'} public quick-look (uncalibrated display)</button>
-        <p class="small muted">The quick-look is ASF's public colour-stretched browse image, placed on the footprint's bounding box (approximate) — useful for orientation, not for measurement. For calibrated HH γ⁰ analysis run:<br><code>python analysis.py nisar --hotspot ${h.id} --granule ${esc(S.nisarSel.properties.fileID)}</code><br>then load the resulting JSON below.</p>`:''}`
+        <p class="small muted">The ASF quick-look is colour-stretched and placed approximately on the footprint bounding box for orientation. Load a locally generated calibrated analysis result to review measured features.</p>`:''}`
       : stateBox('empty','No NISAR acquisitions in the selected date range.')}
       <label class="btn block" style="text-align:center;margin-top:8px">Load analysis.py result (.json)<input type="file" id="imp" accept=".json,application/json" hidden></label>`
     : `
-      ${S.scr?.state==='loading'? stateBox('loading',`Screening surface conditions ${S.scr.done}/${S.scr.total} (median water γ⁰ in the demo window)…`) : S.scr?.state==='done'? stateBox(S.scr.ok?'ok':'warn', `${S.scr.ok} of ${S.scr.total} acquisitions have wind-roughened water ≥ ${SENSORS.S1.nesz+4} dB (NESZ + 4 dB). Others are near the noise floor — calm water hides any film contrast.`) : S.scr?.state==='error'? stateBox('error','Screening failed: '+esc(S.scr.msg)) : ''}
+      ${S.scr?.state==='loading'? stateBox('loading',`Screening median water γ⁰ ${S.scr.done}/${S.scr.total}…`) : S.scr?.state==='done'? stateBox(S.scr.ok?'ok':'warn', `${S.scr.ok} of ${S.scr.total} acquisitions passed the nominal ${SENSORS.S1.nesz+4} dB median and coverage screen in the demo area.`) : S.scr?.state==='error'? stateBox('error','Screening failed: '+esc(S.scr.msg)) : ''}
       ${S.acq.s1.length? `<label class="f">Scene to analyse</label><select id="s1Sel">${s1opts}</select>
-      ${p? `<dl class="kv" style="margin:8px 0"><dt>Satellite</dt><dd>${esc(p.platform)} · ${esc(p['sat:orbit_state']||'')} · ${esc(p['sar:instrument_mode']||'IW')}</dd><dt>Acquired</dt><dd>${esc(p.datetime)}</dd><dt>Product</dt><dd>${esc(S.scene.id)}</dd><dt>Polarisation</dt><dd>VV (analysed), VH</dd></dl>`:''}
+      ${p? `<dl class="kv" style="margin:8px 0"><dt>Satellite</dt><dd>${esc(p.platform)} · ${esc(p['sat:orbit_state']||'')} · ${esc(p['sar:instrument_mode']||'IW')}</dd><dt>Acquired</dt><dd>${esc(p.datetime)}</dd><dt>Product</dt><dd>${esc(S.scene.id)}</dd><dt>Polarisation</dt><dd>VV analysis channel</dd></dl>`:''}
       <label class="f">Before/after comparison (optional)</label><select id="cmpSel">${compOpts}</select>
       <h3>Detection settings</h3>
       <label class="f">Contrast threshold <span class="tip" title="A pixel seeds an anomaly when its speckle-filtered γ⁰ is at least this many dB below the local water background (~3 km window). Regions grow down to half the threshold.">ⓘ</span>: <span class="slider-val">${S.params.T} dB</span></label>
@@ -933,16 +1000,23 @@ function rInvestigate(){
       : stateBox('empty','No Sentinel-1 RTC scenes in the selected date range.')}`}
     ${runHtml}${imp}${det}`;
   // wiring
-  $('#tS1').onclick=()=>{S.invTab='s1'; render();}; $('#tNI').onclick=()=>{S.invTab='nisar'; render();};
+  $('#tS1').onclick=()=>{S.invTab='s1'; refreshLayers(); render();}; $('#tNI').onclick=()=>{S.invTab='nisar'; refreshLayers(); render();};
   const sel=(id,fn)=>{const e=document.getElementById(id); if(e) e.onchange=fn;};
   sel('s1Sel',e=>{S.scene=S.acq.s1[+e.target.value]; S.run=null; S.runStatus=null; S.sel=null; refreshLayers(); render();});
   sel('cmpSel',e=>{S.comp=e.target.value===''?null:S.acq.s1[+e.target.value]; render();});
-  sel('niSel',e=>{S.nisarSel=S.acq.nisar[+e.target.value]; refreshLayers(); render();});
+  sel('niSel',e=>{S.nisarSel=S.acq.nisar[+e.target.value]; S.importedPreview=null; S.sel=null; refreshLayers(); render();});
   const pT=$('#pT'); if(pT) pT.oninput=e=>{S.params.T=+e.target.value; e.target.previousElementSibling.querySelector('.slider-val').textContent=S.params.T+' dB';};
   const pA=$('#pA'); if(pA) pA.oninput=e=>{S.params.minKm2=+e.target.value; e.target.previousElementSibling.querySelector('.slider-val').textContent=S.params.minKm2+' km²';};
   const rd=$('#runDemo'); if(rd) rd.onclick=()=>{ const [w,s,e,n]=h.demo; map.fitBounds([[s,w],[n,e]]); runAnalysis(false); };
   const rv=$('#runView'); if(rv) rv.onclick=()=>runAnalysis(true);
-  const ns=$('#niShow'); if(ns) ns.onclick=()=>{ S.layers.nisar=!S.layers.nisar; if(S.layers.nisar){ const g=S.nisarSel.geometry.coordinates[0]; map.fitBounds(g.map(q=>[q[1],q[0]])); } refreshLayers(); render(); };
+  const ns=$('#niShow'); if(ns) ns.onclick=()=>{
+    S.layers.nisar=!S.layers.nisar;
+    if(S.layers.nisar && S.nisarSel?.geometry){
+      const bounds=L.geoJSON(S.nisarSel.geometry).getBounds();
+      if(bounds.isValid()) map.fitBounds(bounds);
+    }
+    refreshLayers(); render();
+  };
   const im=$('#imp'); if(im) im.onchange=e=>{ if(e.target.files[0]) importResults(e.target.files[0]); };
   document.querySelectorAll('[data-an]').forEach(el=>el.onclick=()=>selectAnom(el.dataset.an));
   const tr=$('#toReason'); if(tr) tr.onclick=()=>gotoScreen('reason');
@@ -953,7 +1027,7 @@ function needAnom(title){
   $('#back').onclick=()=>gotoScreen('investigate');
 }
 const STATUS_BADGE={supported:['b-info','Supported'],consistent:['b-con','Consistent'],untested:['b-unk','Untested'],contradicted:['b-unl','Contradicted']};
-function tierBanner(){ return `<div class="tiers"><div class="tier on"><b>1 · SAR-observed surface anomaly</b><span>measured reduction of radar backscatter</span></div><div class="tier"><b>2 · Possible industrial discharge</b><span>one hypothesis among several — tested below</span></div><div class="tier off"><b>3 · Verified pollution source</b><span>requires in-situ sampling & attribution — never established by this tool</span></div></div>`; }
+function tierBanner(){ return `<div class="tiers"><div class="tier on"><b>1 · Dark-feature candidate</b><span>lower backscatter relative to the estimated background</span></div><div class="tier"><b>2 · Candidate explanations</b><span>compatible context and gaps in the evidence</span></div><div class="tier off"><b>3 · Source attribution</b><span>requires independent evidence</span></div></div>`; }
 function rReason(){
   const a=currentAnom(); if(!a) return needAnom('3 · Scientific Reasoning');
   const run=runOf(a), c=S.ctx[a.key]||{}; const R=reason(a,run,c);
@@ -969,25 +1043,25 @@ function rReason(){
     ${tierBanner()}
     ${loading? stateBox('loading','Retrieving ERA5 wind and mapped infrastructure — the evaluation updates automatically.'):''}
     <div class="verdict ${R.verdict.cls}"><b>${esc(R.verdict.title)}</b><div>${esc(R.verdict.text)}</div>
-      <div class="small muted" style="margin-top:6px">Set-membership test with four evidence levels. <b>Supported</b>: a measurement favours it over an alternative. <b>Consistent</b>: measured and compatible. <b>Untested</b>: no usable measurement — never counted as support. <b>Contradicted</b>: a measured interval lies outside what it can produce. No probabilities are assigned.</div></div>
+      <div class="small muted" style="margin-top:6px">The noise screen flags low signal. Wind, rain and historical water occurrence provide context for plausible explanations. Local conditions and pollutant identity require independent observations.</div></div>
     <div class="cols" style="grid-template-columns:minmax(0,1fr)">
       <div class="card"><h3 style="margin-top:0">Evidence matrix</h3>
         <div style="overflow-x:auto"><table class="t"><tr><th>Explanation</th>${cols.map(c=>`<th>${c[1]}</th>`).join('')}<th>Status</th></tr>
         ${R.hyps.map(h=>`<tr><td>${esc(h.name)}</td>${cols.map(cc=>cell(h,cc[0])).join('')}<td><span class="badge ${STATUS_BADGE[h.status][0]}">${STATUS_BADGE[h.status][1]}</span></td></tr>`).join('')}</table></div>
         <p class="small muted"><span class="ev-sup">▲</span> supports · <span class="ev-con">✓</span> consistent · <span class="ev-unt">?</span> untested / not measurable · <span class="ev-bad">✗</span> contradicts · <span class="ev-ctx">○</span> context only (never changes a status) · · not applicable. Hover a symbol for the reasoning.</p></div>
-      <div class="card"><h3 style="margin-top:0">1 · What the satellite measured</h3><table class="t">${R.obs.map(o=>`<tr><td><b>${esc(o.label)}</b><div class="small muted">${esc(o.src)}${o.kind==='context'?' · context only':o.kind==='missing'?' · not available':''}</div></td><td>${esc(o.val)}</td></tr>`).join('')}</table></div>
+      <div class="card"><h3 style="margin-top:0">Observations and context</h3><table class="t">${R.obs.map(o=>`<tr><td><b>${esc(o.label)}</b><div class="small muted">${esc(o.src)}${o.kind==='context'?' · context only':o.kind==='missing'?' · unavailable':''}</div></td><td>${esc(o.val)}</td></tr>`).join('')}</table></div>
     </div>
     <div class="cols" style="margin-top:14px">
-      ${group('supported','2a · Favoured by a measurement','No explanation is positively favoured by the available measurements.')}
-      ${group('consistent','2b · Physically possible (compatible, not favoured)','—')}
+      ${group('supported','Low-signal screen','No low-signal warning was triggered.')}
+      ${group('consistent','Compatible context','—')}
       ${group('untested','2c · Not testable with the connected data','—')}
       ${group('contradicted','3 · Contradicted by the evidence','No explanation could be excluded with the available measurements.')}
       <div class="card"><h3 style="margin-top:0">4 · Additional measurements needed</h3><ul>${R.needs.map(n=>`<li>${esc(n)}</li>`).join('')}</ul></div>
       <div class="card"><h3 style="margin-top:0">5 · What cannot be concluded</h3><ul>${R.cannot.map(n=>`<li>${esc(n)}</li>`).join('')}</ul></div>
     </div>
     <details><summary>Physical basis and thresholds</summary><div class="small" style="max-width:900px">
-      <p>Radar backscatter from water is dominated by Bragg scattering from short waves (${esc(SENSORS.S1.braggCm)} for C-band; ${esc(SENSORS.NISAR.braggCm)} for L-band). Surface films raise surface viscoelasticity and damp these waves, producing dark areas (${refLink('alpers89')}). Mineral oil and natural monomolecular films act the same way; their damping differs with radar frequency and wind, so discrimination is best with multi-frequency data at low-to-moderate wind (${refLink('gade98')}). Oil slicks are generally observable within a wind window of roughly 2–3 to 10–12 m/s (${refLink('brekke05')}; ${refLink('fingas14')}). Dissolved, suspended, submerged or rapidly mixed pollutants do not alter surface roughness and are invisible to SAR.</p>
-      <p>Rules: noise floor <i>supported</i> if the anomaly mean is ≤ NESZ + 1 dB or ≥ 50 % of its pixels are within 1 dB of NESZ (then every surface explanation is <i>untested</i>), <i>contradicted</i> if ≥ NESZ + 3 dB. Oil film contradicted if the wind lower bound &gt; 14 m/s, untested if the upper bound &lt; 2 m/s; biogenic film contradicted &gt; 10 m/s; low wind contradicted if &gt; 6 m/s and &gt; 5 km from land, supported if ERA5 upper bound &lt; 3 m/s and not in conflict with the SAR background. Shore artefact contradicted if ≥ 95 % permanent water and ≥ 1 km from land, supported if the feature reaches the ${DET_DEFAULTS.shoreBufM} m shoreline buffer. Rain supported if ERA5 ≥ 0.5 mm, otherwise untested (a 25 km reanalysis cannot exclude a cell). ERA5 wind carries ±2 m/s. NESZ for Sentinel-1 is expressed in γ⁰ (−22 dB σ⁰ ÷ cos 39° ≈ −21 dB, ±1 dB across the swath).</p></div></details>`;
+      <p>Bragg scattering responds to short surface waves (${esc(SENSORS.S1.braggCm)} for C-band and ${esc(SENSORS.NISAR.braggCm)} for L-band). A surface film can damp these waves and reduce backscatter. Mineral and natural films can both do this. Wind, frequency and imaging geometry affect contrast. SAR measures roughness-related backscatter and has no direct measurement of chemical composition. ${refLink('alpers89')} · ${refLink('gade98')}</p>
+      <p>The detector’s low-signal flag uses mean γ⁰ at or below the configured screen + 1 dB, or at least half of its pixels below that level. The Sentinel-1 example converts the −22 dB σ⁰ mission specification to an approximate −21 dB γ⁰ screen using γ⁰(dB) = σ⁰(dB) − 10 log₁₀(cos 39°) over flat water. It uses a nominal screen in place of a per-pixel noise estimate.</p></div></details>`;
   $('#bk').onclick=()=>gotoScreen('investigate'); $('#fw').onclick=()=>gotoScreen('industry');
 }
 
@@ -1003,25 +1077,25 @@ function rIndustry(){
   const near=fac.filter(f=>(CAT_IND[f.cat]||[]).includes(I.id)).slice(0,8);
   const hsList=I.hotspots.map(id=>hsById(id)?.name).filter(Boolean);
   $('#page').innerHTML=`
-    <div class="row" style="justify-content:space-between;flex-wrap:wrap;gap:10px"><div><h2>4 · Industry Profile</h2><p class="lead">Which industries could produce a SAR-visible film here — and which cannot.</p></div>
+    <div class="row" style="justify-content:space-between;flex-wrap:wrap;gap:10px"><div><h2>4 · Industry Profile</h2><p class="lead">Historical examples and hypothetical routes to a surface film.</p></div>
       <div class="row"><button class="btn" id="bk">← Reasoning</button><button class="btn primary" id="fw">Findings →</button></div></div>
-    <div class="ind-tabs">${sorted.map(i=>`<button data-ind="${i.id}" class="${i.id===S.ind?'on':''} ${rel.has(i.id)?'rel':''}" title="${rel.has(i.id)?'Relevant to the selected hotspot/anomaly':''}">${rel.has(i.id)?'● ':''}${esc(i.name.split('(')[0].split('—')[0].trim())}</button>`).join('')}</div>
+    <div class="ind-tabs">${sorted.map(i=>`<button data-ind="${i.id}" class="${i.id===S.ind?'on':''} ${rel.has(i.id)?'rel':''}" title="${rel.has(i.id)?'Selected as regional or mapped context':''}">${rel.has(i.id)?'● ':''}${esc(i.name.split('(')[0].split('—')[0].trim())}</button>`).join('')}</div>
     <div class="cols">
       <div class="card"><div class="row" style="justify-content:space-between"><h3 style="margin:0">${esc(I.name)}</h3><span class="badge ${DET[I.detect][1]}">SAR: ${DET[I.detect][0]}</span></div>
         <dl class="kv" style="margin-top:10px">
-          <dt>Illicit pattern</dt><dd>${esc(I.illicit)}</dd><dt>Processes</dt><dd>${esc(I.processes)}</dd><dt>Waste streams</dt><dd>${esc(I.waste)}</dd>
+          <dt>Example release pathway</dt><dd>${esc(I.illicit)}</dd><dt>Processes</dt><dd>${esc(I.processes)}</dd><dt>Waste streams</dt><dd>${esc(I.waste)}</dd>
           <dt>Pathway</dt><dd>${esc(I.pathway)}</dd><dt>Radar visibility</dt><dd>${esc(I.mechanism)}</dd><dt>Look-alikes</dt><dd>${esc(I.confounders)}</dd>
-          <dt>Evidence confidence</dt><dd>${esc(I.conf)}</dd><dt>Candidate regions</dt><dd>${hsList.length?esc(hsList.join('; ')):'— (no hotspot selected for this industry)'}</dd></dl></div>
+          <dt>Evidence scope</dt><dd>${esc(I.conf)}</dd><dt>Candidate regions</dt><dd>${hsList.length?esc(hsList.join('; ')):'— (no hotspot selected for this industry)'}</dd></dl></div>
       <div class="card"><h3 style="margin-top:0">Operating patterns</h3>
         <p class="small"><span class="badge b-sup">Documented</span></p>${I.pattern.doc.length?`<ul class="small">${I.pattern.doc.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p class="small muted">No pattern documented in the sources reviewed.</p>'}
         <p class="small"><span class="badge b-unk">Hypothesis — not established</span></p>${I.pattern.hyp.length?`<ul class="small">${I.pattern.hyp.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p class="small muted">—</p>'}
         <h3>Why it matters for ${a?'anomaly '+esc(a.label):'this hotspot'}</h3>
-        <p class="small">${rel.has(I.id)? (I.detect==='S'||I.detect==='C' ? 'This industry is present in the hotspot evidence or among mapped features near the anomaly, and can produce a floating film that SAR can detect under suitable wind.' : 'Present nearby, but its typical waste streams are dissolved or emulsified — it is an unlikely explanation for a SAR dark feature.') : 'Not documented at this hotspot or near the selected anomaly.'}</p>
-        ${a? `<p class="small"><b>Mapped features near the anomaly (OSM, unverified):</b> ${near.length? near.map(f=>`${esc(f.cat)}${f.tags.name?' “'+esc(f.tags.name)+'”':''} (${fmt(f.dkm,1)} km)`).join('; ') : 'none of this type within 15 km'}.</p>
+        <p class="small">${rel.has(I.id)? (I.detect==='S'||I.detect==='C' ? 'Regional history or mapped features make this a context category. A floating film can affect SAR backscatter under suitable conditions.' : 'Regional or mapped context. This detector cannot identify these waste streams.') : 'This category has no entry in the selected regional or mapped context.'}</p>
+        ${a? `<p class="small"><b>Mapped features near the anomaly (OSM, unverified):</b> ${near.length? near.map(f=>`${esc(f.cat)}${f.tags.name?' “'+esc(f.tags.name)+'”':''} (${fmt(f.dkm,1)} km)`).join('; ') : 'none returned for this category within 15 km'}.</p>
         <p class="small muted">Listing a mapped facility does not imply that it discharged anything.</p>`:''}
         <p class="small"><b>References:</b> ${I.refs.map(refLink).join('; ')}</p></div>
     </div>
-    <details open><summary>Research matrix — all industries ranked by SAR evidence (Q1–Q4)</summary>
+    <details open><summary>Research matrix — examples ordered by surface-film relevance</summary>
       <div class="matrix-wrap" style="margin-top:8px"><table class="t"><tr><th>#</th><th>Industry</th><th>Waste</th><th>Water pathway</th><th>SAR mechanism</th><th>Detectability</th><th>Operating pattern (documented)</th><th>Confounders</th><th>Hotspots</th><th>Evidence</th></tr>
       ${sorted.map(i=>`<tr><td>${i.rank}</td><td><b>${esc(i.name)}</b></td><td>${esc(i.waste)}</td><td>${esc(i.pathway)}</td><td>${esc(i.mechanism)}</td><td><span class="badge ${DET[i.detect][1]}">${DET[i.detect][0]}</span></td><td>${esc(i.pattern.doc.join(' ')||'—')}</td><td>${esc(i.confounders)}</td><td>${esc(i.hotspots.map(x=>hsById(x)?.name).join('; ')||'—')}</td><td>${i.refs.map(refLink).join('; ')}<div class="muted">${esc(i.conf)}</div></td></tr>`).join('')}</table></div>
       <button class="btn" id="csv" style="margin-top:8px">Export matrix (CSV)</button></details>`;
@@ -1034,7 +1108,9 @@ function rIndustry(){
 
 function buildReport(){
   const h=hsById(S.hs); const a=currentAnom(); const run=runOf(a); const c=a?S.ctx[a.key]||{}:{}; const R=a?reason(a,run,c):null;
-  const refs=new Set(['alpers89','gade98','brekke05','fingas14','pekel16','era5','lee80',...h.refs]); if(run?.platform==='NISAR') refs.add('asfGcov');
+  const refs=new Set(['alpers89','gade98','emsa','pekel16','era5','lee80',...h.refs]);
+  if(run?.platform==='NISAR') refs.add('asfGcov');
+  else if(run){ refs.add('s1Mission'); refs.add('s1Products'); }
   relevantIndustries().forEach(i=>indById(i).refs.forEach(r=>refs.add(r)));
   return {h,a,run,c,R,refs:[...refs], generated:new Date().toISOString()};
 }
@@ -1043,7 +1119,8 @@ function rFindings(){
   const body = !a ? stateBox('empty','No anomaly has been investigated yet. The report below covers the hotspot and data search only.') : '';
   const scen = run? `<ul><li><b>Satellite / product:</b> ${esc(run.sensor.product)}</li><li><b>Scene:</b> ${esc(run.sceneId)}</li><li><b>Acquired:</b> ${esc(run.sceneTime)} (${esc(run.platform||'')}${run.orbit?', '+esc(run.orbit):''})</li>
       ${run.compId?`<li><b>Comparison scene:</b> ${esc(run.compId)} (${esc(run.compTime)})</li>`:''}<li><b>Analysis window:</b> ${run.bbox.map(v=>fmt(v,3)).join(', ')} (W,S,E,N)${run.px?` · ${run.px} m pixels`:''}</li>
-      <li><b>Processing (detector v2):</b> ${run.src==='browser'?`γ⁰ VV (RTC, already calibrated & geocoded) read as dB in ${DB_MIN}…${DB_MAX} dB (8-bit, 0.12 dB steps) → JRC water (occurrence ≥ 80 %), land = non-water components ≥ ${DET_DEFAULTS.holeKm2} km², ${DET_DEFAULTS.shoreBufM} m shoreline buffer, in-water structures masked → 5×5 Lee filter (ENL 4.4) → two-pass background (${fmt((2*run.res.R+1)*run.px/1000,1)} km, then ${fmt((2*run.res.R2+1)*run.px/1000,1)} km excluding dark candidates) → only pixels with background ≥ NESZ + T + 1 dB (NESZ ${run.sensor.nesz} dB γ⁰) may seed or grow → hysteresis (seed ≥ ${run.T} dB, grow ≥ ${run.T/2} dB) → min area ${S.params.minKm2} km²`:`analysis.py (${esc(run.file)})`}</li>
+      <li><b>Detector input:</b> ${run.src==='browser'?`Sentinel-1 RTC VV through the 8-bit PNG data endpoint, represented at ${fmt((DB_MAX-DB_MIN)/255,3)} dB steps over ${DB_MIN} to ${DB_MAX} dB. ${fmt(run.rangeLimitFraction*100,1)} % of valid pixels reach a range limit.`:`Imported analysis.py result (${esc(run.file)}).`}</li>
+      <li><b>Settings:</b> seed contrast ≥ ${fmt(run.T)} dB, grow contrast ≥ ${fmt(run.T/2)} dB, configured minimum area ${fmt(run.minKm2,3)} km².${run.src==='browser'?` The detector also requires six pixels, a JRC occurrence mask, a ${DET_DEFAULTS.shoreBufM} m shore buffer, an adequately sampled background and background ≥ ${fmt(run.sensor.nesz+run.T+1)} dB under the nominal noise screen.`:''}</li>
       ${run.compare?`<li><b>Comparability of comparison scene:</b> ${run.compare.notes.map(esc).join(' ')}</li>`:''}</ul>` : '<p class="muted">No SAR scene analysed.</p>';
   $('#page').innerHTML=`
     <div class="row noprint" style="justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:12px"><div><h2>5 · Findings</h2><p class="lead">Investigation report — export or print.</p></div>
@@ -1053,17 +1130,16 @@ function rFindings(){
       <h1>SAR surface-anomaly investigation — ${esc(h.name)}, ${esc(h.country)}</h1>
       <div class="muted small">Generated ${esc(D.generated)} · SAR Discharge Investigator (NASA Space Apps 2026)</div>
       <h2>Location</h2><p>${esc(h.waterLabel)}. Hotspot rationale: ${esc(h.why)}</p>
-      ${a?`<p>Anomaly <b>${esc(a.label)}</b> centred at ${fmt(a.latlon[0],4)}°N, ${fmt(a.latlon[1],4)}°E.</p>`:''}
+      ${a?`<p>Feature <b>${esc(a.label)}</b> centred at ${fmt(a.latlon[0],4)}°, ${fmt(a.latlon[1],4)}° (latitude, longitude).</p>`:''}
       <h2>Satellite and acquisition</h2>${scen}
-      <p class="small">NISAR GCOV acquisitions found for this hotspot in ${esc(S.filt.from)} – ${esc(S.filt.to)}: ${S.acq.status==='done'?S.acq.nisar.length:'not searched'}${S.acq.nisar[0]?` (latest ${esc(S.acq.nisar[0].properties.startTime)})`:''}.</p>
-      ${a?`<h2>Observed anomaly (tier 1 — SAR-observed surface anomaly)</h2><ul><li>Class: ${CLS[a.cls]?CLS[a.cls][1]+' — '+CLS[a.cls][2]:'—'}</li><li>Area ${fmt(a.area,2)} km², principal-axis extent ${fmt(a.lengthKm,1)} km, axis ratio ${fmt(a.elong,1)}${a.fillRatio!=null?`, fill ratio ${fmt(a.fillRatio,2)}`:''}</li><li>γ⁰ ${fmt(a.meanDb)} dB vs. background ${fmt(a.bgDb)} dB (contrast −${fmt(a.contrast)} ± ${fmt(a.contrastU??0,2)} dB${a.p95Contrast!=null?`; 95th percentile −${fmt(a.p95Contrast)} dB`:''}); ${run.sensor.nesz!=null?`${fmt(a.meanDb-run.sensor.nesz)} dB above NESZ${a.noiseFrac!=null?`, ${fmt(a.noiseFrac*100,0)} % of pixels within 1 dB of NESZ`:''}; `:''}edge step ${fmt(a.edgeStep)} dB</li><li>${fmt(a.shoreKm,2)} km from land; ${fmt(a.permFrac*100,0)} % permanent water</li><li>Persistence: ${a.persistStatus==='untestable'?'untestable in comparison scene':a.persist!=null?`${esc(a.persistStatus||'')} (contrast ${fmt(a.persist)} dB${a.persistFrac!=null?`, ${fmt(a.persistFrac*100,0)} % of pixels dark`:''})`:'not assessed'}</li><li>Bright point targets: ${a.ptInside??0} inside, ${a.ptN??'—'} within 2 km (unidentified)</li></ul>
-      <h2>Environmental conditions</h2><p>${c.wind?`ERA5 10 m wind ${fmt(c.wind.ws)} m/s from ${fmt(c.wind.wd,0)}° at ${esc(c.wind.time)}; precipitation ±1 h ${fmt(c.wind.precip3h,1)} mm.`:'Wind not available: '+esc(c.windErr||'not retrieved')}</p>
-      <h2>Candidate explanations (tier 2 — hypotheses, including a possible industrial discharge)</h2><p><b>${esc(R.verdict.title)}.</b> ${esc(R.verdict.text)}</p>
+      <p class="small">NISAR GCOV search for ${esc(S.filt.from)} to ${esc(S.filt.to)}. ${S.acq.err?.nisar?'Catalogue unavailable.':S.acq.status==='done'?`${S.acq.nisar.length} records returned within the search limit.`:'No completed query.'}</p>
+      ${a?`<h2>Dark-feature candidate</h2><ul><li>${CLS[a.cls]?CLS[a.cls][1]+' · '+CLS[a.cls][2]:'Class unavailable'}</li><li>Area ${fmt(a.area,2)} km², principal-axis extent ${fmt(a.lengthKm,1)} km, axis ratio ${fmt(a.elong,1)}${a.fillRatio!=null?`, fill ratio ${fmt(a.fillRatio,2)}`:''}</li><li>γ⁰ ${fmt(a.meanDb)} dB against background ${fmt(a.bgDb)} dB. Contrast ${contrastText(a)}.</li><li>Comparison ${persistenceLabel(a.persistStatus)}${Number.isFinite(a.persist)?` · ${fmt(a.persist)} dB`:''}${Number.isFinite(a.persistCover)?` · ${fmt(a.persistCover*100,0)} % eligible pixels`:''}.</li></ul>
+      <h2>Candidate explanations</h2><p><b>${esc(R.verdict.title)}.</b> ${esc(R.verdict.text)}</p>
       <ul>${R.hyps.map(x=>`<li><b>${esc(x.name)}</b> — <i>${STATUS_BADGE[x.status][1].toLowerCase()}</i>${x.rows.map(r=>`; [${EV[r.ev][2]}] ${esc(r.why)}`).join('')}</li>`).join('')}</ul>
       <p class="small">Tier 3 — verified pollution source: not established. This requires in-situ sampling and source attribution.</p>
-      <h2>Supporting and contradictory evidence</h2><ul>${R.obs.map(o=>`<li><b>${esc(o.label)}:</b> ${esc(o.val)} <span class="muted">(${esc(o.src)})</span></li>`).join('')}</ul>
+      <h2>Observations and context</h2><ul>${R.obs.map(o=>`<li><b>${esc(o.label)}:</b> ${esc(o.val)} <span class="muted">(${esc(o.src)})</span></li>`).join('')}</ul>
       <p class="small">Mapped infrastructure is listed from OpenStreetMap and has not been verified. Proximity is not evidence of a discharge.</p>
-      <h2>Remaining uncertainties</h2><ul>${R.cannot.map(x=>`<li>${esc(x)}</li>`).join('')}<li>ERA5 wind (±2 m/s assumed) cannot resolve local sheltering or gusts.</li><li>8-bit quantisation of γ⁰ (0.12 dB) and resampling to ${run?.px||'—'} m reduce sensitivity to small features.</li><li>Noise floor: ${esc(run?.sensor?.neszNote||'not available for this product')}.</li><li>Contrast uncertainty reflects speckle and quantisation only; calibration and NESZ uncertainty (±1 dB) are not included.</li></ul>
+      <h2>Remaining uncertainties</h2><ul>${R.cannot.map(x=>`<li>${esc(x)}</li>`).join('')}<li>Coarse ERA5 cannot resolve local gusts or sheltering.</li><li>${esc(run.sensor.neszNote||'No noise screen in matching radiometry is documented.')}</li><li>The sampling error estimate assumes independent pixels. Background, processing, calibration and noise-screen uncertainty are outside this estimate.</li></ul>
       <h2>Recommended follow-up observations</h2><ul>${R.needs.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
       <h2>Relevant industries (research matrix)</h2><ul>${[...relevantIndustries()].map(i=>{const I=indById(i); return `<li><b>${esc(I.name)}</b> — SAR detectability: ${DET[I.detect][0]}. ${esc(I.mechanism)}</li>`;}).join('')}</ul>
       <h2>Scientific references</h2><ol class="small">${D.refs.map(k=>`<li>${esc(REFS[k].t)} <a href="${REFS[k].u}">${esc(REFS[k].u)}</a></li>`).join('')}</ol>
@@ -1075,11 +1151,13 @@ function rFindings(){
 }
 function reportJSON(D){ const {h,a,run,c,R}=D; const strip=x=>{ if(!x) return x; const {pix,...rest}=x; return rest; };
   return {generated:D.generated, hotspot:{id:h.id,name:h.name,country:h.country,center:h.center,why:h.why,refs:h.refs.map(k=>REFS[k])},
-    data_search:{from:S.filt.from,to:S.filt.to,nisar_gcov:S.acq.nisar.map(f=>f.properties.fileID), sentinel1_rtc:S.acq.s1.map(f=>f.id)},
-    analysis: run?{detector_version:'v2', source:run.src, sensor:run.sensor.product, nesz_db:run.sensor.nesz, scene:run.sceneId, acquired:run.sceneTime, comparison:run.compId||null, comparability:run.compare||null, bbox:run.bbox, pixel_m:run.px||null, contrast_threshold_db:run.T,
+    data_search:{from:S.filt.from,to:S.filt.to,status:S.acq.status,errors:S.acq.err,nisar_gcov:S.acq.nisar.map(f=>f.properties.fileID), sentinel1_rtc:S.acq.s1.map(f=>f.id)},
+    analysis: run?{detector_version:'v2', source:run.src, sensor:run.sensor.product, nesz_db:run.sensor.nesz, nesz_radiometry:run.sensor.nesz==null?null:'gamma0_dB',nesz_basis:run.sensor.neszBasis||null,
+      input_representation:run.src==='browser'?'8bit_rescaled_gamma0_db_png':run.meta?.input_representation||null,range_limit_fraction:run.rangeLimitFraction??null,
+      scene:run.sceneId, acquired:run.sceneTime, comparison:run.compId||null, comparability:run.compare||run.meta?.comparison||null, bbox:run.bbox, pixel_m:run.px||null, contrast_threshold_db:run.T, configured_min_area_km2:run.minKm2??null,
       scene_stats: run.res? {total_dark_features:run.res.totalFound, water_mean_db:run.res.waterMeanDb, measurable_water_frac:run.res.measFrac, low_signal_water_frac:run.res.lowFrac, bright_point_targets:run.res.nPoints, in_water_structures:run.res.nStruct, regional_threshold_km2:run.res.regionalKm2}:null}:null,
     anomaly:strip(a), environment:c.wind||null, facilities_osm_unverified:(c.fac||[]).slice(0,50).map(f=>({osm:f.id,cat:f.cat,name:f.tags.name||null,dist_km:+f.dkm.toFixed(2)})),
-    evidence_tier:'1 — SAR-observed surface anomaly (not a verified pollution source)',
+    evidence_tier:'1 — dark-feature candidate relative to estimated local backscatter',
     reasoning:R?{verdict:R.verdict, evidence_levels:['supports','consistent','untested','contradicts','context'], hypotheses:R.hyps.map(x=>({id:x.id,name:x.name,status:x.status,checks:x.rows})), needs:R.needs, cannot_conclude:R.cannot}:null,
     references:D.refs.map(k=>REFS[k])}; }
 function htmlToMd(el){
@@ -1094,9 +1172,15 @@ function download(name, text, type){ const b=new Blob([text],{type}); const u=UR
 /* 13. Boot                                                             */
 /* ------------------------------------------------------------------ */
 function boot(){
-  if(typeof L==='undefined'){ document.body.innerHTML='<div class="state error" style="margin:40px">Could not load the Leaflet map library from unpkg.com. Check your internet connection.</div>'; return; }
+  if(typeof L==='undefined'){
+    $('#side').textContent='The Leaflet map library could not load. Open Manual or SAR Explorer to continue.';
+    return;
+  }
   initMap(); drawHotspots(); render();
-  const h=hsById(S.hs); const [w,s,e,n]=h.search; map.fitBounds([[s,w],[n,e]],{padding:[30,30]});
+  if(map.getContainer().clientWidth && map.getContainer().clientHeight){
+    const h=hsById(S.hs); const [w,s,e,n]=h.search; map.fitBounds([[s,w],[n,e]],{padding:[30,30],animate:false});
+  }
 }
 window.SARApp={S, analyzeScene, reason, API, runAnalysis, selectAnom, gotoScreen};
-boot();
+if(document.getElementById('rzExplorer')?.hidden===false) renderSteps();
+else boot();

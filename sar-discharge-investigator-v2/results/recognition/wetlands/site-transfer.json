@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "task": "Exposed water optical reference assessment of the frozen Curuai NISAR model",
+  "training_date": "2026-08-13",
+  "training_site": "Lago Grande de Curuai, Brazil",
+  "eligibility": {
+    "minimum_cells_each_class": 100,
+    "maximum_absolute_time_lag_hours": 24,
+    "HH_NESZ_maximum_db": -18,
+    "optical_purity_minimum": 0.8,
+    "posting_m": 60
+  },
+  "external_qualified_pairs": 0,
+  "trials": [
+    {
+      "id": "burgas",
+      "site": "Atanasovsko Lake study window, Burgas, Bulgaria",
+      "status": "radar_noise_support_unavailable",
+      "reason": "Radar HH noise-equivalent backscatter exceeded the frozen −18 dB eligibility limit across the study window.",
+      "nisar": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4252772664-ASF",
+      "nisar_acquired_utc": "2026-07-12T17:12:19.000000000Z",
+      "optical": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_35TNH_20260713_0_L2A",
+      "optical_acquired_utc": "2026-07-13T09:18:25.997000Z",
+      "optical_lag_seconds": 57966.997,
+      "grid": {
+        "assessment_epsg": 32635,
+        "affine": [
+          60.0,
+          0.0,
+          537000.0,
+          0.0,
+          -60.0,
+          4717800.0
+        ],
+        "shape": [
+          147,
+          90
+        ],
+        "posting_m": 60
+      },
+      "optical_water_cells": 1477,
+      "optical_other_cells": 2026,
+      "radar_qualified_cells": 0,
+      "assessed_cells": 0,
+      "hh_false_positive_cells": null,
+      "logistic_false_positive_cells": null,
+      "support_qualified_both_classes": false,
+      "water_agreement_overlay_available": false,
+      "independent_optical_water_mask": "burgas-external-evaluation/optical-water.tif",
+      "report": "burgas-external-evaluation/summary.json"
+    },
+    {
+      "id": "everglades",
+      "site": "Shark River Slough, Everglades, Florida, USA",
+      "status": "negative_reference_only",
+      "reason": "The optical comparison has no exposed-water labels and only supports other-surface error counts.",
+      "nisar": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4406681165-ASF",
+      "nisar_acquired_utc": "2026-10-27T10:44:08.000000000Z",
+      "optical": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_17RNJ_20261026_0_L2A",
+      "optical_acquired_utc": "2026-10-26T16:06:11.924000Z",
+      "optical_lag_seconds": -67076.076,
+      "grid": {
+        "assessment_epsg": 32617,
+        "affine": [
+          60.0,
+          0.0,
+          516480.0,
+          0.0,
+          -60.0,
+          2833520.0
+        ],
+        "shape": [
+          250,
+          250
+        ],
+        "posting_m": 60
+      },
+      "optical_water_cells": 0,
+      "optical_other_cells": 884,
+      "radar_qualified_cells": 62500,
+      "assessed_cells": 884,
+      "hh_false_positive_cells": 373,
+      "logistic_false_positive_cells": 398,
+      "support_qualified_both_classes": false,
+      "water_agreement_overlay_available": false,
+      "independent_optical_water_mask": null,
+      "report": "everglades-external-evaluation/summary.json"
+    },
+    {
+      "id": "maranon-february",
+      "site": "Marañón near Saramurillo, Peru",
+      "status": "reference_unavailable",
+      "reason": "The February near-date Sentinel-2 window failed optical label coverage.",
+      "nisar": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4275155676-ASF",
+      "nisar_acquired_utc": "2026-02-24T10:44:07.000000000Z",
+      "optical": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_18MWV_20260223_0_L2A",
+      "optical_acquired_utc": "2026-02-23T15:24:31.528000Z",
+      "optical_lag_seconds": -69575.472,
+      "grid": {
+        "assessment_epsg": 32718,
+        "affine": [
+          60.0,
+          0.0,
+          504400.0,
+          0.0,
+          -60.0,
+          9482040.0
+        ],
+        "shape": [
+          150,
+          150
+        ],
+        "posting_m": 60
+      },
+      "optical_water_cells": 0,
+      "optical_other_cells": 0,
+      "radar_qualified_cells": 22500,
+      "assessed_cells": 0,
+      "hh_false_positive_cells": null,
+      "logistic_false_positive_cells": null,
+      "support_qualified_both_classes": false,
+      "water_agreement_overlay_available": false,
+      "independent_optical_water_mask": null,
+      "report": "maranon-february-external-evaluation/summary.json"
+    },
+    {
+      "id": "maranon-march",
+      "site": "Marañón near Saramurillo, Peru",
+      "status": "reference_unavailable",
+      "reason": "Every posting in the Landsat study window and margin carries at least one optical exclusion.",
+      "nisar": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4275159850-ASF",
+      "nisar_acquired_utc": "2026-03-08T10:44:08Z",
+      "optical": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/landsat-c2-l2/items/LC09_L2SP_007063_20260308_02_T1",
+      "optical_acquired_utc": "2026-03-08T15:09:02.545495Z",
+      "optical_lag_seconds": 15894.545495,
+      "native_optical_cells_including_margin": 94249,
+      "native_optical_qa_clear_cells": 0,
+      "radar_qualified_cells": null,
+      "assessed_cells": 0,
+      "support_qualified_both_classes": false,
+      "water_agreement_overlay_available": false,
+      "report": "landsat_reference/qa-decision.json"
+    }
+  ],
+  "limitations": "Four screened site-date windows. Optical agreement concerns optically exposed water. None provides positive and negative held-out water validation with adequate shared coverage."
+}

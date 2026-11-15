@@ -1,139 +1,210 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SAR Discharge Investigator — Dancing with the SARs</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<style>
-:root{
-  --bg:#f5f6f8; --panel:#ffffff; --ink:#18212b; --muted:#5d6b7a; --line:#e2e6eb;
-  --accent:#1f5fae; --accent-soft:#e7effa; --ok:#1e7a4c; --ok-soft:#e5f4ec;
-  --warn:#9a6200; --warn-soft:#fdf3df; --bad:#b3261e; --bad-soft:#fbe9e7;
-  --unk:#5d6b7a; --unk-soft:#eef0f3; --anom:#ff2d7a;
-  --radius:10px; --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.08);
-  font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
-}
-*{box-sizing:border-box}
-html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.45}
-button,select,input{font:inherit}
-header{height:56px;display:flex;align-items:center;gap:20px;padding:0 18px;background:var(--panel);border-bottom:1px solid var(--line)}
-.brand{font-weight:700;font-size:15px;white-space:nowrap}
-.brand small{display:block;font-weight:500;color:var(--muted);font-size:11px}
-nav.steps{display:flex;gap:4px;flex:1;justify-content:center}
-nav.steps button{border:0;background:transparent;padding:8px 12px;border-radius:999px;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap}
-nav.steps button .n{width:22px;height:22px;border-radius:50%;display:inline-grid;place-items:center;background:var(--unk-soft);font-size:12px;font-weight:600}
-nav.steps button.active{background:var(--accent-soft);color:var(--accent);font-weight:600}
-nav.steps button.active .n{background:var(--accent);color:#fff}
-nav.steps button.done .n{background:var(--ok);color:#fff}
-nav.steps .sep{color:#c3cad3;align-self:center}
-.mode{font-size:12px;color:var(--muted);white-space:nowrap}
-main{position:absolute;top:56px;bottom:0;left:0;right:0;display:flex}
-#side{width:390px;min-width:390px;background:var(--panel);border-right:1px solid var(--line);overflow-y:auto;padding:16px 16px 40px}
-#mapWrap{flex:1;position:relative}
-#map{position:absolute;inset:0}
-#page{flex:1;overflow-y:auto;padding:24px 32px 60px;display:none}
-.wide #side,.wide #mapWrap{display:none}
-.wide #page{display:block}
-h2{font-size:17px;margin:0 0 4px}
-h3{font-size:14px;margin:18px 0 8px}
-p.lead{color:var(--muted);margin:0 0 14px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;margin-bottom:10px;box-shadow:var(--shadow)}
-.card.sel{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
-.card.click{cursor:pointer}
-.card.click:hover{border-color:#b9c6d6}
-.row{display:flex;gap:8px;align-items:center}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-label.f{display:block;font-size:12px;color:var(--muted);margin-bottom:3px}
-select,input[type=text],input[type=date]{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:#fff}
-.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 12px;cursor:pointer;font-weight:500}
-.btn:hover{border-color:#b9c6d6}
-.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-.btn.primary:hover{filter:brightness(1.07)}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.btn.block{width:100%}
-.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11.5px;font-weight:600;white-space:nowrap}
-.b-sup{background:var(--ok-soft);color:var(--ok)} .b-con{background:var(--warn-soft);color:var(--warn)}
-.b-unl{background:var(--bad-soft);color:var(--bad)} .b-unk{background:var(--unk-soft);color:var(--unk)}
-.b-info{background:var(--accent-soft);color:var(--accent)}
-.muted{color:var(--muted)} .small{font-size:12px}
-.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:12.5px}
-.kv dt{color:var(--muted)} .kv dd{margin:0;word-break:break-word}
-.state{padding:10px 12px;border-radius:8px;font-size:12.5px;margin:8px 0}
-.state.loading{background:var(--accent-soft);color:var(--accent)}
-.state.empty{background:var(--unk-soft);color:var(--muted)}
-.state.error{background:var(--bad-soft);color:var(--bad)}
-.state.warn{background:var(--warn-soft);color:var(--warn)}
-.state.ok{background:var(--ok-soft);color:var(--ok)}
-.spin{display:inline-block;width:12px;height:12px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:sp 0.8s linear infinite;vertical-align:-2px;margin-right:6px}
-@keyframes sp{to{transform:rotate(360deg)}}
-.list{max-height:220px;overflow-y:auto;border:1px solid var(--line);border-radius:8px}
-.list .it{padding:7px 10px;border-bottom:1px solid var(--line);cursor:pointer;font-size:12.5px;display:flex;justify-content:space-between;gap:8px}
-.list .it:last-child{border-bottom:0}
-.list .it:hover{background:#f7f9fb}
-.list .it.sel{background:var(--accent-soft)}
-.tabs{display:flex;gap:4px;margin:8px 0}
-.tabs button{flex:1;border:1px solid var(--line);background:#fff;padding:6px;border-radius:8px;cursor:pointer;font-size:12.5px}
-.tabs button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
-details{margin:8px 0}
-details summary{cursor:pointer;color:var(--accent);font-size:12.5px}
-.tip{border-bottom:1px dotted var(--muted);cursor:help}
-table.t{border-collapse:collapse;width:100%;font-size:12.5px;background:#fff}
-table.t th,table.t td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
-table.t th{background:#f8f9fb;font-weight:600;position:sticky;top:0}
-.cell-ok{color:var(--ok);font-weight:600}.cell-bad{color:var(--bad);font-weight:600}.cell-unk{color:var(--unk)}
-.verdict{border-radius:var(--radius);padding:14px 16px;margin:12px 0;border:1px solid}
-.verdict.inc{background:var(--warn-soft);border-color:#ecd39c}
-.verdict.neg{background:var(--unk-soft);border-color:var(--line)}
-.verdict.pos{background:var(--accent-soft);border-color:#bcd1ee}
-.verdict b{font-size:16px}
-.verdict .small b{font-size:inherit}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
-.legend{position:absolute;right:12px;bottom:22px;z-index:500;background:rgba(255,255,255,.95);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:11.5px;box-shadow:var(--shadow);max-width:250px}
-.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px}
-.maptools{position:absolute;left:56px;top:12px;z-index:500;display:flex;gap:6px}
-.pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;box-shadow:var(--shadow);font-size:12.5px;cursor:pointer}
-.pill.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 14px;border-radius:8px;font-size:13px;z-index:9999;display:none;max-width:70vw}
-.matrix-wrap{max-height:62vh;overflow:auto;border:1px solid var(--line);border-radius:8px}
-.ind-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
-.ind-tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 11px;cursor:pointer;font-size:12.5px}
-.ind-tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.ind-tabs button.rel{border-color:var(--accent)}
-.report{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 32px;max-width:900px}
-.report h1{font-size:20px;margin:0 0 4px}
-.report h2{font-size:15px;margin:20px 0 6px;border-bottom:1px solid var(--line);padding-bottom:4px}
-.report ul{margin:4px 0;padding-left:20px}
-code{word-break:break-all;font-size:11.5px;background:#f3f5f8;padding:1px 4px;border-radius:4px}
-.ev-sup{color:#1f5fae;font-weight:700}.ev-con{color:var(--ok);font-weight:600}.ev-unt{color:#8a96a3;font-weight:600}.ev-bad{color:var(--bad);font-weight:700}.ev-ctx{color:#8a96a3}.ev-na{color:#c3cad3}
-.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
-.tier{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;font-size:12.5px}.tier b{display:block}.tier span{color:var(--muted);font-size:12px}
-.tier.on{border-color:var(--accent);background:var(--accent-soft)}.tier.off{background:#f6f6f6;border-style:dashed}
-.foot{font-size:11.5px;color:var(--muted);margin-top:18px}
-input[type=range]{width:100%}
-.slider-val{font-variant-numeric:tabular-nums;font-weight:600}
-.legend .sw{display:inline-block;width:60px;height:8px;vertical-align:middle;background:linear-gradient(90deg,#000,#fff);border:1px solid #ccc}
-@media print{header,#side,#mapWrap,.noprint{display:none!important} main{position:static} #page{display:block!important;padding:0} .report{border:0;max-width:none}}
-@media (max-width:1100px){#side{width:330px;min-width:330px} nav.steps button .lbl{display:none}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>SARtainty · NISAR Explorer</title>
+  <link rel="stylesheet" href="/vendor/fonts.css">
+  <link rel="stylesheet" href="/vendor/leaflet.css">
+  <link rel="stylesheet" href="explorer.css">
 </head>
 <body>
-<header>
-  <div class="brand">SAR Discharge Investigator<small>NASA Space Apps 2026 · Dancing with the SARs</small></div>
-  <nav class="steps" id="steps"></nav>
-  <div class="mode" id="modeBadge"><span class="badge b-info">Live data</span></div>
-</header>
-<main id="main">
-  <aside id="side"></aside>
-  <section id="mapWrap">
-    <div id="map"></div>
-    <div class="maptools" id="maptools"></div>
-    <div class="legend" id="legend"></div>
-  </section>
-  <section id="page"></section>
-</main>
-<div class="toast" id="toast"></div>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="app.js"></script>
+  <header class="rz-topbar">
+    <div class="rz-brand"><strong>SARtainty</strong><span class="rz-brand-divider" aria-hidden="true"></span><span class="rz-brand-caption">NISAR Explorer · Relax Zone</span></div>
+    <nav id="rzTools" class="rz-tools" aria-label="Workspace tools">
+      <button type="button" data-rz-view="explore" aria-controls="rzExplorePanel">Manual</button>
+      <button type="button" data-rz-view="settings" aria-controls="rzSettingsPanel" aria-label="Use-case settings"><span class="rz-settings-label">Use-case settings</span><span class="rz-settings-short" aria-hidden="true">Settings</span></button>
+      <button type="button" data-rz-view="assistant" aria-controls="rzAssistantTranscript">Assistant</button>
+      <button type="button" data-rz-view="manual" aria-controls="rzManualPanel">Help</button>
+      <button type="button" data-rz-view="glossary" aria-controls="rzGlossaryPanel">Glossary</button>
+    </nav>
+  </header>
+  <main id="main">
+    <section id="rzExplorer" class="rz-explorer" aria-label="NISAR map workspace">
+      <div id="rzMap" class="rz-map" aria-label="Georeferenced NISAR observation map"></div>
+
+      <div class="rz-map-hud">
+        <div class="rz-scene">
+          <p id="rzSceneLabel" class="rz-scene-label">NISAR radar</p>
+          <h1 id="rzTitle">NISAR Explorer</h1>
+          <p id="rzSubtitle" class="rz-frame-caption">Loading observations…</p>
+          <p id="rzStatus" class="rz-status" role="status" aria-live="polite"></p>
+        </div>
+        <div class="rz-map-actions" aria-label="Map controls">
+          <button class="rz-button rz-secondary rz-small" id="rzFit" type="button">Fit raster</button>
+          <button class="rz-button rz-secondary rz-small" id="rzRasterToggle" type="button" hidden>Hide raster</button>
+          <button class="rz-button rz-secondary rz-small" id="rzOpenPreview" type="button" aria-controls="rzPreviewPanel" hidden>Compare previews</button>
+          <label id="rzOpacityLabel" class="rz-opacity" hidden>Opacity <input id="rzOpacity" type="range" min="0" max="1" step=".05" value="1" aria-label="Radar layer opacity"></label>
+        </div>
+      </div>
+
+      <div class="rz-map-context">
+        <div id="rzMapLegend" class="rz-map-legend" aria-label="Map legend"></div>
+        <div id="rzMapStatus" class="rz-map-status" aria-live="polite"></div>
+      </div>
+
+      <nav class="rz-dock" aria-label="Observation panels">
+        <button type="button" data-rz-view="observations" aria-controls="rzObservationsPanel"><span>Acquisitions</span><span id="rzObservationCount" class="rz-dock-count"></span></button>
+        <button type="button" data-rz-view="evidence" aria-controls="rzEvidencePanel">Source audit</button>
+        <button id="rzChangeToggle" type="button" aria-pressed="false" aria-controls="rzMap" hidden>Radar change</button>
+        <button id="rzReviewToggle" type="button" aria-pressed="false" aria-controls="rzMap" hidden>Recognition review</button>
+        <button id="rzEventToggle" type="button" aria-pressed="false" aria-controls="rzMap" hidden>Slick outlines</button>
+      </nav>
+
+      <aside id="rzExplorePanel" class="rz-drawer rz-drawer-left" hidden aria-labelledby="rzManualTitle">
+        <div class="rz-drawer-heading"><div><h2 id="rzManualTitle">Manual</h2><p>Search NISAR observations or open a use-case guide.</p></div><button class="rz-close" data-rz-close type="button" aria-label="Close Manual">×</button></div>
+        <div class="rz-drawer-scroll">
+          <form id="rzFilters" class="rz-filters">
+            <label>Use case
+              <select id="rzTopic" name="topic">
+                <option value="">All use cases</option>
+                <option value="oil_spill">Oil spill</option>
+                <option value="wetland_flood">Wetland flooding</option>
+                <option value="wetland_drought">Wetland drought</option>
+                <optgroup label="NISAR method guides">
+                  <option value="coseismic" data-rz-method>Earthquake displacement</option>
+                  <option value="ice_sheet_displacement" data-rz-method>Ice sheet displacement</option>
+                  <option value="sea_ice_motion" data-rz-method>Sea ice motion</option>
+                </optgroup>
+              </select>
+            </label>
+            <div id="rzCatalogueFields" class="rz-filters">
+              <label>Study area<select id="rzSite" name="site_id"><option value="">Choose a site</option></select></label>
+              <label>Wavelength<select id="rzBand" name="band"><option value="all">All bands</option><option value="L">L-band</option><option value="S">S-band</option></select></label>
+              <div class="rz-dates">
+                <label>Start date<input id="rzStart" name="start" type="date"></label>
+                <label>End date<input id="rzEnd" name="end" type="date"></label>
+              </div>
+              <div class="rz-filter-actions">
+                <button class="rz-button" id="rzSearch" type="submit">Search catalogue</button>
+                <button class="rz-button rz-secondary" id="rzUndo" type="button" disabled>Undo</button>
+              </div>
+            </div>
+          </form>
+          <div id="rzManualMethod" aria-live="polite">
+            <p class="rz-guidance" data-rz-guide="coseismic" hidden>
+              <strong>Reference workflow</strong><br>
+              Compare radar passes on the same track before and after an earthquake to measure ground movement.
+              <a href="https://gitlab.com/nisar-science-algorithms/solid-earth/ATBD/-/blob/main/docs/SES_ATBD.pdf" target="_blank" rel="noopener noreferrer">Read the NISAR method</a>
+            </p>
+            <p class="rz-guidance" data-rz-guide="ice_sheet_displacement" hidden>
+              <strong>Reference workflow</strong><br>
+              Track how far ice on land moved between two radar passes. NISAR pixel offsets can help follow fast ice flow.
+              <a href="https://gitlab.com/nisar-science-algorithms/cryosphere/land-ice/atbd/documentation/-/blob/main/ATBD_IceSheetVelocity-Version2.1.pdf" target="_blank" rel="noopener noreferrer">Read the NISAR method</a>
+            </p>
+            <p class="rz-guidance" data-rz-guide="sea_ice_motion" hidden>
+              <strong>Reference workflow</strong><br>
+              Follow the same features in overlapping radar images to estimate how fast floating sea ice drifts and in what direction.
+              <a href="https://gitlab.com/nisar-science-algorithms/cryosphere/sea-ice/rgps_calval/-/blob/main/docs/SeaIceMotion_ATBD_V4.docx" target="_blank" rel="noopener noreferrer">Read the NISAR method</a>
+            </p>
+          </div>
+          <div id="rzPicker" class="rz-picker" hidden></div>
+          <p id="rzGuidance" class="rz-guidance" hidden></p>
+          <div id="rzManualStatus" class="rz-muted"></div>
+        </div>
+      </aside>
+
+      <aside id="rzSettingsPanel" class="rz-drawer rz-drawer-right rz-settings" hidden aria-labelledby="rzSettingsTitle">
+        <div class="rz-drawer-heading"><h2 id="rzSettingsTitle">Use-case settings</h2><button class="rz-close" data-rz-close type="button" aria-label="Close Use-case settings">×</button></div>
+        <div class="rz-filters rz-settings-controls">
+          <label>Use case<select id="rzSettingsCase" disabled><option value="">Loading settings…</option></select></label>
+        </div>
+        <div id="rzSettingsBody" class="rz-drawer-scroll rz-settings-body"></div>
+      </aside>
+
+      <section id="rzObservationsPanel" class="rz-drawer rz-drawer-bottom" hidden aria-labelledby="rzObservationsTitle">
+        <div class="rz-drawer-heading"><h2 id="rzObservationsTitle">Acquisitions</h2><button class="rz-close" data-rz-close type="button" aria-label="Close Acquisitions">×</button></div>
+        <div class="rz-drawer-scroll">
+          <section class="rz-panel" aria-labelledby="rzTimelineTitle">
+            <div class="rz-panel-heading"><h3 id="rzTimelineTitle">Timeline</h3><span id="rzTimelineLabel">UTC</span></div>
+            <div id="rzTimeline" class="rz-timeline"></div>
+          </section>
+          <section id="rzPreviewPanel" class="rz-panel" aria-labelledby="rzPreviewTitle" hidden>
+            <div class="rz-panel-heading"><h3 id="rzPreviewTitle">Preview screening</h3><span id="rzPreviewAnchor"></span></div>
+            <form id="rzPreviewForm" class="rz-analysis">
+              <div id="rzPreviewGuidance"></div>
+              <div class="rz-analysis-controls rz-preview-controls">
+                <label>Days before and after<input id="rzPreviewDays" type="number" value="24" min="1" max="90" step="1" required aria-describedby="rzPreviewGuidance"></label>
+                <button id="rzPreviewSubmit" class="rz-button rz-small" type="submit">Find nearby previews</button>
+              </div>
+              <p id="rzPreviewStatus" class="rz-muted rz-preview-status" role="status"></p>
+              <div id="rzPreviewResults" aria-busy="false"></div>
+            </form>
+          </section>
+          <section id="rzAnalysisPanel" class="rz-panel" aria-labelledby="rzAnalysisTitle" hidden>
+            <div class="rz-panel-heading"><h3 id="rzAnalysisTitle">Surface analysis</h3></div>
+            <form id="rzAnalysisForm" class="rz-analysis">
+              <div class="rz-analysis-controls">
+                <label>Analysis <select id="rzAnalysisKind"></select></label>
+                <label>Channel <select id="rzAnalysisChannel"></select></label>
+              </div>
+              <div id="rzAnalysisBrief"></div>
+              <fieldset id="rzAnalysisDateField"><legend>Acquisitions to use · UTC</legend><div id="rzAnalysisDates" class="rz-analysis-dates"></div></fieldset>
+              <div class="rz-analysis-submit"><button id="rzAnalyze" class="rz-button rz-small" type="submit">Analyze selection</button><p id="rzAnalysisStatus" class="rz-muted" role="status"></p></div>
+              <div id="rzAnalysisResults"></div>
+            </form>
+          </section>
+          <section id="rzTimeSeriesPanel" class="rz-panel" aria-labelledby="rzTimeSeriesTitle" hidden>
+            <div class="rz-panel-heading"><h3 id="rzTimeSeriesTitle">Backscatter over time</h3></div>
+            <div id="rzTimeSeries" class="rz-series"></div>
+          </section>
+          <section class="rz-panel" aria-labelledby="rzMatrixTitle">
+            <div class="rz-panel-heading"><h3 id="rzMatrixTitle">Polarization matrix</h3><div id="rzPolarizations" class="rz-polarizations" aria-label="Filter by polarization"></div></div>
+            <div id="rzMatrix" class="rz-table-wrap"></div>
+          </section>
+        </div>
+      </section>
+
+      <aside id="rzEvidencePanel" class="rz-drawer rz-drawer-right" hidden aria-labelledby="rzEvidenceTitle">
+        <div class="rz-drawer-heading"><div><h2 id="rzEvidenceTitle">Source audit</h2><p>Product lineage and access.</p></div><button class="rz-close" data-rz-close type="button" aria-label="Close Source audit">×</button></div>
+        <div class="rz-drawer-scroll">
+          <button class="rz-button rz-secondary rz-small" id="rzExport" type="button">Export evidence JSON</button>
+          <div id="rzEvidence" class="rz-panel-body"></div>
+        </div>
+      </aside>
+
+      <aside id="rzManualPanel" class="rz-drawer rz-drawer-right rz-guide" hidden aria-labelledby="rzHelpTitle">
+        <div class="rz-drawer-heading"><div><h2 id="rzHelpTitle">Field guide</h2><p>Reading imagery, dates and evidence.</p></div><button class="rz-close" data-rz-close type="button" aria-label="Close Help">×</button></div>
+        <div id="rzManualBody" class="rz-drawer-scroll rz-manual"></div>
+      </aside>
+
+      <aside id="rzGlossaryPanel" class="rz-drawer rz-drawer-right" hidden aria-labelledby="rzGlossaryTitle">
+        <div class="rz-drawer-heading"><h2 id="rzGlossaryTitle">Glossary</h2><button class="rz-close" data-rz-close type="button" aria-label="Close Glossary">×</button></div>
+        <div class="rz-glossary-controls">
+          <label class="rz-sr-only" for="rzGlossarySearch">Search glossary terms</label>
+          <input id="rzGlossarySearch" type="search" placeholder="Search backscatter, dB, HH…" maxlength="120" autocomplete="off" aria-controls="rzGlossaryResults">
+          <p id="rzGlossaryStatus" class="rz-muted" role="status"></p>
+        </div>
+        <div id="rzGlossaryResults" class="rz-drawer-scroll rz-glossary-results"></div>
+      </aside>
+
+      <section id="rzAssistantPanel" class="rz-assistant" aria-labelledby="rzAssistantTitle">
+        <div class="rz-chat-heading"><h2 id="rzAssistantTitle">Assistant</h2><button class="rz-chat-expand" id="rzAssistantExpand" type="button" aria-controls="rzAssistantTranscript" aria-expanded="false">Expand chat</button></div>
+        <div id="rzAssistantIntro" class="rz-chat-intro" role="status">
+          <strong id="rzSynopsisTitle">Current dataset</strong>
+          <p id="rzSynopsisDataset" class="rz-muted"></p>
+          <p id="rzSynopsisDetails">Select a NISAR date to see which checks its data supports.</p>
+        </div>
+        <div id="rzAssistantTranscript" class="rz-chat-transcript" hidden>
+          <div id="rzChatLog" class="rz-chat-log" role="log" aria-live="polite"></div>
+          <details class="rz-chat-context"><summary>Current selection</summary><div id="rzChatContext"></div></details>
+        </div>
+        <div id="rzChatPicker" class="rz-picker rz-chat-picker" hidden></div>
+        <div class="rz-suggestions" aria-label="Try a prompt">
+          <button class="rz-chip" data-rz-prompt="Show me wetlands" type="button">Show me wetlands</button>
+          <button class="rz-chip" data-rz-prompt="What do these map colors mean?" type="button">Explain the colors</button>
+          <button class="rz-chip" data-rz-prompt="What can I compare?" type="button">What can I compare?</button>
+        </div>
+        <form id="rzChatForm" class="rz-chat-form">
+          <label class="rz-sr-only" for="rzQuestion">Ask about a site, date or polarization</label>
+          <div><input id="rzQuestion" maxlength="1000" name="message" placeholder="Ask about these data or find observations…" autocomplete="off" required><button class="rz-button" id="rzSend" type="submit">Send</button></div>
+        </form>
+      </section>
+    </section>
+  </main>
+  <script src="/vendor/leaflet.js"></script>
+  <script src="explorer-manual.js"></script>
+  <script src="explorer.js"></script>
 </body>
 </html>

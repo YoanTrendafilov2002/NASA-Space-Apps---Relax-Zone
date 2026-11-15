@@ -1,0 +1,728 @@
+{
+  "default_selection": {
+    "site_id": "umm-al-quwain-nisar",
+    "observation_id": "nisar-uae-20261021",
+    "polarization": "HH"
+  },
+  "sites": [
+    {
+      "id": "umm-al-quwain-nisar",
+      "name": "Umm Al Quwain, UAE",
+      "aliases": ["Umm Al Quwain", "UAE", "Khor Al Beidah"],
+      "bbox": [
+        55.62420492553855,
+        25.532078630130762,
+        55.775013092221194,
+        25.66882706383808
+      ],
+      "start": "2026-10-21",
+      "end": "2026-10-21",
+      "topic": "wetlands",
+      "evidence_id": "nisar-uae-20261021-source"
+    },
+    {
+      "id": "curuai-nisar",
+      "name": "Lago Grande de Curuai, Brazil",
+      "aliases": ["Lago Grande de Curuai", "Curuai", "Curuaí", "Amazon"],
+      "bbox": [
+        -55.5481026273662,
+        -2.129763503469738,
+        -55.41313366752681,
+        -1.9939742286203814
+      ],
+      "start": "2026-08-13",
+      "end": "2026-10-12",
+      "topic": "wetlands",
+      "evidence_id": "nisar-curuai-20260813-source"
+    }
+  ],
+  "observations": [
+    {
+      "id": "nisar-uae-20261021",
+      "site_id": "umm-al-quwain-nisar",
+      "product_id": "NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "mode": "Frequency A · dual polarization",
+      "frequency": "A",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              55.62575376999041,
+              25.532078630130762
+            ],
+            [
+              55.775013092221194,
+              25.53340285124281
+            ],
+            [
+              55.77363236153981,
+              25.66882706383808
+            ],
+            [
+              55.62420492553855,
+              25.66749481926722
+            ],
+            [
+              55.62575376999041,
+              25.532078630130762
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "coordinates": [
+          [
+            [
+              58.05757,
+              25.95581
+            ],
+            [
+              57.41909,
+              28.08432
+            ],
+            [
+              54.83486,
+              27.43941
+            ],
+            [
+              55.52129,
+              25.32608
+            ],
+            [
+              58.05757,
+              25.95581
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "geometry_kind": "local_coverage_window",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-uae-20261021-hh.png",
+          "image_bounds": [
+            [
+              25.532078630130755,
+              55.62420492553854
+            ],
+            [
+              25.66882706383807,
+              55.77501309222119
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            750,
+            746
+          ],
+          "image_transform": [
+            22.503871746084105,
+            0.0,
+            6192058.168091651,
+            0.0,
+            -22.506512727841113,
+            2958121.237638536
+          ],
+          "image_sha256": "297108b76522a3d30baf9bb982e77bc0f9dedf148d1d3ebb53608f361dfe1a91",
+          "image_size_bytes": 591934,
+          "display_range_db": [
+            -26,
+            -8
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-uae-20261021-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32640,
+          "science_posting_m": 20,
+          "science_shape": [
+            750,
+            750
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            361920.0,
+            0.0,
+            -20.0,
+            2839580.0
+          ],
+          "science_sha256": "2ca5dbc5402a740ac7d7dbecbe20690a00a8d29696e060f8d8527ae155af2934",
+          "science_size_bytes": 1442019,
+          "valid_fraction": 1.0,
+          "valid_pixels": 562500,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-uae-20261021-source"
+        },
+        "HV": {
+          "status": "validated",
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "image_url": "/sar/nisar-uae-20261021-hv.png",
+          "image_bounds": [
+            [
+              25.532078630130755,
+              55.62420492553854
+            ],
+            [
+              25.66882706383807,
+              55.77501309222119
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            750,
+            746
+          ],
+          "image_transform": [
+            22.503871746084105,
+            0.0,
+            6192058.168091651,
+            0.0,
+            -22.506512727841113,
+            2958121.237638536
+          ],
+          "image_sha256": "eaa5f1c8788c844943ac0528ea94017bc4a31916cc2ea2057ccf9c37ea66ca27",
+          "image_size_bytes": 584064,
+          "display_range_db": [
+            -33,
+            -16
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-uae-20261021-hv.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32640,
+          "science_posting_m": 20,
+          "science_shape": [
+            750,
+            750
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            361920.0,
+            0.0,
+            -20.0,
+            2839580.0
+          ],
+          "science_sha256": "8a45897e7451ca8d5200a74e0eedfffe0a6c7697d6fb8db2fb901f6f39654449",
+          "science_size_bytes": 1450829,
+          "valid_fraction": 1.0,
+          "valid_pixels": 562500,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-uae-20261021-source"
+        }
+      },
+      "evidence_id": "nisar-uae-20261021-source",
+      "source_url": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&granule_list=NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001&output=geojson",
+      "science_requires_earthdata": false,
+      "source_requires_earthdata": true,
+      "orbit": 128,
+      "absolute_orbit": 6455,
+      "frame": 15,
+      "look_direction": "Left",
+      "direction": "ASCENDING",
+      "acquired_at": "2026-10-21T01:35:16Z",
+      "acquisition_end": "2026-10-21T01:35:51.999342105Z",
+      "processing_version": "1.0.11",
+      "product_specification_version": "1.5.0",
+      "noise_correction_applied": false,
+      "source_window": [
+        4524,
+        14369,
+        750,
+        750
+      ]
+    },
+    {
+      "id": "nisar-curuai-20260813",
+      "site_id": "curuai-nisar",
+      "product_id": "NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "mode": "Frequency A · dual polarization",
+      "frequency": "A",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -55.54797965220517,
+              -2.129763503469738
+            ],
+            [
+              -55.41313366752681,
+              -2.1296297786255733
+            ],
+            [
+              -55.413268051940875,
+              -1.9939742286203814
+            ],
+            [
+              -55.5481026273662,
+              -1.994099428478111
+            ],
+            [
+              -55.54797965220517,
+              -2.129763503469738
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "coordinates": [
+          [
+            [
+              -53.76679,
+              -1.96124
+            ],
+            [
+              -54.23893,
+              0.18592
+            ],
+            [
+              -56.50779,
+              -0.31397
+            ],
+            [
+              -56.04356,
+              -2.45473
+            ],
+            [
+              -53.76679,
+              -1.96124
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "geometry_kind": "local_coverage_window",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-curuai-20260813-hh.png",
+          "image_bounds": [
+            [
+              -2.1297635034697318,
+              -55.54810262736619
+            ],
+            [
+              -1.9939742286203872,
+              -55.41313366752681
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            750,
+            745
+          ],
+          "image_transform": [
+            20.16735017747437,
+            0.0,
+            -6183586.499010907,
+            0.0,
+            -20.16771937195495,
+            -222013.01506154207
+          ],
+          "image_sha256": "8e518a64a78cfcdf6da4a4df0f3f979ea8436d35642fa152b5cad079ad9ce576",
+          "image_size_bytes": 567590,
+          "display_range_db": [
+            -26,
+            -8
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-curuai-20260813-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32721,
+          "science_posting_m": 20,
+          "science_shape": [
+            750,
+            750
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            661480.0,
+            0.0,
+            -20.0,
+            9779520.0
+          ],
+          "science_sha256": "5e52c1f0c04afc8fa43e77e4ea8210589131e7f86eca2fc489c3380debabbd86",
+          "science_size_bytes": 1420917,
+          "valid_fraction": 1.0,
+          "valid_pixels": 562500,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-curuai-20260813-source"
+        },
+        "HV": {
+          "status": "validated",
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "image_url": "/sar/nisar-curuai-20260813-hv.png",
+          "image_bounds": [
+            [
+              -2.1297635034697318,
+              -55.54810262736619
+            ],
+            [
+              -1.9939742286203872,
+              -55.41313366752681
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            750,
+            745
+          ],
+          "image_transform": [
+            20.16735017747437,
+            0.0,
+            -6183586.499010907,
+            0.0,
+            -20.16771937195495,
+            -222013.01506154207
+          ],
+          "image_sha256": "c922406a1546dff0b84d9367ee80b432253ec81b91253509cb379bace2302ea6",
+          "image_size_bytes": 558784,
+          "display_range_db": [
+            -33,
+            -16
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-curuai-20260813-hv.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32721,
+          "science_posting_m": 20,
+          "science_shape": [
+            750,
+            750
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            661480.0,
+            0.0,
+            -20.0,
+            9779520.0
+          ],
+          "science_sha256": "537fa7ac25e2ff01014f5c3534e72544fc67d6c93e624f356b13463e1fa3de43",
+          "science_size_bytes": 1394597,
+          "valid_fraction": 1.0,
+          "valid_pixels": 562500,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-curuai-20260813-source"
+        }
+      },
+      "evidence_id": "nisar-curuai-20260813-source",
+      "source_url": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&granule_list=NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001&output=geojson",
+      "science_requires_earthdata": false,
+      "source_requires_earthdata": true,
+      "orbit": 3,
+      "absolute_orbit": 5464,
+      "frame": 1,
+      "look_direction": "Left",
+      "direction": "ASCENDING",
+      "acquired_at": "2026-08-13T09:21:54Z",
+      "acquisition_end": "2026-08-13T09:22:29.999342105Z",
+      "processing_version": "1.0.11",
+      "product_specification_version": "1.5.0",
+      "noise_correction_applied": false,
+      "source_window": [
+        6218,
+        13152,
+        750,
+        750
+      ]
+    },
+    {
+      "id": "nisar-curuai-20261012",
+      "site_id": "curuai-nisar",
+      "product_id": "NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "mode": "Frequency A · dual polarization",
+      "frequency": "A",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -55.54797965220517,
+              -2.129763503469738
+            ],
+            [
+              -55.41313366752681,
+              -2.1296297786255733
+            ],
+            [
+              -55.413268051940875,
+              -1.9939742286203814
+            ],
+            [
+              -55.5481026273662,
+              -1.994099428478111
+            ],
+            [
+              -55.54797965220517,
+              -2.129763503469738
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "coordinates": [
+          [
+            [
+              -53.76838,
+              -1.95383
+            ],
+            [
+              -54.24074,
+              0.19328
+            ],
+            [
+              -56.50943,
+              -0.30662
+            ],
+            [
+              -56.0453,
+              -2.4474
+            ],
+            [
+              -53.76838,
+              -1.95383
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "geometry_kind": "local_coverage_window",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-curuai-20261012-hh.png",
+          "image_bounds": [
+            [
+              -2.1297635034697318,
+              -55.54810262736619
+            ],
+            [
+              -1.9939742286203872,
+              -55.41313366752681
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            750,
+            745
+          ],
+          "image_transform": [
+            20.16735017747437,
+            0.0,
+            -6183586.499010907,
+            0.0,
+            -20.16771937195495,
+            -222013.01506154207
+          ],
+          "image_sha256": "6a3dd2a49e57774a45ffc76902d5dab75191e7b2ca5d5bfff6672e2c6bed6a54",
+          "image_size_bytes": 590113,
+          "display_range_db": [
+            -26,
+            -8
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-curuai-20261012-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32721,
+          "science_posting_m": 20,
+          "science_shape": [
+            750,
+            750
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            661480.0,
+            0.0,
+            -20.0,
+            9779520.0
+          ],
+          "science_sha256": "b52156da0450432f6209ad8ace359f38462007a1d4e129b54aab6d4337380f27",
+          "science_size_bytes": 1422443,
+          "valid_fraction": 1.0,
+          "valid_pixels": 562500,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-curuai-20261012-source"
+        },
+        "HV": {
+          "status": "validated",
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "image_url": "/sar/nisar-curuai-20261012-hv.png",
+          "image_bounds": [
+            [
+              -2.1297635034697318,
+              -55.54810262736619
+            ],
+            [
+              -1.9939742286203872,
+              -55.41313366752681
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            750,
+            745
+          ],
+          "image_transform": [
+            20.16735017747437,
+            0.0,
+            -6183586.499010907,
+            0.0,
+            -20.16771937195495,
+            -222013.01506154207
+          ],
+          "image_sha256": "03008ea5aaa9d4cf2c911264cf9fe884a9521601657e2240e9e65663680cb551",
+          "image_size_bytes": 574722,
+          "display_range_db": [
+            -33,
+            -16
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-curuai-20261012-hv.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32721,
+          "science_posting_m": 20,
+          "science_shape": [
+            750,
+            750
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            661480.0,
+            0.0,
+            -20.0,
+            9779520.0
+          ],
+          "science_sha256": "f6ef6b16e7182f63fcfe9b2e71e53409fa965947bcf738f171634735072741a9",
+          "science_size_bytes": 1398729,
+          "valid_fraction": 1.0,
+          "valid_pixels": 562500,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-curuai-20261012-source"
+        }
+      },
+      "evidence_id": "nisar-curuai-20261012-source",
+      "source_url": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&granule_list=NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001&output=geojson",
+      "science_requires_earthdata": false,
+      "source_requires_earthdata": true,
+      "orbit": 3,
+      "absolute_orbit": 6329,
+      "frame": 1,
+      "look_direction": "Left",
+      "direction": "ASCENDING",
+      "acquired_at": "2026-10-12T09:21:54Z",
+      "acquisition_end": "2026-10-12T09:22:29.999342105Z",
+      "processing_version": "1.0.11",
+      "product_specification_version": "1.5.0",
+      "noise_correction_applied": false,
+      "source_window": [
+        6218,
+        13152,
+        750,
+        750
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "nisar-uae-20261021-source",
+      "title": "ASF NISAR L2 GCOV scientific download · 2026-10-21",
+      "url": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&granule_list=NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001&output=geojson",
+      "kind": "downloaded_scientific_hdf5",
+      "source_id": "NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001",
+      "accessed_at": "2026-11-15",
+      "provider_asset_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001.h5",
+      "source_filename": "NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001.h5",
+      "source_size_bytes": 1816133632,
+      "provider_size_bytes": 1816133632,
+      "source_sha256": "cd923bddf7f2b68d7d9ea3c95be26c87eaaf00c8f2a9ad4e24c56d2cc1369d9c",
+      "source_authentication": "NASA Earthdata Login required for original HDF5",
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "qgis_reference_check": {
+        "reference": "NISAR_Lband_HH_20261021T0135Z.tif",
+        "compared_postings": 562500,
+        "maximum_db_difference": 0.0
+      },
+      "notes": "Existing local HDF5 matches ASF product ID, acquisition metadata and byte count. The local crop uses measured frequency-A HH and HV covariance power."
+    },
+    {
+      "id": "nisar-curuai-20260813-source",
+      "title": "ASF NISAR L2 GCOV scientific download · 2026-08-13",
+      "url": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&granule_list=NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001&output=geojson",
+      "kind": "downloaded_scientific_hdf5",
+      "source_id": "NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001",
+      "accessed_at": "2026-11-15",
+      "provider_asset_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001/NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001.h5",
+      "source_filename": "NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001.h5",
+      "source_size_bytes": 1983905792,
+      "provider_size_bytes": 1983905792,
+      "source_sha256": "5e5251ae38b74582e10ec641bb77c5041199636384336a5eeb43b4be5aced040",
+      "source_authentication": "NASA Earthdata Login required for original HDF5",
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "qgis_reference_check": null,
+      "notes": "Existing local HDF5 matches ASF product ID, acquisition metadata and byte count. The local crop uses measured frequency-A HH and HV covariance power."
+    },
+    {
+      "id": "nisar-curuai-20261012-source",
+      "title": "ASF NISAR L2 GCOV scientific download · 2026-10-12",
+      "url": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&granule_list=NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001&output=geojson",
+      "kind": "downloaded_scientific_hdf5",
+      "source_id": "NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001",
+      "accessed_at": "2026-11-15",
+      "provider_asset_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001.h5",
+      "source_filename": "NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001.h5",
+      "source_size_bytes": 1983905792,
+      "provider_size_bytes": 1983905792,
+      "source_sha256": "a916d8ff888e42ccd4983f1f973fcdb9d4c5c0aeb4b25adde40c36b906b8ca32",
+      "source_authentication": "NASA Earthdata Login required for original HDF5",
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "qgis_reference_check": null,
+      "notes": "Existing local HDF5 matches ASF product ID, acquisition metadata and byte count. The local crop uses measured frequency-A HH and HV covariance power."
+    }
+  ]
+}

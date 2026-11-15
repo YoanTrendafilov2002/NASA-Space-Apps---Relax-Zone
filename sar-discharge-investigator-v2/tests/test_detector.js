@@ -1,7 +1,7 @@
 // Regression tests for detector v2 + reasoning v2 on SYNTHETIC scenes (test only — not observations).
 const fs=require('fs'); const src=fs.readFileSync(process.argv[2]||require('path').join(__dirname,'..','app.js'),'utf8');
 const pre=src.slice(src.indexOf("const REFS"), src.indexOf("/* 10. Map"));
-const M=new Function('document','window', pre+'\nreturn {analyzeScene, persistence, reason, comparability:typeof comparability!=="undefined"?comparability:null, SENSORS, fmt};')({}, {});
+const M=new Function('document','window', pre+'\nreturn {analyzeScene, persistence, reason, comparability, weatherAtAcquisition, persistenceLabel, SENSORS, fmt};')({}, {});
 let seed=7; const rnd=()=>{ seed=(seed*1103515245+12345)%2147483648; return seed/2147483648; };
 function rg(k){ const d=k-1/3,c=1/Math.sqrt(9*d); for(;;){let x,v; do{ const u1=rnd()||1e-9,u2=rnd(); x=Math.sqrt(-2*Math.log(u1))*Math.cos(2*Math.PI*u2); v=1+c*x;}while(v<=0); v=v*v*v; const u=rnd(); if(u<1-0.0331*x**4) return d*v; if(Math.log(u)<0.5*x*x+d*(1-v+Math.log(v))) return d*v; } }
 const q8=d=>{ d=Math.max(-30,Math.min(0,d)); return -30+Math.round((d+30)/30*255)*30/255; };
@@ -72,12 +72,35 @@ try{
   const R0=M.reason(a,run,{}); const st=id=>R0.hyps.find(h=>h.id===id).status;
   ok(st('rain')==='untested' && st('curr')==='untested', `T8a missing rain/current data → untested (rain ${st('rain')}, current ${st('curr')})`);
   ok(st('oil')==='untested', `T8b oil with no wind/persistence/context → ${st('oil')} (never consistent from missing evidence)`);
-  ok(st('noise')==='contradicted' && st('shore')==='contradicted', `T8c measurable signal contradicts noise floor (${st('noise')}); open water contradicts shore artefact (${st('shore')})`);
+  ok(st('noise')==='untested' && st('shore')==='untested', 'T8c nominal noise and archival shore screens cannot rule out local explanations');
   const R1=M.reason(a,run,{fac:[]}); ok(R1.hyps.find(h=>h.id==='oil').status==='untested', 'T8d "no mapped facilities" is context only — does not change status');
-  const R2=M.reason(a,run,{wind:{ws:17,wd:0,precip3h:0,time:'2026-01-01T00:00Z'}}); ok(R2.hyps.find(h=>h.id==='oil').status==='contradicted', 'T8e wind lower bound >14 m/s contradicts oil film');
+  const R2=M.reason(a,run,{wind:{ws:17,wd:0,precip3h:0,time:'2026-01-01T00:00Z'}}); ok(R2.hyps.find(h=>h.id==='oil').status==='untested', 'T8e coarse high wind does not rule out a film');
   const R3=M.reason({...a,meanDb:-21.5,noiseFrac:0.8,cls:'noise'},run,{wind:{ws:5,wd:0,precip3h:0,time:'2026-01-01T00:00Z'}});
   ok(R3.verdict.title.startsWith('Not interpretable') && R3.hyps.find(h=>h.id==='oil').status==='untested', `T8f noise-floor anomaly → "${R3.verdict.title}", oil ${R3.hyps.find(h=>h.id==='oil').status}`);
-  const R4=M.reason(a,run,{wind:{ws:5,wd:0,precip3h:2,time:'2026-01-01T00:00Z'}}); ok(R4.hyps.find(h=>h.id==='rain').status==='supported', 'T8g ERA5 rain ≥ 0.5 mm supports rain cell');
+  const R4=M.reason(a,run,{wind:{ws:5,wd:0,precip3h:2,time:'2026-01-01T00:00Z'}}); ok(R4.hyps.find(h=>h.id==='rain').status==='consistent', 'T8g ERA5 precipitation supplies compatible context without confirming a local rain cell');
   ok(!R4.hyps.some(h=>h.id==='oil'&&h.status==='supported'), 'T8h oil is never "supported" by single-band SAR evidence'); }
 }catch(e){ ok(false, 'T8 crashed: '+e.message); }
+{
+  const date1='2026-01-01T00:00:00Z', date2='2026-01-13T00:00:00Z';
+  const first={id:'A',properties:{datetime:date1,'sat:relative_orbit':94,platform:'sentinel-1c'}};
+  const second={id:'B',properties:{...first.properties,datetime:date2}};
+  ok(!M.comparability(first,second).canAssess,'T9a missing pass metadata does not establish comparability');
+  first.properties['sat:orbit_state']=second.properties['sat:orbit_state']='descending';
+  ok(M.comparability(first,second).canAssess,'T9b distinct date and matching pass and orbit admit descriptive comparison');
+  second.properties.datetime=date1;
+  ok(!M.comparability(first,second).canAssess,'T9c duplicate acquisition time is not a recurrence test');
+  second.properties.datetime=date2; second.properties['sat:orbit_state']='ascending';
+  ok(!M.comparability(first,second).canAssess,'T9d opposite pass is not a recurrence test');
+  ok(M.persistenceLabel('absent')==='Below recurrence threshold','T9e displayed status qualifies a below-threshold comparison');
+}
+{
+  const hourly={time:['2025-12-31T23:00','2026-01-01T00:00','2026-01-01T01:00'],wind_speed_10m:[4,null,6],precipitation:[0.2,0.4,null]};
+  const target=Date.parse('2026-01-01T00:15:00Z');
+  const missing=M.weatherAtAcquisition(hourly,target);
+  ok(missing.ws===null && missing.precip3h===null,'T10a null wind and incomplete precipitation remain unknown');
+  hourly.precipitation[2]=0.4;
+  ok(Math.abs(M.weatherAtAcquisition(hourly,target).precip3h-1)<1e-8,'T10b three valid hourly totals span UTC midnight');
+  hourly.time[2]='2026-01-01T02:00';
+  ok(M.weatherAtAcquisition(hourly,target).precip3h===null,'T10c missing model hour invalidates the three-hour total');
+}
 console.log(fails? `${fails} FAILED` : 'ALL PASSED'); process.exit(fails?1:0);

@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-15",
+  "sites": [
+    {
+      "id": "burgas",
+      "name": "Burgas Bay, Bulgaria",
+      "topic": "oil_spill",
+      "bbox": [
+        27.447483959954106,
+        42.37464559153233,
+        27.854241120603422,
+        42.62526239873157
+      ],
+      "start": "2026-07-12",
+      "end": "2026-07-13",
+      "evidence_id": "nisar-burgas-20260712-harmony",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.447483959954106,
+              42.37464559153233
+            ],
+            [
+              27.854241120603422,
+              42.37464559153233
+            ],
+            [
+              27.854241120603422,
+              42.62526239873157
+            ],
+            [
+              27.447483959954106,
+              42.62526239873157
+            ],
+            [
+              27.447483959954106,
+              42.37464559153233
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "study_area",
+      "geometry_note": "Study area follows the saved NISAR raster subset. Radar backscatter records surface conditions at acquisition."
+    }
+  ],
+  "observations": [
+    {
+      "id": "NISAR_L2_PR_GCOV_025_065_D_067_2005_DHDH_A_20260712T171219_20260712T171254_P05023_N_F_J_001",
+      "site_id": "burgas",
+      "product_id": "NISAR_L2_PR_GCOV_025_065_D_067_2005_DHDH_A_20260712T171219_20260712T171254_P05023_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_025_065_D_067_2005_DHDH_A_20260712T171219_20260712T171254_P05023_N_F_J_001",
+      "provider": "NASA ASF DAAC",
+      "mission": "nisar",
+      "product": "NISAR GCOV",
+      "product_type": "GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "acquired_at": "2026-07-12T17:12:19Z",
+      "acquired_end": "2026-07-12T17:12:54.999Z",
+      "orbit": 65,
+      "track": 65,
+      "frame": 67,
+      "direction": "descending",
+      "mode": "20+5 MHz DHDH",
+      "frequency": "A",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "collection_concept_id": "C2854338529-ASF",
+      "granule_concept_id": "G4252772664-ASF",
+      "maturity": "provisional",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.447483959954106,
+              42.37464559153233
+            ],
+            [
+              27.854241120603422,
+              42.37464559153233
+            ],
+            [
+              27.854241120603422,
+              42.62526239873157
+            ],
+            [
+              27.447483959954106,
+              42.62526239873157
+            ],
+            [
+              27.447483959954106,
+              42.37464559153233
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              26.09705,
+              43.97584
+            ],
+            [
+              25.1871,
+              41.87899
+            ],
+            [
+              28.04851,
+              41.14937
+            ],
+            [
+              29.05613,
+              43.2196
+            ],
+            [
+              26.09705,
+              43.97584
+            ]
+          ]
+        ]
+      },
+      "evidence_id": "nisar-burgas-20260712-harmony",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "scientific": true,
+          "image_url": "/sar/nisar-burgas-20260712-a-hh.png",
+          "image_bounds": [
+            [
+              42.37464559153233,
+              27.447483959954106
+            ],
+            [
+              42.62526239873157,
+              27.854241120603422
+            ]
+          ],
+          "science_url": "/science/nisar-burgas-20260712-a-hh.tif",
+          "science_units": "unitless gamma0 linear power",
+          "units": "dB",
+          "display_range_db": [
+            -26,
+            -8
+          ],
+          "display_epsg": 3857,
+          "source_epsg": 32635,
+          "source_grid_spacing_m": 20,
+          "source_nodata": "NaN",
+          "source_shape": [
+            1378,
+            1661
+          ],
+          "source_dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "source_valid_pixels": 2255721,
+          "source_total_pixels": 2288858,
+          "source_description": "Harmony-extracted HHHH. Numeric GeoTIFF kept byte-for-byte.",
+          "source_sha256": "cf2892f92e135f7c1fd5813594ad6db42381bbd9eb5a6b353cbe9a483cffe9fe",
+          "science_sha256": "cf2892f92e135f7c1fd5813594ad6db42381bbd9eb5a6b353cbe9a483cffe9fe",
+          "image_sha256": "cbb83ebb837836a4f032566900c6550fa7e5c56e36f15552e8872e01a8d6e7a9",
+          "source_bytes": 10781349,
+          "image_bytes": 1636682,
+          "evidence_id": "nisar-burgas-20260712-harmony"
+        },
+        "HV": {
+          "status": "catalogue_only",
+          "scientific": false,
+          "evidence_id": "nisar-burgas-20260712-harmony"
+        }
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "nisar-burgas-20260712-harmony",
+      "title": "NASA ASF NISAR GCOV provisional · Burgas Bay HH",
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4252772664-ASF",
+      "kind": "calibrated_raster",
+      "notes": "Saved Harmony COG and local HDF5 agree exactly at every finite subset pixel. Native UTM zone 35N, 20 m posting, Float32 gamma0 power, NaN padding. The map uses a separate EPSG:3857 grayscale rendering.",
+      "source_file_sha256": "cf2892f92e135f7c1fd5813594ad6db42381bbd9eb5a6b353cbe9a483cffe9fe",
+      "granule_concept_id": "G4252772664-ASF",
+      "validation": {
+        "method": "QGIS GDAL NETCDF window compared pixel-by-pixel against the original downloaded Harmony TIFF",
+        "finite_cells_exact": 2255721,
+        "outside_or_nodata_cells": 33137
+      }
+    },
+    {
+      "id": "nisar-burgas-gcov-spec",
+      "title": "NASA ASF GCOV frequency-A HHHH specification",
+      "url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "kind": "provider_specification",
+      "notes": "The real diagonal HHHH covariance layer describes HH gamma0 power. Product calibration maturity is provisional."
+    }
+  ]
+}

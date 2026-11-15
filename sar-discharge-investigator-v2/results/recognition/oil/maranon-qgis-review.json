@@ -1,0 +1,22 @@
+{
+  "site_id": "maranon-nisar",
+  "status": "archived_research_review",
+  "inspection_record": "https://www3.congreso.gob.pe/Docs/comisiones2025/transportes/files/oefa_ppt_22_05_2026.pdf#page=10",
+  "source_files": [
+    {"name": "NISAR_Maranon_inspection_coverage.csv", "sha256": "c89d9d03f8dbd5eefe4de9c833bda221a96ffbf8c966f05774f3b281d3d39001"},
+    {"name": "NISAR_Maranon_sensitivity.csv", "sha256": "c080fbded6d741d4466791422439d66c9e0f5f6a5c387c4b35e2f38bd401416d"}
+  ],
+  "selected_review": {
+    "analysis_cell_m": 60,
+    "bank_buffer_m": 40,
+    "marker_radius_m": 1000,
+    "darkening_cutoff_db": 3,
+    "mapped_water_cells_within_radius": 312,
+    "assessable_water_cells_within_radius": 246,
+    "connected_dark_patches_within_radius": 0,
+    "digitized_inspection_area_m2": 2918.1,
+    "assessable_overlap_with_inspection_m2": 0.0,
+    "assessable_overlap_with_inspection_plus_15m_m2": 0.0
+  },
+  "interpretation": "OEFA confirms the incident with field observations. The digitized inspection area describes the inspection, and its timing and material footprint differ from a radar-pixel slick reference. These results establish where the selected radar method could evaluate changes."
+}

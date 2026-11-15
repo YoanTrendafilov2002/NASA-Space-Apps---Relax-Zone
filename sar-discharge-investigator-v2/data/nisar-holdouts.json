@@ -1,0 +1,1617 @@
+{
+  "schema_version": 1,
+  "sites": [
+    {
+      "id": "qeshm-nisar",
+      "name": "Qeshm and Hengam coastal waters",
+      "topic": "oil_spill",
+      "aliases": [
+        "Qeshm",
+        "Hengam"
+      ],
+      "bbox": [
+        55.88335038977189,
+        26.45269785115254,
+        56.116478682660336,
+        26.70709597056803
+      ],
+      "start": "2026-07-17",
+      "end": "2026-08-22",
+      "evidence_id": "qeshm-unu-aug10-reference",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              55.885799433856235,
+              26.45269785115254
+            ],
+            [
+              55.88335038977189,
+              26.705465435694556
+            ],
+            [
+              56.11453649567088,
+              26.70709597056803
+            ],
+            [
+              56.116478682660336,
+              26.454310584050457
+            ],
+            [
+              55.885799433856235,
+              26.45269785115254
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "study_area",
+      "review_points": [
+        {
+          "id": "qeshm-nisar-reference",
+          "topic": "oil_spill",
+          "label": "Regional interpretation in the UNU chart",
+          "lon": 56.006,
+          "lat": 26.576,
+          "evidence_id": "qeshm-unu-aug10-reference",
+          "kind": "independent_reference"
+        }
+      ]
+    },
+    {
+      "id": "gulf-eugene-nisar",
+      "name": "Eugene Island offshore waters, Louisiana",
+      "topic": "oil_spill",
+      "aliases": [
+        "Eugene Island",
+        "Eugene Island 316"
+      ],
+      "bbox": [
+        -91.7559511968315,
+        28.239175005928036,
+        -91.55671406998447,
+        28.332811968961668
+      ],
+      "start": "2026-08-27",
+      "end": "2026-08-27",
+      "evidence_id": "eugene-noaa-aug27-reference",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -91.7559511968315,
+              28.241120192420578
+            ],
+            [
+              -91.75488474546344,
+              28.332811968961668
+            ],
+            [
+              -91.55671406998447,
+              28.330859343533877
+            ],
+            [
+              -91.55795012256802,
+              28.239175005928036
+            ],
+            [
+              -91.7559511968315,
+              28.241120192420578
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "study_area",
+      "review_points": [
+        {
+          "id": "gulf-eugene-nisar-reference",
+          "topic": "oil_spill",
+          "label": "NOAA satellite interpretation",
+          "lon": -91.63679840519563,
+          "lat": 28.296456517839587,
+          "evidence_id": "eugene-noaa-aug27-reference",
+          "kind": "independent_reference"
+        }
+      ]
+    },
+    {
+      "id": "eloi-bay-nisar",
+      "name": "Eloi Bay, Louisiana",
+      "topic": "oil_spill",
+      "aliases": [
+        "Eloi Bay"
+      ],
+      "bbox": [
+        -89.4301661426173,
+        29.667891949780497,
+        -89.32157812715378,
+        29.788367779512107
+      ],
+      "start": "2026-10-12",
+      "end": "2026-10-12",
+      "evidence_id": "eloi-noaa-oct12-reference",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -89.419709972273,
+              29.786651578317947
+            ],
+            [
+              -89.32431121206324,
+              29.788367779512107
+            ],
+            [
+              -89.32157812715378,
+              29.66978717025904
+            ],
+            [
+              -89.37878878780958,
+              29.668761670913398
+            ],
+            [
+              -89.419709972273,
+              29.786651578317947
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "study_area",
+      "review_points": [
+        {
+          "id": "eloi-bay-nisar-reference",
+          "topic": "oil_spill",
+          "label": "NOAA coastal interpretation",
+          "lon": -89.38653237436739,
+          "lat": 29.705711830927115,
+          "evidence_id": "eloi-noaa-oct12-reference",
+          "kind": "independent_reference"
+        }
+      ]
+    },
+    {
+      "id": "atanasovsko-nisar",
+      "name": "Atanasovsko Lake, Bulgaria",
+      "topic": "wetlands",
+      "aliases": [
+        "Atanasovsko",
+        "Atanasovsko Lake",
+        "Burgas salt pans"
+      ],
+      "bbox": [
+        27.45053887020779,
+        42.53204084775475,
+        27.516946287722366,
+        42.61174661137909
+      ],
+      "start": "2026-07-12",
+      "end": "2026-07-12",
+      "evidence_id": "atanasovsko-ramsar-292",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.45053887020779,
+              42.532318217501526
+            ],
+            [
+              27.451110920457673,
+              42.61174661137909
+            ],
+            [
+              27.516946287722366,
+              42.61146847392204
+            ],
+            [
+              27.51629076062356,
+              42.53204084775475
+            ],
+            [
+              27.45053887020779,
+              42.532318217501526
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "study_area",
+      "review_points": [
+        {
+          "id": "atanasovsko-nisar-reference",
+          "topic": "wetlands",
+          "label": "Ramsar site location",
+          "lon": 27.47472222222222,
+          "lat": 42.565,
+          "evidence_id": "atanasovsko-ramsar-292",
+          "kind": "independent_reference"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "nisar-qeshm-20260717",
+      "site_id": "qeshm-nisar",
+      "product_id": "NISAR_L2_PR_GCOV_025_128_A_015_2005_DHDH_M_20260717T013518_20260717T013553_P05023_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_025_128_A_015_2005_DHDH_M_20260717T013518_20260717T013553_P05023_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "product_type": "GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "frequency": "A",
+      "orbit": 128,
+      "frame": 15,
+      "direction": "ASCENDING",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "collection_concept_id": "C2854338529-ASF",
+      "granule_concept_id": "G4254521451-ASF",
+      "mode": "Frequency A · dual polarization",
+      "maturity": "provisional",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              55.885799433856235,
+              26.45269785115254
+            ],
+            [
+              55.88335038977189,
+              26.705465435694556
+            ],
+            [
+              56.11453649567088,
+              26.70709597056803
+            ],
+            [
+              56.116478682660336,
+              26.454310584050457
+            ],
+            [
+              55.885799433856235,
+              26.45269785115254
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              58.04227,
+              26.00299
+            ],
+            [
+              57.40504,
+              28.13187
+            ],
+            [
+              54.82252,
+              27.48737
+            ],
+            [
+              55.50661,
+              25.37335
+            ],
+            [
+              58.04227,
+              26.00299
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "local_coverage_window",
+      "acquired_at": "2026-07-17T01:35:18Z",
+      "acquisition_end": "2026-07-17T01:35:53.999342Z",
+      "processing_version": "1.0.11",
+      "look_direction": null,
+      "noise_correction_applied": null,
+      "evidence_id": "nisar-qeshm-20260717-source",
+      "reference_evidence_id": "qeshm-unu-aug10-reference",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-qeshm-20260717-hh.png",
+          "image_bounds": [
+            [
+              26.452697851152536,
+              55.88335038977189
+            ],
+            [
+              26.707095970568023,
+              56.11647868266033
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            1400,
+            1148
+          ],
+          "image_transform": [
+            22.60603036049377,
+            0.0,
+            6220906.109211493,
+            0.0,
+            -22.61876541302107,
+            3086924.6798206884
+          ],
+          "image_sha256": "bf036450bd54f1d1667268692319bdad8e968b75f26a685705882190c0b8aedc",
+          "image_size_bytes": 1684087,
+          "display_range_db": [
+            -26,
+            -8
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-qeshm-20260717-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32640,
+          "science_posting_m": 20,
+          "science_shape": [
+            1400,
+            1150
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            388920.0,
+            0.0,
+            -20.0,
+            2954300.0
+          ],
+          "science_sha256": "9d1383c3348dc24e530a09cb83a23724f10cecb613b1d0f3bc10f2b33f64d149",
+          "science_size_bytes": 3938200,
+          "valid_fraction": 1.0,
+          "valid_pixels": 1610000,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": null,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-qeshm-20260717-source",
+          "scientific": true,
+          "quality_mask": "Valid source subswath mask, positive looks and finite nonnegative gamma-zero power.",
+          "nesz_available": false
+        },
+        "HV": {
+          "status": "catalogue_only",
+          "scientific": false,
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "evidence_id": "nisar-qeshm-20260717-source"
+        }
+      },
+      "source_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4254521451-ASF",
+      "source_requires_earthdata": true,
+      "science_requires_earthdata": false
+    },
+    {
+      "id": "nisar-qeshm-20260810",
+      "site_id": "qeshm-nisar",
+      "product_id": "NISAR_L2_PR_GCOV_027_128_A_015_2005_DHDH_M_20260810T013517_20260810T013551_P05023_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_027_128_A_015_2005_DHDH_M_20260810T013517_20260810T013551_P05023_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "product_type": "GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "frequency": "A",
+      "orbit": 128,
+      "frame": 15,
+      "direction": "ASCENDING",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "collection_concept_id": "C2854338529-ASF",
+      "granule_concept_id": "G4278857246-ASF",
+      "mode": "Frequency A · dual polarization",
+      "maturity": "provisional",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              55.885799433856235,
+              26.45269785115254
+            ],
+            [
+              55.88335038977189,
+              26.705465435694556
+            ],
+            [
+              56.11453649567088,
+              26.70709597056803
+            ],
+            [
+              56.116478682660336,
+              26.454310584050457
+            ],
+            [
+              55.885799433856235,
+              26.45269785115254
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              58.04329,
+              26.00068
+            ],
+            [
+              57.42261,
+              28.0701
+            ],
+            [
+              54.84045,
+              27.42574
+            ],
+            [
+              55.50711,
+              25.3709
+            ],
+            [
+              58.04329,
+              26.00068
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "local_coverage_window",
+      "acquired_at": "2026-08-10T01:35:17Z",
+      "acquisition_end": "2026-08-10T01:35:51.999342Z",
+      "processing_version": "1.0.11",
+      "look_direction": null,
+      "noise_correction_applied": null,
+      "evidence_id": "nisar-qeshm-20260810-source",
+      "reference_evidence_id": "qeshm-unu-aug10-reference",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-qeshm-20260810-hh.png",
+          "image_bounds": [
+            [
+              26.452697851152536,
+              55.88335038977189
+            ],
+            [
+              26.707095970568023,
+              56.11647868266033
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            1400,
+            1148
+          ],
+          "image_transform": [
+            22.60603036049377,
+            0.0,
+            6220906.109211493,
+            0.0,
+            -22.61876541302107,
+            3086924.6798206884
+          ],
+          "image_sha256": "bbe889621fa7602107048e8195268bc57f9b6421efea357ff7579f0a3d27870c",
+          "image_size_bytes": 1683163,
+          "display_range_db": [
+            -26,
+            -8
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-qeshm-20260810-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32640,
+          "science_posting_m": 20,
+          "science_shape": [
+            1400,
+            1150
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            388920.0,
+            0.0,
+            -20.0,
+            2954300.0
+          ],
+          "science_sha256": "2dc647c3a7d14106c612b3f1b832d8cfdd47e60f484fa212a51fb7eaa269cc64",
+          "science_size_bytes": 3984640,
+          "valid_fraction": 1.0,
+          "valid_pixels": 1610000,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": null,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-qeshm-20260810-source",
+          "scientific": true,
+          "quality_mask": "Valid source subswath mask and finite nonnegative gamma-zero power.",
+          "nesz_available": false
+        },
+        "HV": {
+          "status": "validated",
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "image_url": "/sar/nisar-qeshm-20260810-hv.png",
+          "image_bounds": [
+            [
+              26.452697851152536,
+              55.88335038977189
+            ],
+            [
+              26.707095970568023,
+              56.11647868266033
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            1400,
+            1148
+          ],
+          "image_transform": [
+            22.60603036049377,
+            0.0,
+            6220906.109211493,
+            0.0,
+            -22.61876541302107,
+            3086924.6798206884
+          ],
+          "image_sha256": "7d59573da5fc89444e0146baabbd3032ccd944f567fa9c34b3e1c4043ba8b782",
+          "image_size_bytes": 1704359,
+          "display_range_db": [
+            -33,
+            -16
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-qeshm-20260810-hv.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32640,
+          "science_posting_m": 20,
+          "science_shape": [
+            1400,
+            1150
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            388920.0,
+            0.0,
+            -20.0,
+            2954300.0
+          ],
+          "science_sha256": "5b56dfb959247cf733ec9a19f405925234efee735970455995ad742ed8a225fb",
+          "science_size_bytes": 3959202,
+          "valid_fraction": 1.0,
+          "valid_pixels": 1610000,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": null,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-qeshm-20260810-source",
+          "scientific": true,
+          "quality_mask": "Valid source subswath mask and finite nonnegative gamma-zero power.",
+          "nesz_available": false
+        }
+      },
+      "source_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4278857246-ASF",
+      "source_requires_earthdata": true,
+      "science_requires_earthdata": false
+    },
+    {
+      "id": "nisar-qeshm-20260822",
+      "site_id": "qeshm-nisar",
+      "product_id": "NISAR_L2_PR_GCOV_028_128_A_015_2005_DHDH_M_20260822T013516_20260822T013551_P05023_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_028_128_A_015_2005_DHDH_M_20260822T013516_20260822T013551_P05023_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "product_type": "GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "frequency": "A",
+      "orbit": 128,
+      "frame": 15,
+      "direction": "ASCENDING",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "collection_concept_id": "C2854338529-ASF",
+      "granule_concept_id": "G4288286710-ASF",
+      "mode": "Frequency A · dual polarization",
+      "maturity": "provisional",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              55.885799433856235,
+              26.45269785115254
+            ],
+            [
+              55.88335038977189,
+              26.705465435694556
+            ],
+            [
+              56.11453649567088,
+              26.70709597056803
+            ],
+            [
+              56.116478682660336,
+              26.454310584050457
+            ],
+            [
+              55.885799433856235,
+              26.45269785115254
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              58.05482,
+              25.96408
+            ],
+            [
+              57.41634,
+              28.09261
+            ],
+            [
+              54.83107,
+              27.44738
+            ],
+            [
+              55.51822,
+              25.33422
+            ],
+            [
+              58.05482,
+              25.96408
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "local_coverage_window",
+      "acquired_at": "2026-08-22T01:35:16Z",
+      "acquisition_end": "2026-08-22T01:35:51.999342Z",
+      "processing_version": "1.0.11",
+      "look_direction": null,
+      "noise_correction_applied": null,
+      "evidence_id": "nisar-qeshm-20260822-source",
+      "reference_evidence_id": "qeshm-unu-aug10-reference",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-qeshm-20260822-hh.png",
+          "image_bounds": [
+            [
+              26.452697851152536,
+              55.88335038977189
+            ],
+            [
+              26.707095970568023,
+              56.11647868266033
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            1400,
+            1148
+          ],
+          "image_transform": [
+            22.60603036049377,
+            0.0,
+            6220906.109211493,
+            0.0,
+            -22.61876541302107,
+            3086924.6798206884
+          ],
+          "image_sha256": "0a4e516b0b651805f79a05ff993bd6c7f7f24ec9f9117e1a5cf64365f3d253e9",
+          "image_size_bytes": 1680257,
+          "display_range_db": [
+            -26,
+            -8
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-qeshm-20260822-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32640,
+          "science_posting_m": 20,
+          "science_shape": [
+            1400,
+            1150
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            388920.0,
+            0.0,
+            -20.0,
+            2954300.0
+          ],
+          "science_sha256": "f58fa6d58ffc843379aca01832c884123c116cd833f5f7f2c31299d5a06c0f96",
+          "science_size_bytes": 3966680,
+          "valid_fraction": 1.0,
+          "valid_pixels": 1610000,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": null,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-qeshm-20260822-source",
+          "scientific": true,
+          "quality_mask": "Valid source subswath mask, positive looks and finite nonnegative gamma-zero power.",
+          "nesz_available": false
+        },
+        "HV": {
+          "status": "catalogue_only",
+          "scientific": false,
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "evidence_id": "nisar-qeshm-20260822-source"
+        }
+      },
+      "source_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4288286710-ASF",
+      "source_requires_earthdata": true,
+      "science_requires_earthdata": false
+    },
+    {
+      "id": "nisar-eugene-20260827",
+      "site_id": "gulf-eugene-nisar",
+      "product_id": "NISAR_L2_PR_GCOV_029_033_A_016_4005_DHDH_A_20260827T112649_20260827T112723_P05023_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_029_033_A_016_4005_DHDH_A_20260827T112649_20260827T112723_P05023_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "product_type": "GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "frequency": "A",
+      "orbit": 33,
+      "frame": 16,
+      "direction": "ASCENDING",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "collection_concept_id": "C2854338529-ASF",
+      "granule_concept_id": "G4291280213-ASF",
+      "mode": "Frequency A · dual polarization",
+      "maturity": "provisional",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -91.7559511968315,
+              28.241120192420578
+            ],
+            [
+              -91.75488474546344,
+              28.332811968961668
+            ],
+            [
+              -91.55671406998447,
+              28.330859343533877
+            ],
+            [
+              -91.55795012256802,
+              28.239175005928036
+            ],
+            [
+              -91.7559511968315,
+              28.241120192420578
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -90.30882,
+              27.99553
+            ],
+            [
+              -90.94433,
+              30.06402
+            ],
+            [
+              -93.45273,
+              29.43671
+            ],
+            [
+              -92.77127,
+              27.38216
+            ],
+            [
+              -90.30882,
+              27.99553
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "local_coverage_window",
+      "acquired_at": "2026-08-27T11:26:49Z",
+      "acquisition_end": "2026-08-27T11:27:23.999342Z",
+      "processing_version": "1.0.11",
+      "look_direction": null,
+      "noise_correction_applied": null,
+      "evidence_id": "nisar-eugene-20260827-source",
+      "reference_evidence_id": "eugene-noaa-aug27-reference",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-eugene-20260827-hh.png",
+          "image_bounds": [
+            [
+              28.239175005928026,
+              -91.75595119683149
+            ],
+            [
+              28.33281196896167,
+              -91.55671406998447
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            1016,
+            1904
+          ],
+          "image_transform": [
+            11.648621590191718,
+            0.0,
+            -10214225.764483742,
+            0.0,
+            -11.650634029373256,
+            3290998.9323934917
+          ],
+          "image_sha256": "19a953185a2c17a63671aaaa23d277b1a3151df9960e8564e5f3928cd94760ab",
+          "image_size_bytes": 2110750,
+          "display_range_db": [
+            -26,
+            -8
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-eugene-20260827-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32615,
+          "science_posting_m": 10,
+          "science_shape": [
+            1016,
+            1943
+          ],
+          "science_transform": [
+            10.0,
+            0.0,
+            622050.0,
+            0.0,
+            -10.0,
+            3134700.0
+          ],
+          "science_sha256": "bcd27b29db62bb2af9b2e896e7272bb7415da954a8b34d7cef0bf3eb0a4647a1",
+          "science_size_bytes": 4989834,
+          "valid_fraction": 1.0,
+          "valid_pixels": 1974088,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": null,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-eugene-20260827-source",
+          "scientific": true,
+          "quality_mask": "Valid source subswath mask, positive looks and finite nonnegative gamma-zero power.",
+          "nesz_available": false
+        },
+        "HV": {
+          "status": "catalogue_only",
+          "scientific": false,
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "evidence_id": "nisar-eugene-20260827-source"
+        }
+      },
+      "source_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4291280213-ASF",
+      "source_requires_earthdata": true,
+      "science_requires_earthdata": false
+    },
+    {
+      "id": "nisar-eloi-20261012",
+      "site_id": "eloi-bay-nisar",
+      "product_id": "NISAR_L2_PR_GCOV_033_004_A_017_4005_DHDH_A_20261012T111043_20261012T111118_P05023_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_033_004_A_017_4005_DHDH_A_20261012T111043_20261012T111118_P05023_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "product_type": "GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "frequency": "A",
+      "orbit": 4,
+      "frame": 17,
+      "direction": "ASCENDING",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "collection_concept_id": "C2854338529-ASF",
+      "granule_concept_id": "G4364390789-ASF",
+      "mode": "Frequency A · dual polarization",
+      "maturity": "provisional",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -89.419709972273,
+              29.786651578317947
+            ],
+            [
+              -89.32431121206324,
+              29.788367779512107
+            ],
+            [
+              -89.32157812715378,
+              29.66978717025904
+            ],
+            [
+              -89.37878878780958,
+              29.668761670913398
+            ],
+            [
+              -89.419709972273,
+              29.786651578317947
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -86.74619,
+              29.92584
+            ],
+            [
+              -87.42615,
+              32.05003
+            ],
+            [
+              -89.98262,
+              31.40834
+            ],
+            [
+              -89.25062,
+              29.29952
+            ],
+            [
+              -86.74619,
+              29.92584
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "local_coverage_window",
+      "acquired_at": "2026-10-12T11:10:43Z",
+      "acquisition_end": "2026-10-12T11:11:18.999342Z",
+      "processing_version": "1.0.11",
+      "look_direction": null,
+      "noise_correction_applied": null,
+      "evidence_id": "nisar-eloi-20261012-source",
+      "reference_evidence_id": "eloi-noaa-oct12-reference",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-eloi-20261012-hh.png",
+          "image_bounds": [
+            [
+              29.66789194978049,
+              -89.4301661426173
+            ],
+            [
+              29.788367779512107,
+              -89.32157812715377
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            1309,
+            1024
+          ],
+          "image_transform": [
+            11.804650964502798,
+            0.0,
+            -9955320.556554012,
+            0.0,
+            -11.798253663136098,
+            3476375.3981691105
+          ],
+          "image_sha256": "60313ea6d78d60b71ed21cf37e7b733107db550a30531cdd32e04121d9a963b6",
+          "image_size_bytes": 909431,
+          "display_range_db": [
+            -26,
+            -8
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-eloi-20261012-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32616,
+          "science_posting_m": 10,
+          "science_shape": [
+            1315,
+            1024
+          ],
+          "science_transform": [
+            10.0,
+            0.0,
+            265080.0,
+            0.0,
+            -10.0,
+            3297600.0
+          ],
+          "science_sha256": "df05d4c43719a0ffa4d99c156724eeeeb13be25ade56464866084611e295058b",
+          "science_size_bytes": 2195922,
+          "valid_fraction": 0.6455040993346007,
+          "valid_pixels": 869210,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": null,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-eloi-20261012-source",
+          "scientific": true,
+          "quality_mask": "Valid source subswath mask and finite nonnegative gamma-zero power.",
+          "nesz_available": false
+        },
+        "HV": {
+          "status": "validated",
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "image_url": "/sar/nisar-eloi-20261012-hv.png",
+          "image_bounds": [
+            [
+              29.66789194978049,
+              -89.4301661426173
+            ],
+            [
+              29.788367779512107,
+              -89.32157812715377
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            1309,
+            1024
+          ],
+          "image_transform": [
+            11.804650964502798,
+            0.0,
+            -9955320.556554012,
+            0.0,
+            -11.798253663136098,
+            3476375.3981691105
+          ],
+          "image_sha256": "6410120a6defdb7d32c64067c00cdd8adf86bad1f25fed178080923f2f1d7e54",
+          "image_size_bytes": 941792,
+          "display_range_db": [
+            -33,
+            -16
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-eloi-20261012-hv.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32616,
+          "science_posting_m": 10,
+          "science_shape": [
+            1315,
+            1024
+          ],
+          "science_transform": [
+            10.0,
+            0.0,
+            265080.0,
+            0.0,
+            -10.0,
+            3297600.0
+          ],
+          "science_sha256": "a240c36b12bac907129a19e917b927049ed11289e2ba1866ca794297f921c7d1",
+          "science_size_bytes": 2184064,
+          "valid_fraction": 0.6455040993346007,
+          "valid_pixels": 869210,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": null,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-eloi-20261012-source",
+          "scientific": true,
+          "quality_mask": "Valid source subswath mask and finite nonnegative gamma-zero power.",
+          "nesz_available": false
+        }
+      },
+      "source_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4364390789-ASF",
+      "source_requires_earthdata": true,
+      "science_requires_earthdata": false
+    },
+    {
+      "id": "nisar-atanasovsko-20260712",
+      "site_id": "atanasovsko-nisar",
+      "product_id": "NISAR_L2_PR_GCOV_025_065_D_067_2005_DHDH_A_20260712T171219_20260712T171254_P05023_N_F_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_025_065_D_067_2005_DHDH_A_20260712T171219_20260712T171254_P05023_N_F_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "product_type": "GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "frequency": "A",
+      "orbit": 65,
+      "frame": 67,
+      "direction": "DESCENDING",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "collection_concept_id": "C2854338529-ASF",
+      "granule_concept_id": "G4252772664-ASF",
+      "mode": "Frequency A · dual polarization",
+      "maturity": "provisional",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.45053887020779,
+              42.532318217501526
+            ],
+            [
+              27.451110920457673,
+              42.61174661137909
+            ],
+            [
+              27.516946287722366,
+              42.61146847392204
+            ],
+            [
+              27.51629076062356,
+              42.53204084775475
+            ],
+            [
+              27.45053887020779,
+              42.532318217501526
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              26.09705,
+              43.97584
+            ],
+            [
+              25.1871,
+              41.87899
+            ],
+            [
+              28.04851,
+              41.14937
+            ],
+            [
+              29.05613,
+              43.2196
+            ],
+            [
+              26.09705,
+              43.97584
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "local_coverage_window",
+      "acquired_at": "2026-07-12T17:12:19Z",
+      "acquisition_end": "2026-07-12T17:12:54.999342Z",
+      "processing_version": "1.0.11",
+      "look_direction": "Left",
+      "noise_correction_applied": false,
+      "evidence_id": "nisar-atanasovsko-20260712-source",
+      "reference_evidence_id": "atanasovsko-ramsar-292",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-atanasovsko-20260712-hh.png",
+          "image_bounds": [
+            [
+              42.53204084775475,
+              27.45053887020779
+            ],
+            [
+              42.61174661137908,
+              27.516946287722366
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            441,
+            270
+          ],
+          "image_transform": [
+            27.37940704673701,
+            0.0,
+            3055780.0090324944,
+            0.0,
+            -27.32068209825485,
+            5253061.204971545
+          ],
+          "image_sha256": "6a8e5049975fe8084c7cb59ce35b421c2476dcf581f66b64089d0e3e86728e1e",
+          "image_size_bytes": 121133,
+          "display_range_db": [
+            -26,
+            -8
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-atanasovsko-20260712-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32635,
+          "science_posting_m": 20,
+          "science_shape": [
+            441,
+            270
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            537000.0,
+            0.0,
+            -20.0,
+            4717800.0
+          ],
+          "science_sha256": "dbfbe2036a345e8a7059c0cb3e6c2ef05031c5a922ea566f59526a7257f8e5dc",
+          "science_size_bytes": 308672,
+          "valid_fraction": 1.0,
+          "valid_pixels": 119070,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-atanasovsko-20260712-source",
+          "scientific": true,
+          "quality_mask": "Valid source subswath, positive looks, zero input exception and finite nonnegative power.",
+          "nesz_available": true
+        },
+        "HV": {
+          "status": "validated",
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "image_url": "/sar/nisar-atanasovsko-20260712-hv.png",
+          "image_bounds": [
+            [
+              42.53204084775475,
+              27.45053887020779
+            ],
+            [
+              42.61174661137908,
+              27.516946287722366
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            441,
+            270
+          ],
+          "image_transform": [
+            27.37940704673701,
+            0.0,
+            3055780.0090324944,
+            0.0,
+            -27.32068209825485,
+            5253061.204971545
+          ],
+          "image_sha256": "4625fe55afa7a3f705e3710b71fa360f288b386c946313b5d4be7bb082406883",
+          "image_size_bytes": 112107,
+          "display_range_db": [
+            -33,
+            -16
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-atanasovsko-20260712-hv.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32635,
+          "science_posting_m": 20,
+          "science_shape": [
+            441,
+            270
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            537000.0,
+            0.0,
+            -20.0,
+            4717800.0
+          ],
+          "science_sha256": "af334e42b40726fded19bf82080cba5638d90aaa4e70d46fb35024d6445f7233",
+          "science_size_bytes": 304418,
+          "valid_fraction": 1.0,
+          "valid_pixels": 119070,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-atanasovsko-20260712-source",
+          "scientific": true,
+          "quality_mask": "Valid source subswath, positive looks, zero input exception and finite nonnegative power.",
+          "nesz_available": true
+        }
+      },
+      "source_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4252772664-ASF",
+      "source_requires_earthdata": true,
+      "science_requires_earthdata": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "qeshm-unu-aug10-reference",
+      "title": "UNU-INWEH · Qeshm and Hengam oil interpretation",
+      "url": "https://geilab.unu.edu/satellite-observations-reveal-extent-of-major-oil-slicks-near-iran-and-oman/",
+      "kind": "Independent satellite interpretation",
+      "notes": "UNU mapped oil near the islands from independently acquired Sentinel-1D imagery 39 minutes after the NISAR pass. The published chart provides regional evidence. Registration uncertainty is too high for pixel labels.",
+      "reference_granule": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4275064344-ASF",
+      "reference_start_offset_seconds": 2352.003,
+      "chart_sha256": "040677b599659e5d29439172240d794ba37d05c12757fd17e7f76b98a18fe80a",
+      "chart_control_max_m": 2574.3139026882845
+    },
+    {
+      "id": "eugene-noaa-aug27-reference",
+      "title": "NOAA NESDIS · Eugene Island surveillance outline",
+      "url": "https://www.ospo.noaa.gov/products/ocean/marinepollution/archive.html?year=2026",
+      "kind": "Independent satellite interpretation",
+      "notes": "The public RADARSAT-2 interpretation at 12:10 UTC falls roughly 43 minutes after the NISAR pass. The report describes possible oil; material has not been validated per cell.",
+      "reference_sha256": "e46adbddd381d03ffd99a930ba94ac13b4b16177334bd14b8c481d2d714293c4",
+      "incident_url": "https://incidentnews.noaa.gov/incident/11216"
+    },
+    {
+      "id": "eloi-noaa-oct12-reference",
+      "title": "NOAA · Eloi Bay field report and surveillance",
+      "url": "https://incidentnews.noaa.gov/incident/11235",
+      "kind": "Field incident report",
+      "notes": "NOAA records an independently confirmed crude discharge. The Landsat 8 outline at 16:26 UTC on October 12 is later imagery. This crop covers the coastal outline and nearby water. The later eastward outline extends past that local view.",
+      "reference_sha256": "dc04e7674b570d065fa350bad7dac6707299a95b566c2ee563b7fd47946e426b",
+      "satellite_archive_url": "https://www.ospo.noaa.gov/products/ocean/marinepollution/archive.html?year=2026"
+    },
+    {
+      "id": "atanasovsko-ramsar-292",
+      "title": "Ramsar · Atanasovsko Lake",
+      "url": "https://rsis.ramsar.org/ris/292",
+      "kind": "Official wetland designation",
+      "notes": "Ramsar identifies the saline lagoon, marshes, reedbeds and managed salt pans. This single acquisition provides radar backscatter around them."
+    },
+    {
+      "id": "nisar-qeshm-20260717-source",
+      "title": "NASA ASF DAAC · Qeshm and Hengam coastal waters · 2026-07-17",
+      "kind": "Earthdata Harmony source GeoTIFF subsets",
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4254521451-ASF",
+      "source_id": "NISAR_L2_PR_GCOV_025_128_A_015_2005_DHDH_M_20260717T013518_20260717T013553_P05023_N_F_J_001",
+      "provider_size_bytes": 1820327936,
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "notes": "Native recorded power and available quality layers retained. The subset lacks spatial NESZ and input exception mask. Source noise correction setting is unverified.",
+      "quality_rule": "Valid source subswath mask, positive looks and finite nonnegative gamma-zero power.",
+      "look_direction": null,
+      "noise_correction_applied": null,
+      "nesz_available": false,
+      "source_grid_looks_available": true,
+      "source_exception_mask_available": false,
+      "received_rasters": {
+        "HHHH": {
+          "filename": "NISAR_L2_PR_GCOV_025_128_A_015_2005_DHDH_M_20260717T013518_20260717T013553_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HHHH_subsetted.tif",
+          "size_bytes": 30817777,
+          "sha256": "e5157d8b244c0ce0c1d79c911211977b4d02238476a6d37121e573d206a0c606"
+        },
+        "mask": {
+          "filename": "NISAR_L2_PR_GCOV_025_128_A_015_2005_DHDH_M_20260717T013518_20260717T013553_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_mask_subsetted.tif",
+          "size_bytes": 67487,
+          "sha256": "2180f6aa614d5215a71aab2250730465b08208bd8eac2b9cded1737a75acf5b8"
+        },
+        "numberOfLooks": {
+          "filename": "NISAR_L2_PR_GCOV_025_128_A_015_2005_DHDH_M_20260717T013518_20260717T013553_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_numberOfLooks_subsetted.tif",
+          "size_bytes": 29041545,
+          "sha256": "53513097575039c187650cc86a6aa6ed91630dd06dd8ba102878ee7e0fcea6a0"
+        }
+      },
+      "harmony_pixel_window": [
+        580,
+        750,
+        1150,
+        1400
+      ],
+      "provider_footprint_fraction_of_window": 0.9999999999999999
+    },
+    {
+      "id": "nisar-qeshm-20260810-source",
+      "title": "NASA ASF DAAC · Qeshm and Hengam coastal waters · 2026-08-10",
+      "kind": "Earthdata Harmony source GeoTIFF subsets",
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4278857246-ASF",
+      "source_id": "NISAR_L2_PR_GCOV_027_128_A_015_2005_DHDH_M_20260810T013517_20260810T013551_P05023_N_F_J_001",
+      "provider_size_bytes": 1765801984,
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "notes": "Native recorded power and available quality layers retained. The subset lacks spatial NESZ and input exception mask. Source noise correction setting is unverified.",
+      "quality_rule": "Valid source subswath mask and finite nonnegative gamma-zero power.",
+      "look_direction": null,
+      "noise_correction_applied": null,
+      "nesz_available": false,
+      "source_grid_looks_available": false,
+      "source_exception_mask_available": false,
+      "received_rasters": {
+        "HHHH": {
+          "filename": "NISAR_L2_PR_GCOV_027_128_A_015_2005_DHDH_M_20260810T013517_20260810T013551_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HHHH_subsetted.tif",
+          "size_bytes": 30964461,
+          "sha256": "1d6548300468522cb7f212edeb13296d43aa7cb74f4c8b02d456b3679f20935f"
+        },
+        "HVHV": {
+          "filename": "NISAR_L2_PR_GCOV_027_128_A_015_2005_DHDH_M_20260810T013517_20260810T013551_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HVHV_subsetted.tif",
+          "size_bytes": 30582183,
+          "sha256": "83783b5b114f26187ce997975e148ad87002a87bde6359ba3c035c146cbdb419"
+        },
+        "mask": {
+          "filename": "NISAR_L2_PR_GCOV_027_128_A_015_2005_DHDH_M_20260810T013517_20260810T013551_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_mask_subsetted.tif",
+          "size_bytes": 67487,
+          "sha256": "2180f6aa614d5215a71aab2250730465b08208bd8eac2b9cded1737a75acf5b8"
+        }
+      },
+      "harmony_pixel_window": [
+        580,
+        750,
+        1150,
+        1400
+      ],
+      "provider_footprint_fraction_of_window": 0.9999999999999999
+    },
+    {
+      "id": "nisar-qeshm-20260822-source",
+      "title": "NASA ASF DAAC · Qeshm and Hengam coastal waters · 2026-08-22",
+      "kind": "Earthdata Harmony source GeoTIFF subsets",
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4288286710-ASF",
+      "source_id": "NISAR_L2_PR_GCOV_028_128_A_015_2005_DHDH_M_20260822T013516_20260822T013551_P05023_N_F_J_001",
+      "provider_size_bytes": 1811939328,
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "notes": "Native recorded power and available quality layers retained. The subset lacks spatial NESZ and input exception mask. Source noise correction setting is unverified.",
+      "quality_rule": "Valid source subswath mask, positive looks and finite nonnegative gamma-zero power.",
+      "look_direction": null,
+      "noise_correction_applied": null,
+      "nesz_available": false,
+      "source_grid_looks_available": true,
+      "source_exception_mask_available": false,
+      "received_rasters": {
+        "HHHH": {
+          "filename": "NISAR_L2_PR_GCOV_028_128_A_015_2005_DHDH_M_20260822T013516_20260822T013551_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HHHH_subsetted.tif",
+          "size_bytes": 30957430,
+          "sha256": "bd961046d2aa6cde35d5aa94e6a302f27518346c7940e2d3ccedb8dbd8bbfdbf"
+        },
+        "mask": {
+          "filename": "NISAR_L2_PR_GCOV_028_128_A_015_2005_DHDH_M_20260822T013516_20260822T013551_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_mask_subsetted.tif",
+          "size_bytes": 67487,
+          "sha256": "2180f6aa614d5215a71aab2250730465b08208bd8eac2b9cded1737a75acf5b8"
+        },
+        "numberOfLooks": {
+          "filename": "NISAR_L2_PR_GCOV_028_128_A_015_2005_DHDH_M_20260822T013516_20260822T013551_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_numberOfLooks_subsetted.tif",
+          "size_bytes": 29037989,
+          "sha256": "746bd0f9565a917ad5d8e00b36c8e7b34790985e4e3d6e2a7788bd9949de0610"
+        }
+      },
+      "harmony_pixel_window": [
+        580,
+        750,
+        1150,
+        1400
+      ],
+      "provider_footprint_fraction_of_window": 0.9999999999999999
+    },
+    {
+      "id": "nisar-eugene-20260827-source",
+      "title": "NASA ASF DAAC · Eugene Island offshore waters, Louisiana · 2026-08-27",
+      "kind": "Earthdata Harmony source GeoTIFF subsets",
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4291280213-ASF",
+      "source_id": "NISAR_L2_PR_GCOV_029_033_A_016_4005_DHDH_A_20260827T112649_20260827T112723_P05023_N_F_J_001",
+      "provider_size_bytes": 4492099584,
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "notes": "Native recorded power and available quality layers retained. The subset lacks spatial NESZ and input exception mask. Source noise correction setting is unverified.",
+      "quality_rule": "Valid source subswath mask, positive looks and finite nonnegative gamma-zero power.",
+      "look_direction": null,
+      "noise_correction_applied": null,
+      "nesz_available": false,
+      "source_grid_looks_available": true,
+      "source_exception_mask_available": false,
+      "received_rasters": {
+        "HHHH": {
+          "filename": "NISAR_L2_PR_GCOV_029_033_A_016_4005_DHDH_A_20260827T112649_20260827T112723_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HHHH_subsetted.tif",
+          "size_bytes": 26925509,
+          "sha256": "ab273510cc6e9cd51675312731a8de7a8bce275d10c71eaa44dcc4473befed0a"
+        },
+        "mask": {
+          "filename": "NISAR_L2_PR_GCOV_029_033_A_016_4005_DHDH_A_20260827T112649_20260827T112723_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_mask_subsetted.tif",
+          "size_bytes": 56279,
+          "sha256": "0d58311b47c6df7df0533ec507d21337fbc1cfd34aa8bb6990d39731b44b7129"
+        },
+        "numberOfLooks": {
+          "filename": "NISAR_L2_PR_GCOV_029_033_A_016_4005_DHDH_A_20260827T112649_20260827T112723_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_numberOfLooks_subsetted.tif",
+          "size_bytes": 22855451,
+          "sha256": "d66f159c11cfeae5824b798148c6a0af8e50207f97e6497fc4a17c1b4f99037e"
+        }
+      },
+      "harmony_pixel_window": [
+        457,
+        489,
+        1943,
+        1016
+      ],
+      "provider_footprint_fraction_of_window": 1.0,
+      "provider_footprint_fraction_of_reference": 0.9999999999999998
+    },
+    {
+      "id": "nisar-eloi-20261012-source",
+      "title": "NASA ASF DAAC · Eloi Bay, Louisiana · 2026-10-12",
+      "kind": "Earthdata Harmony source GeoTIFF subsets",
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4364390789-ASF",
+      "source_id": "NISAR_L2_PR_GCOV_033_004_A_017_4005_DHDH_A_20261012T111043_20261012T111118_P05023_N_F_J_001",
+      "provider_size_bytes": 5951717376,
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "notes": "Native recorded power and available quality layers retained. The subset lacks spatial NESZ and input exception mask. Source noise correction setting is unverified.",
+      "quality_rule": "Valid source subswath mask and finite nonnegative gamma-zero power.",
+      "look_direction": null,
+      "noise_correction_applied": null,
+      "nesz_available": false,
+      "source_grid_looks_available": false,
+      "source_exception_mask_available": false,
+      "received_rasters": {
+        "HHHH": {
+          "filename": "NISAR_L2_PR_GCOV_033_004_A_017_4005_DHDH_A_20261012T111043_20261012T111118_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HHHH_subsetted.tif",
+          "size_bytes": 52887409,
+          "sha256": "6f2db78ec4583ef37df0bf856bf204e7a852597828f5427761c3619a0c8e743a"
+        },
+        "HVHV": {
+          "filename": "NISAR_L2_PR_GCOV_033_004_A_017_4005_DHDH_A_20261012T111043_20261012T111118_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HVHV_subsetted.tif",
+          "size_bytes": 52621168,
+          "sha256": "29b02050ea42c1e4135c0c9b6ee8f0900a348ce4e495ef3344a360c99f7b700c"
+        },
+        "mask": {
+          "filename": "NISAR_L2_PR_GCOV_033_004_A_017_4005_DHDH_A_20261012T111043_20261012T111118_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_mask_subsetted.tif",
+          "size_bytes": 142035,
+          "sha256": "76aa6db845c8efaf4c1e1e3caae3a0ad3f530c1ae4248a8acefd2d6475f9a1fc"
+        }
+      },
+      "harmony_pixel_window": [
+        675,
+        673,
+        1024,
+        1315
+      ],
+      "provider_footprint_fraction_of_window": 0.7212722361137118,
+      "provider_footprint_fraction_of_reference": 0.9734098559721389
+    },
+    {
+      "id": "nisar-atanasovsko-20260712-source",
+      "title": "NASA ASF DAAC · Atanasovsko Lake, Bulgaria · 2026-07-12",
+      "kind": "Native GCOV HDF5",
+      "url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?concept_id=G4252772664-ASF",
+      "source_id": "NISAR_L2_PR_GCOV_025_065_D_067_2005_DHDH_A_20260712T171219_20260712T171254_P05023_N_F_J_001",
+      "provider_size_bytes": 1853882368,
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "notes": "Native power and documented source validity bits retained.",
+      "quality_rule": "Valid source subswath, positive looks, zero input exception and finite nonnegative power.",
+      "look_direction": "Left",
+      "noise_correction_applied": false,
+      "nesz_available": true,
+      "source_grid_looks_available": true,
+      "source_exception_mask_available": true,
+      "source_filename": "NISAR_L2_PR_GCOV_025_065_D_067_2005_DHDH_A_20260712T171219_20260712T171254_P05023_N_F_J_001.h5",
+      "source_size_bytes": 1853882368,
+      "source_sha256": "041d67c754d19cde3ee69208fda8f0403401ecfea84813ec83a20ff9a2817069",
+      "source_window": [
+        10218,
+        8262,
+        270,
+        441
+      ],
+      "provider_footprint_fraction_of_window": 1.0
+    }
+  ]
+}

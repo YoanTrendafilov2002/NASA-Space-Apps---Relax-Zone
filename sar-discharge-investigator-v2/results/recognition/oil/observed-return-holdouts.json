@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "calibrated": {
+    "threshold_db": 0.65,
+    "unrounded_calibration_db": 0.6376683115959167,
+    "calibration_cells": 1604978,
+    "quantile": 0.99,
+    "calibration_cache_sha256": "09bbd6bbf4d5fedf71e29bde5cb8fb072ab1b7401a9f00a9ee9bd9473c8440d0"
+  },
+  "held_out_sites": {
+    "gulf-eugene-nisar": {
+      "offset_minutes": 43.18333333333333,
+      "near_time_agreement_eligible": true,
+      "map_whole_cell_agreement": 362,
+      "counts": {
+        "reference_cells": 1730,
+        "reference_valid_coverage": 1730,
+        "reference_measured_ocean_cells": 1730,
+        "reference_bilateral_control_cells": 1730,
+        "reference_assessed_cells": 1730,
+        "reference_flagged_cells": 362,
+        "outside_reference_assessed_cells": 148712,
+        "outside_reference_flags_unlabelled": 834
+      },
+      "epsg": 32615,
+      "grid_transform": [
+        60.0,
+        0.0,
+        617480.0,
+        0.0,
+        -60.0,
+        3139590.0
+      ],
+      "shape": [
+        333,
+        476
+      ],
+      "source_files": {
+        "HHHH": {
+          "filename": "NISAR_L2_PR_GCOV_029_033_A_016_4005_DHDH_A_20260827T112649_20260827T112723_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HHHH_subsetted.tif",
+          "sha256": "ab273510cc6e9cd51675312731a8de7a8bce275d10c71eaa44dcc4473befed0a"
+        },
+        "mask": {
+          "filename": "NISAR_L2_PR_GCOV_029_033_A_016_4005_DHDH_A_20260827T112649_20260827T112723_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_mask_subsetted.tif",
+          "sha256": "0d58311b47c6df7df0533ec507d21337fbc1cfd34aa8bb6990d39731b44b7129"
+        },
+        "numberOfLooks": {
+          "filename": "NISAR_L2_PR_GCOV_029_033_A_016_4005_DHDH_A_20260827T112649_20260827T112723_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_numberOfLooks_subsetted.tif",
+          "sha256": "d66f159c11cfeae5824b798148c6a0af8e50207f97e6497fc4a17c1b4f99037e"
+        }
+      },
+      "reference_files": {
+        "20260827_1210_RADARSAT2_OIL": {
+          "url": "https://www.ospo.noaa.gov/data/ocean/marinepollution/2026/20260827_1210_RADARSAT2_OIL.geojson",
+          "sha256": "e46adbddd381d03ffd99a930ba94ac13b4b16177334bd14b8c481d2d714293c4"
+        }
+      },
+      "scope": "Held-out measured return. NOAA polygons locate possible oil; the material and outside-polygon negatives are unverified."
+    },
+    "eloi-bay-nisar": {
+      "offset_minutes": 315.28333333333336,
+      "near_time_agreement_eligible": false,
+      "map_whole_cell_agreement": 0,
+      "counts": {
+        "reference_cells": 3090,
+        "reference_valid_coverage": 2856,
+        "reference_measured_ocean_cells": 2856,
+        "reference_bilateral_control_cells": 2846,
+        "reference_assessed_cells": 2839,
+        "reference_flagged_cells": 112,
+        "outside_reference_assessed_cells": 259993,
+        "outside_reference_flags_unlabelled": 13875
+      },
+      "epsg": 32616,
+      "grid_transform": [
+        60.0,
+        0.0,
+        258330.0,
+        0.0,
+        -60.0,
+        3304330.0
+      ],
+      "shape": [
+        565,
+        735
+      ],
+      "source_files": {
+        "HHHH": {
+          "filename": "NISAR_L2_PR_GCOV_033_004_A_017_4005_DHDH_A_20261012T111043_20261012T111118_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_HHHH_subsetted.tif",
+          "sha256": "6f2db78ec4583ef37df0bf856bf204e7a852597828f5427761c3619a0c8e743a"
+        },
+        "mask": {
+          "filename": "NISAR_L2_PR_GCOV_033_004_A_017_4005_DHDH_A_20261012T111043_20261012T111118_P05023_N_F_J_001_science_LSAR_GCOV_grids_frequencyA_mask_subsetted.tif",
+          "sha256": "76aa6db845c8efaf4c1e1e3caae3a0ad3f530c1ae4248a8acefd2d6475f9a1fc"
+        }
+      },
+      "reference_files": {
+        "20261012_1626_LANDSAT8_OIL": {
+          "url": "https://www.ospo.noaa.gov/data/ocean/marinepollution/2026/20261012_1626_LANDSAT8_OIL.geojson",
+          "sha256": "dc04e7674b570d065fa350bad7dac6707299a95b566c2ee563b7fd47946e426b"
+        },
+        "20261012_1626b_LANDSAT8_OIL": {
+          "url": "https://www.ospo.noaa.gov/data/ocean/marinepollution/2026/20261012_1626b_LANDSAT8_OIL.geojson",
+          "sha256": "8fd01177689bc7c39e7c82b82ec89cbdb095b905fdddb0c838daf86234aa53f4"
+        }
+      },
+      "scope": "Held-out measured return. NOAA polygons locate possible oil; the material and outside-polygon negatives are unverified."
+    }
+  },
+  "near_time_agreement_minutes": 60,
+  "algorithm_sha256": "8ab4dcfe9abe2bba54a89a830d4cd6732da0b17068ae88eb4feb7b8d4c5f9363",
+  "interpretation": "Only measured NISAR HH power enters the prediction. This observed-return screen lacks pixel-level NESZ and cannot test oil material or estimate precision. Timing gates apply to published geographic agreement."
+}

@@ -1,0 +1,54 @@
+{
+  "site": "Lago Grande de Curuai, Brazil",
+  "timing": "13 August 2026 NISAR 09:21:54 UTC, Sentinel-2A 14:13:28 UTC",
+  "radar": [
+    {
+      "id": "NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001",
+      "noise_correction_applied": "false",
+      "retained_native_postings": 5791699
+    }
+  ],
+  "native_posting_m": 20.0,
+  "analysis_cell_m": 60,
+  "projection_epsg": 32721,
+  "calibration_block_m": 3000,
+  "training_balanced_accuracy": 0.9855769228157343,
+  "cutoff_db": -15.0,
+  "noise_clearance_db": 3,
+  "reference_water_code": 2,
+  "reference_other_code": 1,
+  "optical_reference": "C:\\Users\\Yoan\\Documents\\Codex\\2026-11-14\\set\\outputs\\nisar_wetlands\\curuai_20260813_optical_reference.tif",
+  "calibration_cells": 246621,
+  "evaluation_cells": 247769,
+  "optical_uncertain_or_mixed_cells": 50181,
+  "withheld_optical_water_unassessable_cells": 0,
+  "withheld_optical_nonwater_unassessable_cells": 354,
+  "held_out": {
+    "matched_water_cells": 150529,
+    "missed_water_cells": 3294,
+    "extra_water_cells": 1077,
+    "matched_nonwater_cells": 92869,
+    "matched_water_km2": 541.9044,
+    "missed_water_km2": 11.8584,
+    "extra_water_km2": 3.8772,
+    "matched_nonwater_km2": 334.3284,
+    "water_recall": 0.9785857771594625,
+    "water_precision": 0.9928960595227102,
+    "water_iou": 0.9717817947062621,
+    "nonwater_specificity": 0.9885359674706746
+  },
+  "requiring_3dB_net_signal_to_noise": {
+    "matched_water_cells": 142454,
+    "missed_water_cells": 3294,
+    "extra_water_cells": 1077,
+    "matched_nonwater_cells": 92869,
+    "matched_water_km2": 512.8344,
+    "missed_water_km2": 11.8584,
+    "extra_water_km2": 3.8772,
+    "matched_nonwater_km2": 334.3284,
+    "water_recall": 0.9773993468177951,
+    "water_precision": 0.9924963945071099,
+    "water_iou": 0.9702298654861229,
+    "nonwater_specificity": 0.9885359674706746
+  }
+}

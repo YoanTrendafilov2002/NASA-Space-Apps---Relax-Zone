@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "series": [
+    {
+      "id": "curuai-nisar-hh-backscatter",
+      "site_id": "curuai-nisar",
+      "polarization": "HH",
+      "title": "HH radar return over time",
+      "statistic": "Median gamma0 backscatter over the same pixels on every date",
+      "units": "dB",
+      "points": [
+        {
+          "observation_id": "nisar-curuai-20260813",
+          "acquired_at": "2026-08-13T09:21:54Z",
+          "value": -18.5273267276215,
+          "p10": -21.165142270232767,
+          "p90": -6.81233550405432,
+          "valid_pixels": 562500,
+          "source_sha256": "5e52c1f0c04afc8fa43e77e4ea8210589131e7f86eca2fc489c3380debabbd86"
+        },
+        {
+          "observation_id": "nisar-curuai-20261012",
+          "acquired_at": "2026-10-12T09:21:54Z",
+          "value": -17.722587566104277,
+          "p10": -20.474200860567805,
+          "p90": -8.331130348901748,
+          "valid_pixels": 562500,
+          "source_sha256": "b52156da0450432f6209ad8ace359f38462007a1d4e129b54aab6d4337380f27"
+        }
+      ],
+      "summary": "Each point is an observed date. The median uses exactly the same finite positive cells at every date. Radar brightness can change for several reasons.",
+      "evidence_ids": [
+        "nisar-curuai-20260813-source",
+        "nisar-curuai-20261012-source"
+      ]
+    },
+    {
+      "id": "curuai-nisar-hv-backscatter",
+      "site_id": "curuai-nisar",
+      "polarization": "HV",
+      "title": "HV radar return over time",
+      "statistic": "Median gamma0 backscatter over the same pixels on every date",
+      "units": "dB",
+      "points": [
+        {
+          "observation_id": "nisar-curuai-20260813",
+          "acquired_at": "2026-08-13T09:21:54Z",
+          "value": -23.813251443654412,
+          "p10": -26.02589319426979,
+          "p90": -13.876868005649545,
+          "valid_pixels": 562500,
+          "source_sha256": "537fa7ac25e2ff01014f5c3534e72544fc67d6c93e624f356b13463e1fa3de43"
+        },
+        {
+          "observation_id": "nisar-curuai-20261012",
+          "acquired_at": "2026-10-12T09:21:54Z",
+          "value": -23.45583858960914,
+          "p10": -25.762530323821846,
+          "p90": -15.338921554514291,
+          "valid_pixels": 562500,
+          "source_sha256": "f6ef6b16e7182f63fcfe9b2e71e53409fa965947bcf738f171634735072741a9"
+        }
+      ],
+      "summary": "Each point is an observed date. The median uses exactly the same finite positive cells at every date. Radar brightness can change for several reasons.",
+      "evidence_ids": [
+        "nisar-curuai-20260813-source",
+        "nisar-curuai-20261012-source"
+      ]
+    },
+    {
+      "id": "maranon-nisar-hh-backscatter",
+      "site_id": "maranon-nisar",
+      "polarization": "HH",
+      "title": "HH radar return over time",
+      "statistic": "Median gamma0 backscatter over the same pixels on every date",
+      "units": "dB",
+      "points": [
+        {
+          "observation_id": "nisar-maranon-20260224",
+          "acquired_at": "2026-02-24T10:44:07Z",
+          "value": -5.3822948832433255,
+          "p10": -16.93047377808983,
+          "p90": -2.565433965292157,
+          "valid_pixels": 202500,
+          "source_sha256": "5496a756eefb7fa10e54b1b149a05775020142aa9548101e5de7f703779cde20"
+        },
+        {
+          "observation_id": "nisar-maranon-20260308",
+          "acquired_at": "2026-03-08T10:44:08Z",
+          "value": -5.242903380002003,
+          "p10": -17.040152766484578,
+          "p90": -2.2230292335555597,
+          "valid_pixels": 202500,
+          "source_sha256": "8615b37f9a4996fb038cbbe7d502696fd45cbffa43d195837817e03509f8fd19"
+        }
+      ],
+      "summary": "Each point is an observed date. The median uses exactly the same finite positive cells at every date. Radar brightness can change for several reasons.",
+      "evidence_ids": [
+        "nisar-maranon-20260224-source",
+        "nisar-maranon-20260308-source"
+      ]
+    },
+    {
+      "id": "maranon-nisar-hv-backscatter",
+      "site_id": "maranon-nisar",
+      "polarization": "HV",
+      "title": "HV radar return over time",
+      "statistic": "Median gamma0 backscatter over the same pixels on every date",
+      "units": "dB",
+      "points": [
+        {
+          "observation_id": "nisar-maranon-20260224",
+          "acquired_at": "2026-02-24T10:44:07Z",
+          "value": -11.58426776889308,
+          "p10": -22.568725095139257,
+          "p90": -8.966287761766653,
+          "valid_pixels": 202500,
+          "source_sha256": "fc2711ce1aecc66e32323c1bddaf83bf7e92662bd390b73120e78617c5e09a73"
+        },
+        {
+          "observation_id": "nisar-maranon-20260308",
+          "acquired_at": "2026-03-08T10:44:08Z",
+          "value": -11.421815335383783,
+          "p10": -22.437090392379776,
+          "p90": -8.802930372796787,
+          "valid_pixels": 202500,
+          "source_sha256": "94ba0fad4046caaa9f929adcf14fa3a92bfef924d6d42a25657e4786034e9167"
+        }
+      ],
+      "summary": "Each point is an observed date. The median uses exactly the same finite positive cells at every date. Radar brightness can change for several reasons.",
+      "evidence_ids": [
+        "nisar-maranon-20260224-source",
+        "nisar-maranon-20260308-source"
+      ]
+    },
+    {
+      "id": "qeshm-nisar-hh-backscatter",
+      "site_id": "qeshm-nisar",
+      "polarization": "HH",
+      "title": "HH radar return over time",
+      "statistic": "Median gamma0 backscatter over the same pixels on every date",
+      "units": "dB",
+      "points": [
+        {
+          "observation_id": "nisar-qeshm-20260717",
+          "acquired_at": "2026-07-17T01:35:18Z",
+          "value": -18.52457980771193,
+          "p10": -20.548633197125632,
+          "p90": -16.38993031110245,
+          "valid_pixels": 1610000,
+          "source_sha256": "9d1383c3348dc24e530a09cb83a23724f10cecb613b1d0f3bc10f2b33f64d149"
+        },
+        {
+          "observation_id": "nisar-qeshm-20260810",
+          "acquired_at": "2026-08-10T01:35:17Z",
+          "value": -18.646265685397218,
+          "p10": -21.156849790461777,
+          "p90": -16.16309404337638,
+          "valid_pixels": 1610000,
+          "source_sha256": "2dc647c3a7d14106c612b3f1b832d8cfdd47e60f484fa212a51fb7eaa269cc64"
+        },
+        {
+          "observation_id": "nisar-qeshm-20260822",
+          "acquired_at": "2026-08-22T01:35:16Z",
+          "value": -18.845177842477383,
+          "p10": -21.312666905434927,
+          "p90": -16.608350806596967,
+          "valid_pixels": 1610000,
+          "source_sha256": "f58fa6d58ffc843379aca01832c884123c116cd833f5f7f2c31299d5a06c0f96"
+        }
+      ],
+      "summary": "Each point is an observed date. The median uses exactly the same finite positive cells at every date. Radar brightness can change for several reasons. These are published product values. Per-date noise correction settings could not be checked in the subsets.",
+      "evidence_ids": [
+        "nisar-qeshm-20260717-source",
+        "nisar-qeshm-20260810-source",
+        "nisar-qeshm-20260822-source"
+      ]
+    },
+    {
+      "id": "uae-coastal-review-hh-slick-reference-context",
+      "site_id": "uae-coastal-review",
+      "polarization": "HH",
+      "title": "Umm Al Quwain coast · Before and after",
+      "units": "dB",
+      "statistic": "Median radar return inside the fixed 21 October slick reference outline",
+      "summary": "The October points share a processing release. The November point uses a newer release. The gap marks a change in processing, and the November reading alone cannot establish cleanup.",
+      "points": [
+        {
+          "observation_id": "nisar-uae-coast-20261009",
+          "acquired_at": "2026-10-09T01:35:16Z",
+          "value": -18.107901074942447,
+          "label": "Before the reported leak",
+          "p10": -20.30860958877046,
+          "p90": -15.383174580084985,
+          "valid_pixels": 411803,
+          "source_sha256": "81aebd94e61a032b1d9cca3433e43b3e3c2024f3601e0a7eac554b02e57cde7d",
+          "processing_release": "P05023",
+          "processing_version": "1.0.11",
+          "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+          "maturity": "provisional",
+          "noise_correction_applied": false,
+          "break_before": false
+        },
+        {
+          "observation_id": "nisar-uae-coast-20261021",
+          "acquired_at": "2026-10-21T01:35:16Z",
+          "value": -20.326823932223014,
+          "label": "Slick review",
+          "p10": -22.664991883550705,
+          "p90": -17.0683284517551,
+          "valid_pixels": 411803,
+          "source_sha256": "8eb0170461ecfbc61d6ea4e797cb0ba7a6a2c3f82f97a5604fe074ea25fc5ec2",
+          "processing_release": "P05023",
+          "processing_version": "1.0.11",
+          "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+          "maturity": "provisional",
+          "noise_correction_applied": false,
+          "break_before": false
+        },
+        {
+          "observation_id": "nisar-uae-coast-20261102",
+          "acquired_at": "2026-11-02T01:35:16Z",
+          "value": -20.946178129525208,
+          "label": "After reported containment",
+          "p10": -23.319020716259722,
+          "p90": -17.564399307339574,
+          "valid_pixels": 411803,
+          "source_sha256": "169faee28e653e90d7af216b016a4f9ffc5cd5e374b2039be87ad65760bc0823",
+          "processing_release": "P05036",
+          "processing_version": "1.0.20",
+          "collection": "NISAR_L2_GCOV_V1",
+          "maturity": "validated",
+          "noise_correction_applied": false,
+          "break_before": true
+        }
+      ],
+      "evidence_ids": [
+        "uae-falcon-eye-reference",
+        "nisar-uae-coast-20261009-source",
+        "nisar-uae-coast-20261021-source",
+        "nisar-uae-coast-20261102-source",
+        "uae-p05036-release",
+        "uae-gem-containment-20261030"
+      ],
+      "reference_geometry_sha256": "9c7168c28c8ab2295fe7b15d4d5aac049e7eb1d13031cc6f9cf4d7ce2d9988b5",
+      "reference_evidence_id": "uae-falcon-eye-reference",
+      "footprint_pixels": 422611
+    }
+  ],
+  "evidence": []
+}

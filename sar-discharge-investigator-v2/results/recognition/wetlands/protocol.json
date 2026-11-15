@@ -1,0 +1,25 @@
+{
+  "target": "Optically exposed water at Curuai, Brazil",
+  "hypothesis": "Spatial heterogeneity in HH can help identify open water with the August fit held fixed.",
+  "candidate_predictors": [
+    "HH gamma0 dB",
+    "HH−HV observed gamma0 dB contrast",
+    "Population standard deviation of HH gamma0 dB in a 3×3 window of 60 m cells"
+  ],
+  "control_predictors": [
+    "HH gamma0 dB",
+    "HH−HV observed gamma0 dB contrast"
+  ],
+  "landmark_comparator": "Original QGIS HH cutoff fitted using its established August split.",
+  "training_date": "2026-08-13",
+  "evaluation_date": "2026-10-12",
+  "spatial_partition": "Fixed 3 km checkerboard. A cell and all eight neighbors must lie on its own side of the split.",
+  "analysis_grid_m": 60,
+  "predictor_window_cells": 3,
+  "l2_weight": 0.01,
+  "logistic_decision_logit": 0,
+  "support": "All nine neighborhood cells pass the original dual-channel quality support. Features use measured NISAR power only.",
+  "success_criterion": "Candidate IoU must exceed both HH threshold and the two-feature control for both October exposed water and paired exposed-water loss.",
+  "uncertainty": "Paired resampling of populated spatial blocks within this site, 1000 draws and seed 4217.",
+  "reuse": "October was previously scored for the published baseline. It remains held out of fitting and method selection in this fixed follow-up run."
+}

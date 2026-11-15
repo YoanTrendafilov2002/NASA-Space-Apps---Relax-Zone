@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "layers": [
+    {
+      "id": "nisar-curuai-change-hh",
+      "site_id": "curuai-nisar",
+      "polarization": "HH",
+      "earlier_id": "nisar-curuai-20260813",
+      "later_id": "nisar-curuai-20261012",
+      "earlier_date": "2026-08-13",
+      "later_date": "2026-10-12",
+      "threshold_db": 3.0,
+      "unit": "dB",
+      "image_url": "/sar/nisar-curuai-change-hh.png",
+      "image_epsg": 3857,
+      "image_bounds": [
+        [
+          -2.1297635034697318,
+          -55.54810262736619
+        ],
+        [
+          -1.9939742286203872,
+          -55.41313366752681
+        ]
+      ],
+      "image_shape": [
+        750,
+        745
+      ],
+      "image_transform": [
+        20.16735017747437,
+        0.0,
+        -6183586.499010907,
+        0.0,
+        -20.16771937195495,
+        -222013.01506154207
+      ],
+      "science_url": "/science/nisar-curuai-change-hh.tif",
+      "science_sha256": "353b0d08634aff80aded68559371f8bb3ef00287265f75303597e569a4b403f8",
+      "science_size_bytes": 2045918,
+      "science_units": "dB, later minus earlier",
+      "science_epsg": 32721,
+      "science_shape": [
+        750,
+        750
+      ],
+      "science_transform": [
+        20.0,
+        0.0,
+        661480.0,
+        0.0,
+        -20.0,
+        9779520.0
+      ],
+      "image_sha256": "608d43c2f4cb7b5b13cd2cb323330d3fd3982a44ea225bcb4c1ff509715c915e",
+      "image_size_bytes": 131722,
+      "classes": [
+        {
+          "id": "brightened",
+          "color": "#f38228",
+          "native_pixels": 102200,
+          "display_pixels": 101203
+        },
+        {
+          "id": "darkened",
+          "color": "#6c6853",
+          "native_pixels": 67838,
+          "display_pixels": 67354
+        }
+      ],
+      "paired_native_pixels": 562500,
+      "paired_display_pixels": 557861,
+      "transparent_display_pixels": 390193,
+      "source_hdf5_coordinate_checks": 437,
+      "evidence_ids": [
+        "nisar-curuai-20260813-source",
+        "nisar-curuai-20261012-source"
+      ],
+      "note": "Colours show a measured change in gamma0 backscatter on the paired grid. Independent evidence is needed to attribute the changes to water, oil or other causes."
+    },
+    {
+      "id": "nisar-curuai-change-hv",
+      "site_id": "curuai-nisar",
+      "polarization": "HV",
+      "earlier_id": "nisar-curuai-20260813",
+      "later_id": "nisar-curuai-20261012",
+      "earlier_date": "2026-08-13",
+      "later_date": "2026-10-12",
+      "threshold_db": 3.0,
+      "unit": "dB",
+      "image_url": "/sar/nisar-curuai-change-hv.png",
+      "image_epsg": 3857,
+      "image_bounds": [
+        [
+          -2.1297635034697318,
+          -55.54810262736619
+        ],
+        [
+          -1.9939742286203872,
+          -55.41313366752681
+        ]
+      ],
+      "image_shape": [
+        750,
+        745
+      ],
+      "image_transform": [
+        20.16735017747437,
+        0.0,
+        -6183586.499010907,
+        0.0,
+        -20.16771937195495,
+        -222013.01506154207
+      ],
+      "science_url": "/science/nisar-curuai-change-hv.tif",
+      "science_sha256": "6d0a5001cfdcf8cc3b53dfb6fb6b9872369346db0588bf36b3e049add902b088",
+      "science_size_bytes": 2063228,
+      "science_units": "dB, later minus earlier",
+      "science_epsg": 32721,
+      "science_shape": [
+        750,
+        750
+      ],
+      "science_transform": [
+        20.0,
+        0.0,
+        661480.0,
+        0.0,
+        -20.0,
+        9779520.0
+      ],
+      "image_sha256": "1aaa8e5da0644dc1694e8042063c9ef04dda80a4ecfab7773f806cd9bc31089d",
+      "image_size_bytes": 107770,
+      "classes": [
+        {
+          "id": "brightened",
+          "color": "#f38228",
+          "native_pixels": 58288,
+          "display_pixels": 57820
+        },
+        {
+          "id": "darkened",
+          "color": "#6c6853",
+          "native_pixels": 61105,
+          "display_pixels": 60638
+        }
+      ],
+      "paired_native_pixels": 562500,
+      "paired_display_pixels": 557861,
+      "transparent_display_pixels": 440292,
+      "source_hdf5_coordinate_checks": 437,
+      "evidence_ids": [
+        "nisar-curuai-20260813-source",
+        "nisar-curuai-20261012-source"
+      ],
+      "note": "Colours show a measured change in gamma0 backscatter on the paired grid. Independent evidence is needed to attribute the changes to water, oil or other causes."
+    },
+    {
+      "id": "nisar-maranon-change-hh",
+      "site_id": "maranon-nisar",
+      "polarization": "HH",
+      "earlier_id": "nisar-maranon-20260224",
+      "later_id": "nisar-maranon-20260308",
+      "earlier_date": "2026-02-24",
+      "later_date": "2026-03-08",
+      "threshold_db": 3.0,
+      "unit": "dB",
+      "image_url": "/sar/nisar-maranon-change-hh.png",
+      "image_epsg": 3857,
+      "image_bounds": [
+        [
+          -4.767460945419272,
+          -74.96032658179782
+        ],
+        [
+          -4.6860313776449605,
+          -74.87916238604299
+        ]
+      ],
+      "image_shape": [
+        450,
+        448
+      ],
+      "image_transform": [
+        20.167761031411438,
+        0.0,
+        -8344545.384783222,
+        0.0,
+        -20.212517289187655,
+        -522229.1555093881
+      ],
+      "science_url": "/science/nisar-maranon-change-hh.tif",
+      "science_sha256": "a188b635e395120736c037695f8cc14550651e5ca8a3e4540156b6b9aceaa47d",
+      "science_size_bytes": 751036,
+      "science_units": "dB, later minus earlier",
+      "science_epsg": 32718,
+      "science_shape": [
+        450,
+        450
+      ],
+      "science_transform": [
+        20.0,
+        0.0,
+        504400.0,
+        0.0,
+        -20.0,
+        9482040.0
+      ],
+      "image_sha256": "e2e119d9b5e49ced293da221e8614becdc80081955fc6e2a5b2d059aa239f439",
+      "image_size_bytes": 34860,
+      "classes": [
+        {
+          "id": "brightened",
+          "color": "#f38228",
+          "native_pixels": 17959,
+          "display_pixels": 17872
+        },
+        {
+          "id": "darkened",
+          "color": "#6c6853",
+          "native_pixels": 14163,
+          "display_pixels": 14082
+        }
+      ],
+      "paired_native_pixels": 202500,
+      "paired_display_pixels": 201600,
+      "transparent_display_pixels": 169646,
+      "source_hdf5_coordinate_checks": 437,
+      "evidence_ids": [
+        "nisar-maranon-20260224-source",
+        "nisar-maranon-20260308-source"
+      ],
+      "note": "Colours show a measured change in gamma0 backscatter on the paired grid. Independent evidence is needed to attribute the changes to water, oil or other causes."
+    },
+    {
+      "id": "nisar-maranon-change-hv",
+      "site_id": "maranon-nisar",
+      "polarization": "HV",
+      "earlier_id": "nisar-maranon-20260224",
+      "later_id": "nisar-maranon-20260308",
+      "earlier_date": "2026-02-24",
+      "later_date": "2026-03-08",
+      "threshold_db": 3.0,
+      "unit": "dB",
+      "image_url": "/sar/nisar-maranon-change-hv.png",
+      "image_epsg": 3857,
+      "image_bounds": [
+        [
+          -4.767460945419272,
+          -74.96032658179782
+        ],
+        [
+          -4.6860313776449605,
+          -74.87916238604299
+        ]
+      ],
+      "image_shape": [
+        450,
+        448
+      ],
+      "image_transform": [
+        20.167761031411438,
+        0.0,
+        -8344545.384783222,
+        0.0,
+        -20.212517289187655,
+        -522229.1555093881
+      ],
+      "science_url": "/science/nisar-maranon-change-hv.tif",
+      "science_sha256": "8c73333c47e5ff257d2a714041782ca1563f80223182b4de6ca102a915e994e1",
+      "science_size_bytes": 751288,
+      "science_units": "dB, later minus earlier",
+      "science_epsg": 32718,
+      "science_shape": [
+        450,
+        450
+      ],
+      "science_transform": [
+        20.0,
+        0.0,
+        504400.0,
+        0.0,
+        -20.0,
+        9482040.0
+      ],
+      "image_sha256": "fec1cfb27c5767e7e202674ede9a98c67b8584a679c527e6d44fdd60970b7dd0",
+      "image_size_bytes": 34801,
+      "classes": [
+        {
+          "id": "brightened",
+          "color": "#f38228",
+          "native_pixels": 18156,
+          "display_pixels": 18063
+        },
+        {
+          "id": "darkened",
+          "color": "#6c6853",
+          "native_pixels": 13648,
+          "display_pixels": 13588
+        }
+      ],
+      "paired_native_pixels": 202500,
+      "paired_display_pixels": 201600,
+      "transparent_display_pixels": 169949,
+      "source_hdf5_coordinate_checks": 437,
+      "evidence_ids": [
+        "nisar-maranon-20260224-source",
+        "nisar-maranon-20260308-source"
+      ],
+      "note": "Colours show a measured change in gamma0 backscatter on the paired grid. Independent evidence is needed to attribute the changes to water, oil or other causes."
+    }
+  ]
+}

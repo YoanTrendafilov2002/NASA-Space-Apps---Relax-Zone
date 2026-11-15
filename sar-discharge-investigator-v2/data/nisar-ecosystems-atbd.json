@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "title": "NISAR Ecosystem L2 Products Algorithm Theoretical Basis Document",
+  "date": "2018-05-01",
+  "authors": "Siqueira, Chapman, Kellndorfer, Saatchi and Simard",
+  "url": "https://gitlab.com/nisar-science-algorithms/ecosystems/documentation/-/raw/main/NISAR_Ecosystems_Combined_ATBD.pdf",
+  "pdf_sha256": "2a1d1f1d5274f45f5575ae6598a234cf02cbcd63f6d8650d28195aade1423edb",
+  "entries": [
+    {
+      "id": "overview", "section": "§1 and §3", "pages": [4, 10],
+      "title": "Ecosystems algorithm scope", "terms": ["scope", "overview", "four topics", "which topics", "ecosystem products"],
+      "answer": "The 2018 design document covers aboveground biomass, forest disturbance, inundation and agriculture. It explains what radar observes, how the team proposed turning those measurements into science products, and how they planned to check the results. Its specifications describe the proposed products."
+    },
+    {
+      "id": "terrain", "section": "§2.2–2.4", "pages": [8, 10],
+      "title": "Terrain, viewing angle and segmentation", "terms": ["terrain correction", "radiometric", "slope", "scattering law", "incidence angle", "segmentation", "terrain", "rtc"],
+      "answer": "A slope facing the radar can look brighter partly because of how much ground contributes to the return. The document discusses correcting for this geometry, then accounting for remaining angle-dependent scattering. It also describes grouping similar neighbouring pixels to reduce variability."
+    },
+    {
+      "id": "water-vegetation", "section": "§3.3.1–3.3.2", "pages": [40, 46],
+      "title": "Open water and inundated vegetation", "terms": ["open water", "flooded vegetation", "inundated vegetation", "double bounce", "weak echo", "dark water", "wetlands", "inundation", "flooded forest"],
+      "answer": "Smooth open water often reflects the radar pulse away from the satellite and looks dark. Where water meets upright stems or trunks, the pulse can bounce off both and return a stronger HH echo. The document uses HH strength and its contrast with HV to help tell these two signatures apart."
+    },
+    {
+      "id": "water-thresholds", "section": "§3.3.2, Table 3.3-1", "pages": [42, 46],
+      "title": "Inundation thresholds and calibration", "terms": ["threshold", "thresholds", "cutoff", "cutoffs", "table 3.3", "numbers", "noise floor", "noise", "angle dependent", "incidence angle thresholds", "hh hv ratio", "hh/hv"],
+      "answer": "The inundation design uses thresholds that can depend on the radar viewing angle. Its example thresholds came from Sentinel C-band data and require L-band calibration for NISAR. One universal cutoff would be an unreliable translation of the table."
+    },
+    {
+      "id": "water-time", "section": "§3.3.1–3.3.2", "pages": [41, 46],
+      "title": "A baseline and changes across passes", "terms": ["baseline", "multi temporal", "multitemporal", "time series", "change detection", "drier date", "repeat pass", "before and after", "seasonality"],
+      "answer": "The design starts by averaging a series of calibrated radar observations to establish a baseline. It then compares later passes with that baseline to identify transitions, such as a stronger vegetation return or the weaker return expected when open water expands."
+    },
+    {
+      "id": "water-classes", "section": "§3.3.4", "pages": [48, 48],
+      "title": "Wetland mask and planned inundation classes", "terms": ["wetland mask", "inventory", "wetland boundary", "water mapped as wetlands", "classes", "categories", "indeterminate", "uncertain", "product resolution"],
+      "answer": "The design uses a pre-existing wetland mask to define where it looks for inundation. Within that context it distinguishes flooded vegetation, open water, areas without inundation and uncertain cases. The habitat boundary records where wetland can occur, while the radar classification describes surface conditions on a date."
+    },
+    {
+      "id": "water-confounds", "section": "§3.3.1 and §3.3.3", "pages": [41, 47],
+      "title": "Lookalikes and tidal boundaries", "terms": ["shore", "shoreline", "tidal", "tide", "bare ground", "lookalike", "coherence", "floating vegetation", "mixed cells"],
+      "answer": "Dark bare ground can resemble open water. The document discusses looking from another direction or using repeat-pass coherence as additional evidence. In tidal wetlands, water can advance or retreat within hours, so an observed shoreline depends on when the satellite passed."
+    },
+    {
+      "id": "water-validation", "section": "§3.3.5", "pages": [49, 50],
+      "title": "Independent inundation checks", "terms": ["validation", "validate", "ground truth", "optical", "field", "water gauge", "accuracy", "uavsar"],
+      "answer": "Clear optical imagery can check the exposed-water class. Water beneath vegetation calls for different evidence, such as field observations and polarimetric airborne radar. The document proposes calibration and validation across several wetland settings."
+    },
+    {
+      "id": "biomass", "section": "§3.1, §3.1.5–3.1.6", "pages": [11, 30],
+      "title": "Estimating aboveground biomass", "terms": ["biomass", "forest mass", "carbon", "biomass saturation", "aboveground"],
+      "answer": "The proposed biomass method estimates how much vegetation mass is above ground from calibrated radar returns. It accounts for factors such as terrain, soil moisture and ecological region, and uses field and lidar measurements for calibration and validation."
+    },
+    {
+      "id": "disturbance", "section": "§3.2.2", "pages": [34, 39],
+      "title": "Forest disturbance using a time series", "terms": ["disturbance", "deforestation", "forest loss", "cumulative sum", "change point", "cusum"],
+      "answer": "The disturbance design looks for a persistent shift in forest radar return. It calibrates scenes relative to each other and tracks accumulated deviations from the time-series average. A change in that accumulation can help locate when a disturbance occurred."
+    },
+    {
+      "id": "agriculture", "section": "§3.4.1–3.4.2", "pages": [50, 55],
+      "title": "Mapping crop area", "terms": ["agriculture", "crop", "crops", "crop area", "cropland", "coefficient of variation", "fields"],
+      "answer": "The agriculture design uses how much a field's radar return varies through the growing season. Plant growth and farm management can change the signal over time. The document proposes the coefficient of variation as a feature for distinguishing cropped land."
+    }
+  ]
+}

@@ -1,6 +1,26 @@
-# SAR Discharge Investigator
+# SARtainty
 
 NASA Space Apps Challenge 2026: **Dancing with the SARs**.
+
+## Open the NISAR map
+
+Run the launcher from this folder and open [the local explorer](http://127.0.0.1:4174/). The launcher sets up its Python environment. See the [portable hosting guide](QUICKSTART.md) for another computer or a public link.
+
+```powershell
+py -3 launch_relax_zone.py --without-ollama
+```
+
+The dark map opens on a georeferenced NISAR GCOV image. The Assistant input is visible when the map opens. Enter **show me wetlands** or choose a study area in **Manual**. The timeline and polarization matrix offer the channels and dates recorded for that site. Select **Download GeoTIFF** in the source panel to save the selected scientific crop.
+
+The assistant uses a trained question router, measured data from the matrix and source-backed interpretations. Try **Show me wetlands**, **Show what changed at Curuai in HV**, or **Show me oil**. The [scientific review](NISAR_DATA_REVIEW.md) describes the answer checks and links to the recognition methodology.
+
+The standalone assistant handles supported commands and evidence questions. If Ollama runs locally with `qwen3.5:4b`, launch without `--without-ollama` to add Qwen parsing for flexible phrasing. The server validates selections against the recorded sites and bounded NISAR catalogue results.
+
+The [Curuai and Everglades checks](models/WETLAND.md) and [oil recognition report](results/recognition/oil/README.md) document the new model runs. Each uses measured radar predictors and separate references. The app shows their results in **Source audit → Recognition tests** on the applicable site.
+
+For a temporary HTTPS demo, run the existing Cloudflare connector against `http://127.0.0.1:4174` with `--http-host-header 127.0.0.1:4174`. Start the app with `--public-origin` set to the exact HTTPS URL printed by Cloudflare. Guests use their own browser sessions for NASA access.
+
+The following sections document the original investigation workflow and its historical scientific validation. Refer to the science review for the qualifications and adjustments in this release.
 
 This web app helps you investigate dark surface anomalies in rivers, estuaries and lakes near industrial activity. It uses real NISAR and Sentinel‑1 SAR data. It does not label anything as oil or as illegal. Instead, it reports what the radar measured and which physical explanations those measurements still allow.
 

@@ -40,9 +40,10 @@ HOTSPOTS = {
     "galveston": {"name": "Houston Ship Channel - Galveston Bay, USA", "search": [-95.30, 29.30, -94.70, 29.80], "demo": [-95.12, 29.45, -94.82, 29.72]},
     "bonny": {"name": "Bonny River estuary, Niger Delta, Nigeria", "search": [6.95, 4.35, 7.30, 4.80], "demo": [6.98, 4.38, 7.22, 4.62]},
 }
-S1_NESZ_DB = -21.0   # Sentinel-1 IW NESZ -22 dB sigma0 (ESA spec) expressed as gamma0 at ~39 deg incidence (+/-1 dB across swath)
-S1_ENL = 4.4         # IW GRDH nominal equivalent number of looks
+S1_NESZ_DB = -21.0  # Nominal screen: -22 dB sigma0 - 10*log10(cos(39 deg)) over flat water
+S1_ENL = 4.4        # Nominal IW GRDH assumption, not an ENL measured on the reprojected grid
 GCOV_ROOT = "/science/LSAR/GCOV/grids"
+GCOV_DIAGONAL = ("HHHH", "HVHV", "VVVV", "VHVH", "RHRH", "RVRV")
 
 
 def log(*a):
@@ -156,10 +157,11 @@ def detect(db, valid, occ, px_m, T=3.0, min_km2=0.05, nesz=None, enl=S1_ENL, max
         yy, xx = np.nonzero(comp)
         xm, ym = xx * px_x, yy * px_y
         cx, cy = xm.mean(), ym.mean()
-        cxx, cyy, cxy = ((xm - cx) ** 2).mean(), ((ym - cy) ** 2).mean(), ((xm - cx) * (ym - cy)).mean()
+        cxx = ((xm - cx) ** 2).mean() + px_x ** 2 / 12
+        cyy = ((ym - cy) ** 2).mean() + px_y ** 2 / 12
+        cxy = ((xm - cx) * (ym - cy)).mean()
         ev, evec = np.linalg.eigh(np.array([[cxx, cxy], [cxy, cyy]]))
-        fl = px_l * px_l / 12
-        l1, l2 = float(ev[1]) + fl, max(float(ev[0]), 0.0) + fl
+        l1, l2 = float(ev[1]), max(float(ev[0]), 0.0)
         u = evec[:, 1]
         proj = (xm - cx) * u[0] + (ym - cy) * u[1]
         extent = proj.max() - proj.min() + abs(u[0]) * px_x + abs(u[1]) * px_y
@@ -174,9 +176,8 @@ def detect(db, valid, occ, px_m, T=3.0, min_km2=0.05, nesz=None, enl=S1_ENL, max
         noise_frac = float((fdb[comp] < nesz + 1).mean()) if nesz is not None else None
         regional = area > regional_km2
         se = 4.343 * math.sqrt(1.0 / (enl * npx))
-        unc = math.sqrt(se ** 2 + 2 * ((30 / 255) / math.sqrt(12)) ** 2)
         shore_km = float(d_land_km[comp].min())
-        shore_km = None if not math.isfinite(shore_km) else shore_km   # None = no land in the window
+        shore_km = None if not math.isfinite(shore_km) else shore_km   # No mapped land distance in this window
         # point targets inside / within 2 km of the boundary
         inside = near = 0
         nearest = None
@@ -190,17 +191,17 @@ def detect(db, valid, occ, px_m, T=3.0, min_km2=0.05, nesz=None, enl=S1_ENL, max
                 nearest = d if nearest is None else min(nearest, d)
         anoms.append({
             "n": npx, "cx": float(cx / px_x), "cy": float(cy / px_y), "area_km2": area,
-            "mean_db": meandb, "bg_db": bgdb, "contrast_db": bgdb - meandb, "contrast_unc_db": unc,
+            "mean_db": meandb, "bg_db": bgdb, "contrast_db": bgdb - meandb, "contrast_unc_db": se,
             "p95_contrast_db": float(np.percentile(cvals, 95)), "max_contrast_db": float(np.nanmax(cvals)),
             "elongation": math.sqrt(l1 / l2), "length_km": extent / 1000, "ellipse_major_km": 2 * a_ / 1000,
             "fill_ratio": npx * px_x * px_y / (math.pi * a_ * b_), "edge_step_db": edge,
             "shore_km": shore_km, "touches_shore_buffer": bool(shore_km is not None and shore_km * 1000 <= shore_buf_m + 1.5 * px_l),
             "perm_water_frac": float(perm[comp].mean()), "noise_frac": noise_frac, "regional": bool(regional),
-            "class": "noise" if (noise_frac is not None and noise_frac >= 0.5) else ("regional" if regional else "measurable"),
+            "class": "noise" if noise_frac is not None and (noise_frac >= 0.5 or meandb <= nesz + 1) else ("regional" if regional else "measurable"),
             "point_targets_inside": inside, "point_targets_2km": near, "nearest_point_target_km": nearest, "_mask": comp,
         })
     anoms.sort(key=lambda a: -a["area_km2"])
-    low = float((bdb[ok_bg] < nesz + 3).mean()) if nesz is not None and ok_bg.any() else None
+    low = float(((bdb < nesz + 3) & ok_bg).sum() / wm.sum()) if nesz is not None else None
     return {"anoms": anoms[:max_out], "total": len(anoms), "n_points": int(npt), "n_struct": int(small.sum()) if nl else 0,
             "con": con, "meas": meas, "lin": lin, "bg_lin": bg_lin, "wm": wm, "fdb": np.where(valid, db, np.nan),  # display layer (unfiltered gamma0 dB)
             "low_frac": low, "meas_frac": float(meas.sum() / wm.sum()), "water_mean_db": float(10 * np.log10(np.nanmean(lin[wm]))),
@@ -238,7 +239,7 @@ def quicklook(fdb, anoms, valid):
     return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
 
 
-def write_result(path, source, bbox, px_m, params, nesz, res, valid, extra=None):
+def write_result(path, source, bbox, px_m, params, nesz, res, valid, extra=None, *, nesz_basis=None):
     W, S, E, N = bbox
     H, Wd = res["fdb"].shape
     out_anoms = []
@@ -251,6 +252,10 @@ def write_result(path, source, bbox, px_m, params, nesz, res, valid, extra=None)
     doc = {
         "generated": dt.datetime.utcnow().isoformat() + "Z",
         "source": source, "bbox": bbox, "pixel_m": px_m, "nesz_db": nesz, "params": params,
+        "nesz_radiometry": "gamma0_dB" if nesz is not None else None,
+        "nesz_basis": nesz_basis,
+        "contrast_uncertainty_method": "Approximate speckle sampling error with assumed independent pixels and ENL. Excludes background, resampling, calibration and noise-floor uncertainty.",
+        "input_representation": "floating_point_gamma0_power",
         "detector_version": "v2",
         "scene": {"total_dark_features": res["total"], "bright_point_targets": res["n_points"], "in_water_structures": res["n_struct"],
                   "water_mean_db": res["water_mean_db"], "measurable_water_fraction": res["meas_frac"],
@@ -382,26 +387,38 @@ def cmd_s1(a):
     valid = np.isfinite(lin) & (lin > 0)
     db = np.where(valid, 10 * np.log10(np.where(valid, lin, 1)), np.nan)
     occ = gsw_on_grid(bbox, shape)
-    # block averaging from 10 m to a.pixel increases the ENL by ~ (a.pixel/10)^2
-    enl = S1_ENL * max(1.0, (a.pixel / 10.0) ** 2)
+    # Native spatial correlation prevents scaling nominal ENL by pixel area.
+    enl = S1_ENL
     pxy = grid_pixel_m(bbox, shape)
-    res = detect(np.nan_to_num(db, nan=-30), valid, occ, a.pixel, a.threshold, a.min_area, S1_NESZ_DB, enl=min(enl, 50), px_xy=pxy)
+    res = detect(np.nan_to_num(db, nan=-30), valid, occ, a.pixel, a.threshold, a.min_area, S1_NESZ_DB, enl=enl, px_xy=pxy)
     extra = {}
     if a.compare:
         item2, lin2 = read_s1(a.compare, bbox, shape)
         v2 = np.isfinite(lin2) & (lin2 > 0)
-        r2 = detect(np.nan_to_num(10 * np.log10(np.where(v2, lin2, 1)), nan=-30), v2, occ, a.pixel, a.threshold, a.min_area, S1_NESZ_DB, enl=min(enl, 50), px_xy=pxy)
-        persistence(res["anoms"], r2, a.threshold)
+        r2 = detect(np.nan_to_num(10 * np.log10(np.where(v2, lin2, 1)), nan=-30), v2, occ, a.pixel, a.threshold, a.min_area, S1_NESZ_DB, enl=enl, px_xy=pxy)
         p1, p2 = item.properties, item2.properties
+        orbits = [p1.get("sat:relative_orbit"), p2.get("sat:relative_orbit")]
+        passes = [p1.get("sat:orbit_state"), p2.get("sat:orbit_state")]
+        same_geometry = bool(isinstance(orbits[0], int) and orbits[0] > 0 and orbits[0] == orbits[1]
+                             and passes[0] in ("ascending", "descending") and passes[0] == passes[1])
+        dt_take = p1.get("s1:datatake_id")
+        same_datatake = bool(dt_take and dt_take == p2.get("s1:datatake_id") and p1.get("platform") == p2.get("platform"))
+        distinct = bool(item.id != item2.id and item.datetime and item2.datetime
+                        and item.datetime != item2.datetime and not same_datatake)
+        if same_geometry and distinct:
+            persistence(res["anoms"], r2, a.threshold)
+        else:
+            for anomaly in res["anoms"]:
+                anomaly["persist_status"] = "untestable"
         extra["comparison"] = {"scene": a.compare, "platforms": [p1.get("platform"), p2.get("platform")],
-                               "relative_orbits": [p1.get("sat:relative_orbit"), p2.get("sat:relative_orbit")],
-                               "orbit_states": [p1.get("sat:orbit_state"), p2.get("sat:orbit_state")],
-                               "same_geometry": p1.get("sat:relative_orbit") == p2.get("sat:relative_orbit") and p1.get("sat:orbit_state") == p2.get("sat:orbit_state"),
+                               "relative_orbits": orbits, "orbit_states": passes,
+                               "same_geometry": same_geometry, "distinct_acquisition": distinct,
                                "water_mean_db": [res["water_mean_db"], r2["water_mean_db"]]}
     src = {"platform": item.properties.get("platform", "Sentinel-1"), "product": "Sentinel-1 IW GRD RTC gamma0 (Planetary Computer sentinel-1-rtc)",
            "granule": item.id, "start": item.properties["datetime"], "polarization": "VV"}
     write_result(a.out or f"results/s1_{a.hotspot}_{item.id[:40]}.json", src, bbox, a.pixel,
-                 {"contrast_db": a.threshold, "min_area_km2": a.min_area, "enl": min(enl, 50)}, S1_NESZ_DB, res, valid, extra)
+                 {"contrast_db": a.threshold, "min_area_km2": a.min_area, "enl": enl},
+                 S1_NESZ_DB, res, valid, extra, nesz_basis="nominal_sentinel1_screening")
 
 
 # --------------------------------------------------------------------------
@@ -420,12 +437,9 @@ def read_gcov(h5, bbox, pol="HHHH", freq="A"):
     if g not in h5:
         raise RuntimeError(f"{g} not in product")
     avail = [k for k in h5[g].keys() if len(k) == 4 and k.isupper()]
-    if pol not in h5[g]:
-        alt = next((p for p in ("HHHH", "VVVV", "HVHV") if p in h5[g]), None)
-        if alt is None:
-            raise RuntimeError(f"No diagonal gamma0 term in {g}; available: {avail}")
-        log(f"{pol} not present, using {alt}")
-        pol = alt
+    available_diagonal = [name for name in GCOV_DIAGONAL if name in h5[g]]
+    if pol not in available_diagonal:
+        raise RuntimeError(f"{pol} is unavailable as a diagonal gamma0 term in {g}; available: {available_diagonal}")
     x = h5[f"{g}/xCoordinates"][()]
     y = h5[f"{g}/yCoordinates"][()]
     proj = h5[f"{g}/projection"]
@@ -483,15 +497,15 @@ def cmd_nisar(a):
     valid = np.isfinite(lin_g) & (lin_g > 0)
     db = np.where(valid, 10 * np.log10(np.where(valid, lin_g, 1)), -30)
     occ = gsw_on_grid(bbox, shape)
-    native = meta["native_spacing_m"] or 10.0
-    enl = (meta["median_looks"] or 1.0) * max(1.0, (a.pixel / native) ** 2)
-    res = detect(db, valid, occ, a.pixel, a.threshold, a.min_area, a.nesz, enl=min(enl, 50), px_xy=grid_pixel_m(bbox, shape))
+    # The source median is an approximation after reprojection and filtering.
+    enl = meta["median_looks"] or 1.0
+    res = detect(db, valid, occ, a.pixel, a.threshold, a.min_area, a.nesz, enl=enl, px_xy=grid_pixel_m(bbox, shape))
     src = {"platform": "NISAR", "product": props.get("collectionName", "NISAR_L2_GCOV"), "granule": a.granule,
            "start": props.get("startTime"), "polarization": meta["polarization"], "pass": props.get("flightDirection"),
            "track": props.get("pathNumber"), "frame": props.get("frameNumber"), "url": url}
     write_result(a.out or f"results/nisar_{a.hotspot}_{a.granule[:60]}.json", src, bbox, a.pixel,
-                 {"contrast_db": a.threshold, "min_area_km2": a.min_area, "enl": min(enl, 50)}, a.nesz, res, valid,
-                 {"gcov_meta": meta})
+                 {"contrast_db": a.threshold, "min_area_km2": a.min_area, "enl": enl}, a.nesz, res, valid,
+                 {"gcov_meta": meta}, nesz_basis="user_supplied_gamma0_screen" if a.nesz is not None else None)
 
 
 # --------------------------------------------------------------------------
@@ -543,8 +557,8 @@ def main():
     n = sp.add_parser("nisar", help="analyse a NISAR L2 GCOV granule")
     common(n)
     n.add_argument("--granule", required=True, help="NISAR GCOV fileID, e.g. NISAR_L2_PR_GCOV_034_155_D_083_...")
-    n.add_argument("--pol", default="HHHH", help="GCOV diagonal term (HHHH, VVVV, HVHV)")
-    n.add_argument("--nesz", type=float, default=None, help="noise-equivalent sigma0 in dB, if known for this product")
+    n.add_argument("--pol", choices=GCOV_DIAGONAL, default="HHHH", help="GCOV diagonal gamma0 power term")
+    n.add_argument("--nesz", type=float, default=None, help="Optional product-specific gamma0 noise-equivalent backscatter in dB")
     n.add_argument("--download", help="download the full HDF5 to this folder instead of streaming")
     n.set_defaults(fn=cmd_nisar)
 

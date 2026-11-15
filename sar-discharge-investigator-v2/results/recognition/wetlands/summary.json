@@ -1,0 +1,87 @@
+{
+  "id": "curuai-exposed-water-texture-validation",
+  "status": "completed",
+  "site": "Lago Grande de Curuai, Brazil",
+  "target": "Optically exposed water",
+  "predictor_source": "NISAR L-band frequency A GCOV only",
+  "training_date": "2026-08-13",
+  "evaluation_date": "2026-10-12",
+  "training_cells": 246399,
+  "new_feature": "Population standard deviation of HH gamma0 dB in a 3×3 window of 60 m cells",
+  "candidate_met_predeclared_criterion": false,
+  "validation_status": "single_site_research_screen",
+  "date_transfer_validated_for_use": false,
+  "evidence_status": {
+    "exposed_water": "evaluated_against_optical_proxy",
+    "exposed_water_loss": "evaluated_against_optical_proxy",
+    "flood_event_extent": "unsupported",
+    "inundation_under_vegetation": "unsupported",
+    "drought": "unsupported"
+  },
+  "reference_source": "Same-day Sentinel-2A clear optical agreement labels used offline. The predictor features are radar-only.",
+  "metrics": [
+    {
+      "test": "August spatial holdout",
+      "common_assessed_cells": 247502,
+      "models": {
+        "QGIS HH threshold": {
+          "iou": 0.9717721093709619,
+          "recall": 0.9785687796435937,
+          "precision": 0.9929034472742636
+        },
+        "HH and HH−HV logistic": {
+          "iou": 0.971333572969087,
+          "recall": 0.984547920963429,
+          "precision": 0.9863704804552299
+        },
+        "HH and HH−HV logistic with local HH texture": {
+          "iou": 0.9691706665124558,
+          "recall": 0.9813403946623639,
+          "precision": 0.9873660506798112
+        }
+      }
+    },
+    {
+      "test": "October temporal holdout on August-withheld blocks",
+      "common_assessed_cells": 181130,
+      "models": {
+        "QGIS HH threshold": {
+          "iou": 0.4436779661016949,
+          "recall": 0.994415742288406,
+          "precision": 0.4447861621327715
+        },
+        "HH and HH−HV logistic": {
+          "iou": 0.39992069906821404,
+          "recall": 0.9962011852302082,
+          "precision": 0.4005315168084554
+        },
+        "HH and HH−HV logistic with local HH texture": {
+          "iou": 0.406297014346646,
+          "recall": 0.9951375170946665,
+          "precision": 0.4071052263508788
+        }
+      }
+    },
+    {
+      "test": "August–October paired loss on withheld blocks",
+      "common_assessed_cells": 146358,
+      "models": {
+        "QGIS HH threshold": {
+          "iou": 0.13604400412538675,
+          "recall": 0.1368997075195773,
+          "precision": 0.9560729189545355
+        },
+        "HH and HH−HV logistic": {
+          "iou": 0.09156768857658105,
+          "recall": 0.09261880051577193,
+          "precision": 0.8897280966767371
+        },
+        "HH and HH−HV logistic with local HH texture": {
+          "iou": 0.09013155848598886,
+          "recall": 0.0911406736484574,
+          "precision": 0.8905961893054702
+        }
+      }
+    }
+  ]
+}

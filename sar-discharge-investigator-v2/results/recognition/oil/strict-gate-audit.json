@@ -1,0 +1,352 @@
+{
+  "schema_version": 1,
+  "study": "NISAR HH coherent dark-water imagery recognition experiment",
+  "status": "local_research_only",
+  "algorithm_sha256": "4df2102b7b8a89b06bb905fda18539e3548af9cbd9a8d17867924f08cc6d68b4",
+  "case_split": {
+    "calibration": "Oman, Caroline Bezengi case",
+    "held_out": "Umm Al Quwain, GEM NO. 2 case"
+  },
+  "predictors": "Only NISAR L-SAR GCOV frequency-A HH contrast and masks derived from NISAR quality and signal.",
+  "method": {
+    "calibration_quantile": 0.99,
+    "threshold_rounding_step_db": 0.05,
+    "gaussian_sigma_m": 180,
+    "gaussian_truncation_sigmas": 3,
+    "min_weighted_support": 0.75,
+    "input_contrast_clamp_db": [
+      -4.0,
+      4.0
+    ],
+    "cell_m": 60,
+    "parent_model": "models/oil.py",
+    "fit_inputs": "All finite eligible Oman scores in the radar analysis crop. The cached crop extent was originally chosen around an independent proxy. Reference labels are used after the fit for descriptive evaluation."
+  },
+  "fit": {
+    "eligible_calibration_cells": 1558099,
+    "quantile_score_db": 0.47234657406806946,
+    "threshold_db": 0.5,
+    "cells_at_or_above_threshold": 13670
+  },
+  "cases": {
+    "calibration": {
+      "source": {
+        "name": "Oman, Caroline Bezengi case",
+        "reference_label": "Suomi NPP VIIRS bright-core optical interpretation",
+        "reference_status": "independent_sensor_non_exhaustive_positive_proxy",
+        "reference_url": "https://nasa-gibs.github.io/gibs-api-docs/",
+        "time_separation_minutes": [
+          319,
+          326
+        ],
+        "reference_limit": "Non-exhaustive bright visible cores from an earlier VIIRS pass. Motion and changes in appearance during the several-hour gap are unresolved.",
+        "acquisition": "11 August 2026 | NISAR HH at 14:49 UTC and Suomi NPP VIIRS at 09:24\u201309:30 UTC",
+        "nisar_gcov_granules": [
+          {
+            "id": "NISAR_L2_PR_GCOV_027_150_D_079_2005_DHDH_A_20260811T144913_20260811T144947_P05023_N_F_J_001",
+            "noise_correction_applied": "false",
+            "retained_native_postings": 14286100
+          },
+          {
+            "id": "NISAR_L2_PR_GCOV_027_150_D_080_2005_DHDH_A_20260811T144946_20260811T145009_P05023_N_P_J_001",
+            "noise_correction_applied": "false",
+            "retained_native_postings": 329610
+          }
+        ],
+        "epsg": 32640,
+        "native_posting_m": 20.0,
+        "screen_grid_m": 60,
+        "reference_ring_radius_km": 4,
+        "region": "5 km independent-map buffer",
+        "grid_shape": [
+          2110,
+          1506
+        ],
+        "input_sha256": {
+          "feature_cache": "09bbd6bbf4d5fedf71e29bde5cb8fb072ab1b7401a9f00a9ee9bd9473c8440d0",
+          "feature_provenance": "904e961bdf1387621d5211299bf3c0db4a95e207aaf3e39c94d800ff53e92324",
+          "reference_geometry": "b50c3416a2462c517909dbb99932edb2e5ae70f200ab1a37da5a64cdbba79fb2"
+        },
+        "reference_metadata": {
+          "reference_type": "Non-exhaustive digitization of bright optical slick cores",
+          "sensor": "Suomi NPP VIIRS, NASA GIBS true colour RGB",
+          "utc_catalog_start_min": "2026-08-11T09:24:00Z",
+          "utc_catalog_end_max": "2026-08-11T09:30:00Z",
+          "catalog_ids": [
+            "G4276595764-LAADS",
+            "G4276595763-LAADS"
+          ],
+          "wms": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi",
+          "layer": "VIIRS_SNPP_CorrectedReflectance_TrueColor",
+          "wms_accumulation_time_utc": "2026-08-11",
+          "wms_bbox": [
+            55.95,
+            17.38,
+            58.4,
+            19.41
+          ],
+          "wms_width_height": [
+            1350,
+            1200
+          ],
+          "method": "Manual centerline tracing on optical only, constrained to bright connected high-pass RGB features.",
+          "quality_note": "Bright cores are a time-specific optical interpretation. Intervening hours permit drift and shape change. Untraced water is unlabeled.",
+          "area_km2": 196.329
+        }
+      },
+      "recognition": {
+        "proxy_cells": 54577,
+        "proxy_km2": 196.47719999999998,
+        "proxy_outside_open_water_cells": 0,
+        "proxy_without_valid_radar_cells": 31728,
+        "proxy_without_snr_or_local_support_cells": 983,
+        "eligible_proxy_cells": 21147,
+        "eligible_proxy_km2": 76.1292,
+        "proxy_eligible_fraction": 0.38747091265551425,
+        "overlap_cells": 1446,
+        "overlap_km2": 5.2056,
+        "eligible_proxy_overlap_fraction": 0.06837849340331963,
+        "eligible_unlabelled_cells": 262230,
+        "candidate_unlabelled_cells": 8649,
+        "candidate_unlabelled_km2": 31.1364,
+        "eligible_unlabelled_candidate_fraction": 0.03298249628188994,
+        "known_negative_cells": 0,
+        "false_positive_rate": null,
+        "precision": null,
+        "proxy_without_coherence_support_cells": 719
+      },
+      "reference_gate_breakdown": {
+        "outside_buffered_water": 0,
+        "invalid_radar_in_water": 31728,
+        "failed_snr_and_local_reference": 1,
+        "failed_snr_only": 931,
+        "failed_local_reference_only": 51,
+        "failed_coherence_support_only": 719,
+        "assessed_without_flag": 19701,
+        "assessed_with_flag": 1446
+      },
+      "comparison_on_common_support": {
+        "eligible_reference_cells": 21147,
+        "eligible_unlabelled_cells": 262230,
+        "coherent_overlap_cells": 1446,
+        "unsmoothed_overlap_cells": 119,
+        "coherent_unlabelled_flags": 8649,
+        "unsmoothed_unlabelled_flags": 1093
+      },
+      "frozen_1_5_db_baseline": {
+        "proxy_cells": 54577,
+        "proxy_km2": 196.47719999999998,
+        "proxy_outside_open_water_cells": 0,
+        "proxy_without_valid_radar_cells": 31728,
+        "proxy_without_snr_or_local_support_cells": 983,
+        "eligible_proxy_cells": 21866,
+        "eligible_proxy_km2": 78.7176,
+        "proxy_eligible_fraction": 0.40064496033127506,
+        "overlap_cells": 123,
+        "overlap_km2": 0.44279999999999997,
+        "eligible_proxy_overlap_fraction": 0.005625171499131071,
+        "eligible_unlabelled_cells": 266638,
+        "candidate_unlabelled_cells": 1247,
+        "candidate_unlabelled_km2": 4.4892,
+        "eligible_unlabelled_candidate_fraction": 0.004676752750920724,
+        "known_negative_cells": 0,
+        "false_positive_rate": null,
+        "precision": null
+      },
+      "original_3_db_baseline": {
+        "proxy_cells": 54577,
+        "proxy_km2": 196.47719999999998,
+        "proxy_outside_open_water_cells": 0,
+        "proxy_without_valid_radar_cells": 31728,
+        "proxy_without_snr_or_local_support_cells": 983,
+        "eligible_proxy_cells": 21866,
+        "eligible_proxy_km2": 78.7176,
+        "proxy_eligible_fraction": 0.40064496033127506,
+        "overlap_cells": 0,
+        "overlap_km2": 0.0,
+        "eligible_proxy_overlap_fraction": 0.0,
+        "eligible_unlabelled_cells": 266638,
+        "candidate_unlabelled_cells": 0,
+        "candidate_unlabelled_km2": 0.0,
+        "eligible_unlabelled_candidate_fraction": 0.0,
+        "known_negative_cells": 0,
+        "false_positive_rate": null,
+        "precision": null
+      },
+      "additional_proxy_cells_abstained_for_neighbourhood_support": 719,
+      "preview": "oman-coherent-screen.png",
+      "assessment": "descriptive_reference_overlap"
+    },
+    "held_out": {
+      "source": {
+        "name": "Umm Al Quwain, GEM NO. 2 case",
+        "reference_label": "Falcon Eye outline digitized on independent Sentinel-1D VV",
+        "reference_status": "independent_sensor_reported_perimeter_positive_proxy",
+        "reference_url": "https://www.ess-uae.me/post/satellite-oil-spill-monitoring-uae-umm-al-quwain",
+        "time_separation_minutes": [
+          38,
+          40
+        ],
+        "reference_limit": "Published analyst perimeter from a later radar pass. It was georeferenced against Sentinel-1D VV. Outline registration and surface displacement remain uncertain.",
+        "acquisition": "21 October 2026 | NISAR L-band HH at 01:35 UTC and Sentinel-1D C-band VV at 02:14\u201302:15 UTC",
+        "nisar_gcov_granules": [
+          {
+            "id": "NISAR_L2_PR_GCOV_033_128_A_015_2005_DHDH_M_20261021T013516_20261021T013551_P05023_N_F_J_001",
+            "noise_correction_applied": "false",
+            "retained_native_postings": 4397900
+          }
+        ],
+        "epsg": 32640,
+        "native_posting_m": 20.0,
+        "screen_grid_m": 60,
+        "reference_ring_radius_km": 4,
+        "region": "5 km independent-map buffer",
+        "grid_shape": [
+          855,
+          807
+        ],
+        "input_sha256": {
+          "feature_cache": "dec25cf988f2aa68e88f5a1198cf18c461d0b7123b7e54d827e10dc081c44122",
+          "feature_provenance": "21803e04d2cf40173e37e602d50e44af8e144b33510ff19fb4c82ef43527bb2e",
+          "reference_geometry": "aef5a08000c01ca18f951a52f9f5b12b393b7dcea756668434c737000ac48d0a"
+        },
+        "reference_metadata": {
+          "title": "Falcon Eye mapped slick, Gem No. 2 oil spill",
+          "publisher": "Environmental Systems Solutions, Falcon Eye",
+          "publisher_anomaly_id": 285,
+          "publisher_reported_area_km2": 162,
+          "source": "https://www.ess-uae.me/post/satellite-oil-spill-monitoring-uae-umm-al-quwain",
+          "source_figure": "https://static.wixstatic.com/media/fb7d69_da811dc27ca14077909fed3974c0ac35~mv2.png",
+          "source_sensor": "Copernicus Sentinel-1D VV, two adjacent GRDH slices",
+          "source_map_timestamp_utc": "2026-10-21T02:15:00Z",
+          "source_acquisition_window_utc": [
+            "2026-10-21T02:14:30Z",
+            "2026-10-21T02:15:20Z"
+          ],
+          "source_slice_ids": [
+            "S1D_IW_GRDH_1SDV_20261021T021430_20261021T021455_005107_009ABD_6439",
+            "S1D_IW_GRDH_1SDV_20261021T021455_20261021T021520_005107_009ABD_0B55"
+          ],
+          "independent_of_nisar": true,
+          "fit_offsets_preview_pixels": [
+            [
+              -299,
+              -131
+            ],
+            [
+              -299,
+              -130
+            ],
+            [
+              -299,
+              -131
+            ],
+            [
+              -299,
+              -130
+            ],
+            [
+              -299,
+              -131
+            ]
+          ],
+          "fit_correlations": [
+            0.735,
+            0.769,
+            0.848,
+            0.755,
+            0.699
+          ],
+          "registration": "Fixed Leaflet Web Mercator sampling and match five shoreline patches to independent calibrated Sentinel-1D VV. Median of translation offsets.",
+          "digitization": "Isolate red ink, close gaps where two blue marks cover line, fill and remove about half the stroke thickness, simplify in Web Mercator.",
+          "digitized_approx_area_km2": 169.09,
+          "registration_note": "Offsets agree to within one map pixel among five partially overlapping templates. Subpixels and boundary interpretation remain uncertain. Near-time reference from a different sensor."
+        }
+      },
+      "recognition": {
+        "proxy_cells": 46942,
+        "proxy_km2": 168.9912,
+        "proxy_outside_open_water_cells": 0,
+        "proxy_without_valid_radar_cells": 6662,
+        "proxy_without_snr_or_local_support_cells": 38205,
+        "eligible_proxy_cells": 172,
+        "eligible_proxy_km2": 0.6192,
+        "proxy_eligible_fraction": 0.00366409611861446,
+        "overlap_cells": 0,
+        "overlap_km2": 0.0,
+        "eligible_proxy_overlap_fraction": 0.0,
+        "eligible_unlabelled_cells": 25434,
+        "candidate_unlabelled_cells": 361,
+        "candidate_unlabelled_km2": 1.2995999999999999,
+        "eligible_unlabelled_candidate_fraction": 0.01419359911928914,
+        "known_negative_cells": 0,
+        "false_positive_rate": null,
+        "precision": null,
+        "proxy_without_coherence_support_cells": 1903
+      },
+      "reference_gate_breakdown": {
+        "outside_buffered_water": 0,
+        "invalid_radar_in_water": 6662,
+        "failed_snr_and_local_reference": 23858,
+        "failed_snr_only": 14254,
+        "failed_local_reference_only": 93,
+        "failed_coherence_support_only": 1903,
+        "assessed_without_flag": 172,
+        "assessed_with_flag": 0
+      },
+      "comparison_on_common_support": {
+        "eligible_reference_cells": 172,
+        "eligible_unlabelled_cells": 25434,
+        "coherent_overlap_cells": 0,
+        "unsmoothed_overlap_cells": 0,
+        "coherent_unlabelled_flags": 361,
+        "unsmoothed_unlabelled_flags": 7
+      },
+      "frozen_1_5_db_baseline": {
+        "proxy_cells": 46942,
+        "proxy_km2": 168.9912,
+        "proxy_outside_open_water_cells": 0,
+        "proxy_without_valid_radar_cells": 6662,
+        "proxy_without_snr_or_local_support_cells": 38205,
+        "eligible_proxy_cells": 2075,
+        "eligible_proxy_km2": 7.47,
+        "proxy_eligible_fraction": 0.044203485151889564,
+        "overlap_cells": 0,
+        "overlap_km2": 0.0,
+        "eligible_proxy_overlap_fraction": 0.0,
+        "eligible_unlabelled_cells": 39396,
+        "candidate_unlabelled_cells": 7,
+        "candidate_unlabelled_km2": 0.0252,
+        "eligible_unlabelled_candidate_fraction": 0.00017768301350390902,
+        "known_negative_cells": 0,
+        "false_positive_rate": null,
+        "precision": null
+      },
+      "original_3_db_baseline": {
+        "proxy_cells": 46942,
+        "proxy_km2": 168.9912,
+        "proxy_outside_open_water_cells": 0,
+        "proxy_without_valid_radar_cells": 6662,
+        "proxy_without_snr_or_local_support_cells": 38205,
+        "eligible_proxy_cells": 2075,
+        "eligible_proxy_km2": 7.47,
+        "proxy_eligible_fraction": 0.044203485151889564,
+        "overlap_cells": 0,
+        "overlap_km2": 0.0,
+        "eligible_proxy_overlap_fraction": 0.0,
+        "eligible_unlabelled_cells": 39396,
+        "candidate_unlabelled_cells": 0,
+        "candidate_unlabelled_km2": 0.0,
+        "eligible_unlabelled_candidate_fraction": 0.0,
+        "known_negative_cells": 0,
+        "false_positive_rate": null,
+        "precision": null
+      },
+      "additional_proxy_cells_abstained_for_neighbourhood_support": 1903,
+      "preview": "uae-coherent-screen.png",
+      "assessment": "no_overlap_among_eligible_reference_cells"
+    }
+  },
+  "holdout_conclusion": "No positive evidence of transfer to the held-out proxy under this frozen recognition rule.",
+  "reference_limit": "A recorded incident and a later or earlier remote-sensing outline have different evidentiary roles. The outlines are time-offset, non-exhaustive proxies. Outside-reference flags are unlabelled. Area and error rates for confirmed oil remain unestimated."
+}

@@ -1,0 +1,524 @@
+{
+  "status": "method_qa_only",
+  "app_ingest_ready": false,
+  "pair_labels": [
+    "Aug19",
+    "Aug31"
+  ],
+  "method": "Common finite positive power and valid subswath masks, 10 log10(Aug31/Aug19), then nearest native class to Web Mercator as in Curuai.",
+  "native_grid": {
+    "shape": [
+      1122,
+      997
+    ],
+    "epsg": 32645,
+    "affine": [
+      10.0,
+      0.0,
+      336100.0,
+      0.0,
+      -10.0,
+      3132680.0
+    ],
+    "bounds_wgs84": [
+      85.32835949034484,
+      28.208783101384697,
+      85.43149594834841,
+      28.31122955258404
+    ]
+  },
+  "sample_reprojection": {
+    "image_epsg": 3857,
+    "image_shape": [
+      1122,
+      995
+    ],
+    "image_transform": [
+      11.538791946915152,
+      0.0,
+      9498709.52869058,
+      0.0,
+      -11.539688424286956,
+      3288269.684350914
+    ],
+    "image_bounds": [
+      [
+        28.208783101384693,
+        85.32835949034484
+      ],
+      [
+        28.31122955258404,
+        85.43149594834841
+      ]
+    ]
+  },
+  "input_evidence": {
+    "HH_Aug19": {
+      "file": "Nepal_HH_Aug19.tif",
+      "sha256": "f1ef9ddcc874ef29179b38d31070fec384a51dba1325b5da04ab11944d0d00c9",
+      "dtype": "float32",
+      "shape": [
+        1122,
+        997
+      ],
+      "epsg": 32645,
+      "affine": [
+        10.0,
+        0.0,
+        336100.0,
+        0.0,
+        -10.0,
+        3132680.0
+      ],
+      "bounds_wgs84": [
+        85.32835949034484,
+        28.208783101384697,
+        85.43149594834841,
+        28.31122955258404
+      ],
+      "native_bounds": [
+        336100.0,
+        3121460.0,
+        346070.0,
+        3132680.0
+      ],
+      "nodata": "NaN",
+      "mission_tag": "NISAR",
+      "long_name": "Geocoded polarimetric covariance term HHHH",
+      "units_tag": "1",
+      "source_layer_statistics_as_tags": {
+        "min_value": "1.4662222e-18",
+        "max_value": "339374.97",
+        "mean_value": "1.4040407",
+        "sample_stddev": "104.61423"
+      }
+    },
+    "HH_Aug31": {
+      "file": "Nepal_HH_Aug31.tif",
+      "sha256": "8d6e871cb31cf8762bda9a4ca8dae80019ba29b28a38ce867715d46f32a9c021",
+      "dtype": "float32",
+      "shape": [
+        1122,
+        997
+      ],
+      "epsg": 32645,
+      "affine": [
+        10.0,
+        0.0,
+        336100.0,
+        0.0,
+        -10.0,
+        3132680.0
+      ],
+      "bounds_wgs84": [
+        85.32835949034484,
+        28.208783101384697,
+        85.43149594834841,
+        28.31122955258404
+      ],
+      "native_bounds": [
+        336100.0,
+        3121460.0,
+        346070.0,
+        3132680.0
+      ],
+      "nodata": "NaN",
+      "mission_tag": "NISAR",
+      "long_name": "Geocoded polarimetric covariance term HHHH",
+      "units_tag": "1",
+      "source_layer_statistics_as_tags": {
+        "min_value": "3.2662014e-17",
+        "max_value": "296746.66",
+        "mean_value": "1.4394176",
+        "sample_stddev": "105.13918"
+      }
+    },
+    "HH_Change_dB": {
+      "file": "Nepal_HH_Change_dB.tif",
+      "sha256": "3f8ff23567926f0362df3aa4e0feb91806225d4838279242332ba3fbcf3529c1",
+      "dtype": "float32",
+      "shape": [
+        1122,
+        997
+      ],
+      "epsg": 32645,
+      "affine": [
+        10.0,
+        0.0,
+        336100.0,
+        0.0,
+        -10.0,
+        3132680.0
+      ],
+      "bounds_wgs84": [
+        85.32835949034484,
+        28.208783101384697,
+        85.43149594834841,
+        28.31122955258404
+      ],
+      "native_bounds": [
+        336100.0,
+        3121460.0,
+        346070.0,
+        3132680.0
+      ],
+      "nodata": "NaN",
+      "mission_tag": null,
+      "long_name": null,
+      "units_tag": null,
+      "source_layer_statistics_as_tags": {}
+    },
+    "HV_Aug19": {
+      "file": "Nepal_HV_Aug19.tif",
+      "sha256": "887eecc7d9c71a683c34555a539e65cf4dfbaf6d207a34102f8459c056df531d",
+      "dtype": "float32",
+      "shape": [
+        1122,
+        997
+      ],
+      "epsg": 32645,
+      "affine": [
+        10.0,
+        0.0,
+        336100.0,
+        0.0,
+        -10.0,
+        3132680.0
+      ],
+      "bounds_wgs84": [
+        85.32835949034484,
+        28.208783101384697,
+        85.43149594834841,
+        28.31122955258404
+      ],
+      "native_bounds": [
+        336100.0,
+        3121460.0,
+        346070.0,
+        3132680.0
+      ],
+      "nodata": "NaN",
+      "mission_tag": "NISAR",
+      "long_name": "Geocoded polarimetric covariance term HVHV",
+      "units_tag": "1",
+      "source_layer_statistics_as_tags": {
+        "min_value": "1.25373e-18",
+        "max_value": "17230.037",
+        "mean_value": "0.18587889",
+        "sample_stddev": "9.5658712"
+      }
+    },
+    "HV_Aug31": {
+      "file": "Nepal_HV_Aug31.tif",
+      "sha256": "0094fca4ed595517b6c09cf91dc4108644332c3f5cec3e7dd2b126e3da4a1f72",
+      "dtype": "float32",
+      "shape": [
+        1122,
+        997
+      ],
+      "epsg": 32645,
+      "affine": [
+        10.0,
+        0.0,
+        336100.0,
+        0.0,
+        -10.0,
+        3132680.0
+      ],
+      "bounds_wgs84": [
+        85.32835949034484,
+        28.208783101384697,
+        85.43149594834841,
+        28.31122955258404
+      ],
+      "native_bounds": [
+        336100.0,
+        3121460.0,
+        346070.0,
+        3132680.0
+      ],
+      "nodata": "NaN",
+      "mission_tag": "NISAR",
+      "long_name": "Geocoded polarimetric covariance term HVHV",
+      "units_tag": "1",
+      "source_layer_statistics_as_tags": {
+        "min_value": "8.1193583e-19",
+        "max_value": "13056.472",
+        "mean_value": "0.1875053",
+        "sample_stddev": "9.5462542"
+      }
+    },
+    "HV_Change_dB": {
+      "file": "Nepal_HV_Change_dB.tif",
+      "sha256": "2420c0932586505414c778b8d3450f0fa7b342c510439f80b876bc7069826731",
+      "dtype": "float32",
+      "shape": [
+        1122,
+        997
+      ],
+      "epsg": 32645,
+      "affine": [
+        10.0,
+        0.0,
+        336100.0,
+        0.0,
+        -10.0,
+        3132680.0
+      ],
+      "bounds_wgs84": [
+        85.32835949034484,
+        28.208783101384697,
+        85.43149594834841,
+        28.31122955258404
+      ],
+      "native_bounds": [
+        336100.0,
+        3121460.0,
+        346070.0,
+        3132680.0
+      ],
+      "nodata": "NaN",
+      "mission_tag": null,
+      "long_name": null,
+      "units_tag": null,
+      "source_layer_statistics_as_tags": {}
+    },
+    "Mask_Aug19": {
+      "file": "Nepal_Mask_Aug19.tif",
+      "sha256": "3c6ec431bf93a342fc9bdda7b20125612b4963418affdc7cb216dbdcf49d1786",
+      "dtype": "uint8",
+      "shape": [
+        1122,
+        997
+      ],
+      "epsg": 32645,
+      "affine": [
+        10.0,
+        0.0,
+        336100.0,
+        0.0,
+        -10.0,
+        3132680.0
+      ],
+      "bounds_wgs84": [
+        85.32835949034484,
+        28.208783101384697,
+        85.43149594834841,
+        28.31122955258404
+      ],
+      "native_bounds": [
+        336100.0,
+        3121460.0,
+        346070.0,
+        3132680.0
+      ],
+      "nodata": 255,
+      "mission_tag": "NISAR",
+      "long_name": "Valid samples subswath mask",
+      "units_tag": null,
+      "source_layer_statistics_as_tags": {}
+    },
+    "Mask_Aug31": {
+      "file": "Nepal_Mask_Aug31.tif",
+      "sha256": "6384bd63916c67993602846b6986cb4810b4bcf62eabb0b143a198bbcc21edd3",
+      "dtype": "uint8",
+      "shape": [
+        1122,
+        997
+      ],
+      "epsg": 32645,
+      "affine": [
+        10.0,
+        0.0,
+        336100.0,
+        0.0,
+        -10.0,
+        3132680.0
+      ],
+      "bounds_wgs84": [
+        85.32835949034484,
+        28.208783101384697,
+        85.43149594834841,
+        28.31122955258404
+      ],
+      "native_bounds": [
+        336100.0,
+        3121460.0,
+        346070.0,
+        3132680.0
+      ],
+      "nodata": 255,
+      "mission_tag": "NISAR",
+      "long_name": "Valid samples subswath mask",
+      "units_tag": null,
+      "source_layer_statistics_as_tags": {}
+    }
+  },
+  "mask_code_counts": {
+    "Aug19": {
+      "0": 22536,
+      "1": 1096098,
+      "255": 0
+    },
+    "Aug31": {
+      "0": 22603,
+      "1": 1096031,
+      "255": 0
+    }
+  },
+  "masked_common_pixels": 1095239,
+  "results": {
+    "HH": {
+      "paired_pixels": 1095239,
+      "paired_fraction": 0.9790860996536848,
+      "max_abs_delta_error_db": 2.087942064576964e-06,
+      "reverse_sign_error_db": 87.6150423177825,
+      "change_quantiles_db_p10_p50_p90": [
+        -3.121028697439284,
+        -0.06308213621343003,
+        2.9985596709937616
+      ],
+      "brightened_ge_3db_cells": 109415,
+      "darkened_le_minus_3db_cells": 118387,
+      "brightened_ge_3db_fraction": 0.09990056964735551,
+      "darkened_le_minus_3db_fraction": 0.10809238896715694,
+      "map_grid_class_counts_brightened_darkened": [
+        106329,
+        114991
+      ],
+      "map_grid_paired_pixels": 1064317,
+      "independent_map_coordinate_checks": 437
+    },
+    "HV": {
+      "paired_pixels": 1095239,
+      "paired_fraction": 0.9790860996536848,
+      "max_abs_delta_error_db": 2.573383817150443e-06,
+      "reverse_sign_error_db": 89.23840310901093,
+      "change_quantiles_db_p10_p50_p90": [
+        -3.2396507201744154,
+        -0.09945288021042176,
+        3.0199884280447704
+      ],
+      "brightened_ge_3db_cells": 110979,
+      "darkened_le_minus_3db_cells": 127479,
+      "brightened_ge_3db_fraction": 0.10132856846770431,
+      "darkened_le_minus_3db_fraction": 0.11639377341383936,
+      "map_grid_class_counts_brightened_darkened": [
+        107900,
+        123881
+      ],
+      "map_grid_paired_pixels": 1064317,
+      "independent_map_coordinate_checks": 437
+    }
+  },
+  "catalogue_references": [
+    {
+      "date": "2025-08-19",
+      "asf_query": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&processingLevel=GCOV&start=2025-08-19T00%3A00%3A00Z&end=2025-08-19T23%3A59%3A59Z&intersectsWith=POLYGON%28%2885.32835949034484+28.208783101384697%2C85.43149594834841+28.208783101384697%2C85.43149594834841+28.31122955258404%2C85.32835949034484+28.31122955258404%2C85.32835949034484+28.208783101384697%29%29&maxResults=10&output=geojson",
+      "candidates": []
+    },
+    {
+      "date": "2025-08-31",
+      "asf_query": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&processingLevel=GCOV&start=2025-08-31T00%3A00%3A00Z&end=2025-08-31T23%3A59%3A59Z&intersectsWith=POLYGON%28%2885.32835949034484+28.208783101384697%2C85.43149594834841+28.208783101384697%2C85.43149594834841+28.31122955258404%2C85.32835949034484+28.31122955258404%2C85.32835949034484+28.208783101384697%29%29&maxResults=10&output=geojson",
+      "candidates": []
+    },
+    {
+      "date": "2026-08-19",
+      "asf_query": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&processingLevel=GCOV&start=2026-08-19T00%3A00%3A00Z&end=2026-08-19T23%3A59%3A59Z&intersectsWith=POLYGON%28%2885.32835949034484+28.208783101384697%2C85.43149594834841+28.208783101384697%2C85.43149594834841+28.31122955258404%2C85.32835949034484+28.31122955258404%2C85.32835949034484+28.208783101384697%29%29&maxResults=10&output=geojson",
+      "candidates": [
+        {
+          "granule_id_candidate": "NISAR_L2_PR_GCOV_028_098_A_016_4005_DHDH_A_20260819T233918_20260819T233953_X05026_N_F_J_001",
+          "acquired_at": "2026-08-19T23:39:18Z",
+          "track": 98,
+          "frame": 16,
+          "direction": "ASCENDING",
+          "sensor": "L-SAR",
+          "frequency_a_polarizations": [
+            "HH",
+            "HV"
+          ],
+          "footprint_contains_all_crop_bounds": true,
+          "collection_concept_id": "C2854338529-ASF",
+          "source_hdf5_size_bytes": 7243563008,
+          "source_hdf5_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_028_098_A_016_4005_DHDH_A_20260819T233918_20260819T233953_X05026_N_F_J_001/NISAR_L2_PR_GCOV_028_098_A_016_4005_DHDH_A_20260819T233918_20260819T233953_X05026_N_F_J_001.h5",
+          "cmr_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C2854338529-ASF&granule_ur=NISAR_L2_PR_GCOV_028_098_A_016_4005_DHDH_A_20260819T233918_20260819T233953_X05026_N_F_J_001&page_size=4",
+          "cmr_granule_concept_ids": [
+            "G4315938525-ASF"
+          ]
+        },
+        {
+          "granule_id_candidate": "NISAR_L2_PR_GCOV_028_098_A_016_4005_DHDH_A_20260819T233918_20260819T233953_P05023_N_F_J_001",
+          "acquired_at": "2026-08-19T23:39:18Z",
+          "track": 98,
+          "frame": 16,
+          "direction": "ASCENDING",
+          "sensor": "L-SAR",
+          "frequency_a_polarizations": [
+            "HH",
+            "HV"
+          ],
+          "footprint_contains_all_crop_bounds": true,
+          "collection_concept_id": "C2854338529-ASF",
+          "source_hdf5_size_bytes": 7243563008,
+          "source_hdf5_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_028_098_A_016_4005_DHDH_A_20260819T233918_20260819T233953_P05023_N_F_J_001/NISAR_L2_PR_GCOV_028_098_A_016_4005_DHDH_A_20260819T233918_20260819T233953_P05023_N_F_J_001.h5",
+          "cmr_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C2854338529-ASF&granule_ur=NISAR_L2_PR_GCOV_028_098_A_016_4005_DHDH_A_20260819T233918_20260819T233953_P05023_N_F_J_001&page_size=4",
+          "cmr_granule_concept_ids": [
+            "G4286846660-ASF"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-08-31",
+      "asf_query": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&processingLevel=GCOV&start=2026-08-31T00%3A00%3A00Z&end=2026-08-31T23%3A59%3A59Z&intersectsWith=POLYGON%28%2885.32835949034484+28.208783101384697%2C85.43149594834841+28.208783101384697%2C85.43149594834841+28.31122955258404%2C85.32835949034484+28.31122955258404%2C85.32835949034484+28.208783101384697%29%29&maxResults=10&output=geojson",
+      "candidates": [
+        {
+          "granule_id_candidate": "NISAR_L2_PR_GCOV_029_098_A_016_4005_DHDH_A_20260831T233918_20260831T233952_X05026_N_F_J_001",
+          "acquired_at": "2026-08-31T23:39:18Z",
+          "track": 98,
+          "frame": 16,
+          "direction": "ASCENDING",
+          "sensor": "L-SAR",
+          "frequency_a_polarizations": [
+            "HH",
+            "HV"
+          ],
+          "footprint_contains_all_crop_bounds": true,
+          "collection_concept_id": "C2854338529-ASF",
+          "source_hdf5_size_bytes": 7050625024,
+          "source_hdf5_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_029_098_A_016_4005_DHDH_A_20260831T233918_20260831T233952_X05026_N_F_J_001/NISAR_L2_PR_GCOV_029_098_A_016_4005_DHDH_A_20260831T233918_20260831T233952_X05026_N_F_J_001.h5",
+          "cmr_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C2854338529-ASF&granule_ur=NISAR_L2_PR_GCOV_029_098_A_016_4005_DHDH_A_20260831T233918_20260831T233952_X05026_N_F_J_001&page_size=4",
+          "cmr_granule_concept_ids": [
+            "G4315924849-ASF"
+          ]
+        },
+        {
+          "granule_id_candidate": "NISAR_L2_PR_GCOV_029_098_A_016_4005_DHDH_A_20260831T233918_20260831T233952_P05023_N_F_J_001",
+          "acquired_at": "2026-08-31T23:39:18Z",
+          "track": 98,
+          "frame": 16,
+          "direction": "ASCENDING",
+          "sensor": "L-SAR",
+          "frequency_a_polarizations": [
+            "HH",
+            "HV"
+          ],
+          "footprint_contains_all_crop_bounds": true,
+          "collection_concept_id": "C2854338529-ASF",
+          "source_hdf5_size_bytes": 7050625024,
+          "source_hdf5_url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_029_098_A_016_4005_DHDH_A_20260831T233918_20260831T233952_P05023_N_F_J_001/NISAR_L2_PR_GCOV_029_098_A_016_4005_DHDH_A_20260831T233918_20260831T233952_P05023_N_F_J_001.h5",
+          "cmr_url": "https://cmr.earthdata.nasa.gov/search/granules.umm_json?collection_concept_id=C2854338529-ASF&granule_ur=NISAR_L2_PR_GCOV_029_098_A_016_4005_DHDH_A_20260831T233918_20260831T233952_P05023_N_F_J_001&page_size=4",
+          "cmr_granule_concept_ids": [
+            "G4296206881-ASF"
+          ]
+        }
+      ]
+    }
+  ],
+  "primary_product_reference": "https://nisar-docs.asf.alaska.edu/gcov/",
+  "limits": [
+    "Supplied GeoTIFFs retain NISAR unitless covariance and mask layer tags. Original product IDs, acquisition years, and RTC/noise metadata are absent.",
+    "Matching official date and footprint candidates have multiple processing releases. The native input-exception and looks layers are unavailable in this crop set.",
+    "The date labels and ratio are adequate for a local arithmetic QA example. Independent event timing and extent evidence are unavailable."
+  ]
+}

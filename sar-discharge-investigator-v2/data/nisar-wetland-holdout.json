@@ -1,0 +1,300 @@
+{
+  "schema_version": 1,
+  "sites": [
+    {
+      "id": "hasik-nisar",
+      "name": "Hasik coast wetland test, Oman",
+      "topic": "wetlands",
+      "aliases": [
+        "Hasik",
+        "Hasik coast",
+        "Dhofar"
+      ],
+      "bbox": [
+        55.25152532363565,
+        17.422651717877702,
+        55.30851296143488,
+        17.477350161034963
+      ],
+      "start": "2026-08-11",
+      "end": "2026-08-11",
+      "evidence_id": "nisar-hasik-optical-20260812",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              55.25204224206953,
+              17.422651717877702
+            ],
+            [
+              55.25152532363565,
+              17.47686120649794
+            ],
+            [
+              55.30801272317806,
+              17.477350161034963
+            ],
+            [
+              55.30851296143488,
+              17.423139061467175
+            ],
+            [
+              55.25204224206953,
+              17.422651717877702
+            ]
+          ]
+        ]
+      },
+      "geometry_kind": "study_area"
+    }
+  ],
+  "observations": [
+    {
+      "id": "nisar-hasik-20260811",
+      "site_id": "hasik-nisar",
+      "product_id": "NISAR_L2_PR_GCOV_027_150_D_080_2005_DHDH_A_20260811T144946_20260811T145009_P05023_N_P_J_001",
+      "acquisition_id": "NISAR_L2_PR_GCOV_027_150_D_080_2005_DHDH_A_20260811T144946_20260811T145009_P05023_N_P_J_001",
+      "mission": "nisar",
+      "provider": "NASA ASF DAAC",
+      "product": "NISAR GCOV",
+      "product_type": "GCOV",
+      "sensor": "L-SAR",
+      "wavelength": "L",
+      "frequency": "A",
+      "collection": "NISAR_L2_GCOV_PROVISIONAL_V1",
+      "collection_concept_id": "C2854338529-ASF",
+      "mode": "Frequency A · dual polarization",
+      "maturity": "provisional",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              55.25204224206953,
+              17.422651717877702
+            ],
+            [
+              55.25152532363565,
+              17.47686120649794
+            ],
+            [
+              55.30801272317806,
+              17.477350161034963
+            ],
+            [
+              55.30851296143488,
+              17.423139061467175
+            ],
+            [
+              55.25204224206953,
+              17.422651717877702
+            ]
+          ]
+        ]
+      },
+      "source_geometry": {
+        "coordinates": [
+          [
+            [
+              54.92845,
+              18.17873
+            ],
+            [
+              54.56068,
+              16.75238
+            ],
+            [
+              56.82083,
+              16.20726
+            ],
+            [
+              57.20084,
+              17.62775
+            ],
+            [
+              54.92845,
+              18.17873
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "geometry_kind": "local_coverage_window",
+      "orbit": 150,
+      "frame": 80,
+      "direction": "DESCENDING",
+      "look_direction": "Left",
+      "acquired_at": "2026-08-11T14:49:46Z",
+      "acquisition_end": "2026-08-11T14:50:09.999342105Z",
+      "processing_version": "1.0.11",
+      "noise_correction_applied": false,
+      "evidence_id": "nisar-hasik-20260811-source",
+      "reference_evidence_id": "nisar-hasik-optical-20260812",
+      "channels": {
+        "HH": {
+          "status": "validated",
+          "term": "HHHH",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HHHH",
+          "image_url": "/sar/nisar-hasik-20260811-hh.png",
+          "image_bounds": [
+            [
+              17.422651717877702,
+              55.25152532363564
+            ],
+            [
+              17.477350161034956,
+              55.30851296143487
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            300,
+            299
+          ],
+          "image_transform": [
+            21.216838867297664,
+            0.0,
+            6150571.66457878,
+            0.0,
+            -21.275811205388358,
+            1976462.9360522423
+          ],
+          "image_sha256": "e3e70962ce0da8e2cf2d5a2ec29ee1067c4470e8ab2e1000b7cb2f3ed0c89e50",
+          "image_size_bytes": 92280,
+          "display_range_db": [
+            -26,
+            -8
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-hasik-20260811-hh.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32640,
+          "science_posting_m": 20,
+          "science_shape": [
+            300,
+            300
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            314340.0,
+            0.0,
+            -20.0,
+            1933160.0
+          ],
+          "science_sha256": "18c049eb8649563acfc9463da0211934244fdc0fdbfc3dd647cd1887a5b01268",
+          "science_size_bytes": 238737,
+          "valid_fraction": 1.0,
+          "valid_pixels": 90000,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-hasik-20260811-source",
+          "scientific": true,
+          "quality_mask": "Valid source subswath, positive looks, clean exception flags and finite nonnegative power.",
+          "nesz_available": true
+        },
+        "HV": {
+          "status": "validated",
+          "term": "HVHV",
+          "dataset_path": "/science/LSAR/GCOV/grids/frequencyA/HVHV",
+          "image_url": "/sar/nisar-hasik-20260811-hv.png",
+          "image_bounds": [
+            [
+              17.422651717877702,
+              55.25152532363564
+            ],
+            [
+              17.477350161034956,
+              55.30851296143487
+            ]
+          ],
+          "image_epsg": 3857,
+          "image_shape": [
+            300,
+            299
+          ],
+          "image_transform": [
+            21.216838867297664,
+            0.0,
+            6150571.66457878,
+            0.0,
+            -21.275811205388358,
+            1976462.9360522423
+          ],
+          "image_sha256": "b6ee02d95b15ce32471a204954fc75b7133f052a0cfee0f9b2a451306b0c7727",
+          "image_size_bytes": 91302,
+          "display_range_db": [
+            -33,
+            -16
+          ],
+          "units": "dB",
+          "science_url": "/science/nisar-hasik-20260811-hv.tif",
+          "science_units": "unitless gamma0 power",
+          "science_epsg": 32640,
+          "science_posting_m": 20,
+          "science_shape": [
+            300,
+            300
+          ],
+          "science_transform": [
+            20.0,
+            0.0,
+            314340.0,
+            0.0,
+            -20.0,
+            1933160.0
+          ],
+          "science_sha256": "e110a28d187a2d5eadff9d507c375afd8d82eb9f9a1692a649d1a7b8dddd6284",
+          "science_size_bytes": 239129,
+          "valid_fraction": 1.0,
+          "valid_pixels": 90000,
+          "geographic_pixel_checks": 27,
+          "noise_correction_applied": false,
+          "notes": "Measured GCOV gamma0 power. The map displays a fixed 10 log10 dB stretch. The native GeoTIFF preserves linear power and source validity.",
+          "evidence_id": "nisar-hasik-20260811-source",
+          "scientific": true,
+          "quality_mask": "Valid source subswath, positive looks, clean exception flags and finite nonnegative power.",
+          "nesz_available": true
+        }
+      },
+      "source_url": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&granule_list=NISAR_L2_PR_GCOV_027_150_D_080_2005_DHDH_A_20260811T144946_20260811T145009_P05023_N_P_J_001&output=geojson",
+      "source_requires_earthdata": true,
+      "science_requires_earthdata": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "nisar-hasik-20260811-source",
+      "title": "NASA ASF DAAC · Hasik coast · 11 August 2026",
+      "kind": "Native GCOV HDF5",
+      "url": "https://nisar.asf.earthdatacloud.nasa.gov/NISAR/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_027_150_D_080_2005_DHDH_A_20260811T144946_20260811T145009_P05023_N_P_J_001/NISAR_L2_PR_GCOV_027_150_D_080_2005_DHDH_A_20260811T144946_20260811T145009_P05023_N_P_J_001.h5",
+      "source_id": "NISAR_L2_PR_GCOV_027_150_D_080_2005_DHDH_A_20260811T144946_20260811T145009_P05023_N_P_J_001",
+      "source_filename": "NISAR_L2_PR_GCOV_027_150_D_080_2005_DHDH_A_20260811T144946_20260811T145009_P05023_N_P_J_001.h5",
+      "source_sha256": "fb1fab65eb58842027cddb9977d6b19f5b9a84f0740ea5cc1a083d554f6723d5",
+      "provider_size_bytes": 1044381696,
+      "source_window": [
+        5565,
+        4718,
+        300,
+        300
+      ],
+      "catalogue_url": "https://api.daac.asf.alaska.edu/services/search/param?platform=NISAR&granule_list=NISAR_L2_PR_GCOV_027_150_D_080_2005_DHDH_A_20260811T144946_20260811T145009_P05023_N_P_J_001&output=geojson",
+      "documentation_url": "https://nisar-docs.asf.alaska.edu/gcov/",
+      "notes": "This 6 km crop preserves native 20 m HH and HV power. Relative to the earlier exposed-water rule, the new screen uses stricter signal and support criteria.",
+      "quality_rule": "Valid source subswath, positive looks, clean exception flags and finite nonnegative power.",
+      "noise_correction_applied": false,
+      "nesz_available": true
+    },
+    {
+      "id": "nisar-hasik-optical-20260812",
+      "title": "Copernicus Sentinel-2 · Hasik open-water reference · 12 August 2026",
+      "kind": "Independent optical proxy",
+      "url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2C_40QCE_20260812_0_L2A",
+      "acquired_at": "2026-08-12T06:54:40.704000Z",
+      "reference_sha256": "6d82bc67bffeb6775ee38f3c08e1972eb13ae2c5f37d946c0e40d3229ef11fc2",
+      "notes": "The optical reference was acquired 16 h 5 min after NISAR. On 8,718 clear cells away from transitional edges, the new screen had 0 extra flags and missed 64 optical water labels. The earlier screen had 28 extra flags and missed no optical water labels. This test does not establish flooding under vegetation."
+    }
+  ]
+}

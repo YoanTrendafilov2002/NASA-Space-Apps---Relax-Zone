@@ -1,0 +1,460 @@
+{
+  "protocol": {
+    "target": "Optically exposed water at Curuai, Brazil",
+    "hypothesis": "Spatial heterogeneity in HH can help identify open water with the August fit held fixed.",
+    "candidate_predictors": [
+      "HH gamma0 dB",
+      "HH−HV observed gamma0 dB contrast",
+      "Population standard deviation of HH gamma0 dB in a 3×3 window of 60 m cells"
+    ],
+    "control_predictors": [
+      "HH gamma0 dB",
+      "HH−HV observed gamma0 dB contrast"
+    ],
+    "landmark_comparator": "Original QGIS HH cutoff fitted using its established August split.",
+    "training_date": "2026-08-13",
+    "evaluation_date": "2026-10-12",
+    "spatial_partition": "Fixed 3 km checkerboard. A cell and all eight neighbors must lie on its own side of the split.",
+    "analysis_grid_m": 60,
+    "predictor_window_cells": 3,
+    "l2_weight": 0.01,
+    "logistic_decision_logit": 0,
+    "support": "All nine neighborhood cells pass the original dual-channel quality support. Features use measured NISAR power only.",
+    "success_criterion": "Candidate IoU must exceed both HH threshold and the two-feature control for both October exposed water and paired exposed-water loss.",
+    "uncertainty": "Paired resampling of populated spatial blocks within this site, 1000 draws and seed 4217.",
+    "reuse": "October was previously scored for the published baseline. It remains held out of fitting and method selection in this fixed follow-up run."
+  },
+  "training": {
+    "training_input": {
+      "granule": "NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001",
+      "source_filename": "NISAR_L2_PR_GCOV_028_003_A_001_2005_DHDH_A_20260813T092154_20260813T092229_P05023_N_F_J_001.h5",
+      "source_size_bytes": 1983905792,
+      "frequency": "A",
+      "native_posting_m": 20.0,
+      "projection_epsg": 32721,
+      "weighting": "Mean native linear covariance power before dB conversion",
+      "noise_correction_applied": "false",
+      "exception_mask_dtype": "uint8",
+      "product_version": "1.0.11",
+      "product_specification_version": "1.5.0",
+      "radar_start_utc": "2026-08-13T09:21:54.000000000Z",
+      "radar_end_utc": "2026-08-13T09:22:29.999342105Z",
+      "optical_lag_seconds": 17494.158,
+      "orbit_number": 5464,
+      "track_number": 3,
+      "frame_number": 1,
+      "pass_direction": "Ascending",
+      "look_direction": "Left",
+      "native_valid_postings_by_pol": {
+        "HH": 5791699,
+        "HV": 5791699
+      },
+      "source_item": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_21MXT_20260813_0_L2A",
+      "source_acquired_at": "2026-08-13T14:13:28.158000Z",
+      "reference_filename": "curuai_20260813_optical_reference.tif",
+      "reference_sha256": "486a89fddf561d8070797e9424d87364e15cad65ae7938e4bb2ef729819c5ea5",
+      "reference_classes": {
+        "0": "cloud, shadow, no data, or low spectral denominator",
+        "1": "optically clear and agreement on nonwater surface",
+        "2": "optically clear and agreement on exposed water",
+        "3": "clear but SCL and spectral index disagree"
+      },
+      "reference_counts": {
+        "0": 641849,
+        "1": 1957076,
+        "2": 3133930,
+        "3": 89145
+      },
+      "optical_cloud_buffer_m": 40,
+      "provider_note": "Optically exposed water proxy based on independent Sentinel-2 SCL and MNDWI agreement.",
+      "input_sha256": "5e5251ae38b74582e10ec641bb77c5041199636384336a5eeb43b4be5aced040"
+    },
+    "training_cells_on_common_support": 246399,
+    "models": {
+      "QGIS HH threshold": {
+        "method": "QGIS HH threshold",
+        "cutoff_db": -15.0,
+        "training_balanced_accuracy": 0.9855769228157343,
+        "calibration_cells": 246621,
+        "tested_eligible_cutoffs": 280,
+        "tie_break": "Median of the maximizing cutoffs, as in the original QGIS method."
+      },
+      "HH and HH−HV logistic": {
+        "method": "Class-balanced L2 logistic",
+        "features": [
+          "HH gamma0 dB",
+          "HH–HV observed gamma0 dB contrast"
+        ],
+        "positive_train_cells": 155893,
+        "negative_train_cells": 90506,
+        "calibration_cells": 246399,
+        "centering": [
+          -14.268150135715226,
+          5.422833837731954
+        ],
+        "scaling": [
+          6.397884336973987,
+          1.4918207485632997
+        ],
+        "coefficients": [
+          0.6324239492377511,
+          -3.1832533513889794,
+          -0.38256875552837016
+        ],
+        "regularization": 0.01,
+        "decision_logit": 0.0,
+        "iterations": 19,
+        "converged": true
+      },
+      "HH and HH−HV logistic with local HH texture": {
+        "method": "Class-balanced L2 logistic",
+        "features": [
+          "HH gamma0 dB",
+          "HH−HV observed gamma0 dB contrast",
+          "Population standard deviation of HH gamma0 dB in a 3×3 window of 60 m cells"
+        ],
+        "positive_train_cells": 155893,
+        "negative_train_cells": 90506,
+        "calibration_cells": 246399,
+        "centering": [
+          -14.268150135715226,
+          5.422833837731954,
+          1.1170612425995092
+        ],
+        "scaling": [
+          6.397884336973987,
+          1.4918207485632997,
+          1.068958582616971
+        ],
+        "coefficients": [
+          0.6776036592883151,
+          -3.1251267892083616,
+          -0.35061032184860136,
+          -0.21750956057062654
+        ],
+        "regularization": 0.01,
+        "decision_logit": 0.0,
+        "iterations": 24,
+        "converged": true
+      }
+    }
+  },
+  "evaluation_input": {
+    "granule": "NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001",
+    "source_filename": "NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001.h5",
+    "source_size_bytes": 1983905792,
+    "frequency": "A",
+    "native_posting_m": 20.0,
+    "projection_epsg": 32721,
+    "weighting": "Mean native linear covariance power before dB conversion",
+    "noise_correction_applied": "false",
+    "exception_mask_dtype": "uint8",
+    "product_version": "1.0.11",
+    "product_specification_version": "1.5.0",
+    "radar_start_utc": "2026-10-12T09:21:54.000000000Z",
+    "radar_end_utc": "2026-10-12T09:22:29.999342105Z",
+    "optical_lag_seconds": 17489.899,
+    "orbit_number": 6329,
+    "track_number": 3,
+    "frame_number": 1,
+    "pass_direction": "Ascending",
+    "look_direction": "Left",
+    "native_valid_postings_by_pol": {
+      "HH": 5761328,
+      "HV": 5761328
+    },
+    "source_item": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_21MXT_20261012_0_L2A",
+    "source_acquired_at": "2026-10-12T14:13:23.899000Z",
+    "reference_filename": "curuai_20261012_optical_reference.tif",
+    "reference_sha256": "406abedc4fa87aea3934236f52cef4c354614ccae27ab4f8395b270749a9a279",
+    "reference_classes": {
+      "0": "cloud, shadow, no data, or low spectral denominator",
+      "1": "optically clear and agreement on nonwater surface",
+      "2": "optically clear and agreement on exposed water",
+      "3": "clear but SCL and spectral index disagree"
+    },
+    "reference_counts": {
+      "0": 1819979,
+      "1": 3211709,
+      "2": 629427,
+      "3": 160885
+    },
+    "optical_cloud_buffer_m": 40,
+    "provider_note": "Optically exposed water proxy based on independent Sentinel-2 SCL and MNDWI agreement.",
+    "input_sha256": "a916d8ff888e42ccd4983f1f973fcdb9d4c5c0aeb4b25adde40c36b906b8ca32"
+  },
+  "candidate_met_predeclared_criterion": false,
+  "metrics": [
+    {
+      "test": "August spatial holdout",
+      "model": "QGIS HH threshold",
+      "outcome": "exposed water",
+      "reference_cells": 247905,
+      "assessed_cells": 247502,
+      "withheld_water_cells": 0,
+      "withheld_other_cells": 403,
+      "assessed_fraction": 0.9983743772816199,
+      "matched_water_cells": 150407,
+      "missed_water_cells": 3294,
+      "extra_water_cells": 1075,
+      "matched_other_cells": 92726,
+      "recall": 0.9785687796435937,
+      "precision": 0.9929034472742636,
+      "iou": 0.9717721093709619,
+      "specificity": 0.9885395678084455,
+      "balanced_accuracy": 0.9835541737260196,
+      "matched_water_km2": 541.4652,
+      "missed_water_km2": 11.8584,
+      "extra_water_km2": 3.87
+    },
+    {
+      "test": "August spatial holdout",
+      "model": "HH and HH−HV logistic",
+      "outcome": "exposed water",
+      "reference_cells": 247905,
+      "assessed_cells": 247502,
+      "withheld_water_cells": 0,
+      "withheld_other_cells": 403,
+      "assessed_fraction": 0.9983743772816199,
+      "matched_water_cells": 151326,
+      "missed_water_cells": 2375,
+      "extra_water_cells": 2091,
+      "matched_other_cells": 91710,
+      "recall": 0.984547920963429,
+      "precision": 0.9863704804552299,
+      "iou": 0.971333572969087,
+      "specificity": 0.9777081267790322,
+      "balanced_accuracy": 0.9811280238712305,
+      "matched_water_km2": 544.7736,
+      "missed_water_km2": 8.55,
+      "extra_water_km2": 7.5276
+    },
+    {
+      "test": "August spatial holdout",
+      "model": "HH and HH−HV logistic with local HH texture",
+      "outcome": "exposed water",
+      "reference_cells": 247905,
+      "assessed_cells": 247502,
+      "withheld_water_cells": 0,
+      "withheld_other_cells": 403,
+      "assessed_fraction": 0.9983743772816199,
+      "matched_water_cells": 150833,
+      "missed_water_cells": 2868,
+      "extra_water_cells": 1930,
+      "matched_other_cells": 91871,
+      "recall": 0.9813403946623639,
+      "precision": 0.9873660506798112,
+      "iou": 0.9691706665124558,
+      "specificity": 0.9794245263909767,
+      "balanced_accuracy": 0.9803824605266702,
+      "matched_water_km2": 542.9988,
+      "missed_water_km2": 10.3248,
+      "extra_water_km2": 6.948
+    },
+    {
+      "test": "October temporal holdout on August-withheld blocks",
+      "model": "QGIS HH threshold",
+      "outcome": "exposed water",
+      "reference_cells": 184599,
+      "assessed_cells": 181130,
+      "withheld_water_cells": 58,
+      "withheld_other_cells": 3411,
+      "assessed_fraction": 0.9812079155358372,
+      "matched_water_cells": 26177,
+      "missed_water_cells": 147,
+      "extra_water_cells": 32676,
+      "matched_other_cells": 122130,
+      "recall": 0.994415742288406,
+      "precision": 0.4447861621327715,
+      "iou": 0.4436779661016949,
+      "specificity": 0.78892290996473,
+      "balanced_accuracy": 0.891669326126568,
+      "matched_water_km2": 94.2372,
+      "missed_water_km2": 0.5292,
+      "extra_water_km2": 117.6336
+    },
+    {
+      "test": "October temporal holdout on August-withheld blocks",
+      "model": "HH and HH−HV logistic",
+      "outcome": "exposed water",
+      "reference_cells": 184599,
+      "assessed_cells": 181130,
+      "withheld_water_cells": 58,
+      "withheld_other_cells": 3411,
+      "assessed_fraction": 0.9812079155358372,
+      "matched_water_cells": 26224,
+      "missed_water_cells": 100,
+      "extra_water_cells": 39249,
+      "matched_other_cells": 115557,
+      "recall": 0.9962011852302082,
+      "precision": 0.4005315168084554,
+      "iou": 0.39992069906821404,
+      "specificity": 0.746463315375373,
+      "balanced_accuracy": 0.8713322503027906,
+      "matched_water_km2": 94.4064,
+      "missed_water_km2": 0.36,
+      "extra_water_km2": 141.2964
+    },
+    {
+      "test": "October temporal holdout on August-withheld blocks",
+      "model": "HH and HH−HV logistic with local HH texture",
+      "outcome": "exposed water",
+      "reference_cells": 184599,
+      "assessed_cells": 181130,
+      "withheld_water_cells": 58,
+      "withheld_other_cells": 3411,
+      "assessed_fraction": 0.9812079155358372,
+      "matched_water_cells": 26196,
+      "missed_water_cells": 128,
+      "extra_water_cells": 38151,
+      "matched_other_cells": 116655,
+      "recall": 0.9951375170946665,
+      "precision": 0.4071052263508788,
+      "iou": 0.406297014346646,
+      "specificity": 0.7535560637184605,
+      "balanced_accuracy": 0.8743467904065635,
+      "matched_water_km2": 94.3056,
+      "missed_water_km2": 0.4608,
+      "extra_water_km2": 137.3436
+    },
+    {
+      "test": "August–October paired loss on withheld blocks",
+      "model": "QGIS HH threshold",
+      "outcome": "exposed-water loss",
+      "reference_cells": 147247,
+      "assessed_cells": 146358,
+      "withheld_water_cells": 0,
+      "withheld_other_cells": 889,
+      "assessed_fraction": 0.9939625255523032,
+      "matched_water_cells": 4353,
+      "missed_water_cells": 27444,
+      "extra_water_cells": 200,
+      "matched_other_cells": 114361,
+      "recall": 0.1368997075195773,
+      "precision": 0.9560729189545355,
+      "iou": 0.13604400412538675,
+      "specificity": 0.9982542051832648,
+      "balanced_accuracy": 0.567576956351421,
+      "matched_water_km2": 15.6708,
+      "missed_water_km2": 98.7984,
+      "extra_water_km2": 0.72
+    },
+    {
+      "test": "August–October paired loss on withheld blocks",
+      "model": "HH and HH−HV logistic",
+      "outcome": "exposed-water loss",
+      "reference_cells": 147247,
+      "assessed_cells": 146358,
+      "withheld_water_cells": 0,
+      "withheld_other_cells": 889,
+      "assessed_fraction": 0.9939625255523032,
+      "matched_water_cells": 2945,
+      "missed_water_cells": 28852,
+      "extra_water_cells": 365,
+      "matched_other_cells": 114196,
+      "recall": 0.09261880051577193,
+      "precision": 0.8897280966767371,
+      "iou": 0.09156768857658105,
+      "specificity": 0.9968139244594583,
+      "balanced_accuracy": 0.5447163624876151,
+      "matched_water_km2": 10.602,
+      "missed_water_km2": 103.8672,
+      "extra_water_km2": 1.314
+    },
+    {
+      "test": "August–October paired loss on withheld blocks",
+      "model": "HH and HH−HV logistic with local HH texture",
+      "outcome": "exposed-water loss",
+      "reference_cells": 147247,
+      "assessed_cells": 146358,
+      "withheld_water_cells": 0,
+      "withheld_other_cells": 889,
+      "assessed_fraction": 0.9939625255523032,
+      "matched_water_cells": 2898,
+      "missed_water_cells": 28899,
+      "extra_water_cells": 356,
+      "matched_other_cells": 114205,
+      "recall": 0.0911406736484574,
+      "precision": 0.8905961893054702,
+      "iou": 0.09013155848598886,
+      "specificity": 0.9968924852262113,
+      "balanced_accuracy": 0.5440165794373344,
+      "matched_water_km2": 10.4328,
+      "missed_water_km2": 104.0364,
+      "extra_water_km2": 1.2816
+    }
+  ],
+  "comparisons": [
+    {
+      "test": "August spatial holdout",
+      "control": "QGIS HH threshold",
+      "candidate_minus_control_iou": -0.0026014428585061644,
+      "interval_95": [
+        -0.005451576404570277,
+        -7.997446779774778e-05
+      ],
+      "populated_blocks": 148,
+      "valid_draws": 1000
+    },
+    {
+      "test": "August spatial holdout",
+      "control": "HH and HH−HV logistic",
+      "candidate_minus_control_iou": -0.0021629064566311973,
+      "interval_95": [
+        -0.003036218709854585,
+        -0.001393417022391208
+      ],
+      "populated_blocks": 148,
+      "valid_draws": 1000
+    },
+    {
+      "test": "October temporal holdout on August-withheld blocks",
+      "control": "QGIS HH threshold",
+      "candidate_minus_control_iou": -0.03738095175504891,
+      "interval_95": [
+        -0.046045143545428976,
+        -0.029420407757150217
+      ],
+      "populated_blocks": 144,
+      "valid_draws": 1000
+    },
+    {
+      "test": "October temporal holdout on August-withheld blocks",
+      "control": "HH and HH−HV logistic",
+      "candidate_minus_control_iou": 0.0063763152784319654,
+      "interval_95": [
+        0.004535715084750071,
+        0.008588922529574602
+      ],
+      "populated_blocks": 144,
+      "valid_draws": 1000
+    },
+    {
+      "test": "August–October paired loss on withheld blocks",
+      "control": "QGIS HH threshold",
+      "candidate_minus_control_iou": -0.04591244563939789,
+      "interval_95": [
+        -0.05705065086907613,
+        -0.03735037689211392
+      ],
+      "populated_blocks": 142,
+      "valid_draws": 1000
+    },
+    {
+      "test": "August–October paired loss on withheld blocks",
+      "control": "HH and HH−HV logistic",
+      "candidate_minus_control_iou": -0.0014361300905921942,
+      "interval_95": [
+        -0.003466040507473697,
+        0.0007091466029214384
+      ],
+      "populated_blocks": 142,
+      "valid_draws": 1000
+    }
+  ],
+  "assessment_limits": [
+    "Separate optical reference acquired about 4 hours and 52 minutes later than radar.",
+    "One site and two dates. Spatial resampling measures within-site variability.",
+    "Labels cover optically exposed water and exclude uncertain cells. Field confirmation, event attribution, and vegetation-covered water remain untested by this experiment."
+  ]
+}

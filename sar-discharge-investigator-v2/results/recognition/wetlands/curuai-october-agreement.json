@@ -1,0 +1,294 @@
+{
+  "study": "Curuai 12 October 2026 exposed-water temporal holdout",
+  "site_id": "curuai-nisar",
+  "observation_id": "nisar-curuai-20261012",
+  "epsg": 32721,
+  "affine": [
+    60.0,
+    0.0,
+    641180.0,
+    0.0,
+    -60.0,
+    9786660.0
+  ],
+  "shape": [
+    684,
+    947
+  ],
+  "display_raster_bounds_epsg32721": [
+    661480.0,
+    9764520.0,
+    676480.0,
+    9779520.0
+  ],
+  "full_display_cells_at_60m": 62250,
+  "source": {
+    "granule": "NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001",
+    "source_filename": "NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001.h5",
+    "source_size_bytes": 1983905792,
+    "frequency": "A",
+    "native_posting_m": 20.0,
+    "projection_epsg": 32721,
+    "weighting": "Mean native linear covariance power before dB conversion",
+    "noise_correction_applied": "false",
+    "exception_mask_dtype": "uint8",
+    "product_version": "1.0.11",
+    "product_specification_version": "1.5.0",
+    "radar_start_utc": "2026-10-12T09:21:54.000000000Z",
+    "radar_end_utc": "2026-10-12T09:22:29.999342105Z",
+    "optical_lag_seconds": 17489.899,
+    "orbit_number": 6329,
+    "track_number": 3,
+    "frame_number": 1,
+    "pass_direction": "Ascending",
+    "look_direction": "Left",
+    "native_valid_postings_by_pol": {
+      "HH": 5761328,
+      "HV": 5761328
+    },
+    "source_item": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_21MXT_20261012_0_L2A",
+    "source_acquired_at": "2026-10-12T14:13:23.899000Z",
+    "reference_filename": "curuai_20261012_optical_reference.tif",
+    "reference_sha256": "406abedc4fa87aea3934236f52cef4c354614ccae27ab4f8395b270749a9a279",
+    "reference_classes": {
+      "0": "cloud, shadow, no data, or low spectral denominator",
+      "1": "optically clear and agreement on nonwater surface",
+      "2": "optically clear and agreement on exposed water",
+      "3": "clear but SCL and spectral index disagree"
+    },
+    "reference_counts": {
+      "0": 1819979,
+      "1": 3211709,
+      "2": 629427,
+      "3": 160885
+    },
+    "optical_cloud_buffer_m": 40,
+    "provider_note": "Optically exposed water proxy based on independent Sentinel-2 SCL and MNDWI agreement.",
+    "input_sha256": "a916d8ff888e42ccd4983f1f973fcdb9d4c5c0aeb4b25adde40c36b906b8ca32"
+  },
+  "frozen_model_sha256": "18ad2f16e2721a7e9864fc00741f13a82c34563e829e38e45bcdc53951b4170f",
+  "reference_citation": "https://sentiwiki.copernicus.eu/web/s2-processing",
+  "algorithm_citation": "https://doi.org/10.1080/01431160600589179",
+  "nisar_citation": "https://nisar-docs.asf.alaska.edu/gcov/",
+  "display_granule_lineage": "NISAR_L2_PR_GCOV_033_003_A_001_2005_DHDH_A_20261012T092154_20261012T092229_P05023_N_F_J_001",
+  "radar_quality": "Common HH and HV support on all nine 20 m samples per 60 m cell: valid focused subswath, looks and calibrated power, clean exception flags, finite positive NESZ; HH 60 m NESZ must be at or below −18 dB. Noise correction was off.",
+  "reference_quality": "At least eight of nine aligned Sentinel-2 Level-2A postings agree after a 40 m cloud and shadow buffer, requiring SCL and MNDWI agreement.",
+  "scope": "Independent same-day optical proxy for exposed water, acquired 4 h 51 min 29.899 s after the radar scene. The 60 m grid and scope apply to the outlines. Field confirmation, inundated vegetation and attribution of flood or drought were not tested.",
+  "counts": {
+    "threshold": {
+      "all_assessed": {
+        "assessed_cells": 392540,
+        "tp": 58198,
+        "fn": 367,
+        "fp": 72020,
+        "tn": 261955,
+        "iou": 0.44567140176896275,
+        "precision": 0.4469274601053618,
+        "true_positive_km2": 209.5128
+      },
+      "withheld_blocks": {
+        "assessed_cells": 181423,
+        "tp": 26208,
+        "fn": 147,
+        "fp": 32685,
+        "tn": 122383,
+        "iou": 0.44390243902439025,
+        "precision": 0.44501044266721,
+        "true_positive_km2": 94.3488
+      },
+      "map_crop": {
+        "assessed_cells": 33920,
+        "tp": 7744,
+        "fn": 93,
+        "fp": 10738,
+        "tn": 15345,
+        "iou": 0.41690444145356664,
+        "precision": 0.4190022724813332,
+        "true_positive_km2": 27.8784
+      },
+      "map_crop_withheld_blocks": {
+        "assessed_cells": 14648,
+        "tp": 3488,
+        "fn": 42,
+        "fp": 4209,
+        "tn": 6909,
+        "iou": 0.4507042253521127,
+        "precision": 0.45316357022216447,
+        "true_positive_km2": 12.556799999999999
+      }
+    },
+    "logistic": {
+      "all_assessed": {
+        "assessed_cells": 392540,
+        "tp": 58305,
+        "fn": 260,
+        "fp": 86668,
+        "tn": 247307,
+        "iou": 0.4014583462436223,
+        "precision": 0.40217833665579106,
+        "true_positive_km2": 209.898
+      },
+      "withheld_blocks": {
+        "assessed_cells": 181423,
+        "tp": 26255,
+        "fn": 100,
+        "fp": 39272,
+        "tn": 115796,
+        "iou": 0.40006399804958326,
+        "precision": 0.4006745311093137,
+        "true_positive_km2": 94.518
+      },
+      "map_crop": {
+        "assessed_cells": 33920,
+        "tp": 7763,
+        "fn": 74,
+        "fp": 12162,
+        "tn": 13921,
+        "iou": 0.3881694084704235,
+        "precision": 0.38961104140526975,
+        "true_positive_km2": 27.9468
+      },
+      "map_crop_withheld_blocks": {
+        "assessed_cells": 14648,
+        "tp": 3496,
+        "fn": 34,
+        "fp": 4647,
+        "tn": 6471,
+        "iou": 0.4275406628347805,
+        "precision": 0.42932580130173154,
+        "true_positive_km2": 12.5856
+      }
+    }
+  },
+  "rasters": {
+    "optical-reference": {
+      "file": "optical-reference.tif",
+      "sha256": "1a717f894073eb60ed04738e93d117af44de095b73b2669358f8a42287efedc8",
+      "bytes": 45417,
+      "classes": {
+        "0": 248238,
+        "1": 58626,
+        "2": 340884
+      }
+    },
+    "radar-eligibility": {
+      "file": "radar-eligibility.tif",
+      "sha256": "26ab755bc429557ec82a681ee080afba297fee7d1f651eb76ed33498b42d79a6",
+      "bytes": 3103,
+      "classes": {
+        "0": 7919,
+        "1": 639829
+      }
+    },
+    "assessment-eligibility": {
+      "file": "assessment-eligibility.tif",
+      "sha256": "888eb8d17663d3b19202556ae9157bed45d1cb1226d51128c4481768279bfa41",
+      "bytes": 42421,
+      "classes": {
+        "0": 255208,
+        "1": 392540
+      }
+    },
+    "withheld-blocks": {
+      "file": "withheld-blocks.tif",
+      "sha256": "0c1d6b49da77c8cf8a18475d40cbd5228b6d94dd895c6c3eb7b64fa6ea1073f4",
+      "bytes": 7592,
+      "classes": {
+        "0": 349444,
+        "1": 298304
+      }
+    },
+    "map-extent-cells": {
+      "file": "map-extent-cells.tif",
+      "sha256": "c9561fd16900a459808350509fe51cacb213be490ba62e18eede3c6cf2b7d613",
+      "bytes": 2826,
+      "classes": {
+        "0": 585498,
+        "1": 62250
+      }
+    },
+    "map-optical-water": {
+      "file": "map-optical-water.tif",
+      "sha256": "54c7683d9a9fa534ddcf4a6aa1cd4edf0fd1660b04a6f8f78a2d77a08ff4bb9c",
+      "bytes": 5301,
+      "classes": {
+        "0": 639911,
+        "1": 7837
+      }
+    },
+    "threshold-prediction": {
+      "file": "threshold-prediction.tif",
+      "sha256": "4f4981114f5d3d9e1efe602f2d86e5601b0bd39e3e28967da9684533f7aa7cc1",
+      "bytes": 38000,
+      "classes": {
+        "0": 7919,
+        "1": 353899,
+        "2": 285930
+      }
+    },
+    "threshold-true-positive": {
+      "file": "threshold-true-positive.tif",
+      "sha256": "a3825167453a664480c98e7b03cab2b23af9dac43b8eefb7e748714dd8a97929",
+      "bytes": 23030,
+      "classes": {
+        "0": 589550,
+        "1": 58198
+      }
+    },
+    "threshold-map-true-positive": {
+      "file": "threshold-map-true-positive.tif",
+      "sha256": "a916398e2c980e491ce758e62b572845bcb74e96f13df0d49ad5dc5fc39dab5a",
+      "bytes": 5376,
+      "classes": {
+        "0": 640004,
+        "1": 7744
+      }
+    },
+    "threshold-map-withheld-true-positive": {
+      "file": "threshold-map-withheld-true-positive.tif",
+      "sha256": "de7fe5d377a68acc3361878ff8092a18f3b799dab9a6a7d366a1199d064dd7d5",
+      "bytes": 3824,
+      "classes": {
+        "0": 644260,
+        "1": 3488
+      }
+    },
+    "logistic-prediction": {
+      "file": "logistic-prediction.tif",
+      "sha256": "adb07a417df14f2857b39c5391d61b8cff23d527b0e1757f1b77d887742075a4",
+      "bytes": 40324,
+      "classes": {
+        "0": 7919,
+        "1": 372678,
+        "2": 267151
+      }
+    },
+    "logistic-true-positive": {
+      "file": "logistic-true-positive.tif",
+      "sha256": "41cf411164688518bc3aae1fdc2bbfe95de50d7a0d472df9ab098513873b2e91",
+      "bytes": 23056,
+      "classes": {
+        "0": 589443,
+        "1": 58305
+      }
+    },
+    "logistic-map-true-positive": {
+      "file": "logistic-map-true-positive.tif",
+      "sha256": "7eaddd791958492c2e3455f4db0a43561ffa4725e7c6b9f527fdf2410ef91965",
+      "bytes": 5380,
+      "classes": {
+        "0": 639985,
+        "1": 7763
+      }
+    },
+    "logistic-map-withheld-true-positive": {
+      "file": "logistic-map-withheld-true-positive.tif",
+      "sha256": "f54cf80ff66c67955ab865f691f04abe2b0a3ce2f49ac2e3e9ec9115c554952a",
+      "bytes": 3836,
+      "classes": {
+        "0": 644252,
+        "1": 3496
+      }
+    }
+  }
+}
